@@ -19,36 +19,36 @@ The repository is organized into the following sample projects:
 - `zephyr-imu-ncs/` - Inertial Measurement Unit (IMU) sample
 - `zephyr-lowpower-ncs/` - Low power consumption sample
 - `zephyr-pwm-ncs/` - Pulse Width Modulation sample
-- `zephyr-HPF-mspi-ncs/` - High Performance Frequency MSPI sample
+- `zephyr-HPF-mspi-ncs/` - High Performance Framework MSPI sample
 - `zephyr-expansion-base-for-xiao/` - Samples for expansion base modules (buzzer, I2C SHT31, OLED, RTC)
-- `old/` - Older versions of samples (PlatformIO based)
+- `old/` - Older versions of samples (PlatformIO based, not supported)
 
 Each sample directory contains:
 - `CMakeLists.txt` - Build configuration for nRF Connect SDK
 - `prj.conf` - Project configuration
 - `src/` - Source code
 - `README.md` - Sample-specific documentation
-- `sample.yaml` - Sample metadata
+- `sample.yaml` - Sample metadata to allow it to appear in nRF Connect for VS Code
 
-Some samples also include PlatformIO configurations in the `old/` folder.
+
+## PlatformIO Support
+
+PlatformIO is **not supported** for this repository. The Zephyr implementation in PlatformIO is out of date as of 9/17/2025 and incompatible with the current samples.
 
 ## Getting Started
 
 ### Prerequisites
-
+- nRF Connect for VS Code
 - nRF Connect SDK (for NCS samples)
-- PlatformIO (for PlatformIO samples)
-- Seeed Xiao nRF54L15 board
+- Seeed Xiao nRF54L15 or xiao nRF54l15 Sense
 
 ### Building and Running
+install nRF Connect for VS Code : https://www.youtube.com/watch?v=EAJdOqsL9m8  
+This video covers installation of the required tools to support the extension, nRF toolchain and nRF connect sdk.
+The samples in this repository have been tested with nRF Connect for VS Code version 3.1.0.
+Opening the sample folder in vs code will automatically add the sample as an application in nrf connect for vs code.
 
-For NCS samples:
-1. Navigate to the sample directory
-2. Use nRF Connect for VS Code or command line to build and flash
-
-For PlatformIO samples (in `old/`):
-1. Open the project in PlatformIO
-2. Build and upload
+Add an application and build configuration for the xiao nRF54L15 board to the nRF Connect for VS Code Workspace.
 
 ## Resources
 
