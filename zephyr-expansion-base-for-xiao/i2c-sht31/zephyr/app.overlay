@@ -1,0 +1,16 @@
+/ {
+    aliases {
+		sht31 = &sht31; 
+	};
+};
+
+&xiao_i2c {
+	status = "okay";
+
+	sht31: sht31@44 {
+        compatible = "sensirion,sht3xd";
+        reg = <0x44>;
+    };
+};
+
+

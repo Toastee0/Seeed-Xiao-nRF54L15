@@ -1,0 +1,13 @@
+sample:
+  name: ADC to PWM Control
+  description: ADC potentiometer reading controls PWM LED brightness
+tests:
+  sample.adc.pwm_control:
+    harness: console
+    platform_allow:
+      - nrf52840dk/nrf52840
+      - nrf5340dk/nrf5340/cpuapp
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    tags: adc pwm sensors
+    integration_platforms:
+      - xiao_nrf54l15/nrf54l15/cpuapp

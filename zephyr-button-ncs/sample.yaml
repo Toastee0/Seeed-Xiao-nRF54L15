@@ -1,0 +1,13 @@
+sample:
+  name: Button to LED Control
+  description: Button press controls LED state demonstrating GPIO input and output
+tests:
+  sample.basic.button:
+    harness: console
+    platform_allow:
+      - nrf52840dk/nrf52840
+      - nrf5340dk/nrf5340/cpuapp
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    tags: gpio button led input output
+    integration_platforms:
+      - xiao_nrf54l15/nrf54l15/cpuapp

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/CMakeFiles/vpr_launcher"
+		},
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/CMakeFiles/vpr_launcher.rule"
+		},
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/CMakeFiles/vpr_launcher-complete.rule"
+		},
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-build.rule"
+		},
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-configure.rule"
+		},
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-download.rule"
+		},
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-install.rule"
+		},
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-mkdir.rule"
+		},
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-patch.rule"
+		},
+		{
+			"file" : "C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vpr_launcher"
+		],
+		"name" : "vpr_launcher"
+	}
+}

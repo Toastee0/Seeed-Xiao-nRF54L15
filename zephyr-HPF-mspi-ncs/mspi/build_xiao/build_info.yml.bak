@@ -1,0 +1,24 @@
+cmake:
+  board:
+    name: 'xiao_nrf54l15'
+    path:
+     - 'C:/ncs/v3.1.0/zephyr/boards/seeed/xiao_nrf54l15'
+    qualifiers: 'nrf54l15/cpuflpr'
+    revision: ''
+  images:
+   - name: 'mspi'
+     source-dir: 'C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi'
+     type: 'MAIN'
+   - name: 'vpr_launcher'
+     source-dir: ''
+  kconfig:
+    files:
+     - 'C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/empty.conf'
+     - 'c:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/sysbuild.conf'
+    user-files:
+     - 'c:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/sysbuild.conf'
+version: '0.1.0'
+west:
+  command: 'C:\ncs\toolchains\b8b84efebd\opt\bin\Scripts\west build --build-dir c:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao c:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi --pristine --board xiao_nrf54l15/nrf54l15/cpuflpr --sysbuild -- -DSNIPPET=hpf-mspi'
+  topdir: 'c:\ncs\v3.1.0'
+  version: '1.4.0'

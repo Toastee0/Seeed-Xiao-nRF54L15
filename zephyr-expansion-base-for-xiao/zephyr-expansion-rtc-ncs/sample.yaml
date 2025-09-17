@@ -1,0 +1,13 @@
+sample:
+  name: Expansion Board RTC (PCF8563)
+  description: Real-time clock sample using PCF8563 RTC chip
+tests:
+  sample.rtc.expansion_rtc:
+    harness: console
+    platform_allow:
+      - nrf52840dk/nrf52840
+      - nrf5340dk/nrf5340/cpuapp
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    tags: rtc i2c expansion pcf8563 time
+    integration_platforms:
+      - xiao_nrf54l15/nrf54l15/cpuapp

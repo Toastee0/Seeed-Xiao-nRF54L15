@@ -1,0 +1,13 @@
+# Target labels
+ mspi
+# Source files and their labels
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/mspi
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/mspi.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/mspi-complete.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/mspi-prefix/src/mspi-stamp/mspi-build.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/mspi-prefix/src/mspi-stamp/mspi-configure.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/mspi-prefix/src/mspi-stamp/mspi-download.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/mspi-prefix/src/mspi-stamp/mspi-install.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/mspi-prefix/src/mspi-stamp/mspi-mkdir.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/mspi-prefix/src/mspi-stamp/mspi-patch.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/mspi-prefix/src/mspi-stamp/mspi-update.rule

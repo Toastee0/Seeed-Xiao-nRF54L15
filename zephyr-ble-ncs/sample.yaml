@@ -1,0 +1,13 @@
+sample:
+  name: Bluetooth BLE Peripheral
+  description: BLE peripheral with custom GATT service
+tests:
+  sample.bluetooth.peripheral:
+    harness: bluetooth
+    platform_allow:
+      - nrf52840dk/nrf52840
+      - nrf5340dk/nrf5340/cpuapp
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    tags: bluetooth
+    integration_platforms:
+      - nrf52840dk/nrf52840

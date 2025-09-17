@@ -1,0 +1,23 @@
+# Build directories
+build/
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+
+# Old samples
+old/
+
+# Temporary files
+*.tmp
+*.swp

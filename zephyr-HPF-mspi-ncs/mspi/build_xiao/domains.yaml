@@ -1,0 +1,10 @@
+default: mspi
+build_dir: C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao
+domains:
+  - name: mspi
+    build_dir: C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/mspi
+  - name: vpr_launcher
+    build_dir: C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/vpr_launcher
+flash_order:
+  - mspi
+  - vpr_launcher

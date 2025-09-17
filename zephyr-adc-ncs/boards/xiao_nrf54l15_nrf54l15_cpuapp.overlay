@@ -1,0 +1,18 @@
+/ {
+    aliases {
+        pwm-led = &pwm0_led0;
+    };
+
+    zephyr,user {
+		io-channels = <&adc 0>, <&adc 1>, <&adc 2>, <&adc 3>,
+			<&adc 4>, <&adc 5>, <&adc 6>, <&adc 7>;
+	};
+
+    pwm_leds {
+        compatible = "pwm-leds";
+        pwm0_led0: my_pwm_led {
+            pwms = <&pwm20 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+            status = "okay";
+        };
+    };
+};

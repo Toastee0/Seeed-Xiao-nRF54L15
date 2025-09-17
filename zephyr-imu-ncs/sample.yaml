@@ -1,0 +1,13 @@
+sample:
+  name: IMU LSM6DSO Sensor
+  description: I2C-based LSM6DSO IMU sensor reading accelerometer and gyroscope data
+tests:
+  sample.sensor.imu:
+    harness: console
+    platform_allow:
+      - nrf52840dk/nrf52840
+      - nrf5340dk/nrf5340/cpuapp
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    tags: i2c sensor imu accelerometer gyroscope lsm6dso
+    integration_platforms:
+      - xiao_nrf54l15/nrf54l15/cpuapp

@@ -1,0 +1,13 @@
+sample:
+  name: PWM LED Fade
+  description: PWM-controlled LED fade in/out effect demonstrating PWM duty cycle control
+tests:
+  sample.pwm.led_fade:
+    harness: console
+    platform_allow:
+      - nrf52840dk/nrf52840
+      - nrf5340dk/nrf5340/cpuapp
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    tags: pwm led fade
+    integration_platforms:
+      - xiao_nrf54l15/nrf54l15/cpuapp

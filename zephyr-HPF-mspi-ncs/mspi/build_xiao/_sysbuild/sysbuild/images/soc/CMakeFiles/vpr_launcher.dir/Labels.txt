@@ -1,0 +1,13 @@
+# Target labels
+ vpr_launcher
+# Source files and their labels
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/CMakeFiles/vpr_launcher
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/CMakeFiles/vpr_launcher.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/CMakeFiles/vpr_launcher-complete.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-build.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-configure.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-download.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-install.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-mkdir.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-patch.rule
+C:/old_nrfprojects/WS2812_nrf54l15/sdk-nrf/applications/hpf/mspi/build_xiao/_sysbuild/sysbuild/images/soc/vpr_launcher-prefix/src/vpr_launcher-stamp/vpr_launcher-update.rule
