@@ -41,6 +41,7 @@ PlatformIO is **not supported** for this repository. The Zephyr implementation i
 - nRF Connect for VS Code
 - nRF Connect SDK (for NCS samples)
 - Seeed Xiao nRF54L15 or xiao nRF54l15 Sense
+- These samples should also work on the nRF54l15-DK board (todo: add nRF54l15-DK board to the sample.yaml files)
 
 ### Building and Running
 install nRF Connect for VS Code : https://www.youtube.com/watch?v=EAJdOqsL9m8  
