@@ -1,0 +1,33 @@
+/ {
+    zephyr,user {
+		io-channels = <&adc 0>, <&adc 1>, <&adc 2>, <&adc 3>,
+			<&adc 4>, <&adc 5>, <&adc 6>, <&adc 7>;
+	};
+
+    o_ports {
+		compatible = "gpio-leds";
+
+		p104_d0: p104_d0 {
+			gpios = <&xiao_d 0 GPIO_ACTIVE_HIGH>;
+		};
+	};
+
+	i_port {
+		compatible = "gpio-keys";
+
+		p105_d1: p105_d1 {
+			gpios = <&xiao_d 1 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			zephyr,code = <INPUT_KEY_ENTER>;
+		};
+	};
+
+    aliases {
+		p104d0 = &p104_d0;
+		p105d1 = &p105_d1;
+    };
+};
+
+&xiao_i2c {
+    clock-frequency = <400000>;
+    status = "okay";
+};

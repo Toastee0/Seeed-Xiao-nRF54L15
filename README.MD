@@ -1,6 +1,36 @@
 # Seeed Xiao nRF54L15 Zephyr Samples
 
-This repository contains sample applications for the Seeed Studio Xiao nRF54L15 development board using the Zephyr RTOS.
+This repository contains sample applications and simple example code for the Seeed Studio Xiao nRF54L15 development board using Zephyr RTOS.
+
+## Centralized Libraries
+
+All external libraries are managed as git submodules in the `lib/` directory to avoid duplication across samples:
+
+- **lib/u8g2/** - U8g2 graphics library for OLED displays
+- **lib/MadgwickAHRS/** - Arduino Madgwick AHRS filter for IMU sensor fusion
+
+### Using Libraries in Samples
+
+When creating or building samples that use these libraries:
+
+1. **Initialize submodules** (first time):
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+2. **Reference libraries** in CMakeLists.txt:
+   ```cmake
+   # Example: Include U8g2 library
+   file(GLOB U8G2_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/../../../lib/u8g2/csrc/*.c)
+   target_sources(app PRIVATE ${U8G2_SOURCES})
+   target_include_directories(app PRIVATE ../../../lib/u8g2/csrc)
+   ```
+
+3. **Include headers** in source code:
+   ```cpp
+   #include "../../../lib/u8g2/csrc/u8g2.h"
+   #include "../../../lib/MadgwickAHRS/src/MadgwickAHRS.h"
+   ```
 
 ## Repository Structure
 
@@ -21,7 +51,6 @@ The repository is organized into the following sample projects:
 - `zephyr-pwm-ncs/` - Pulse Width Modulation sample
 - `zephyr-HPF-mspi-ncs/` - High Performance Framework MSPI sample
 - `zephyr-expansion-base-for-xiao/` - Samples for expansion base modules (buzzer, I2C SHT31, OLED, RTC)
-- `old/` - Older versions of samples (PlatformIO based, not supported)
 
 Each sample directory contains:
 - `CMakeLists.txt` - Build configuration for nRF Connect SDK
@@ -54,7 +83,8 @@ Add an application and build configuration for the xiao nRF54L15 board to the nR
 ## Resources
 
 - [Seeed Xiao nRF54L15 Wiki](https://wiki.seeedstudio.com/xiao_nrf54l15_sense_getting_started/)
-- [Purchase Link](https://www.seeedstudio.com/XIAO-nRF54L15-Sense-p-6494.html)
+If you want to support the development of more samples for this board, please consider purchasing through the affiliate link below:
+- [AffiliatePurchase Link](https://www.seeedstudio.com/XIAO-nRF54L15-Sense-p-6494.html?sensecap_affiliate=JG7nwfh&referring_service=link)
 - [Zephyr Documentation](https://docs.zephyrproject.org/)
 
 ## Contributing
@@ -64,3 +94,7 @@ Contributions are welcome! Please submit issues and pull requests.
 ## License
 
 This project is licensed under the Apache 2.0 License.
+
+other resources
+https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/samples.html
+
