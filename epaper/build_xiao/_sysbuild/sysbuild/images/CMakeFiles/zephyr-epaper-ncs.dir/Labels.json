@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-epaper-ncs"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-epaper-ncs.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-epaper-ncs-complete.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-epaper-ncs-prefix/src/zephyr-epaper-ncs-stamp/zephyr-epaper-ncs-build.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-epaper-ncs-prefix/src/zephyr-epaper-ncs-stamp/zephyr-epaper-ncs-configure.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-epaper-ncs-prefix/src/zephyr-epaper-ncs-stamp/zephyr-epaper-ncs-download.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-epaper-ncs-prefix/src/zephyr-epaper-ncs-stamp/zephyr-epaper-ncs-install.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-epaper-ncs-prefix/src/zephyr-epaper-ncs-stamp/zephyr-epaper-ncs-mkdir.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-epaper-ncs-prefix/src/zephyr-epaper-ncs-stamp/zephyr-epaper-ncs-patch.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-epaper-ncs-prefix/src/zephyr-epaper-ncs-stamp/zephyr-epaper-ncs-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"zephyr-epaper-ncs"
+		],
+		"name" : "zephyr-epaper-ncs"
+	}
+}

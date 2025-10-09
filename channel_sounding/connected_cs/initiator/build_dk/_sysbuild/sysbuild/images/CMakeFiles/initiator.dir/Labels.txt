@@ -1,0 +1,13 @@
+# Target labels
+ initiator
+# Source files and their labels
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/CMakeFiles/initiator
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/CMakeFiles/initiator.rule
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/CMakeFiles/initiator-complete.rule
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-build.rule
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-configure.rule
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-download.rule
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-install.rule
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-mkdir.rule
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-patch.rule
+M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-update.rule

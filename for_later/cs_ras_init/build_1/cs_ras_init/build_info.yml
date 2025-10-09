@@ -1,0 +1,64 @@
+cmake:
+  application:
+    configuration-dir: 'M:/projects/nRF54L15/cs_ras_init'
+    source-dir: 'M:/projects/nRF54L15/cs_ras_init'
+  board:
+    name: 'nrf54l15dk'
+    path:
+     - 'C:/ncs/v3.1.1/zephyr/boards/nordic/nrf54l15dk'
+    qualifiers: 'nrf54l15/cpuapp'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - 'C:/ncs/v3.1.1/nrf/dts/bindings'
+     - 'C:/ncs/v3.1.1/zephyr/dts/bindings'
+    extra-user-files:
+     - 'C:/ncs/v3.1.1/zephyr/snippets/bt-ll-sw-split/bt-ll-sw-split.overlay'
+    files:
+     - 'C:/ncs/v3.1.1/zephyr/boards/nordic/nrf54l15dk/nrf54l15dk_nrf54l15_cpuapp.dts'
+     - 'boards/nrf54l15dk_nrf54l15_cpuapp.overlay'
+     - 'C:/ncs/v3.1.1/zephyr/snippets/bt-ll-sw-split/bt-ll-sw-split.overlay'
+    include-dirs:
+     - 'C:/ncs/v3.1.1/nrf/include'
+     - 'C:/ncs/v3.1.1/nrf/dts/common'
+     - 'C:/ncs/v3.1.1/nrf/dts/riscv'
+     - 'C:/ncs/v3.1.1/nrf/dts/arm'
+     - 'C:/ncs/v3.1.1/nrf/dts'
+     - 'C:/ncs/v3.1.1/zephyr/include'
+     - 'C:/ncs/v3.1.1/zephyr/include/zephyr'
+     - 'C:/ncs/v3.1.1/zephyr/dts/common'
+     - 'C:/ncs/v3.1.1/zephyr/dts/vendor'
+     - 'C:/ncs/v3.1.1/zephyr/dts/rx'
+     - 'C:/ncs/v3.1.1/zephyr/dts/x86'
+     - 'C:/ncs/v3.1.1/zephyr/dts/xtensa'
+     - 'C:/ncs/v3.1.1/zephyr/dts/sparc'
+     - 'C:/ncs/v3.1.1/zephyr/dts/riscv'
+     - 'C:/ncs/v3.1.1/zephyr/dts/posix'
+     - 'C:/ncs/v3.1.1/zephyr/dts/arm64'
+     - 'C:/ncs/v3.1.1/zephyr/dts/arm'
+     - 'C:/ncs/v3.1.1/zephyr/dts/arc'
+     - 'C:/ncs/v3.1.1/zephyr/dts'
+    user-files:
+     - 'boards/nrf54l15dk_nrf54l15_cpuapp.overlay'
+  kconfig:
+    extra-user-files:
+     - 'C:/ncs/v3.1.1/zephyr/snippets/bt-ll-sw-split/bt-ll-sw-split.conf'
+     - 'boards/xiao_nrf54l15_nrf54l15_cpuapp.conf'
+    files:
+     - 'C:/ncs/v3.1.1/zephyr/boards/nordic/nrf54l15dk/nrf54l15dk_nrf54l15_cpuapp_defconfig'
+     - 'M:/projects/nRF54L15/cs_ras_init/prj.conf'
+     - 'C:/ncs/v3.1.1/zephyr/snippets/bt-ll-sw-split/bt-ll-sw-split.conf'
+     - 'M:/projects/nRF54L15/cs_ras_init/boards/xiao_nrf54l15_nrf54l15_cpuapp.conf'
+     - 'M:/projects/nRF54L15/cs_ras_init/build_1/cs_ras_init/zephyr/.config.sysbuild'
+    user-files:
+     - 'prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: 'C:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk'
+  vendor-specific:
+    nordic:
+      svdfile: 'C:/ncs/v3.1.1/modules/hal/nordic/nrfx/mdk/nrf54l15_application.svd'
+  zephyr:
+    version: '4.1.99'
+    zephyr-base: 'C:/ncs/v3.1.1/zephyr'
+version: '0.1.0'

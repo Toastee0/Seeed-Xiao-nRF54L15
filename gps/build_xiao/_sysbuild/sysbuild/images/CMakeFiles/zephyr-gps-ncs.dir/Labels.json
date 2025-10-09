@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-gps-ncs"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-gps-ncs.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-gps-ncs-complete.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-gps-ncs-prefix/src/zephyr-gps-ncs-stamp/zephyr-gps-ncs-build.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-gps-ncs-prefix/src/zephyr-gps-ncs-stamp/zephyr-gps-ncs-configure.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-gps-ncs-prefix/src/zephyr-gps-ncs-stamp/zephyr-gps-ncs-download.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-gps-ncs-prefix/src/zephyr-gps-ncs-stamp/zephyr-gps-ncs-install.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-gps-ncs-prefix/src/zephyr-gps-ncs-stamp/zephyr-gps-ncs-mkdir.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-gps-ncs-prefix/src/zephyr-gps-ncs-stamp/zephyr-gps-ncs-patch.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-gps-ncs-prefix/src/zephyr-gps-ncs-stamp/zephyr-gps-ncs-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"zephyr-gps-ncs"
+		],
+		"name" : "zephyr-gps-ncs"
+	}
+}

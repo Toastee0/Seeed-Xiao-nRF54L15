@@ -1,0 +1,55 @@
+/ {
+    aliases {
+        sw0 = &usr_btn;
+    };
+    
+    buttons {
+        compatible = "gpio-keys";
+    };
+};
+
+    
+
+&radio {
+    status = "disabled";
+};
+
+&spi00 {
+    status = "disabled";
+};
+
+&i2c30 {
+    status = "disabled";
+};
+
+&lsm6dso {
+    status = "disabled";
+};
+
+&i2c22 {
+    status = "disabled";
+};
+
+&pdm20 {
+    status = "disabled";
+};
+
+&nfct {
+    status = "disabled";
+};
+
+&temp {
+    status = "disabled";
+};
+
+&uart21 {
+    status = "disabled";
+};
+
+&adc {
+    status = "disabled";
+};
+
+&bt_hci_sdc {
+    status = "disabled";
+};

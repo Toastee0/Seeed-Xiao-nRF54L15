@@ -1,0 +1,7 @@
+default: zephyr-lowpower-ncs
+build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-lowpower-ncs/build_xiao
+domains:
+  - name: zephyr-lowpower-ncs
+    build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-lowpower-ncs/build_xiao/zephyr-lowpower-ncs
+flash_order:
+  - zephyr-lowpower-ncs

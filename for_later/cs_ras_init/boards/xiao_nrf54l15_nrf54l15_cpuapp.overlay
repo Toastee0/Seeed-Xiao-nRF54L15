@@ -1,0 +1,102 @@
+/*
+ * Copyright (c) 2024 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+//#include <zephyr/dt-bindings/gpio/gpio.h>
+//#include <zephyr/dt-bindings/led/led.h>
+//#include "../nrf54l15-bindings.h"
+
+
+/ {
+	aliases { 
+			pov-timer = &timer20; /* Use TIMER20 for POV frame timing */
+	};
+
+	chosen {
+		zephyr,bt-hci = &bt_hci_sdc;
+	};
+
+
+	zephyr,user {
+		m2-gpios = <&gpio2 8 0>;
+	};
+	};
+ 
+&bt_hci_sdc {
+	status = "okay";
+};
+
+&pwm20 {
+	pinctrl-0 = < &xiao_d 5 0>;
+};
+
+/* Configure TIMER20 for POV frame updates */
+&timer20 {
+	status = "okay";
+};
+
+/* Enable GPIO port 2 for WS2812 data pin (FLPR requirement) */
+//&gpio2 {
+//	status = "okay";
+//};
+
+/* Enable MBOX communication with FLPR core */
+&cpuapp_vevif_tx {
+	status = "okay";
+};
+
+&cpuapp_vevif_rx {
+	status = "okay";
+};
+
+
+
+&xiao_d {
+
+	status = "okay";
+};
+
+/* PWM for motor control - DRV8833 
+ * Motor IN1 on P1.11 (D5) - controlled by PWM20 (Port 1 supports PWM)
+ * Motor IN2 on P2.08 (D6) - controlled by GPIO (Port 2 doesn't support PWM)
+ * D10 (P2.02) - WS2812 data (no conflict)
+ */
+&pwm20 {
+	status = "okay";
+	pinctrl-0 = <&pwm20_default>;
+	pinctrl-1 = <&pwm20_sleep>;
+	pinctrl-names = "default", "sleep";
+};
+
+&pinctrl {
+	pwm20_default: pwm20_default {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 1, 11)>;  /* D5/P1.11 - Motor IN1 */
+		};
+	};
+	
+	pwm20_sleep: pwm20_sleep {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 1, 11)>;
+			low-power-enable;
+		};
+	};
+};
+
+&pdm20 {
+	status = "disabled";
+};
+
+&i2c22 {
+	status = "disabled";
+};
+
+&adc {
+	status = "disabled";
+};
+
+&uart21 {
+	status = "disabled";
+};

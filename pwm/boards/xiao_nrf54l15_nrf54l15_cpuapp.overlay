@@ -1,0 +1,57 @@
+/*
+ * Copyright (c) 2024 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/dt-bindings/pwm/pwm.h>
+
+
+
+
+/ {
+	aliases { 
+		pov-timer = &timer20; /* Use TIMER20 for POV frame timing */
+		pwm-led0 = &pwm_led0;
+	};
+	
+	pwmleds {
+		compatible = "pwm-leds";
+		pwm_led0: pwm_led_0 {
+			pwms = <&pwm20 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+		};
+	};
+	
+	chosen {
+		zephyr,bt-hci = &bt_hci_controller;
+	};
+};
+
+/* Configure TIMER20 for POV frame updates */
+&timer20 {
+	status = "okay";
+};
+
+/* Enable GPIO port 2 for WS2812 data pin (FLPR requirement) */
+//&gpio2 {
+//	status = "okay";
+//};
+
+/* Enable MBOX communication with FLPR core */
+&cpuapp_vevif_tx {
+	status = "okay";
+};
+
+&cpuapp_vevif_rx {
+	status = "okay";
+};
+
+/* Enable GPIO ports (but specific pins will be used by PWM) */
+&gpio1 {
+	status = "okay";
+};
+
+&gpio2 {
+	status = "okay";
+};
+

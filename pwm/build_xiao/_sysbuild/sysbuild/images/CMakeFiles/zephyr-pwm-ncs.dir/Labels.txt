@@ -1,0 +1,13 @@
+# Target labels
+ zephyr-pwm-ncs
+# Source files and their labels
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-pwm-ncs
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-pwm-ncs.rule
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-pwm-ncs-complete.rule
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-build.rule
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-configure.rule
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-download.rule
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-install.rule
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-mkdir.rule
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-patch.rule
+M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-update.rule

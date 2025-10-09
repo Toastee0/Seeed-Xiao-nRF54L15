@@ -1,0 +1,7 @@
+default: zephyr-dmic-recorder-ncs
+build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao
+domains:
+  - name: zephyr-dmic-recorder-ncs
+    build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/zephyr-dmic-recorder-ncs
+flash_order:
+  - zephyr-dmic-recorder-ncs

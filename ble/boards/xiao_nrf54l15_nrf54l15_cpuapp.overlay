@@ -1,0 +1,7 @@
+&pdm_imu_pwr{
+    /delete-property/ regulator-boot-on;
+};
+&pdm20 {
+    queue-size = <4>;
+};
+

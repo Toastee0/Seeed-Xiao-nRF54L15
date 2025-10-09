@@ -1,0 +1,13 @@
+# Target labels
+ grove_relay
+# Source files and their labels
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/CMakeFiles/grove_relay
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/CMakeFiles/grove_relay.rule
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/CMakeFiles/grove_relay-complete.rule
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/grove_relay-prefix/src/grove_relay-stamp/grove_relay-build.rule
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/grove_relay-prefix/src/grove_relay-stamp/grove_relay-configure.rule
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/grove_relay-prefix/src/grove_relay-stamp/grove_relay-download.rule
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/grove_relay-prefix/src/grove_relay-stamp/grove_relay-install.rule
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/grove_relay-prefix/src/grove_relay-stamp/grove_relay-mkdir.rule
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/grove_relay-prefix/src/grove_relay-stamp/grove_relay-patch.rule
+M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/_sysbuild/sysbuild/images/grove_relay-prefix/src/grove_relay-stamp/grove_relay-update.rule

@@ -1,0 +1,13 @@
+# Target labels
+ zephyr-dmic-recorder-ncs
+# Source files and their labels
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-dmic-recorder-ncs
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-dmic-recorder-ncs.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-dmic-recorder-ncs-complete.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-build.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-configure.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-download.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-install.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-mkdir.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-patch.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-update.rule

@@ -1,0 +1,7 @@
+default: button
+build_dir: M:/nRF54L15/button/build_xiao
+domains:
+  - name: button
+    build_dir: M:/nRF54L15/button/build_xiao/button
+flash_order:
+  - button

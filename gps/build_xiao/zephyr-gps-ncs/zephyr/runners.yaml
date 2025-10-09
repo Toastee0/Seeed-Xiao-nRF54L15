@@ -1,0 +1,46 @@
+# Available runners configured by board.cmake.
+runners:
+- openocd
+- nrfutil
+- nrfjprog
+- jlink
+
+# Default flash runner if --runner is not given.
+flash-runner: openocd
+
+# Default debug runner if --runner is not given.
+debug-runner: openocd
+
+# Common runner configuration values.
+config:
+  board_dir: C:/ncs/v3.1.0/zephyr/boards/seeed/xiao_nrf54l15
+  # Build outputs:
+  elf_file: zephyr.elf
+  hex_file: M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/merged.hex
+  bin_file: zephyr.bin
+  # Host tools:
+  gdb: C:/ncs/toolchains/b8b84efebd/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb.exe
+  openocd: C:/ProgramData/chocolatey/bin/openocd.exe
+  openocd_search:
+    - C:\Program Files/OpenOCD/share/openocd/scripts
+
+# Runner specific arguments
+args:
+  openocd:
+    - --cmd-load
+    - flash write_image erase
+    - --cmd-verify
+    - verify_image
+    - --cmd-load=nrf54l-load
+    - -c
+    - targets nrf54l.cpu
+  nrfutil:
+    []
+
+  nrfjprog:
+    []
+
+  jlink:
+    - --dt-flash=y
+    - --device=nRF54L15_M33
+    - --speed=4000

@@ -1,0 +1,22 @@
+/ {
+    aliases {
+        sdhc0 = &sdhc0;
+    };
+};
+
+/* SD Card configuration for expansion base */
+&xiao_spi {
+    status = "okay";
+    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+    
+    sdhc0: sdhc@0 {
+        compatible = "zephyr,sdhc-spi-slot";
+        reg = <0>;
+        status = "okay";
+        spi-max-frequency = <24000000>;
+        mmc {
+            compatible = "zephyr,sdmmc-disk";
+            status = "okay";
+        };
+    };
+};

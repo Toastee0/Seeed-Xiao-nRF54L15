@@ -1,0 +1,7 @@
+default: zephyr-epaper-ncs
+build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao
+domains:
+  - name: zephyr-epaper-ncs
+    build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-epaper-ncs/build_xiao/zephyr-epaper-ncs
+flash_order:
+  - zephyr-epaper-ncs

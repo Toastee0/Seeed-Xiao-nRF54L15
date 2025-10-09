@@ -1,0 +1,11 @@
+# ninja log v5
+1	145	7814894531031889	_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-mkdir	d9df884ff038ee70
+1	145	7814894531031889	M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-mkdir	d9df884ff038ee70
+146	196	7814894531546045	_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-download	636ccc0420eb2437
+146	196	7814894531546045	M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-download	636ccc0420eb2437
+197	243	7814894532011283	_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-update	4bbb29c02e17312e
+197	243	7814894532011283	M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-update	4bbb29c02e17312e
+244	290	7814894532481286	_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-patch	bca3a36a1f921ddd
+244	290	7814894532481286	M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-patch	bca3a36a1f921ddd
+290	336	7814894532931337	_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-configure	c38c59e5e4d55e72
+290	336	7814894532931337	M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-configure	c38c59e5e4d55e72

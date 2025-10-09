@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-dmic-ncs"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-dmic-ncs.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-dmic-ncs-complete.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-ncs-prefix/src/zephyr-dmic-ncs-stamp/zephyr-dmic-ncs-build.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-ncs-prefix/src/zephyr-dmic-ncs-stamp/zephyr-dmic-ncs-configure.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-ncs-prefix/src/zephyr-dmic-ncs-stamp/zephyr-dmic-ncs-download.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-ncs-prefix/src/zephyr-dmic-ncs-stamp/zephyr-dmic-ncs-install.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-ncs-prefix/src/zephyr-dmic-ncs-stamp/zephyr-dmic-ncs-mkdir.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-ncs-prefix/src/zephyr-dmic-ncs-stamp/zephyr-dmic-ncs-patch.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-ncs-prefix/src/zephyr-dmic-ncs-stamp/zephyr-dmic-ncs-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"zephyr-dmic-ncs"
+		],
+		"name" : "zephyr-dmic-ncs"
+	}
+}

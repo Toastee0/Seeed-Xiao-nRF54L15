@@ -1,0 +1,13 @@
+# Target labels
+ zephyr-imu-ncs
+# Source files and their labels
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-imu-ncs
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-imu-ncs.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-imu-ncs-complete.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-build.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-configure.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-download.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-install.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-mkdir.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-patch.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-update.rule

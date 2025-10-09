@@ -1,0 +1,7 @@
+default: zephyr-battery-ncs
+build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao
+domains:
+  - name: zephyr-battery-ncs
+    build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/zephyr-battery-ncs
+flash_order:
+  - zephyr-battery-ncs

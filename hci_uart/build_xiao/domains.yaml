@@ -1,0 +1,7 @@
+default: hci_uart
+build_dir: M:/projects/nRF54L15/hci_uart/build_xiao
+domains:
+  - name: hci_uart
+    build_dir: M:/projects/nRF54L15/hci_uart/build_xiao/hci_uart
+flash_order:
+  - hci_uart

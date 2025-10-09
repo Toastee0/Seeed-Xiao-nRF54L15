@@ -1,0 +1,13 @@
+# Target labels
+ zephyr-battery-ncs
+# Source files and their labels
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-battery-ncs
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-battery-ncs.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-battery-ncs-complete.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-battery-ncs-prefix/src/zephyr-battery-ncs-stamp/zephyr-battery-ncs-build.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-battery-ncs-prefix/src/zephyr-battery-ncs-stamp/zephyr-battery-ncs-configure.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-battery-ncs-prefix/src/zephyr-battery-ncs-stamp/zephyr-battery-ncs-download.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-battery-ncs-prefix/src/zephyr-battery-ncs-stamp/zephyr-battery-ncs-install.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-battery-ncs-prefix/src/zephyr-battery-ncs-stamp/zephyr-battery-ncs-mkdir.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-battery-ncs-prefix/src/zephyr-battery-ncs-stamp/zephyr-battery-ncs-patch.rule
+M:/projects/Seeed-Xiao-nRF54L15/zephyr-battery-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-battery-ncs-prefix/src/zephyr-battery-ncs-stamp/zephyr-battery-ncs-update.rule

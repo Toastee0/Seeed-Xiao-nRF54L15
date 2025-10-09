@@ -1,0 +1,12 @@
+/* 
+ * Board overlay for XIAO nRF54L15 blink sample
+ * 
+ * The built-in LED (led0) is already defined in the board definition,
+ * so no additional configuration is needed for the basic blink sample.
+ */
+/ {
+	aliases {
+		relay0 = &xiao_d;
+
+	};
+};

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-pwm-ncs"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-pwm-ncs.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-pwm-ncs-complete.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-build.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-configure.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-download.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-install.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-mkdir.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-patch.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-pwm-ncs-prefix/src/zephyr-pwm-ncs-stamp/zephyr-pwm-ncs-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"zephyr-pwm-ncs"
+		],
+		"name" : "zephyr-pwm-ncs"
+	}
+}

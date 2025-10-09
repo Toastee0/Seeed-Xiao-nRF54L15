@@ -1,0 +1,7 @@
+default: grove_relay
+build_dir: M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO
+domains:
+  - name: grove_relay
+    build_dir: M:/nRF54L15/xiao_expanded/grove_relay/build_XIAO/grove_relay
+flash_order:
+  - grove_relay

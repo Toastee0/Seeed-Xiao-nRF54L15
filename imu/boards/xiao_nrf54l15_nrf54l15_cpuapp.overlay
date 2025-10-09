@@ -1,0 +1,11 @@
+&xiao_i2c {
+    clock-frequency = <400000>;
+    status = "okay";
+    
+    lsm6dso@6a {
+        compatible = "st,lsm6dso";
+        reg = <0x6a>;
+        irq-gpios = <&xiao_d 8 GPIO_ACTIVE_HIGH>;
+        label = "LSM6DSO";
+    };
+};

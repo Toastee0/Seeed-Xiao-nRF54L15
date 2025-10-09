@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/CMakeFiles/initiator"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/CMakeFiles/initiator.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/CMakeFiles/initiator-complete.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-build.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-configure.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-download.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-install.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-mkdir.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-patch.rule"
+		},
+		{
+			"file" : "M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/_sysbuild/sysbuild/images/initiator-prefix/src/initiator-stamp/initiator-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"initiator"
+		],
+		"name" : "initiator"
+	}
+}

@@ -1,0 +1,7 @@
+default: zephyr-imu-ncs
+build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao
+domains:
+  - name: zephyr-imu-ncs
+    build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/zephyr-imu-ncs
+flash_order:
+  - zephyr-imu-ncs

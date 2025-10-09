@@ -1,0 +1,52 @@
+
+/ {
+    aliases {
+        sw0 = &usr_btn;
+        sw1 = &xiao_btn;
+        relay0 = &relay_0;
+    };
+
+    buttons {
+        compatible = "gpio-keys";
+        xiao_btn: xiao_button {
+            gpios = <&xiao_d 1 GPIO_ACTIVE_HIGH>;  // D1 pin on XIAO, button(d1) on expansion board
+            label = "XIAO Button D1";
+        };
+    };
+
+    relays {
+        compatible = "gpio-leds"; // zephyr calls any generic GPIO output device a "led" this is linked to grove port a0 on the expansion board
+        relay_0: relay_0 {
+            gpios = <&xiao_d 0 GPIO_ACTIVE_LOW>;
+            label = "Relay 0";
+        };
+    };
+};
+
+//Turn off unneccesary hardware for this relay demo.
+
+&adc {
+    status = "disabled";
+};
+
+&pdm20 { //digital mic
+    status = "disabled";
+};
+
+&nfct { //nfc antenna
+    status = "disabled";
+};
+
+&radio { //various bt and matter radios
+    status = "disabled";
+};
+
+//nordic ble softdevice controller
+&bt_hci_sdc {
+    status = "disabled";
+};
+//more radio 
+&ieee802154 {
+    status = "disabled";
+};
+

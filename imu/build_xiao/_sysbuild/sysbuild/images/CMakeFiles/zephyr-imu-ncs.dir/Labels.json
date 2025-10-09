@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-imu-ncs"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-imu-ncs.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-imu-ncs-complete.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-build.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-configure.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-download.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-install.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-mkdir.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-patch.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-imu-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-imu-ncs-prefix/src/zephyr-imu-ncs-stamp/zephyr-imu-ncs-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"zephyr-imu-ncs"
+		],
+		"name" : "zephyr-imu-ncs"
+	}
+}

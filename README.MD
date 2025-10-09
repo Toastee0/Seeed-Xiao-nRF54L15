@@ -36,21 +36,38 @@ When creating or building samples that use these libraries:
 
 The repository is organized into the following sample projects:
 
-- `zephyr-adc-ncs/` - Analog-to-Digital Converter sample using nRF Connect SDK
-- `zephyr-battery-ncs/` - Battery monitoring sample
-- `zephyr-ble-ncs/` - Bluetooth Low Energy sample
-- `zephyr-blink-ncs/` - Basic LED blinking sample
-- `zephyr-button-ncs/` - Button input sample
-- `zephyr-dmic-ncs/` - Digital Microphone sample
-- `zephyr-dmic-recorder-ncs/` - Digital Microphone recorder sample
-- `zephyr-epaper-ncs/` - E-paper display sample
-- `zephyr-gpio-ncs/` - GPIO control sample
-- `zephyr-gps-ncs/` - GPS module sample
-- `zephyr-imu-ncs/` - Inertial Measurement Unit (IMU) sample
-- `zephyr-lowpower-ncs/` - Low power consumption sample
-- `zephyr-pwm-ncs/` - Pulse Width Modulation sample
-- `zephyr-HPF-mspi-ncs/` - High Performance Framework MSPI sample
-- `zephyr-expansion-base-for-xiao/` - Samples for expansion base modules (buzzer, I2C SHT31, OLED, RTC)
+### Status Legend:
+- ✅ **Working** - Successfully built, flashed, and tested on XIAO nRF54L15 hardware
+- ⚠️ **Needs Fix** - Build fails or requires configuration updates  
+- 🧪 **Testing** - Board config ready, needs build and hardware testing
+- ❓ **Untested** - Not yet tested or missing board configuration
+
+### Sample Projects:
+
+- 🧪 `adc/` - Analog-to-Digital Converter sample (has incomplete board config)
+- 🧪 `battery/` - Battery monitoring sample (board config updated)
+- 🧪 `ble/` - Bluetooth Low Energy sample (has partial board config)
+- ✅ `blink/` - Basic LED blinking sample (working - builds, flashes, and runs correctly)
+- ✅ `button/` - Button input sample (working - builds, flashes, and runs correctly)
+- 🧪 `dmic/` - Digital Microphone sample (needs verification)
+- 🧪 `dmic-recorder/` - Digital Microphone recorder sample (needs verification)
+- 🧪 `epaper/` - E-paper display sample (needs verification)
+- 🧪 `gps/` - GPS module sample (needs verification)
+- 🧪 `imu/` - Inertial Measurement Unit sample (board config added - ready for testing)
+- 🧪 `lowpower/` - Low power consumption sample (needs verification)
+- 🧪 `pwm/` - Pulse Width Modulation sample (needs verification)
+- 🧪 `HPF-mspi/` - High Performance Framework MSPI sample (uses CPUFLPR core)
+- 🧪 `sdcard/` - SD Card sample (needs verification)
+- 🧪 `uart/` - UART communication sample (needs verification)
+
+### Expansion Base Samples (`xiao_expanded/`):
+- 🧪 `xiao_expanded/attitude_monitor-ncs/` - IMU attitude monitor with OLED display (board config ready - needs build testing)
+- 🧪 `xiao_expanded/sd_card/` - SD Card with expansion base (board config added)
+- 🧪 `xiao_expanded/buzzer/` - Buzzer control sample for expansion base
+- ✅ `xiao_expanded/grove_relay/` - Expansion base Grove relay control sample (requires expansion base hardware & a grove relay connected on port a0/d0)
+- 🧪 `xiao_expanded/i2c-sht31/` - I2C SHT31 temperature/humidity sensor sample
+- 🧪 `xiao_expanded/oled/` - OLED display sample for expansion base
+- 🧪 `xiao_expanded/rtc/` - Real-time clock sample for expansion base
 
 Each sample directory contains:
 - `CMakeLists.txt` - Build configuration for nRF Connect SDK

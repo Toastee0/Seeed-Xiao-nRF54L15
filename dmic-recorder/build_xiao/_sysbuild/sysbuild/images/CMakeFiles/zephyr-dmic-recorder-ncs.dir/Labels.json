@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-dmic-recorder-ncs"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-dmic-recorder-ncs.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/zephyr-dmic-recorder-ncs-complete.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-build.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-configure.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-download.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-install.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-mkdir.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-patch.rule"
+		},
+		{
+			"file" : "M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-recorder-ncs/build_xiao/_sysbuild/sysbuild/images/zephyr-dmic-recorder-ncs-prefix/src/zephyr-dmic-recorder-ncs-stamp/zephyr-dmic-recorder-ncs-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"zephyr-dmic-recorder-ncs"
+		],
+		"name" : "zephyr-dmic-recorder-ncs"
+	}
+}

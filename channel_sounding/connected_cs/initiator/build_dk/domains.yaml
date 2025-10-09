@@ -1,0 +1,7 @@
+default: initiator
+build_dir: M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk
+domains:
+  - name: initiator
+    build_dir: M:/projects/nRF54L15/channel_sounding/connected_cs/initiator/build_dk/initiator
+flash_order:
+  - initiator
