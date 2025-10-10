@@ -59,9 +59,10 @@ The repository is organized into the following sample projects:
 - 🧪 `HPF-mspi/` - High Performance Framework MSPI sample (uses CPUFLPR core)
 - 🧪 `sdcard/` - SD Card sample (needs verification)
 - 🧪 `uart/` - UART communication sample (needs verification)
+- 🧪 `lpuart/` - Low Power UART communication sample (needs verification)
 
 ### Expansion Base Samples (`xiao_expanded/`):
-- 🧪 `xiao_expanded/attitude_monitor-ncs/` - IMU attitude monitor with OLED display (board config ready - needs build testing)
+- ✅ `xiao_expanded/attitude_monitor/` - IMU attitude monitor with OLED display (working - builds, flashes, and runs correctly)
 - 🧪 `xiao_expanded/sd_card/` - SD Card with expansion base (board config added)
 - 🧪 `xiao_expanded/buzzer/` - Buzzer control sample for expansion base
 - ✅ `xiao_expanded/grove_relay/` - Expansion base Grove relay control sample (requires expansion base hardware & a grove relay connected on port a0/d0)
