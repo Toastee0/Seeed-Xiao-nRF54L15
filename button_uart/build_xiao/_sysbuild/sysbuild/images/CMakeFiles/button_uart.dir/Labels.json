@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/button_uart"
+		},
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/button_uart.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/button_uart-complete.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-build.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-configure.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-download.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-install.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-mkdir.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-patch.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"button_uart"
+		],
+		"name" : "button_uart"
+	}
+}

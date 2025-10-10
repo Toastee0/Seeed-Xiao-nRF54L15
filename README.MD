@@ -54,6 +54,7 @@ The repository is organized into the following sample projects:
 - 🧪 `epaper/` - E-paper display sample (needs verification)
 - 🧪 `gps/` - GPS module sample (needs verification)
 - 🧪 `imu/` - Inertial Measurement Unit sample (board config added - ready for testing)
+- ✅ `led_strip/` - LED strip control using WS2812/SK6812 (working - outputs on MOSI/D10 only, uses SPI backend)
 - 🧪 `lowpower/` - Low power consumption sample (needs verification)
 - 🧪 `pwm/` - Pulse Width Modulation sample (needs verification)
 - 🧪 `HPF-mspi/` - High Performance Framework MSPI sample (uses CPUFLPR core)

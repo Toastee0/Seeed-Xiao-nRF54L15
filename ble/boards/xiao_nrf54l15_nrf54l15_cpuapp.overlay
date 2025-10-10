@@ -1,7 +1,56 @@
-&pdm_imu_pwr{
-    /delete-property/ regulator-boot-on;
+// XIAO nRF54L15 BLE Sample Device Tree Overlay
+// Enables Bluetooth hardware and GPIO for LED contro;l
+
+/ {
+	aliases {
+		led0 = &led0;
+		sw0 = &button0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		led0: led_0 {
+			gpios = <&gpio2 1 GPIO_ACTIVE_HIGH>;
+			label = "User LED";
+		};
+	};
+
+	buttons {
+		compatible = "gpio-keys";
+		button0: button_0 {
+			gpios = <&gpio1 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "User Button";
+		};
+	};
 };
-&pdm20 {
-    queue-size = <4>;
+
+// Enable GPIO controllers
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};
+
+&gpio2 {
+	status = "okay";
+};
+
+// Configure UART for console output (optional for debugging)
+&uart20 {
+	status = "okay";
+	current-speed = <115200>;
+};
+
+// Enable radio for Bluetooth
+&radio {
+	status = "okay";
+};
+
+// Configure power management for low power operation
+&cpuapp_rram {
+	// Partition Manager handles partitions automatically
+	status = "okay";
 };
 

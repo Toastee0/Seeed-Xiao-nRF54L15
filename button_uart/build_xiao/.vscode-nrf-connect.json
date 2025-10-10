@@ -1,0 +1,18 @@
+{
+  "toolchainPath": "c:\\ncs\\toolchains\\c1a76fddb2",
+  "sdkPath": "c:\\ncs\\v3.1.1",
+  "board": "xiao_nrf54l15/nrf54l15/cpuapp",
+  "boardDir": "c:\\ncs\\v3.1.1\\zephyr\\boards\\arm\\xiao_nrf54l15",
+  "boardDirs": [
+    "c:\\ncs\\v3.1.1\\zephyr\\boards\\arm\\xiao_nrf54l15"
+  ],
+  "sysbuild": true,
+  "optimizations": "none",
+  "cmakeArgs": [],
+  "confFiles": [],
+  "buildDirectory": "build_xiao",
+  "kconfigFragments": [],
+  "snippets": [],
+  "dtcOverlays": [],
+  "extraDtcOverlays": []
+}

@@ -1,0 +1,7 @@
+default: initiator
+build_dir: M:/nRF54L15/channel_sounding/connected_cs/initiator/build_xiao
+domains:
+  - name: initiator
+    build_dir: M:/nRF54L15/channel_sounding/connected_cs/initiator/build_xiao/initiator
+flash_order:
+  - initiator

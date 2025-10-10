@@ -1,0 +1,13 @@
+# Target labels
+ button_uart
+# Source files and their labels
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/button_uart
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/button_uart.rule
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/CMakeFiles/button_uart-complete.rule
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-build.rule
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-configure.rule
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-download.rule
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-install.rule
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-mkdir.rule
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-patch.rule
+M:/nRF54L15/button_uart/build_xiao/_sysbuild/sysbuild/images/button_uart-prefix/src/button_uart-stamp/button_uart-update.rule

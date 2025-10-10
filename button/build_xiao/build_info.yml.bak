@@ -17,6 +17,6 @@ cmake:
      - 'M:/nRF54L15/button/build_xiao/_sysbuild/empty.conf'
 version: '0.1.0'
 west:
-  command: 'C:\ncs\toolchains\c1a76fddb2\opt\bin\Scripts\west build --build-dir m:/nRF54L15/button/build_xiao m:/nRF54L15/button --pristine --board xiao_nrf54l15/nrf54l15/cpuapp --sysbuild'
+  command: 'C:\ncs\toolchains\c1a76fddb2\opt\bin\Scripts\west build --build-dir m:/nRF54L15/button/build_xiao m:/nRF54L15/button --pristine --board xiao_nrf54l15/nrf54l15/cpuapp --sysbuild --'
   topdir: 'c:\ncs\v3.1.1'
   version: '1.4.0'
