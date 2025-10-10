@@ -1,0 +1,71 @@
+/*
+ * Copyright (c) 2024 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+//#include <zephyr/dt-bindings/gpio/gpio.h>
+#include <zephyr/dt-bindings/led/led.h>
+#include "../nrf54l15-bindings.h"
+
+&xiao_spi {
+	compatible = "nordic,nrf-spim";
+	led_strip: ws2812@0 {
+		compatible = "worldsemi,ws2812-spi";
+		/* WS2812 LED strip configuration */
+		reg = <0>;                  /* P2.08 (D6/TX on XIAO nRF54L15) - FLPR can only use Port 2! */
+		spi-max-frequency = <SPI_FREQ>;
+
+		/* WS2812 */
+		chain-length = <90>; /* arbitrary; change at will */
+		color-mapping = <LED_COLOR_ID_GREEN
+				 LED_COLOR_ID_RED
+				 LED_COLOR_ID_BLUE>;
+		spi-one-frame = <ONE_FRAME>;
+		spi-zero-frame = <ZERO_FRAME>;
+	};
+
+	
+};
+
+/ {
+	aliases { 
+		led-strip = &led_strip;
+		pov-timer = &timer20; 
+	};
+
+	chosen {
+		zephyr,bt-hci = &bt_hci_controller;
+		zephyr,console = &uart20;
+		nordic,rpc-uart = &uart20;
+	};
+
+	
+};
+
+
+/* Configure TIMER20 for POV frame updates */
+&timer20 {
+	status = "okay";
+};
+
+
+&pdm20 {
+	status = "disabled";
+};
+
+&i2c22 {
+	status = "disabled";
+};
+
+&adc {
+	status = "disabled";
+};
+
+&uart21 {
+	status = "disabled";
+};
+
+&bt_hci_controller {
+	status = "okay";
+};

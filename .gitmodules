@@ -4,3 +4,6 @@
 [submodule "lib/MadgwickAHRS"]
 	path = lib/MadgwickAHRS
 	url = https://github.com/arduino-libraries/MadgwickAHRS.git
+[submodule "pyOCD"]
+	path = pyOCD
+	url = https://github.com/pyocd/pyOCD.git

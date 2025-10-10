@@ -1,7 +1,0 @@
-default: cs_ras_init
-build_dir: M:/projects/nRF54L15/cs_ras_init/build_1
-domains:
-  - name: cs_ras_init
-    build_dir: M:/projects/nRF54L15/cs_ras_init/build_1/cs_ras_init
-flash_order:
-  - cs_ras_init

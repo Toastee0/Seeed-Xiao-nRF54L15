@@ -1,7 +1,0 @@
-default: button_uart
-build_dir: M:/nRF54L15/button_uart/build_xiao
-domains:
-  - name: button_uart
-    build_dir: M:/nRF54L15/button_uart/build_xiao/button_uart
-flash_order:
-  - button_uart
