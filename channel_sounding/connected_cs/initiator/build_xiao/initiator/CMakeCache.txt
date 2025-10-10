@@ -309,7 +309,7 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 // listed, e.g. CONF_FILE="prj1.conf;prj2.conf" The CACHED_CONF_FILE
 // is internal Zephyr variable used between CMake runs. To change
 // CONF_FILE, use the CONF_FILE variable.
-CONF_FILE:STRING=M:/nRF54L15/channel_sounding/connected_cs/initiator/prj.conf
+CONF_FILE:STRING=M:/nRF54L15/channel_sounding/connected_cs/initiator/prj.conf;M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.conf
 
 //Path to a program.
 DTC:FILEPATH=C:/ncs/toolchains/c1a76fddb2/opt/bin/dtc.exe
@@ -319,7 +319,7 @@ DTC:FILEPATH=C:/ncs/toolchains/c1a76fddb2/opt/bin/dtc.exe
 // parameter. These settings will override the settings in the
 // board's .dts file. Multiple files may be listed, e.g. DTC_OVERLAY_FILE="dts1.overlay
 // dts2.overlay"
-DTC_OVERLAY_FILE:STRING=
+DTC_OVERLAY_FILE:STRING=M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay
 
 //Use to ensure we add links only once
 EXTERNAL_CRYPTO_CORE_HANDLED_PSA_CRYPTO_CONFIG:BOOL=False
@@ -595,7 +595,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=188
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=197
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

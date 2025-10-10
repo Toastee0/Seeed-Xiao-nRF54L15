@@ -44,6 +44,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("M:/nRF54L15/channel_sounding/connected_cs/initiator/build_xiao/initiator/modules/nrf/lib/multithreading_lock/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("M:/nRF54L15/channel_sounding/connected_cs/initiator/build_xiao/initiator/modules/nrf/lib/flash_patch/cmake_install.cmake")
 endif()
 

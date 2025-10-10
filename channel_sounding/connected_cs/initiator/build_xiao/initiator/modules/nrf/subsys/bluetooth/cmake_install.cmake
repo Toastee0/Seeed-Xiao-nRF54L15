@@ -39,6 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("M:/nRF54L15/channel_sounding/connected_cs/initiator/build_xiao/initiator/modules/nrf/subsys/bluetooth/controller/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("M:/nRF54L15/channel_sounding/connected_cs/initiator/build_xiao/initiator/modules/nrf/subsys/bluetooth/cs_de/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("M:/nRF54L15/channel_sounding/connected_cs/initiator/build_xiao/initiator/modules/nrf/subsys/bluetooth/host_extensions/cmake_install.cmake")
 endif()
 

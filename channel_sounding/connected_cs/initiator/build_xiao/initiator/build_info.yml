@@ -14,6 +14,7 @@ cmake:
      - 'C:/ncs/v3.1.1/zephyr/dts/bindings'
     files:
      - 'C:/ncs/v3.1.1/zephyr/boards/arm/xiao_nrf54l15/xiao_nrf54l15_nrf54l15_cpuapp.dts'
+     - 'M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay'
     include-dirs:
      - 'C:/ncs/v3.1.1/nrf/include'
      - 'C:/ncs/v3.1.1/nrf/dts/common'
@@ -34,13 +35,17 @@ cmake:
      - 'C:/ncs/v3.1.1/zephyr/dts/arm'
      - 'C:/ncs/v3.1.1/zephyr/dts/arc'
      - 'C:/ncs/v3.1.1/zephyr/dts'
+    user-files:
+     - 'M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay'
   kconfig:
     files:
      - 'C:/ncs/v3.1.1/zephyr/boards/arm/xiao_nrf54l15/xiao_nrf54l15_nrf54l15_cpuapp_defconfig'
      - 'M:/nRF54L15/channel_sounding/connected_cs/initiator/prj.conf'
+     - 'M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.conf'
      - 'M:/nRF54L15/channel_sounding/connected_cs/initiator/build_xiao/initiator/zephyr/.config.sysbuild'
     user-files:
      - 'M:/nRF54L15/channel_sounding/connected_cs/initiator/prj.conf'
+     - 'M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.conf'
   toolchain:
     name: 'zephyr'
     path: 'C:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk'

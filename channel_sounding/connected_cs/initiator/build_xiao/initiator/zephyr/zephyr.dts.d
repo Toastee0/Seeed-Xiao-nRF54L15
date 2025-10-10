@@ -30,4 +30,5 @@ empty_file.o: C:/ncs/v3.1.1/zephyr/misc/empty_file.c \
  C:/ncs/v3.1.1/zephyr/boards/arm/xiao_nrf54l15/seeed_xiao_connector.dtsi \
  C:/ncs/v3.1.1/zephyr/boards/arm/xiao_nrf54l15/xiao_nrf54l15_common.dtsi \
  C:/ncs/v3.1.1/zephyr/boards/arm/xiao_nrf54l15/xiao_nrf54l15-pinctrl.dtsi \
- C:/ncs/v3.1.1/zephyr/include/zephyr/dt-bindings/sensor/lsm6dso.h
+ C:/ncs/v3.1.1/zephyr/include/zephyr/dt-bindings/sensor/lsm6dso.h \
+ M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay

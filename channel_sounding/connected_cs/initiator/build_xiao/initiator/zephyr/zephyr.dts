@@ -436,7 +436,7 @@
 				compatible = "nordic,nrf-radio"; /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:238 */
 				reg = < 0x8a000 0x1000 >;        /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:239 */
 				interrupts = < 0x8a 0x1 >;       /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:240 */
-				status = "okay";                 /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_nrf54l15_cpuapp.dts:168 */
+				status = "okay";                 /* in M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay:9 */
 				dfe-supported;                   /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:242 */
 				ieee802154-supported;            /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:243 */
 				ble-2mbps-supported;             /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:244 */
@@ -451,14 +451,14 @@
 
 				/* node '/soc/peripheral@50000000/radio@8a000/bt_hci_sdc' defined in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:253 */
 				bt_hci_sdc: bt_hci_sdc {
-					compatible = "zephyr,bt-hci-sdc"; /* in zephyr\dts\arm\nordic\nrf54l_05_10_15_cpuapp.dtsi:41 */
-					status = "okay";                  /* in zephyr\dts\arm\nordic\nrf54l_05_10_15_cpuapp.dtsi:40 */
+					compatible = "nordic,bt-hci-sdc"; /* in M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay:12 */
+					status = "okay";                  /* in M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay:22 */
 				};
 
 				/* node '/soc/peripheral@50000000/radio@8a000/bt_hci_controller' defined in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:258 */
 				bt_hci_controller: bt_hci_controller {
 					compatible = "zephyr,bt-hci-ll-sw-split"; /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:259 */
-					status = "disabled";                      /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:260 */
+					status = "disabled";                      /* in M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay:27 */
 				};
 			};
 
@@ -691,7 +691,7 @@
 			/* node '/soc/peripheral@50000000/pdm@d0000' defined in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:470 */
 			pdm20: pdm@d0000 {
 				compatible = "nordic,nrf-pdm";  /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:471 */
-				status = "okay";                /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_nrf54l15_cpuapp.dts:104 */
+				status = "disabled";            /* in M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay:32 */
 				reg = < 0xd0000 0x1000 >;       /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:473 */
 				interrupts = < 0xd0 0x1 >;      /* in zephyr\dts\vendor\nordic\nrf54l_05_10_15.dtsi:474 */
 				pinctrl-0 = < &pdm20_default >; /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_common.dtsi:78 */
@@ -1186,10 +1186,11 @@
 		zephyr,sram = &cpuapp_sram;                 /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_nrf54l15_cpuapp.dts:45 */
 		zephyr,flash = &cpuapp_rram;                /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_nrf54l15_cpuapp.dts:46 */
 		zephyr,flash-controller = &rram_controller; /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_nrf54l15_cpuapp.dts:47 */
-		zephyr,console = &uart20;                   /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_nrf54l15_cpuapp.dts:48 */
+		zephyr,console = &uart20;                   /* in M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay:4 */
 		zephyr,shell-uart = &uart20;                /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_nrf54l15_cpuapp.dts:49 */
 		nordic,rpc-uart = &uart20;                  /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_nrf54l15_cpuapp.dts:50 */
 		zephyr,ieee802154 = &ieee802154;            /* in zephyr\boards\arm\xiao_nrf54l15\xiao_nrf54l15_nrf54l15_cpuapp.dts:51 */
+		nordic,bt-hci = &bt_hci_sdc;                /* in M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay:3 */
 	};
 
 	/* node '/rng' defined in zephyr\dts\arm\nordic\nrf54l_05_10_15_cpuapp.dtsi:28 */

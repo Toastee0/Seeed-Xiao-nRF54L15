@@ -33,8 +33,13 @@ LOG_MODULE_REGISTER(main);
 
 static const struct led_rgb colors[] = {
 	RGB(CONFIG_SAMPLE_LED_BRIGHTNESS, 0x00, 0x00), /* red */
+	RGB(CONFIG_SAMPLE_LED_BRIGHTNESS, CONFIG_SAMPLE_LED_BRIGHTNESS/2, 0x00), /* orange */
+	RGB(CONFIG_SAMPLE_LED_BRIGHTNESS, CONFIG_SAMPLE_LED_BRIGHTNESS, 0x00), /* yellow */
 	RGB(0x00, CONFIG_SAMPLE_LED_BRIGHTNESS, 0x00), /* green */
+	RGB(0x00, CONFIG_SAMPLE_LED_BRIGHTNESS, CONFIG_SAMPLE_LED_BRIGHTNESS), /* cyan */
 	RGB(0x00, 0x00, CONFIG_SAMPLE_LED_BRIGHTNESS), /* blue */
+	RGB(CONFIG_SAMPLE_LED_BRIGHTNESS/2, 0x00, CONFIG_SAMPLE_LED_BRIGHTNESS), /* indigo */
+	RGB(CONFIG_SAMPLE_LED_BRIGHTNESS, 0x00, CONFIG_SAMPLE_LED_BRIGHTNESS), /* violet/magenta */
 };
 
 static struct led_rgb pixels[STRIP_NUM_PIXELS];
@@ -53,21 +58,22 @@ int main(void)
 		return 0;
 	}
 
-	LOG_INF("Displaying pattern on strip");
+	LOG_INF("Displaying rainbow pattern on strip");
 	while (1) {
-		for (size_t cursor = 0; cursor < ARRAY_SIZE(pixels); cursor++) {
-			memset(&pixels, 0x00, sizeof(pixels));
-			memcpy(&pixels[cursor], &colors[color], sizeof(struct led_rgb));
-
-			rc = led_strip_update_rgb(strip, pixels, STRIP_NUM_PIXELS);
-			if (rc) {
-				LOG_ERR("couldn't update strip: %d", rc);
-			}
-
-			k_sleep(DELAY_TIME);
+		/* Fill entire strip with rainbow colors */
+		for (size_t i = 0; i < ARRAY_SIZE(pixels); i++) {
+			size_t color_idx = (i + color) % ARRAY_SIZE(colors);
+			memcpy(&pixels[i], &colors[color_idx], sizeof(struct led_rgb));
 		}
 
+		rc = led_strip_update_rgb(strip, pixels, STRIP_NUM_PIXELS);
+		if (rc) {
+			LOG_ERR("couldn't update strip: %d", rc);
+		}
+
+		/* Shift the rainbow pattern */
 		color = (color + 1) % ARRAY_SIZE(colors);
+		k_sleep(DELAY_TIME);
 	}
 
 	return 0;

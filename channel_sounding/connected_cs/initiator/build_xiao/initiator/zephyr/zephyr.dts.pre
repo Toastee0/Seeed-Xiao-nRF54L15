@@ -1574,4 +1574,39 @@ xiao_adc: &adc {};
  };
 };
 # 0 "<command-line>" 2
+# 1 "M:/nRF54L15/channel_sounding/connected_cs/initiator/boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay" 1
+/ {
+ chosen {
+  nordic,bt-hci = &bt_hci_sdc;
+  zephyr,console = &uart20;
+ };
+};
+
+&radio {
+    status = "okay";
+
+    bt_hci_sdc: bt_hci_sdc {
+        compatible = "nordic,bt-hci-sdc";
+
+    };
+};
+
+
+
+
+
+&bt_hci_sdc {
+ status = "okay";
+};
+
+
+&bt_hci_controller {
+ status = "disabled";
+};
+
+
+&pdm20 {
+ status = "disabled";
+};
+# 0 "<command-line>" 2
 # 1 "C:/ncs/v3.1.1/zephyr/misc/empty_file.c"
