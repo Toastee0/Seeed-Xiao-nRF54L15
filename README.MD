@@ -58,7 +58,7 @@ The repository is organized into the following sample projects:
 - 🧪 `lowpower/` - Low power consumption sample (needs verification)
 - 🧪 `pwm/` - Pulse Width Modulation sample (needs verification)
 - 🧪 `HPF-mspi/` - High Performance Framework MSPI sample (uses CPUFLPR core)
-- 🧪 `sdcard/` - SD Card sample (needs verification)
+- ❌ `sdcard/` - SD Card sample (not working - moved to Not_working/)
 - 🧪 `uart/` - UART communication sample (needs verification)
 - 🧪 `lpuart/` - Low Power UART communication sample (needs verification)
 
