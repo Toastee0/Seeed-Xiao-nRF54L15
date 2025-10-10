@@ -2,6 +2,10 @@
 
 An attitude monitoring system built for the XIAO nRF54L15 Sense with expansion base, featuring real-time IMU data processing, attitude calculation using the Madgwick filter, and OLED display output.
 
+## Status
+
+✅ **Tested and Working** - Successfully built and flashed with nRF Connect SDK v3.1.1 (October 2025)
+
 ## Features
 
 - **Real-time Attitude Monitoring**: Uses IMU data (accelerometer and gyroscope) to calculate pitch, roll, and yaw
