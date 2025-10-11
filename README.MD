@@ -44,7 +44,7 @@ The repository is organized into the following sample projects:
 
 ### Sample Projects:
 
-- 🧪 `adc/` - Analog-to-Digital Converter sample (has incomplete board config)
+- ✅ `adc/` - ADC variable blink sample - reads potentiometer on A0, controls LED blink rate (working - builds, flashes, and tested with pot)
 - 🧪 `battery/` - Battery monitoring sample (board config updated)
 - 🧪 `ble/` - Bluetooth Low Energy sample (has partial board config)
 - ✅ `blink/` - Basic LED blinking sample (working - builds, flashes, and runs correctly)
@@ -71,12 +71,33 @@ The repository is organized into the following sample projects:
 - 🧪 `xiao_expanded/oled/` - OLED display sample for expansion base
 - 🧪 `xiao_expanded/rtc/` - Real-time clock sample for expansion base
 
-Each sample directory contains:
+### Applications (`applications/`):
+
+Complete applications that combine multiple features for specific use cases:
+
+- ✅ `applications/blink_uart/` - LED blink with UART output and system-off power management (working - demonstrates power management and low-power modes)
+
+Applications differ from samples in that they:
+- Combine multiple peripheral features
+- Implement complete end-to-end functionality
+- May include power management and sleep modes
+- Are designed for specific real-world use cases
+
+Each sample/application directory contains:
 - `CMakeLists.txt` - Build configuration for nRF Connect SDK
 - `prj.conf` - Project configuration
 - `src/` - Source code
 - `README.md` - Sample-specific documentation
-- `sample.yaml` - Sample metadata to allow it to appear in nRF Connect for VS Code
+- `sample.yaml` - Sample metadata that makes the board appear in the compatible section of nRF Connect's build UI, enabling automatic selection of the correct `xiao_nrf54l15/nrf54l15/cpuapp` profile
+- `boards/` - **Required** board-specific configuration folder containing:
+  - `xiao_nrf54l15_nrf54l15_cpuapp.conf` - Board-specific Kconfig options
+  - `xiao_nrf54l15_nrf54l15_cpuapp.overlay` - Board-specific devicetree overlay
+
+**Important**: All samples and applications must include:
+1. A `sample.yaml` file listing the board as compatible
+2. A `boards/` folder with the Xiao nRF54L15 configuration files
+
+These files work together to ensure that when you add the application in nRF Connect for VS Code, the board appears as compatible and the correct board-specific options and devicetree configurations are automatically applied.
 
 
 ## PlatformIO Support

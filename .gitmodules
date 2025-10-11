@@ -7,3 +7,9 @@
 [submodule "pyOCD"]
 	path = pyOCD
 	url = https://github.com/pyocd/pyOCD.git
+[submodule "platform-seeedboards"]
+	path = platform-seeedboards
+	url = https://github.com/Seeed-Studio/platform-seeedboards.git
+[submodule "led_strip_pov"]
+	path = led_strip_pov
+	url = https://github.com/Toastee0/led_strip_pov.git
