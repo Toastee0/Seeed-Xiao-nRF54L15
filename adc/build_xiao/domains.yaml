@@ -1,7 +1,7 @@
-default: zephyr-adc-ncs
-build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-adc-ncs/build_xiao
+default: adc
+build_dir: M:/nRF54L15/adc/build_xiao
 domains:
-  - name: zephyr-adc-ncs
-    build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-adc-ncs/build_xiao/zephyr-adc-ncs
+  - name: adc
+    build_dir: M:/nRF54L15/adc/build_xiao/adc
 flash_order:
-  - zephyr-adc-ncs
+  - adc

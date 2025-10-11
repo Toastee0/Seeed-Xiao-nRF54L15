@@ -1,4 +1,4 @@
-# Install script for directory: C:/ncs/v3.1.0/zephyr/share/sysbuild/images/firmware_loader
+# Install script for directory: C:/ncs/v3.1.1/zephyr/share/sysbuild/images/firmware_loader
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
