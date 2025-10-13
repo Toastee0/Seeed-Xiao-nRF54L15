@@ -20,12 +20,15 @@ old/
 # Temporary files
 *.tmp
 *.swp
-hpt_gpio_basic_api/
-hpt_gpio_more_loops/
+hpf_gpio_basic_api/
+hpf_gpio_more_loops/
 hci_uart/
 led_strip_pov/
 Not_working/
 pyOCD/
-
+hpf-mspi/
+blink_hpf/
+channel_sounding/
+reference/
 board_config_template.overlay
 hpf.rst
