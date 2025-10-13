@@ -1,7 +1,0 @@
-default: zephyr-gps-ncs
-build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao
-domains:
-  - name: zephyr-gps-ncs
-    build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-gps-ncs/build_xiao/zephyr-gps-ncs
-flash_order:
-  - zephyr-gps-ncs
