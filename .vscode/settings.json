@@ -1,0 +1,19 @@
+{
+    "nrf-connect.applications": [
+        "${workspaceFolder}\\zephyr-gpio-ncs",
+        "${workspaceFolder}\\ipc_service",
+        "${workspaceFolder}\\cs_ras_init",
+        "${workspaceFolder}\\cs_ras_reflect",
+        "${workspaceFolder}\\blink",
+        "${workspaceFolder}\\button",
+        "${workspaceFolder}\\xiao_expanded\\grove_relay",
+        "${workspaceFolder}\\xiao_expanded\\attitude_monitor",
+        "${workspaceFolder}\\ble",
+        "${workspaceFolder}\\led_strip",
+        "${workspaceFolder}\\adc"
+    ],
+    "nrf-connect.boardRoots": [
+        "${workspaceFolder}\\platform-seeedboards\\zephyr"
+    ],
+    "git.ignoreLimitWarning": true
+}
