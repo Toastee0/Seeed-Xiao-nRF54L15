@@ -1,7 +1,0 @@
-default: watchface
-build_dir: M:/nRF54L15/watchface/build_xiao
-domains:
-  - name: watchface
-    build_dir: M:/nRF54L15/watchface/build_xiao/watchface
-flash_order:
-  - watchface
