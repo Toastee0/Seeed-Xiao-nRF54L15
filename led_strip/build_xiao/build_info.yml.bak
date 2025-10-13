@@ -1,4 +1,6 @@
 cmake:
+  application:
+    source-dir: 'C:/ncs/v3.1.1/zephyr/share/sysbuild'
   board:
     name: 'xiao_nrf54l15'
     path:
@@ -15,6 +17,7 @@ cmake:
      - 'M:/nRF54L15/led_strip/build_xiao/_sysbuild/empty.conf'
     user-files:
      - 'M:/nRF54L15/led_strip/build_xiao/_sysbuild/empty.conf'
+  sysbuild: 'true'
 version: '0.1.0'
 west:
   command: 'C:\ncs\toolchains\c1a76fddb2\opt\bin\Scripts\west build --build-dir m:/nRF54L15/led_strip/build_xiao m:/nRF54L15/led_strip --pristine --board xiao_nrf54l15/nrf54l15/cpuapp --sysbuild --'

@@ -1,0 +1,11 @@
+sample:
+  name: PWM RGB LED
+  description: RGB LED control using 3-channel PWM with rainbow effects and HSV color conversion
+tests:
+  sample.pwm.rgb_led:
+    harness: console
+    platform_allow:
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    tags: pwm rgb led color hsv
+    integration_platforms:
+      - xiao_nrf54l15/nrf54l15/cpuapp

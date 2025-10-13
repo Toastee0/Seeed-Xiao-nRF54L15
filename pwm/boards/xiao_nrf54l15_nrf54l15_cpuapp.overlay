@@ -2,56 +2,54 @@
  * Copyright (c) 2024 Nordic Semiconductor ASA
  *
  * SPDX-License-Identifier: Apache-2.0
+ * 
+ * PWM-capable pins on XIAO nRF54L15:
+ * - D0 (P1.04): PWM20 CHAN[0]
+ * - D1 (P1.05): PWM20 CHAN[1]
+ * - D2 (P1.06): PWM20 CHAN[2]
+ * - D3 (P1.07): PWM20 CHAN[3]
+ * - D4 (P1.10): PWM20 CHAN[4]
+ * - D5 (P1.11): PWM20 CHAN[5]
+ * 
+ * This sample uses D1 (P1.05) for single LED PWM fade effect
  */
 
 #include <zephyr/dt-bindings/pwm/pwm.h>
 
-
-
-
 / {
 	aliases { 
-		pov-timer = &timer20; /* Use TIMER20 for POV frame timing */
 		pwm-led0 = &pwm_led0;
 	};
 	
 	pwmleds {
 		compatible = "pwm-leds";
 		pwm_led0: pwm_led_0 {
-			pwms = <&pwm20 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+			pwms = <&pwm20 1 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
 		};
 	};
-	
-	chosen {
-		zephyr,bt-hci = &bt_hci_controller;
+};
+
+/* Enable PWM instance 20 */
+&pwm20 {
+	status = "okay";
+	pinctrl-0 = <&pwm20_default>;
+	pinctrl-1 = <&pwm20_sleep>;
+	pinctrl-names = "default", "sleep";
+};
+
+/* Configure PWM Channel 1 on P1.05 (Pin D1) */
+&pinctrl {
+	pwm20_default: pwm20_default {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT1, 1, 5)>;
+		};
 	};
-};
 
-/* Configure TIMER20 for POV frame updates */
-&timer20 {
-	status = "okay";
-};
-
-/* Enable GPIO port 2 for WS2812 data pin (FLPR requirement) */
-//&gpio2 {
-//	status = "okay";
-//};
-
-/* Enable MBOX communication with FLPR core */
-&cpuapp_vevif_tx {
-	status = "okay";
-};
-
-&cpuapp_vevif_rx {
-	status = "okay";
-};
-
-/* Enable GPIO ports (but specific pins will be used by PWM) */
-&gpio1 {
-	status = "okay";
-};
-
-&gpio2 {
-	status = "okay";
+	pwm20_sleep: pwm20_sleep {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT1, 1, 5)>;
+			low-power-enable;
+		};
+	};
 };
 

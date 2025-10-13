@@ -8,12 +8,23 @@
         "${workspaceFolder}\\button",
         "${workspaceFolder}\\xiao_expanded\\grove_relay",
         "${workspaceFolder}\\xiao_expanded\\attitude_monitor",
-        "${workspaceFolder}\\ble",
         "${workspaceFolder}\\led_strip",
-        "${workspaceFolder}\\adc"
-    ],
-    "nrf-connect.boardRoots": [
-        "${workspaceFolder}\\platform-seeedboards\\zephyr"
+        "${workspaceFolder}\\adc",
+        "${workspaceFolder}\\dmic",
+        "${workspaceFolder}\\xiao_expanded\\audio_visualizer",
+        "${workspaceFolder}\\dmic-recorder",
+        "${workspaceFolder}\\imu",
+        "${workspaceFolder}\\pwm",
+        "${workspaceFolder}\\pwm_rgb",
+        "${workspaceFolder}\\xiao_expanded\\buzzer",
+        "${workspaceFolder}\\xiao_expanded\\oled",
+        "${workspaceFolder}\\xiao_expanded\\sd_card",
+        "${workspaceFolder}\\HPF-mspi",
+        "${workspaceFolder}\\xiao_expanded\\sd_card_mspi",
+        "${workspaceFolder}\\xiao_expanded\\mspi_sd_test",
+        "${workspaceFolder}\\hpf_gpio_basic_api",
+        "${workspaceFolder}\\blink_hpf\\blink_cpuapp"
     ],
     "git.ignoreLimitWarning": true
 }
+

@@ -1,7 +1,0 @@
-default: adc
-build_dir: M:/nRF54L15/adc/build_xiao
-domains:
-  - name: adc
-    build_dir: M:/nRF54L15/adc/build_xiao/adc
-flash_order:
-  - adc

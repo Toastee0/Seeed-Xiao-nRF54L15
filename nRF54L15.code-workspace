@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "gpio",
+			"path": "C:/ncs/v3.1.1/nrf/applications/hpf/gpio"
+		}
+	],
+	"settings": {
+		"nrf-connect.applications": [
+			"${workspaceFolder}\\zephyr-gpio-ncs",
+			"${workspaceFolder}\\ipc_service",
+			"${workspaceFolder}\\cs_ras_init",
+			"${workspaceFolder}\\cs_ras_reflect",
+			"${workspaceFolder}\\blink",
+			"${workspaceFolder}\\button",
+			"${workspaceFolder}\\xiao_expanded\\grove_relay",
+			"${workspaceFolder}\\xiao_expanded\\attitude_monitor",
+			"${workspaceFolder}\\led_strip",
+			"${workspaceFolder}\\adc",
+			"${workspaceFolder}\\dmic",
+			"${workspaceFolder}\\xiao_expanded\\audio_visualizer",
+			"${workspaceFolder}\\dmic-recorder",
+			"${workspaceFolder}\\imu",
+			"${workspaceFolder}\\pwm",
+			"${workspaceFolder}\\pwm_rgb",
+			"${workspaceFolder}\\xiao_expanded\\buzzer",
+			"${workspaceFolder}\\xiao_expanded\\oled",
+			"${workspaceFolder}\\xiao_expanded\\sd_card",
+			"${workspaceFolder}\\HPF-mspi",
+			"${workspaceFolder}\\xiao_expanded\\sd_card_mspi",
+			"${workspaceFolder}\\xiao_expanded\\mspi_sd_test",
+			"${workspaceFolder}\\hpf_gpio_basic_api",
+			"${workspaceFolder}\\blink_hpf\\blink_cpuapp",
+			"${workspaceFolder}\\watchface"
+		],
+		"git.ignoreLimitWarning": true
+	}
+}

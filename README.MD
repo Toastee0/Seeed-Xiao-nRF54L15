@@ -2,6 +2,31 @@
 
 This repository contains sample applications and simple example code for the Seeed Studio Xiao nRF54L15 development board using Zephyr RTOS.
 
+## Board Installation (Required First!)
+
+Before building any samples, you must install the board definition files:
+
+1. **Clone this repository** (with submodules):
+   ```bash
+   git clone --recursive https://github.com/Toastee0/Seeed-Xiao-nRF54L15.git
+   ```
+
+2. **Copy board files** to your nRF Connect SDK installation:
+   ```bash
+   # Copy the entire board directory
+   cp -r platform-seeedboards/zephyr/boards/arm/xiao_nrf54l15 C:/ncs/v3.1.1/zephyr/boards/arm/
+   
+   # Or on Windows PowerShell:
+   Copy-Item -Path "platform-seeedboards\zephyr\boards\arm\xiao_nrf54l15" -Destination "C:\ncs\v3.1.1\zephyr\boards\arm\" -Recurse
+   ```
+
+3. **Verify installation** - The board files should be at:
+   ```
+   C:\ncs\v3.1.1\zephyr\boards\arm\xiao_nrf54l15\
+   ```
+
+Now you can build any sample with `-b xiao_nrf54l15/nrf54l15/cpuapp`
+
 ## Centralized Libraries
 
 All external libraries are managed as git submodules in the `lib/` directory to avoid duplication across samples:
@@ -44,32 +69,42 @@ The repository is organized into the following sample projects:
 
 ### Sample Projects:
 
-- ✅ `adc/` - ADC variable blink sample - reads potentiometer on A0, controls LED blink rate (working - builds, flashes, and tested with pot)
-- 🧪 `battery/` - Battery monitoring sample (board config updated)
-- 🧪 `ble/` - Bluetooth Low Energy sample (has partial board config)
-- ✅ `blink/` - Basic LED blinking sample (working - builds, flashes, and runs correctly)
-- ✅ `button/` - Button input sample (working - builds, flashes, and runs correctly)
-- 🧪 `dmic/` - Digital Microphone sample (needs verification)
-- 🧪 `dmic-recorder/` - Digital Microphone recorder sample (needs verification)
-- 🧪 `epaper/` - E-paper display sample (needs verification)
-- 🧪 `gps/` - GPS module sample (needs verification)
-- 🧪 `imu/` - Inertial Measurement Unit sample (board config added - ready for testing)
-- ✅ `led_strip/` - LED strip control using WS2812/SK6812 (working - outputs on MOSI/D10 only, uses SPI backend)
-- 🧪 `lowpower/` - Low power consumption sample (needs verification)
-- 🧪 `pwm/` - Pulse Width Modulation sample (needs verification)
-- 🧪 `HPF-mspi/` - High Performance Framework MSPI sample (uses CPUFLPR core)
-- ❌ `sdcard/` - SD Card sample (not working - moved to Not_working/)
-- 🧪 `uart/` - UART communication sample (needs verification)
-- 🧪 `lpuart/` - Low Power UART communication sample (needs verification)
+#### ✅ Working Samples (Tested on Hardware):
+- `adc/` - ADC variable blink sample - reads potentiometer on A0, controls LED blink rate (working - builds, flashes, and tested with pot)
+- `blink/` - Basic LED blinking sample (working - builds, flashes, and runs correctly)
+- `button/` - Button input sample (working - builds, flashes, and runs correctly)
+- `dmic/` - Digital Microphone sample with LED feedback and terminal bar graph (working - captures audio, displays levels, LED responds to volume thresholds)
+- `dmic-recorder/` - Digital Microphone recorder with UART streaming - records 10-second audio clips to WAV file via Python script (working - 16kHz/16-bit PCM, button-triggered recording, 921600 baud transfer, tested and produces acceptable quality audio)
+- `imu/` - LSM6DSO IMU sensor sample with custom I2C driver - reads raw accelerometer and gyroscope data (working - tested and verified with real sensor, outputs raw LSB values at 12.5Hz)
+- `led_strip/` - LED strip control using WS2812/SK6812 (working - outputs on MOSI/D10 only, uses SPI backend)
+- `pwm/` - PWM LED fade sample with smooth brightness control (working - tested on D1/P1.05, 1kHz PWM frequency)
+- `pwm_rgb/` - RGB LED control with 3-channel PWM - rainbow effects, HSV color conversion, smooth color transitions (working - tested on D1/D2/D3, includes fade effects between colors)
+
+#### 🧪 Needs Testing (Board Config Ready):
+- `battery/` - Battery monitoring sample (board config updated)
+- `ble/` - Bluetooth Low Energy sample (has partial board config)
+- `epaper/` - E-paper display sample (needs verification)
+- `gps/` - GPS module sample (needs verification)
+- `HPF-mspi/` - High Performance Framework MSPI sample (uses CPUFLPR core)
+- `lowpower/` - Low power consumption sample (needs verification)
+- `uart/` - UART communication sample (needs verification)
+- `lpuart/` - Low Power UART communication sample (needs verification)
+
+#### ⚠️ Known Limitations:
+- **Hardware SPI Minimum Frequency**: The nRF54L15's hardware SPI (SPIM120) has a minimum frequency of 2MHz, which is too fast for reliable SD card initialization. See the `xiao_expanded/sd_card/` sample for a working solution using SPI bit-bang.
 
 ### Expansion Base Samples (`xiao_expanded/`):
-- ✅ `xiao_expanded/attitude_monitor/` - IMU attitude monitor with OLED display (working - builds, flashes, and runs correctly)
-- 🧪 `xiao_expanded/sd_card/` - SD Card with expansion base (board config added)
-- 🧪 `xiao_expanded/buzzer/` - Buzzer control sample for expansion base
-- ✅ `xiao_expanded/grove_relay/` - Expansion base Grove relay control sample (requires expansion base hardware & a grove relay connected on port a0/d0)
-- 🧪 `xiao_expanded/i2c-sht31/` - I2C SHT31 temperature/humidity sensor sample
-- 🧪 `xiao_expanded/oled/` - OLED display sample for expansion base
-- 🧪 `xiao_expanded/rtc/` - Real-time clock sample for expansion base
+
+#### ✅ Working Samples (Tested on Hardware):
+- `xiao_expanded/attitude_monitor/` - IMU attitude monitor with OLED display (working - builds, flashes, and runs correctly)
+- `xiao_expanded/audio_visualizer/` - Real-time audio visualizer with FFT and mel-spectrogram on OLED (working - captures DMIC audio, performs FFT, displays frequency bands)
+- `xiao_expanded/buzzer/` - Button-triggered PWM buzzer control at 1kHz (working - tested with expansion base, press D1 button to sound buzzer on D3)
+- `xiao_expanded/grove_relay/` - Expansion base Grove relay control sample (requires expansion base hardware & a grove relay connected on port a0/d0)
+- `xiao_expanded/oled/` - OLED display sample for expansion base
+- `xiao_expanded/sd_card/` - SD Card with expansion base using SPI bit-bang driver (working - uses software SPI to overcome hardware SPI minimum frequency limitation, successfully reads/writes files)
+
+#### 🧪 Needs Testing (Board Config Ready):
+- `xiao_expanded/rtc/` - Real-time clock sample for expansion base
 
 ### Applications (`applications/`):
 

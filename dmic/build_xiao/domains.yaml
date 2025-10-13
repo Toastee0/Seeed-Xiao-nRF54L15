@@ -1,7 +1,0 @@
-default: zephyr-dmic-ncs
-build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao
-domains:
-  - name: zephyr-dmic-ncs
-    build_dir: M:/projects/Seeed-Xiao-nRF54L15/zephyr-dmic-ncs/build_xiao/zephyr-dmic-ncs
-flash_order:
-  - zephyr-dmic-ncs

@@ -1,7 +1,0 @@
-default: zephyr-pwm-ncs
-build_dir: M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao
-domains:
-  - name: zephyr-pwm-ncs
-    build_dir: M:/projects/nRF54L15/zephyr-pwm-ncs/build_xiao/zephyr-pwm-ncs
-flash_order:
-  - zephyr-pwm-ncs
