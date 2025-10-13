@@ -1,0 +1,17 @@
+sample:
+  name: SD Card + ZMS Storage
+  description: SD card filesystem with ZMS (Zephyr Memory Storage) for persistent settings on nRF54L15
+  
+common:
+  tags: storage filesystem sd_card spi zms
+  
+tests:
+  sample.storage.sd_card_zms:
+    harness: console
+    platform_allow:
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    tags: storage sd_card zms spi
+    integration_platforms:
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    extra_args:
+      - OVERLAY_CONFIG=boards/xiao_nrf54l15_nrf54l15_cpuapp.overlay

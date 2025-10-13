@@ -1,0 +1,16 @@
+sample:
+  name: HPF GPIO Blinky Test
+  description: Test GPIO via HPF framework on FLPR core
+tests:
+  sample.hpf.gpio_blinky:
+    tags: gpio hpf blinky
+    platform_allow: xiao_nrf54l15_nrf54l15_cpuapp
+    integration_platforms:
+      - xiao_nrf54l15_nrf54l15_cpuapp
+    harness: console
+    harness_config:
+      type: multi_line
+      regex:
+        - "LED configured successfully"
+        - "LED: ON"
+        - "LED: OFF"

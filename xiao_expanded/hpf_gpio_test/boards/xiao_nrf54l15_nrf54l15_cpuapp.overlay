@@ -1,0 +1,25 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * 
+ * HPF GPIO device tree overlay for XIAO nRF54L15
+ * Maps GPIO through HPF (FLPR core)
+ */
+
+/ {
+	aliases {
+		led0 = &led0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		led0: led_0 {
+			gpios = <&hpf_gpio0 0 GPIO_ACTIVE_HIGH>;  /* Use HPF GPIO port */
+			label = "LED 0";
+		};
+	};
+};
+
+/* Define HPF GPIO controller */
+&hpf_gpio0 {
+	status = "okay";
+};

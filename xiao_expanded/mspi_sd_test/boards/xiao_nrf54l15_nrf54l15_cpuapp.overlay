@@ -1,0 +1,71 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * 
+ * MSPI device tree overlay for SD Card on XIAO Expansion Base
+ * Pins: D8=SCK (P2.1), D9=MISO (P2.4), D10=MOSI (P2.2), D2=CS (P1.6)
+ */
+
+/ {
+	/* Define MSPI controller using HPF */
+	hpf_mspi0: hpf_mspi@0 {
+		compatible = "nordic,nrf-mspi-hpf";
+		reg = <0>;
+		status = "okay";
+		
+		/* Pin configuration for SD card on expansion base */
+		pinctrl-0 = <&hpf_mspi_default>;
+		pinctrl-1 = <&hpf_mspi_sleep>;
+		pinctrl-names = "default", "sleep";
+		
+		/* SD card device on MSPI bus */
+		sd_card: sd_card@0 {
+			compatible = "zephyr,mspi-device";
+			reg = <0>;
+			status = "okay";
+			
+			/* SD card SPI configuration */
+			mspi-max-frequency = <400000>;  /* 400 kHz for initialization */
+			mspi-io-mode = <0>;  /* MSPI_IO_MODE_SINGLE */
+			mspi-data-rate = <0>;  /* MSPI_DATA_RATE_SINGLE */
+			mspi-cpp-mode = <0>;  /* MSPI_CPP_MODE_0 (SPI Mode 0) */
+			mspi-endian = <0>;  /* MSPI_XFER_LITTLE_ENDIAN */
+			mspi-ce-polarity = <0>;  /* MSPI_CE_ACTIVE_LOW */
+			mspi-ce-num = <0>;
+		};
+	};
+};
+
+&pinctrl {
+	/* MSPI pins for SD card - using expansion base SPI pins */
+	hpf_mspi_default: hpf_mspi_default {
+		group1 {
+			/* SCK, MOSI, MISO pins */
+			psels = <NRF_PSEL(MSPI_SCK, 2, 1)>,   /* D8 - SCK */
+					<NRF_PSEL(MSPI_MOSI, 2, 2)>,  /* D10 - MOSI */
+					<NRF_PSEL(MSPI_MISO, 2, 4)>;  /* D9 - MISO */
+		};
+		group2 {
+			/* CS pin */
+			psels = <NRF_PSEL(MSPI_CS0, 1, 6)>;  /* D2 - CS */
+		};
+	};
+	
+	hpf_mspi_sleep: hpf_mspi_sleep {
+		group1 {
+			psels = <NRF_PSEL(MSPI_SCK, 2, 1)>,
+					<NRF_PSEL(MSPI_MOSI, 2, 2)>,
+					<NRF_PSEL(MSPI_MISO, 2, 4)>;
+			low-power-enable;
+		};
+		group2 {
+			psels = <NRF_PSEL(MSPI_CS0, 1, 6)>;
+			low-power-enable;
+		};
+	};
+};
+
+/ {
+	aliases {
+		mspi-sd = &sd_card;
+	};
+};

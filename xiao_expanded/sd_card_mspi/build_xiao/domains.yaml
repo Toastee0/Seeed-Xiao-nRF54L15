@@ -1,0 +1,10 @@
+default: sd_card_mspi
+build_dir: M:/nRF54L15/xiao_expanded/sd_card_mspi/build_xiao
+domains:
+  - name: sd_card_mspi
+    build_dir: M:/nRF54L15/xiao_expanded/sd_card_mspi/build_xiao/sd_card_mspi
+  - name: vpr_launcher
+    build_dir: M:/nRF54L15/xiao_expanded/sd_card_mspi/build_xiao/vpr_launcher
+flash_order:
+  - sd_card_mspi
+  - vpr_launcher
