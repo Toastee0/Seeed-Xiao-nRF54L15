@@ -1,7 +1,0 @@
-default: hci_uart
-build_dir: C:/ncs/v3.1.0/zephyr/samples/bluetooth/hci_uart/build_dk
-domains:
-  - name: hci_uart
-    build_dir: C:/ncs/v3.1.0/zephyr/samples/bluetooth/hci_uart/build_dk/hci_uart
-flash_order:
-  - hci_uart

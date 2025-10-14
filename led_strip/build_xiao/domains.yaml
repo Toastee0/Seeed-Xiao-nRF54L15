@@ -1,7 +1,0 @@
-default: led_strip
-build_dir: M:/nRF54L15/led_strip/build_xiao
-domains:
-  - name: led_strip
-    build_dir: M:/nRF54L15/led_strip/build_xiao/led_strip
-flash_order:
-  - led_strip
