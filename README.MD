@@ -91,7 +91,9 @@ The repository is organized into the following sample projects:
 - `lpuart/` - Low Power UART communication sample (needs verification)
 
 #### ⚠️ Known Limitations:
-- **Hardware SPI Minimum Frequency**: The nRF54L15's hardware SPI (SPIM120) has a minimum frequency of 2MHz, which is too fast for reliable SD card initialization. See the `xiao_expanded/sd_card/` sample for a working solution using SPI bit-bang.
+- **Hardware SPI00 Minimum Frequency**: The nRF54L15's hardware SPI00 peripheral (SPIM00) has a minimum frequency of 2MHz, which is too fast for reliable SD card initialization (requires 400kHz). Two solutions are provided:
+  - `xiao_expanded/sd_card/` - Uses SPI bit-bang driver (software SPI)
+  - `xiao_expanded/sd_card_hw/` - Uses hardware SPI20 which supports full frequency range (400kHz to 24MHz)
 
 ### Expansion Base Samples (`xiao_expanded/`):
 
@@ -101,7 +103,8 @@ The repository is organized into the following sample projects:
 - `xiao_expanded/buzzer/` - Button-triggered PWM buzzer control at 1kHz (working - tested with expansion base, press D1 button to sound buzzer on D3)
 - `xiao_expanded/grove_relay/` - Expansion base Grove relay control sample (requires expansion base hardware & a grove relay connected on port a0/d0)
 - `xiao_expanded/oled/` - OLED display sample for expansion base
-- `xiao_expanded/sd_card/` - SD Card with expansion base using SPI bit-bang driver (working - uses software SPI to overcome hardware SPI minimum frequency limitation, successfully reads/writes files)
+- `xiao_expanded/sd_card/` - SD Card with expansion base using SPI bit-bang driver (working - uses software SPI to overcome SPI00/SPIM00 2MHz minimum frequency limitation, successfully reads/writes files)
+- `xiao_expanded/sd_card_hw/` - SD Card with expansion base using hardware SPI20 peripheral (working - uses SDHC driver with hardware SPI20, supports 400kHz initialization and up to 24MHz data transfer, includes filesystem shell interface)
 
 #### 🧪 Needs Testing (Board Config Ready):
 - `xiao_expanded/rtc/` - Real-time clock sample for expansion base
