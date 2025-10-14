@@ -1,7 +1,0 @@
-default: blink
-build_dir: M:/nRF54L15/blink/build_xiao
-domains:
-  - name: blink
-    build_dir: M:/nRF54L15/blink/build_xiao/blink
-flash_order:
-  - blink

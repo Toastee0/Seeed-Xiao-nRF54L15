@@ -7,5 +7,5 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(sd_card)
 
 target_sources(app PRIVATE
-  src/main_simple.c
+  src/main.c
 )
