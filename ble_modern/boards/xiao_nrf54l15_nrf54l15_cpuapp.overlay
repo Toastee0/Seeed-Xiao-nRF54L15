@@ -1,0 +1,26 @@
+/ {
+    aliases {
+        sw0 = &usr_btn;
+        led0 = &led0;
+    };
+    
+    buttons {
+        compatible = "gpio-keys";
+    };
+};
+
+// Enable Nordic BT stack for the Xiao board (not enabled by default like with DK)
+
+&bt_hci_controller {
+	status = "okay";
+};
+
+&bt_hci_sdc {
+	status = "okay";
+};
+
+/ {
+	chosen {
+		zephyr,bt-hci = &bt_hci_controller;
+	};
+};

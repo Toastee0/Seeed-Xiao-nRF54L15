@@ -79,6 +79,7 @@ The repository is organized into the following sample projects:
 - `led_strip/` - LED strip control using WS2812/SK6812 (working - outputs on MOSI/D10 only, uses SPI backend)
 - `pwm/` - PWM LED fade sample with smooth brightness control (working - tested on D1/P1.05, 1kHz PWM frequency)
 - `pwm_rgb/` - RGB LED control with 3-channel PWM - rainbow effects, HSV color conversion, smooth color transitions (working - tested on D1/D2/D3, includes fade effects between colors)
+- `ble_modern/` - Modern Bluetooth Low Energy beacon sample with LED status indication (working - advertises as beacon with URL, LED blinks to show running status, tested on hardware)
 
 #### 🧪 Needs Testing (Board Config Ready):
 - `battery/` - Battery monitoring sample (board config updated)
