@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build bap_broadcast_sink",
+			"type": "shell",
+			"command": "west build --pristine -b nrf52840dongle_nrf52840 -- -DEXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

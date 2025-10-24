@@ -1,0 +1,158 @@
+// XIAO nRF54L15 BAP Broadcast Source Device Tree Overlay
+// Configured with PDM microphone for audio input
+
+/ {
+	aliases {
+		sw0 = &usr_btn;
+		led0 = &led0;
+		mic = &dmic_dev;
+	};
+	
+	buttons {
+		compatible = "gpio-keys";
+	};
+};
+
+// Enable PDM microphone (use default pinctrl - WORKING config!)
+dmic_dev: &pdm20 {
+	status = "okay";
+};
+
+// Enable Nordic BT stack for the Xiao board (not enabled by default like with DK)
+
+&bt_hci_controller {
+	status = "okay";
+};
+
+&bt_hci_sdc {
+	status = "okay";
+};
+
+/ {
+	chosen {
+		zephyr,bt-hci = &bt_hci_controller;
+		nordic,pdm-nrfx = &pdm20;
+		nordic,rpc-uart = &uart21;
+		zephyr,shell-uart = &uart21;
+		zephyr,console = &uart21;
+	};
+};
+
+// Enable GPIO controllers
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};
+
+&gpio2 {
+	status = "okay";
+};
+
+&uart21_default {
+	group1 {
+		psels = <NRF_PSEL(UART_TX, 1, 9)>;
+	};
+
+	group2 {
+		psels = <NRF_PSEL(UART_RX, 1, 8)>;
+		bias-pull-up;
+	};
+};
+
+&uart21_sleep {
+	group1 {
+		psels = <NRF_PSEL(UART_TX, 1, 9)>,
+			<NRF_PSEL(UART_RX, 1, 8)>;
+		low-power-enable;
+	};
+};
+
+
+// Configure UART for console output
+&uart20 {
+	status = "disabled";
+	current-speed = <115200>;
+};
+
+dmic_dev: &pdm20 {
+    status = "okay";
+};
+// Enable PDM microphone for audio input
+&pdm20 {
+	status = "okay";
+	pinctrl-0 = <&pdm20_default>;
+	pinctrl-names = "default";
+};
+
+// Enable radio for Bluetooth
+&radio {
+	status = "okay";
+};
+
+// Configure power management
+&cpuapp_rram {
+	status = "okay";
+};
+
+&power {
+	status = "okay";
+};
+
+/*
+ * Copyright (c) 2025 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <dt-bindings/usb/audio.h>
+
+/ {
+	uac2_broadcaster: usb_audio2 {
+		compatible = "zephyr,uac2";
+		status = "okay";
+		full-speed;
+		audio-function = <AUDIO_FUNCTION_OTHER>;
+
+		/* Clock supporting 48KHz
+		 *
+		 * For simplicity we claim support for 48KHz only and then downsample if needed
+		 */
+		uac_aclk: aclk {
+			compatible = "zephyr,uac2-clock-source";
+			clock-type = "internal-programmable";
+			frequency-control = "read-only";
+			sampling-frequencies = <48000>;
+			/* Falsely claim synchronous audio because we
+			 * currently don't calculate feedback value
+			 */
+			sof-synchronized;
+		};
+
+		/* USB Audio terminal from USB host to USB device */
+		out_terminal: out_terminal {
+			compatible = "zephyr,uac2-input-terminal";
+			clock-source = <&uac_aclk>;
+			terminal-type = <USB_TERMINAL_STREAMING>;
+			front-left;
+			front-right;
+		};
+
+		/* The broadcaster_output terminal defines what we are sending over Bluetooth */
+		broadcaster_output: headphones {
+			compatible = "zephyr,uac2-output-terminal";
+			data-source = <&out_terminal>;
+			clock-source = <&uac_aclk>;
+			terminal-type = <OUTPUT_TERMINAL_UNDEFINED>;
+		};
+
+		as_iso_out: out_interface {
+			compatible = "zephyr,uac2-audio-streaming";
+			linked-terminal = <&out_terminal>;
+			subslot-size = <2>;
+			bit-resolution = <16>;
+		};
+	};
+};
