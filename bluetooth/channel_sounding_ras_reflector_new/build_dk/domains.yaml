@@ -1,0 +1,7 @@
+default: channel_sounding_ras_reflector_new
+build_dir: M:/nRF54L15/bluetooth/channel_sounding_ras_reflector_new/build_dk
+domains:
+  - name: channel_sounding_ras_reflector_new
+    build_dir: M:/nRF54L15/bluetooth/channel_sounding_ras_reflector_new/build_dk/channel_sounding_ras_reflector_new
+flash_order:
+  - channel_sounding_ras_reflector_new
