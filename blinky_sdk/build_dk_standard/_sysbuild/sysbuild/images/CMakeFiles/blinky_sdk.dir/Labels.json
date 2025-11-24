@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/CMakeFiles/blinky_sdk"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/CMakeFiles/blinky_sdk.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/CMakeFiles/blinky_sdk-complete.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/blinky_sdk-prefix/src/blinky_sdk-stamp/blinky_sdk-build.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/blinky_sdk-prefix/src/blinky_sdk-stamp/blinky_sdk-configure.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/blinky_sdk-prefix/src/blinky_sdk-stamp/blinky_sdk-download.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/blinky_sdk-prefix/src/blinky_sdk-stamp/blinky_sdk-install.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/blinky_sdk-prefix/src/blinky_sdk-stamp/blinky_sdk-mkdir.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/blinky_sdk-prefix/src/blinky_sdk-stamp/blinky_sdk-patch.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_sdk/build_dk_standard/_sysbuild/sysbuild/images/blinky_sdk-prefix/src/blinky_sdk-stamp/blinky_sdk-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"blinky_sdk"
+		],
+		"name" : "blinky_sdk"
+	}
+}

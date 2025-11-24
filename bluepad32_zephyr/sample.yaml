@@ -1,0 +1,15 @@
+sample:
+  name: Bluepad32 for Zephyr
+  description: Bluetooth gamepad/controller library ported to Zephyr RTOS
+tests:
+  sample.bluepad32.basic:
+    harness: console
+    tags: bluetooth
+    integration_platforms:
+      - xiao_nrf54l15/nrf54l15/cpuapp
+      - nrf52840dk/nrf52840
+      - nrf5340dk/nrf5340/cpuapp
+    platform_allow:
+      - xiao_nrf54l15/nrf54l15/cpuapp
+      - nrf52840dk/nrf52840
+      - nrf5340dk/nrf5340/cpuapp

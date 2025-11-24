@@ -1,0 +1,24 @@
+cmake:
+  board:
+    name: 'nrf54l15dk'
+    path:
+     - 'C:/ncs/v3.2.0-preview2/zephyr/boards/nordic/nrf54l15dk'
+    qualifiers: 'nrf54l15/cpuflpr'
+    revision: ''
+  images:
+   - name: 'mspi'
+     source-dir: 'M:/nRF54L15/hpf/mspi'
+     type: 'MAIN'
+   - name: 'vpr_launcher'
+     source-dir: ''
+  kconfig:
+    files:
+     - 'M:/nRF54L15/hpf/mspi/build_test/_sysbuild/empty.conf'
+     - 'm:/nRF54L15/hpf/mspi/sysbuild.conf'
+    user-files:
+     - 'm:/nRF54L15/hpf/mspi/sysbuild.conf'
+version: '0.1.0'
+west:
+  command: 'C:\Python313\Scripts\west build --build-dir build_test . --pristine --board nrf54l15dk/nrf54l15/cpuflpr'
+  topdir: 'C:\ncs\v3.2.0-preview2'
+  version: '1.4.0'

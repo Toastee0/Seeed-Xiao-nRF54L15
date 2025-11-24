@@ -23,9 +23,12 @@ LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/sys/util.h>
+#include <hal/nrf_comp.h>
 
 #include "font_5x5.h"
 #include "water_physics.h"
+#include "audio_viz.h"
+#include "animations.h"
 
 
 #define STRIP_NODE		DT_ALIAS(led_strip)
@@ -65,6 +68,16 @@ static const struct device *i2c_dev;
 static float tilt_x = 0.0f;  // Roll (left/right)
 static float tilt_y = 0.0f;  // Pitch (forward/backward)
 static bool imu_available = false;
+
+// Animation mode state
+static bool animation_mode = false;  // false = water sim, true = audio/IMU animations
+static uint32_t last_frame_time = 0;
+
+// Button state for animation control
+static bool button_pressed = false;
+
+// Button device for animation control
+static const struct gpio_dt_spec button = GPIO_DT_SPEC_GET(DT_ALIAS(sw0), gpios);
 
 /**
  * @brief Convert x,y matrix coordinates to linear pixel index
@@ -147,6 +160,7 @@ static void draw_vline(int x, int y, int height, struct led_rgb color)
 /**
  * @brief Draw a rectangle outline
  */
+__attribute__((unused))
 static void draw_rect(int x, int y, int w, int h, struct led_rgb color)
 {
 	draw_hline(x, y, w, color);
@@ -158,6 +172,7 @@ static void draw_rect(int x, int y, int w, int h, struct led_rgb color)
 /**
  * @brief Fill a rectangle
  */
+__attribute__((unused))
 static void fill_rect(int x, int y, int w, int h, struct led_rgb color)
 {
 	for (int row = 0; row < h; row++) {
@@ -250,6 +265,48 @@ static int read_imu(void)
 }
 
 /**
+ * @brief Initialize button for animation control
+ */
+static int init_button(void)
+{
+	if (!gpio_is_ready_dt(&button)) {
+		LOG_ERR("Button device not ready");
+		return -ENODEV;
+	}
+
+	int ret = gpio_pin_configure_dt(&button, GPIO_INPUT);
+	if (ret != 0) {
+		LOG_ERR("Failed to configure button: %d", ret);
+		return ret;
+	}
+
+	LOG_INF("Button initialized for animation control");
+	return 0;
+}
+
+/**
+ * @brief Check button state and handle animation cycling
+ */
+static void check_button(void)
+{
+	bool current_state = gpio_pin_get_dt(&button);
+	
+	// Button pressed (active low)
+	if (!current_state && !button_pressed) {
+		button_pressed = true;
+		
+		// Cycle to next animation
+		if (animation_mode) {
+			animations_next_mode();
+			LOG_INF("Animation: %s", 
+				animations_get_mode_name(animations_get_mode()));
+		}
+	} else if (current_state) {
+		button_pressed = false;
+	}
+}
+
+/**
  * @brief Draw a character at position using 5x5 font
  */
 static void draw_char(int x, int y, char c, struct led_rgb color)
@@ -291,6 +348,7 @@ static void draw_string(int x, int y, const char *str, struct led_rgb color)
 /**
  * @brief Get pixel width of a string
  */
+__attribute__((unused))
 static int string_width(const char *str)
 {
 	int len = 0;
@@ -302,6 +360,7 @@ static int string_width(const char *str)
 /**
  * @brief Demo: Scrolling text
  */
+__attribute__((unused))
 static void demo_scrolling_text(int offset, const char *text, struct led_rgb color)
 {
 	clear_matrix();
@@ -353,6 +412,22 @@ int main(void)
 		LOG_WRN("I2C device not ready");
 	}
 
+	// Initialize button for controls
+	if (init_button() != 0) {
+		LOG_WRN("Button initialization failed, continuing without button");
+	}
+
+	// Initialize audio visualizer
+	if (audio_viz_init() == 0) {
+		LOG_INF("Audio visualizer initialized");
+	} else {
+		LOG_WRN("Audio visualizer not available");
+	}
+
+	// Initialize animations
+	animations_init(MATRIX_WIDTH, MATRIX_HEIGHT);
+	LOG_INF("Animations initialized");
+
 	LOG_INF("LED Matrix: %dx%d (%d pixels) in raster format", 
 		MATRIX_WIDTH, MATRIX_HEIGHT, MATRIX_SIZE);
 	LOG_INF("Max power at brightness 105: ~1435 mA (safe for 5 matrices @ 1.5A)");
@@ -375,28 +450,60 @@ int main(void)
 	update_display();
 	k_msleep(500);
 
-	// Initialize water physics simulation (fill bottom 3 rows)
-	if (water_physics_init(MATRIX_WIDTH, MATRIX_HEIGHT, 3) != 0) {
+	// Initialize water physics simulation with "HELLO" text
+	if (water_physics_init_text(MATRIX_WIDTH, MATRIX_HEIGHT, "HELLO") != 0) {
 		LOG_ERR("Failed to initialize water physics");
 		return 0;
 	}
-	LOG_INF("Water physics initialized");
+	LOG_INF("Water physics initialized with HELLO text");
 	
-	// Cyan/blue water color
-	struct led_rgb water_color = {.r = 0, .g = CONFIG_SAMPLE_LED_BRIGHTNESS/2, .b = CONFIG_SAMPLE_LED_BRIGHTNESS};
+	// Cyan/blue water color (much dimmer)
+	struct led_rgb water_color = {.r = 0, .g = 20, .b = 40};
+	
+	// Start in animation mode
+	animation_mode = true;
+	if (audio_viz_start() == 0) {
+		LOG_INF("Audio capture started");
+	}
+	last_frame_time = k_uptime_get_32();
+	
+	LOG_INF("==============================================");
+	LOG_INF("Button Controls:");
+	LOG_INF("  SW0 (User Button) - Cycle through animations");
+	LOG_INF("==============================================");
 	
 	int frame_counter = 0;
+	bool first_frame = true;
 	
 	while (1) {
-		// Read IMU every frame for responsive liquid
+		uint32_t current_time = k_uptime_get_32();
+		uint32_t delta_time = current_time - last_frame_time;
+		last_frame_time = current_time;
+		
+		// Read IMU every frame
 		if (imu_available) {
 			read_imu();
-			water_physics_set_tilt(tilt_x, tilt_y);
 		}
 
-		// Update and render liquid simulation
-		water_physics_update();
-		render_liquid(water_color);
+		// Check button for animation cycling
+		check_button();
+		
+		if (animation_mode) {
+			// Animation mode - process audio and render animations
+			audio_viz_process();
+			animations_update(pixels, tilt_x, tilt_y, delta_time);
+		} else {
+			// Water simulation mode
+			if (first_frame) {
+				render_liquid(water_color);
+				update_display();
+				first_frame = false;
+			}
+			
+			water_physics_set_tilt(tilt_x, tilt_y);
+			water_physics_update();
+			render_liquid(water_color);
+		}
 		
 		rc = update_display();
 		if (rc) {
@@ -404,7 +511,7 @@ int main(void)
 		}
 		
 		frame_counter++;
-		k_sleep(DELAY_TIME);
+		// No sleep - run as fast as possible, delta_time handles frame rate
 	}
 
 	return 0;

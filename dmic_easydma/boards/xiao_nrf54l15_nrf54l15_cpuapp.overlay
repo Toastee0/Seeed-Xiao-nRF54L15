@@ -1,0 +1,9 @@
+/ {
+	aliases {
+		mic = &dmic_dev;
+	};
+};
+
+dmic_dev: &pdm20 {
+	status = "okay";
+};

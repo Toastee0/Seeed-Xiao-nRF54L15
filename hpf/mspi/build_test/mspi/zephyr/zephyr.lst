@@ -1,0 +1,4788 @@
+
+zephyr.elf:     file format elf32-littleriscv
+
+
+Disassembly of section rom_start:
+
+2003c400 <__start>:
+SECTION_FUNC(vectors, __start)
+#if defined(CONFIG_RISCV_GP)
+	/* Initialize global pointer */
+	.option push
+	.option norelax
+	la gp, __global_pointer$
+2003c400:	00004197          	auipc	gp,0x4
+2003c404:	c2818193          	addi	gp,gp,-984 # 20040028 <__global_pointer$>
+#endif
+
+	.option norvc;
+
+#if defined(CONFIG_SOC_RESET_HOOK)
+	call soc_reset_hook
+2003c408:	106020ef          	jal	ra,2003e50e <SystemInit>
+	 * CONFIG_RISCV_TRAP_HANDLER_ALIGNMENT)
+	 */
+#if defined(CONFIG_USE_ISR_WRAPPER)
+	la t0, _isr_wrapper
+#else
+	add t0, zero, zero
+2003c40c:	000002b3          	add	t0,zero,zero
+#endif
+	addi t0, t0, 0x03 /* Enable CLIC vectored mode by setting LSB */
+2003c410:	00328293          	addi	t0,t0,3
+	csrw mtvec, t0
+2003c414:	30529073          	csrw	mtvec,t0
+	 * When an interrupt occurs in CLIC vectored mode, the address of the
+	 * handler entry from the vector table is loaded and then jumped to in
+	 * hardware. This time mtvt is used as the base address for the
+	 * interrupt table.
+	 */
+	la t0, _irq_vector_table
+2003c418:	00000297          	auipc	t0,0x0
+2003c41c:	0e828293          	addi	t0,t0,232 # 2003c500 <_irq_vector_table>
+	csrw 0x307, t0 /* mtvt */
+2003c420:	30729073          	csrw	0x307,t0
+#endif /* CONFIG_RISCV_HAS_CLIC&& !CONFIG_LEGACY_CLIC */
+
+#endif /* CONFIG_RISCV_VECTORED_MODE */
+
+	/* Jump to __reset */
+	tail __reset
+2003c424:	aba1                	j	2003c97c <_vector_end>
+	...
+
+2003c500 <_irq_vector_table>:
+2003c500:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c510:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c520:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c530:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c540:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c550:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c560:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c570:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c580:	e45e 2003 d13e 2003 d17c 2003 e1ea 2003     ^.. >.. |.. ... 
+2003c590:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c5a0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c5b0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c5c0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c5d0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c5e0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c5f0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c600:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c610:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c620:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c630:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c640:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c650:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c660:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c670:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c680:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c690:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c6a0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c6b0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c6c0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c6d0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c6e0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c6f0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c700:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c710:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c720:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c730:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c740:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c750:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c760:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c770:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c780:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c790:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c7a0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c7b0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c7c0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c7d0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c7e0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c7f0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c800:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c810:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c820:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c830:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c840:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c850:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c860:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c870:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c880:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c890:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c8a0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c8b0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c8c0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c8d0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c8e0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c8f0:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c900:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c910:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c920:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c930:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c940:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c950:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c960:	e1ea 2003 e1ea 2003 e1ea 2003 e1ea 2003     ... ... ... ... 
+2003c970:	e1ea 2003 e1ea 2003 e1ea 2003               ... ... ... 
+
+Disassembly of section reset:
+
+2003c97c <__reset>:
+	/*
+	 * jump to __initialize
+	 * use call opcode in case __initialize is far away.
+	 * This will be dependent on linker.ld configuration.
+	 */
+	call __initialize
+2003c97c:	2021                	jal	2003c984 <__initialize>
+	...
+
+Disassembly of section exceptions:
+
+2003c980 <__soc_handle_irq>:
+
+/*
+ * No need to clear anything, pending bit is cleared by HW.
+ */
+SECTION_FUNC(exception.other, __soc_handle_irq)
+	ret
+2003c980:	8082                	ret
+
+Disassembly of section text:
+
+2003c984 <__initialize>:
+/*
+ * Remainder of asm-land initialization code before we can jump into
+ * the C domain
+ */
+SECTION_FUNC(TEXT, __initialize)
+	csrr a0, mhartid
+2003c984:	f1402573          	csrr	a0,mhartid
+	li t0, CONFIG_RV_BOOT_HART
+2003c988:	4281                	li	t0,0
+	beq a0, t0, boot_first_core
+2003c98a:	00550363          	beq	a0,t0,2003c990 <boot_first_core>
+	j boot_secondary_core
+2003c98e:	a819                	j	2003c9a4 <boot_secondary_core>
+
+2003c990 <boot_first_core>:
+
+	/*
+	 * Initially, setup stack pointer to
+	 * z_interrupt_stacks + __z_interrupt_stack_SIZEOF
+	 */
+	la sp, z_interrupt_stacks
+2003c990:	00002117          	auipc	sp,0x2
+2003c994:	26010113          	addi	sp,sp,608 # 2003ebf0 <z_interrupt_stacks>
+	li t0, __z_interrupt_stack_SIZEOF
+2003c998:	6285                	lui	t0,0x1
+2003c99a:	80028293          	addi	t0,t0,-2048 # 800 <CONFIG_ISR_STACK_SIZE>
+	add sp, sp, t0
+2003c99e:	9116                	add	sp,sp,t0
+
+	/*
+	 * Jump into C domain. z_prep_c zeroes BSS, copies rw data into RAM,
+	 * and then enters kernel z_cstart
+	 */
+	call z_prep_c
+2003c9a0:	059010ef          	jal	ra,2003e1f8 <z_prep_c>
+
+2003c9a4 <boot_secondary_core>:
+	la t0, riscv_cpu_boot_flag
+	li t1, 1
+	sr t1, 0(t0)
+	j arch_secondary_cpu_init
+#else
+	j loop_unconfigured_cores
+2003c9a4:	a009                	j	2003c9a6 <loop_unconfigured_cores>
+
+2003c9a6 <loop_unconfigured_cores>:
+#endif
+
+loop_unconfigured_cores:
+	wfi
+2003c9a6:	10500073          	wfi
+	j loop_unconfigured_cores
+2003c9aa:	bff5                	j	2003c9a6 <loop_unconfigured_cores>
+	...
+
+2003c9ae <_OffsetAbsSyms>:
+GEN_OFFSET_SYM(_cpu_arch_t, user_exc_sp);
+GEN_OFFSET_SYM(_cpu_arch_t, user_exc_tmp0);
+GEN_OFFSET_SYM(_cpu_arch_t, user_exc_tmp1);
+#endif
+
+GEN_ABS_SYM_END
+2003c9ae:	8082                	ret
+
+2003c9b0 <hrt_tx>:
+2003c9b0:	415c                	lw	a5,4(a0)
+2003c9b2:	1141                	addi	sp,sp,-16
+2003c9b4:	c622                	sw	s0,12(sp)
+2003c9b6:	c426                	sw	s1,8(sp)
+2003c9b8:	c032                	sw	a2,0(sp)
+2003c9ba:	cba5                	beqz	a5,2003ca2a <hrt_tx+0x7a>
+2003c9bc:	02000713          	li	a4,32
+2003c9c0:	02b74733          	div	a4,a4,a1
+2003c9c4:	200403b7          	lui	t2,0x20040
+2003c9c8:	82838613          	addi	a2,t2,-2008 # 2003f828 <xfer_shift_ctrl>
+2003c9cc:	00264483          	lbu	s1,2(a2)
+2003c9d0:	00164783          	lbu	a5,1(a2)
+2003c9d4:	00b60123          	sb	a1,2(a2)
+2003c9d8:	00364603          	lbu	a2,3(a2)
+2003c9dc:	00300337          	lui	t1,0x300
+2003c9e0:	07a2                	slli	a5,a5,0x8
+2003c9e2:	0652                	slli	a2,a2,0x14
+2003c9e4:	00667633          	and	a2,a2,t1
+2003c9e8:	7007f793          	andi	a5,a5,1792
+2003c9ec:	8fd1                	or	a5,a5,a2
+2003c9ee:	637d                	lui	t1,0x1f
+2003c9f0:	00c59613          	slli	a2,a1,0xc
+2003c9f4:	00667633          	and	a2,a2,t1
+2003c9f8:	8fd1                	or	a5,a5,a2
+2003c9fa:	177d                	addi	a4,a4,-1
+2003c9fc:	0ff77713          	zext.b	a4,a4
+2003ca00:	82e38423          	sb	a4,-2008(t2)
+2003ca04:	03f77713          	andi	a4,a4,63
+2003ca08:	8fd9                	or	a5,a5,a4
+2003ca0a:	bcb79073          	csrw	0xbcb,a5
+2003ca0e:	001f0737          	lui	a4,0x1f0
+2003ca12:	01059793          	slli	a5,a1,0x10
+2003ca16:	8ff9                	and	a5,a5,a4
+2003ca18:	0047e793          	ori	a5,a5,4
+2003ca1c:	c23e                	sw	a5,4(sp)
+2003ca1e:	4301                	li	t1,0
+2003ca20:	82838293          	addi	t0,t2,-2008
+2003ca24:	415c                	lw	a5,4(a0)
+2003ca26:	00f36663          	bltu	t1,a5,2003ca32 <hrt_tx+0x82>
+2003ca2a:	4432                	lw	s0,12(sp)
+2003ca2c:	44a2                	lw	s1,8(sp)
+2003ca2e:	0141                	addi	sp,sp,16
+2003ca30:	8082                	ret
+2003ca32:	415c                	lw	a5,4(a0)
+2003ca34:	4705                	li	a4,1
+2003ca36:	406787b3          	sub	a5,a5,t1
+2003ca3a:	00e78e63          	beq	a5,a4,2003ca56 <hrt_tx+0xa6>
+2003ca3e:	4709                	li	a4,2
+2003ca40:	0ae78363          	beq	a5,a4,2003cae6 <hrt_tx+0x136>
+2003ca44:	4118                	lw	a4,0(a0)
+2003ca46:	4781                	li	a5,0
+2003ca48:	c731                	beqz	a4,2003ca94 <hrt_tx+0xe4>
+2003ca4a:	411c                	lw	a5,0(a0)
+2003ca4c:	00231713          	slli	a4,t1,0x2
+2003ca50:	97ba                	add	a5,a5,a4
+2003ca52:	439c                	lw	a5,0(a5)
+2003ca54:	a081                	j	2003ca94 <hrt_tx+0xe4>
+2003ca56:	0012c603          	lbu	a2,1(t0)
+2003ca5a:	0022c783          	lbu	a5,2(t0)
+2003ca5e:	647d                	lui	s0,0x1f
+2003ca60:	0622                	slli	a2,a2,0x8
+2003ca62:	07b2                	slli	a5,a5,0xc
+2003ca64:	8fe1                	and	a5,a5,s0
+2003ca66:	70067613          	andi	a2,a2,1792
+2003ca6a:	8e5d                	or	a2,a2,a5
+2003ca6c:	00854703          	lbu	a4,8(a0)
+2003ca70:	0032c783          	lbu	a5,3(t0)
+2003ca74:	00300437          	lui	s0,0x300
+2003ca78:	177d                	addi	a4,a4,-1 # 1effff <CONFIG_FLASH_BASE_ADDRESS+0x76bff>
+2003ca7a:	07d2                	slli	a5,a5,0x14
+2003ca7c:	0ff77713          	zext.b	a4,a4
+2003ca80:	8fe1                	and	a5,a5,s0
+2003ca82:	82e38423          	sb	a4,-2008(t2)
+2003ca86:	8fd1                	or	a5,a5,a2
+2003ca88:	03f77713          	andi	a4,a4,63
+2003ca8c:	8fd9                	or	a5,a5,a4
+2003ca8e:	bcb79073          	csrw	0xbcb,a5
+2003ca92:	455c                	lw	a5,12(a0)
+2003ca94:	00958b63          	beq	a1,s1,2003caaa <hrt_tx+0xfa>
+2003ca98:	bce02773          	csrr	a4,0xbce
+2003ca9c:	0ff77713          	zext.b	a4,a4
+2003caa0:	ff65                	bnez	a4,2003ca98 <hrt_tx+0xe8>
+2003caa2:	4712                	lw	a4,4(sp)
+2003caa4:	be371073          	csrw	0xbe3,a4
+2003caa8:	84ae                	mv	s1,a1
+2003caaa:	01054703          	lbu	a4,16(a0)
+2003caae:	0ff77613          	zext.b	a2,a4
+2003cab2:	cb2d                	beqz	a4,2003cb24 <hrt_tx+0x174>
+2003cab4:	4705                	li	a4,1
+2003cab6:	00e61463          	bne	a2,a4,2003cabe <hrt_tx+0x10e>
+2003caba:	bc979073          	csrw	0xbc9,a5
+2003cabe:	02031263          	bnez	t1,2003cae2 <hrt_tx+0x132>
+2003cac2:	4782                	lw	a5,0(sp)
+2003cac4:	0007c783          	lbu	a5,0(a5)
+2003cac8:	ef89                	bnez	a5,2003cae2 <hrt_tx+0x132>
+2003caca:	87b6                	mv	a5,a3
+2003cacc:	e291                	bnez	a3,2003cad0 <hrt_tx+0x120>
+2003cace:	4785                	li	a5,1
+2003cad0:	01079693          	slli	a3,a5,0x10
+2003cad4:	82c1                	srli	a3,a3,0x10
+2003cad6:	7d569073          	csrw	0x7d5,a3
+2003cada:	4782                	lw	a5,0(sp)
+2003cadc:	4705                	li	a4,1
+2003cade:	00e78023          	sb	a4,0(a5)
+2003cae2:	0305                	addi	t1,t1,1 # 1f001 <CONFIG_PM_PARTITION_SIZE_B0_IMAGE+0x18001>
+2003cae4:	b781                	j	2003ca24 <hrt_tx+0x74>
+2003cae6:	0012c603          	lbu	a2,1(t0)
+2003caea:	0022c783          	lbu	a5,2(t0)
+2003caee:	647d                	lui	s0,0x1f
+2003caf0:	0622                	slli	a2,a2,0x8
+2003caf2:	07b2                	slli	a5,a5,0xc
+2003caf4:	8fe1                	and	a5,a5,s0
+2003caf6:	70067613          	andi	a2,a2,1792
+2003cafa:	8e5d                	or	a2,a2,a5
+2003cafc:	00954703          	lbu	a4,9(a0)
+2003cb00:	0032c783          	lbu	a5,3(t0)
+2003cb04:	00300437          	lui	s0,0x300
+2003cb08:	177d                	addi	a4,a4,-1
+2003cb0a:	07d2                	slli	a5,a5,0x14
+2003cb0c:	0ff77713          	zext.b	a4,a4
+2003cb10:	8fe1                	and	a5,a5,s0
+2003cb12:	82e38423          	sb	a4,-2008(t2)
+2003cb16:	8fd1                	or	a5,a5,a2
+2003cb18:	03f77713          	andi	a4,a4,63
+2003cb1c:	8fd9                	or	a5,a5,a4
+2003cb1e:	bcb79073          	csrw	0xbcb,a5
+2003cb22:	b70d                	j	2003ca44 <hrt_tx+0x94>
+2003cb24:	bc879073          	csrw	0xbc8,a5
+2003cb28:	bf59                	j	2003cabe <hrt_tx+0x10e>
+
+2003cb2a <hrt_write>:
+2003cb2a:	1141                	addi	sp,sp,-16
+2003cb2c:	c422                	sw	s0,8(sp)
+2003cb2e:	c606                	sw	ra,12(sp)
+2003cb30:	c226                	sw	s1,4(sp)
+2003cb32:	842a                	mv	s0,a0
+2003cb34:	000101a3          	sb	zero,3(sp)
+2003cb38:	05a55783          	lhu	a5,90(a0)
+2003cb3c:	bc179073          	csrw	0xbc1,a5
+2003cb40:	4781                	li	a5,0
+2003cb42:	4651                	li	a2,20
+2003cb44:	4691                	li	a3,4
+2003cb46:	02c78733          	mul	a4,a5,a2
+2003cb4a:	9722                	add	a4,a4,s0
+2003cb4c:	4358                	lw	a4,4(a4)
+2003cb4e:	ef2d                	bnez	a4,2003cbc8 <hrt_write+0x9e>
+2003cb50:	0785                	addi	a5,a5,1
+2003cb52:	fed79ae3          	bne	a5,a3,2003cb46 <hrt_write+0x1c>
+2003cb56:	478d                	li	a5,3
+2003cb58:	4705                	li	a4,1
+2003cb5a:	06e78a63          	beq	a5,a4,2003cbce <hrt_write+0xa4>
+2003cb5e:	470d                	li	a4,3
+2003cb60:	06e78a63          	beq	a5,a4,2003cbd4 <hrt_write+0xaa>
+2003cb64:	4681                	li	a3,0
+2003cb66:	e789                	bnez	a5,2003cb70 <hrt_write+0x46>
+2003cb68:	05044683          	lbu	a3,80(s0) # 300050 <CONFIG_FLASH_BASE_ADDRESS+0x186c50>
+2003cb6c:	0ff6f693          	zext.b	a3,a3
+2003cb70:	20040737          	lui	a4,0x20040
+2003cb74:	82d70523          	sb	a3,-2006(a4) # 2003f82a <xfer_shift_ctrl+0x2>
+2003cb78:	7d015073          	csrwi	0x7d0,2
+2003cb7c:	05445703          	lhu	a4,84(s0)
+2003cb80:	0742                	slli	a4,a4,0x10
+2003cb82:	8341                	srli	a4,a4,0x10
+2003cb84:	7d302673          	csrr	a2,0x7d3
+2003cb88:	75c1                	lui	a1,0xffff0
+2003cb8a:	8e6d                	and	a2,a2,a1
+2003cb8c:	8f51                	or	a4,a4,a2
+2003cb8e:	7d371073          	csrw	0x7d3,a4
+2003cb92:	bc305073          	csrwi	0xbc3,0
+2003cb96:	001f0637          	lui	a2,0x1f0
+2003cb9a:	01069713          	slli	a4,a3,0x10
+2003cb9e:	8f71                	and	a4,a4,a2
+2003cba0:	00476713          	ori	a4,a4,4
+2003cba4:	be371073          	csrw	0xbe3,a4
+2003cba8:	4751                	li	a4,20
+2003cbaa:	02e787b3          	mul	a5,a5,a4
+2003cbae:	4605                	li	a2,1
+2003cbb0:	97a2                	add	a5,a5,s0
+2003cbb2:	43d8                	lw	a4,4(a5)
+2003cbb4:	02c70363          	beq	a4,a2,2003cbda <hrt_write+0xb0>
+2003cbb8:	4609                	li	a2,2
+2003cbba:	0cc70c63          	beq	a4,a2,2003cc92 <hrt_write+0x168>
+2003cbbe:	02000793          	li	a5,32
+2003cbc2:	02d7c7b3          	div	a5,a5,a3
+2003cbc6:	a821                	j	2003cbde <hrt_write+0xb4>
+2003cbc8:	0ff7f793          	zext.b	a5,a5
+2003cbcc:	b771                	j	2003cb58 <hrt_write+0x2e>
+2003cbce:	05144683          	lbu	a3,81(s0)
+2003cbd2:	bf69                	j	2003cb6c <hrt_write+0x42>
+2003cbd4:	05344683          	lbu	a3,83(s0)
+2003cbd8:	bf51                	j	2003cb6c <hrt_write+0x42>
+2003cbda:	0087c783          	lbu	a5,8(a5)
+2003cbde:	bce79073          	csrw	0xbce,a5
+2003cbe2:	05844783          	lbu	a5,88(s0)
+2003cbe6:	05644703          	lbu	a4,86(s0)
+2003cbea:	e7dd                	bnez	a5,2003cc98 <hrt_write+0x16e>
+2003cbec:	4785                	li	a5,1
+2003cbee:	00e797b3          	sll	a5,a5,a4
+2003cbf2:	07c2                	slli	a5,a5,0x10
+2003cbf4:	83c1                	srli	a5,a5,0x10
+2003cbf6:	bc07b073          	csrc	0xbc0,a5
+2003cbfa:	bc0024f3          	csrr	s1,0xbc0
+2003cbfe:	05044583          	lbu	a1,80(s0)
+2003cc02:	05445683          	lhu	a3,84(s0)
+2003cc06:	00310613          	addi	a2,sp,3
+2003cc0a:	8522                	mv	a0,s0
+2003cc0c:	3355                	jal	2003c9b0 <hrt_tx>
+2003cc0e:	05144583          	lbu	a1,81(s0)
+2003cc12:	05445683          	lhu	a3,84(s0)
+2003cc16:	00310613          	addi	a2,sp,3
+2003cc1a:	01440513          	addi	a0,s0,20
+2003cc1e:	3b49                	jal	2003c9b0 <hrt_tx>
+2003cc20:	05244583          	lbu	a1,82(s0)
+2003cc24:	05445683          	lhu	a3,84(s0)
+2003cc28:	00310613          	addi	a2,sp,3
+2003cc2c:	02840513          	addi	a0,s0,40
+2003cc30:	3341                	jal	2003c9b0 <hrt_tx>
+2003cc32:	05344583          	lbu	a1,83(s0)
+2003cc36:	05445683          	lhu	a3,84(s0)
+2003cc3a:	00310613          	addi	a2,sp,3
+2003cc3e:	03c40513          	addi	a0,s0,60
+2003cc42:	33bd                	jal	2003c9b0 <hrt_tx>
+2003cc44:	05e44783          	lbu	a5,94(s0)
+2003cc48:	e3a5                	bnez	a5,2003cca8 <hrt_write+0x17e>
+2003cc4a:	6785                	lui	a5,0x1
+2003cc4c:	0785                	addi	a5,a5,1 # 1001 <CONFIG_FPROTECT_BLOCK_SIZE+0x1>
+2003cc4e:	bcb79073          	csrw	0xbcb,a5
+2003cc52:	00020737          	lui	a4,0x20
+2003cc56:	00149793          	slli	a5,s1,0x1
+2003cc5a:	1779                	addi	a4,a4,-2 # 1fffe <CONFIG_PM_PARTITION_SIZE_B0_IMAGE+0x18ffe>
+2003cc5c:	8ff9                	and	a5,a5,a4
+2003cc5e:	bc479073          	csrw	0xbc4,a5
+2003cc62:	7d005073          	csrwi	0x7d0,0
+2003cc66:	7d505073          	csrwi	0x7d5,0
+2003cc6a:	05744783          	lbu	a5,87(s0)
+2003cc6e:	ef89                	bnez	a5,2003cc88 <hrt_write+0x15e>
+2003cc70:	05844783          	lbu	a5,88(s0)
+2003cc74:	05644703          	lbu	a4,86(s0)
+2003cc78:	e3bd                	bnez	a5,2003ccde <hrt_write+0x1b4>
+2003cc7a:	4785                	li	a5,1
+2003cc7c:	00e797b3          	sll	a5,a5,a4
+2003cc80:	07c2                	slli	a5,a5,0x10
+2003cc82:	83c1                	srli	a5,a5,0x10
+2003cc84:	bc07a073          	csrs	0xbc0,a5
+2003cc88:	40b2                	lw	ra,12(sp)
+2003cc8a:	4422                	lw	s0,8(sp)
+2003cc8c:	4492                	lw	s1,4(sp)
+2003cc8e:	0141                	addi	sp,sp,16
+2003cc90:	8082                	ret
+2003cc92:	0097c783          	lbu	a5,9(a5)
+2003cc96:	b7a1                	j	2003cbde <hrt_write+0xb4>
+2003cc98:	4785                	li	a5,1
+2003cc9a:	00e797b3          	sll	a5,a5,a4
+2003cc9e:	07c2                	slli	a5,a5,0x10
+2003cca0:	83c1                	srli	a5,a5,0x10
+2003cca2:	bc07a073          	csrs	0xbc0,a5
+2003cca6:	bf91                	j	2003cbfa <hrt_write+0xd0>
+2003cca8:	bce027f3          	csrr	a5,0xbce
+2003ccac:	0ff7f793          	zext.b	a5,a5
+2003ccb0:	ffe5                	bnez	a5,2003cca8 <hrt_write+0x17e>
+2003ccb2:	7d005073          	csrwi	0x7d0,0
+2003ccb6:	6785                	lui	a5,0x1
+2003ccb8:	0785                	addi	a5,a5,1 # 1001 <CONFIG_FPROTECT_BLOCK_SIZE+0x1>
+2003ccba:	bcb79073          	csrw	0xbcb,a5
+2003ccbe:	05e44703          	lbu	a4,94(s0)
+2003ccc2:	4785                	li	a5,1
+2003ccc4:	00f71563          	bne	a4,a5,2003ccce <hrt_write+0x1a4>
+2003ccc8:	bc00f073          	csrci	0xbc0,1
+2003cccc:	bf69                	j	2003cc66 <hrt_write+0x13c>
+2003ccce:	05e44703          	lbu	a4,94(s0)
+2003ccd2:	478d                	li	a5,3
+2003ccd4:	f8f719e3          	bne	a4,a5,2003cc66 <hrt_write+0x13c>
+2003ccd8:	bc00e073          	csrsi	0xbc0,1
+2003ccdc:	b769                	j	2003cc66 <hrt_write+0x13c>
+2003ccde:	4785                	li	a5,1
+2003cce0:	00e797b3          	sll	a5,a5,a4
+2003cce4:	07c2                	slli	a5,a5,0x10
+2003cce6:	83c1                	srli	a5,a5,0x10
+2003cce8:	bc07b073          	csrc	0xbc0,a5
+2003ccec:	bf71                	j	2003cc88 <hrt_write+0x15e>
+
+2003ccee <hrt_read>:
+2003ccee:	fdc10113          	addi	sp,sp,-36
+2003ccf2:	ce22                	sw	s0,28(sp)
+2003ccf4:	cc26                	sw	s1,24(sp)
+2003ccf6:	d006                	sw	ra,32(sp)
+2003ccf8:	05354783          	lbu	a5,83(a0)
+2003ccfc:	02000493          	li	s1,32
+2003cd00:	842a                	mv	s0,a0
+2003cd02:	02f4c4b3          	div	s1,s1,a5
+2003cd06:	05354783          	lbu	a5,83(a0)
+2003cd0a:	05354683          	lbu	a3,83(a0)
+2003cd0e:	4138                	lw	a4,64(a0)
+2003cd10:	05754303          	lbu	t1,87(a0)
+2003cd14:	5d4c                	lw	a1,60(a0)
+2003cd16:	05e54503          	lbu	a0,94(a0)
+2003cd1a:	460d                	li	a2,3
+2003cd1c:	0ff7f793          	zext.b	a5,a5
+2003cd20:	0ff6f693          	zext.b	a3,a3
+2003cd24:	0ff37313          	zext.b	t1,t1
+2003cd28:	14fd                	addi	s1,s1,-1
+2003cd2a:	0ff4f493          	zext.b	s1,s1
+2003cd2e:	00c51963          	bne	a0,a2,2003cd40 <hrt_read+0x52>
+2003cd32:	04444603          	lbu	a2,68(s0)
+2003cd36:	167d                	addi	a2,a2,-1 # 1effff <CONFIG_FLASH_BASE_ADDRESS+0x76bff>
+2003cd38:	0ff67613          	zext.b	a2,a2
+2003cd3c:	04c40223          	sb	a2,68(s0)
+2003cd40:	05844603          	lbu	a2,88(s0)
+2003cd44:	05644503          	lbu	a0,86(s0)
+2003cd48:	18061b63          	bnez	a2,2003cede <hrt_read+0x1f0>
+2003cd4c:	4605                	li	a2,1
+2003cd4e:	00a61633          	sll	a2,a2,a0
+2003cd52:	0642                	slli	a2,a2,0x10
+2003cd54:	8241                	srli	a2,a2,0x10
+2003cd56:	bc063073          	csrc	0xbc0,a2
+2003cd5a:	bc002673          	csrr	a2,0xbc0
+2003cd5e:	4048                	lw	a0,4(s0)
+2003cd60:	c032                	sw	a2,0(sp)
+2003cd62:	e509                	bnez	a0,2003cd6c <hrt_read+0x7e>
+2003cd64:	4c08                	lw	a0,24(s0)
+2003cd66:	e119                	bnez	a0,2003cd6c <hrt_read+0x7e>
+2003cd68:	5448                	lw	a0,44(s0)
+2003cd6a:	c115                	beqz	a0,2003cd8e <hrt_read+0xa0>
+2003cd6c:	04042023          	sw	zero,64(s0)
+2003cd70:	4505                	li	a0,1
+2003cd72:	04a40ba3          	sb	a0,87(s0)
+2003cd76:	8522                	mv	a0,s0
+2003cd78:	ca2e                	sw	a1,20(sp)
+2003cd7a:	c81a                	sw	t1,16(sp)
+2003cd7c:	c63a                	sw	a4,12(sp)
+2003cd7e:	c436                	sw	a3,8(sp)
+2003cd80:	c23e                	sw	a5,4(sp)
+2003cd82:	3365                	jal	2003cb2a <hrt_write>
+2003cd84:	45d2                	lw	a1,20(sp)
+2003cd86:	4342                	lw	t1,16(sp)
+2003cd88:	4732                	lw	a4,12(sp)
+2003cd8a:	46a2                	lw	a3,8(sp)
+2003cd8c:	4792                	lw	a5,4(sp)
+2003cd8e:	c038                	sw	a4,64(s0)
+2003cd90:	04640ba3          	sb	t1,87(s0)
+2003cd94:	05344303          	lbu	t1,83(s0)
+2003cd98:	4505                	li	a0,1
+2003cd9a:	14a31a63          	bne	t1,a0,2003ceee <hrt_read+0x200>
+2003cd9e:	05a45503          	lhu	a0,90(s0)
+2003cda2:	0542                	slli	a0,a0,0x10
+2003cda4:	8141                	srli	a0,a0,0x10
+2003cda6:	996d                	andi	a0,a0,-5
+2003cda8:	0542                	slli	a0,a0,0x10
+2003cdaa:	8141                	srli	a0,a0,0x10
+2003cdac:	04a41d23          	sh	a0,90(s0)
+2003cdb0:	05a45503          	lhu	a0,90(s0)
+2003cdb4:	bc151073          	csrw	0xbc1,a0
+2003cdb8:	bc315073          	csrwi	0xbc3,2
+2003cdbc:	001f0537          	lui	a0,0x1f0
+2003cdc0:	06c2                	slli	a3,a3,0x10
+2003cdc2:	8ee9                	and	a3,a3,a0
+2003cdc4:	0046e513          	ori	a0,a3,4
+2003cdc8:	be351073          	csrw	0xbe3,a0
+2003cdcc:	bce0d073          	csrwi	0xbce,1
+2003cdd0:	7d015073          	csrwi	0x7d0,2
+2003cdd4:	7d115073          	csrwi	0x7d1,2
+2003cdd8:	05445503          	lhu	a0,84(s0)
+2003cddc:	0542                	slli	a0,a0,0x10
+2003cdde:	8141                	srli	a0,a0,0x10
+2003cde0:	7d302373          	csrr	t1,0x7d3
+2003cde4:	72c1                	lui	t0,0xffff0
+2003cde6:	00537333          	and	t1,t1,t0
+2003cdea:	00656533          	or	a0,a0,t1
+2003cdee:	7d351073          	csrw	0x7d3,a0
+2003cdf2:	05445503          	lhu	a0,84(s0)
+2003cdf6:	0542                	slli	a0,a0,0x10
+2003cdf8:	8141                	srli	a0,a0,0x10
+2003cdfa:	7d302373          	csrr	t1,0x7d3
+2003cdfe:	0506                	slli	a0,a0,0x1
+2003ce00:	0342                	slli	t1,t1,0x10
+2003ce02:	0505                	addi	a0,a0,1 # 1f0001 <CONFIG_FLASH_BASE_ADDRESS+0x76c01>
+2003ce04:	01035313          	srli	t1,t1,0x10
+2003ce08:	0542                	slli	a0,a0,0x10
+2003ce0a:	00656533          	or	a0,a0,t1
+2003ce0e:	7d351073          	csrw	0x7d3,a0
+2003ce12:	657d                	lui	a0,0x1f
+2003ce14:	07b2                	slli	a5,a5,0xc
+2003ce16:	8fe9                	and	a5,a5,a0
+2003ce18:	00200337          	lui	t1,0x200
+2003ce1c:	03f4f513          	andi	a0,s1,63
+2003ce20:	8d5d                	or	a0,a0,a5
+2003ce22:	40030313          	addi	t1,t1,1024 # 200400 <CONFIG_FLASH_BASE_ADDRESS+0x87000>
+2003ce26:	00656533          	or	a0,a0,t1
+2003ce2a:	bcb51073          	csrw	0xbcb,a0
+2003ce2e:	bc905073          	csrwi	0xbc9,0
+2003ce32:	4505                	li	a0,1
+2003ce34:	0ca71463          	bne	a4,a0,2003cefc <hrt_read+0x20e>
+2003ce38:	04444283          	lbu	t0,68(s0)
+2003ce3c:	4509                	li	a0,2
+2003ce3e:	20a29763          	bne	t0,a0,2003d04c <hrt_read+0x35e>
+2003ce42:	05445703          	lhu	a4,84(s0)
+2003ce46:	65c1                	lui	a1,0x10
+2003ce48:	8f4d                	or	a4,a4,a1
+2003ce4a:	7d271073          	csrw	0x7d2,a4
+2003ce4e:	7d5025f3          	csrr	a1,0x7d5
+2003ce52:	7d502773          	csrr	a4,0x7d5
+2003ce56:	05c2                	slli	a1,a1,0x10
+2003ce58:	0742                	slli	a4,a4,0x10
+2003ce5a:	81c1                	srli	a1,a1,0x10
+2003ce5c:	8341                	srli	a4,a4,0x10
+2003ce5e:	fee598e3          	bne	a1,a4,2003ce4e <hrt_read+0x160>
+2003ce62:	4702                	lw	a4,0(sp)
+2003ce64:	01871613          	slli	a2,a4,0x18
+2003ce68:	bc961073          	csrw	0xbc9,a2
+2003ce6c:	be369073          	csrw	0xbe3,a3
+2003ce70:	05344683          	lbu	a3,83(s0)
+2003ce74:	4721                	li	a4,8
+2003ce76:	06e69f63          	bne	a3,a4,2003cef4 <hrt_read+0x206>
+2003ce7a:	bca02773          	csrr	a4,0xbca
+2003ce7e:	8341                	srli	a4,a4,0x10
+2003ce80:	c438                	sw	a4,72(s0)
+2003ce82:	7d005073          	csrwi	0x7d0,0
+2003ce86:	7d105073          	csrwi	0x7d1,0
+2003ce8a:	03f4f493          	andi	s1,s1,63
+2003ce8e:	8cdd                	or	s1,s1,a5
+2003ce90:	bcb49073          	csrw	0xbcb,s1
+2003ce94:	05744783          	lbu	a5,87(s0)
+2003ce98:	ef91                	bnez	a5,2003ceb4 <hrt_read+0x1c6>
+2003ce9a:	05844783          	lbu	a5,88(s0)
+2003ce9e:	05644703          	lbu	a4,86(s0)
+2003cea2:	24079e63          	bnez	a5,2003d0fe <hrt_read+0x410>
+2003cea6:	4785                	li	a5,1
+2003cea8:	00e797b3          	sll	a5,a5,a4
+2003ceac:	07c2                	slli	a5,a5,0x10
+2003ceae:	83c1                	srli	a5,a5,0x10
+2003ceb0:	bc07a073          	csrs	0xbc0,a5
+2003ceb4:	05344703          	lbu	a4,83(s0)
+2003ceb8:	4785                	li	a5,1
+2003ceba:	00f71c63          	bne	a4,a5,2003ced2 <hrt_read+0x1e4>
+2003cebe:	05a45783          	lhu	a5,90(s0)
+2003cec2:	0047e793          	ori	a5,a5,4
+2003cec6:	04f41d23          	sh	a5,90(s0)
+2003ceca:	05a45783          	lhu	a5,90(s0)
+2003cece:	bc179073          	csrw	0xbc1,a5
+2003ced2:	5082                	lw	ra,32(sp)
+2003ced4:	4472                	lw	s0,28(sp)
+2003ced6:	44e2                	lw	s1,24(sp)
+2003ced8:	02410113          	addi	sp,sp,36
+2003cedc:	8082                	ret
+2003cede:	4605                	li	a2,1
+2003cee0:	00a61633          	sll	a2,a2,a0
+2003cee4:	0642                	slli	a2,a2,0x10
+2003cee6:	8241                	srli	a2,a2,0x10
+2003cee8:	bc062073          	csrs	0xbc0,a2
+2003ceec:	b5bd                	j	2003cd5a <hrt_read+0x6c>
+2003ceee:	05c45503          	lhu	a0,92(s0)
+2003cef2:	b5c9                	j	2003cdb4 <hrt_read+0xc6>
+2003cef4:	bca02773          	csrr	a4,0xbca
+2003cef8:	8361                	srli	a4,a4,0x18
+2003cefa:	b759                	j	2003ce80 <hrt_read+0x192>
+2003cefc:	4509                	li	a0,2
+2003cefe:	16a71863          	bne	a4,a0,2003d06e <hrt_read+0x380>
+2003cf02:	04544503          	lbu	a0,69(s0)
+2003cf06:	1575                	addi	a0,a0,-3 # 1effd <CONFIG_PM_PARTITION_SIZE_B0_IMAGE+0x17ffd>
+2003cf08:	03f57513          	andi	a0,a0,63
+2003cf0c:	8d5d                	or	a0,a0,a5
+2003cf0e:	00656533          	or	a0,a0,t1
+2003cf12:	bcb51073          	csrw	0xbcb,a0
+2003cf16:	04444483          	lbu	s1,68(s0)
+2003cf1a:	05445503          	lhu	a0,84(s0)
+2003cf1e:	6341                	lui	t1,0x10
+2003cf20:	14fd                	addi	s1,s1,-1
+2003cf22:	0ff4f493          	zext.b	s1,s1
+2003cf26:	00656533          	or	a0,a0,t1
+2003cf2a:	7d251073          	csrw	0x7d2,a0
+2003cf2e:	bca02573          	csrr	a0,0xbca
+2003cf32:	00200337          	lui	t1,0x200
+2003cf36:	03f4f513          	andi	a0,s1,63
+2003cf3a:	8d5d                	or	a0,a0,a5
+2003cf3c:	40030313          	addi	t1,t1,1024 # 200400 <CONFIG_FLASH_BASE_ADDRESS+0x87000>
+2003cf40:	00656533          	or	a0,a0,t1
+2003cf44:	bcb51073          	csrw	0xbcb,a0
+2003cf48:	567d                	li	a2,-1
+2003cf4a:	1779                	addi	a4,a4,-2
+2003cf4c:	4289                	li	t0,2
+2003cf4e:	02000393          	li	t2,32
+2003cf52:	14c71663          	bne	a4,a2,2003d09e <hrt_read+0x3b0>
+2003cf56:	7d5025f3          	csrr	a1,0x7d5
+2003cf5a:	7d502773          	csrr	a4,0x7d5
+2003cf5e:	05c2                	slli	a1,a1,0x10
+2003cf60:	0742                	slli	a4,a4,0x10
+2003cf62:	81c1                	srli	a1,a1,0x10
+2003cf64:	8341                	srli	a4,a4,0x10
+2003cf66:	fee598e3          	bne	a1,a4,2003cf56 <hrt_read+0x268>
+2003cf6a:	4702                	lw	a4,0(sp)
+2003cf6c:	01871613          	slli	a2,a4,0x18
+2003cf70:	bc961073          	csrw	0xbc9,a2
+2003cf74:	be369073          	csrw	0xbe3,a3
+2003cf78:	05e44683          	lbu	a3,94(s0)
+2003cf7c:	470d                	li	a4,3
+2003cf7e:	16e69263          	bne	a3,a4,2003d0e2 <hrt_read+0x3f4>
+2003cf82:	bca026f3          	csrr	a3,0xbca
+2003cf86:	bc305073          	csrwi	0xbc3,0
+2003cf8a:	05445603          	lhu	a2,84(s0)
+2003cf8e:	02300713          	li	a4,35
+2003cf92:	00c77c63          	bgeu	a4,a2,2003cfaa <hrt_read+0x2bc>
+2003cf96:	7d005073          	csrwi	0x7d0,0
+2003cf9a:	05445703          	lhu	a4,84(s0)
+2003cf9e:	fdd70713          	addi	a4,a4,-35
+2003cfa2:	0742                	slli	a4,a4,0x10
+2003cfa4:	8341                	srli	a4,a4,0x10
+2003cfa6:	7d571073          	csrw	0x7d5,a4
+2003cfaa:	6741                	lui	a4,0x10
+2003cfac:	177d                	addi	a4,a4,-1 # ffff <CONFIG_PM_PARTITION_SIZE_B0_IMAGE+0x8fff>
+2003cfae:	bc202673          	csrr	a2,0xbc2
+2003cfb2:	0642                	slli	a2,a2,0x10
+2003cfb4:	8241                	srli	a2,a2,0x10
+2003cfb6:	fee60ce3          	beq	a2,a4,2003cfae <hrt_read+0x2c0>
+2003cfba:	05445603          	lhu	a2,84(s0)
+2003cfbe:	02300713          	li	a4,35
+2003cfc2:	00c77463          	bgeu	a4,a2,2003cfca <hrt_read+0x2dc>
+2003cfc6:	7da05073          	csrwi	0x7da,0
+2003cfca:	bc202673          	csrr	a2,0xbc2
+2003cfce:	0642                	slli	a2,a2,0x10
+2003cfd0:	8241                	srli	a2,a2,0x10
+2003cfd2:	bc00e073          	csrsi	0xbc0,1
+2003cfd6:	05344583          	lbu	a1,83(s0)
+2003cfda:	4711                	li	a4,4
+2003cfdc:	10e58063          	beq	a1,a4,2003d0dc <hrt_read+0x3ee>
+2003cfe0:	4309                	li	t1,2
+2003cfe2:	4291                	li	t0,4
+2003cfe4:	01869593          	slli	a1,a3,0x18
+2003cfe8:	0186d713          	srli	a4,a3,0x18
+2003cfec:	8f4d                	or	a4,a4,a1
+2003cfee:	65c1                	lui	a1,0x10
+2003cff0:	0086d513          	srli	a0,a3,0x8
+2003cff4:	f0058593          	addi	a1,a1,-256 # ff00 <CONFIG_PM_PARTITION_SIZE_B0_IMAGE+0x8f00>
+2003cff8:	8d6d                	and	a0,a0,a1
+2003cffa:	05344383          	lbu	t2,83(s0)
+2003cffe:	8f49                	or	a4,a4,a0
+2003d000:	06a2                	slli	a3,a3,0x8
+2003d002:	00ff0537          	lui	a0,0xff0
+2003d006:	8ee9                	and	a3,a3,a0
+2003d008:	8f55                	or	a4,a4,a3
+2003d00a:	00567633          	and	a2,a2,t0
+2003d00e:	04444683          	lbu	a3,68(s0)
+2003d012:	40665633          	sra	a2,a2,t1
+2003d016:	00771733          	sll	a4,a4,t2
+2003d01a:	8f51                	or	a4,a4,a2
+2003d01c:	05344603          	lbu	a2,83(s0)
+2003d020:	0685                	addi	a3,a3,1
+2003d022:	02c686b3          	mul	a3,a3,a2
+2003d026:	02000613          	li	a2,32
+2003d02a:	40d606b3          	sub	a3,a2,a3
+2003d02e:	00d71733          	sll	a4,a4,a3
+2003d032:	01871613          	slli	a2,a4,0x18
+2003d036:	01875693          	srli	a3,a4,0x18
+2003d03a:	8ed1                	or	a3,a3,a2
+2003d03c:	00875613          	srli	a2,a4,0x8
+2003d040:	8e6d                	and	a2,a2,a1
+2003d042:	0722                	slli	a4,a4,0x8
+2003d044:	8ed1                	or	a3,a3,a2
+2003d046:	8f69                	and	a4,a4,a0
+2003d048:	8f55                	or	a4,a4,a3
+2003d04a:	bd1d                	j	2003ce80 <hrt_read+0x192>
+2003d04c:	04444503          	lbu	a0,68(s0)
+2003d050:	1575                	addi	a0,a0,-3 # fefffd <CONFIG_FLASH_BASE_ADDRESS+0xe76bfd>
+2003d052:	03f57513          	andi	a0,a0,63
+2003d056:	8d5d                	or	a0,a0,a5
+2003d058:	00656533          	or	a0,a0,t1
+2003d05c:	bcb51073          	csrw	0xbcb,a0
+2003d060:	4501                	li	a0,0
+2003d062:	4309                	li	t1,2
+2003d064:	02651663          	bne	a0,t1,2003d090 <hrt_read+0x3a2>
+2003d068:	04544483          	lbu	s1,69(s0)
+2003d06c:	b57d                	j	2003cf1a <hrt_read+0x22c>
+2003d06e:	05344283          	lbu	t0,83(s0)
+2003d072:	02000513          	li	a0,32
+2003d076:	02554533          	div	a0,a0,t0
+2003d07a:	1575                	addi	a0,a0,-3
+2003d07c:	03f57513          	andi	a0,a0,63
+2003d080:	8d5d                	or	a0,a0,a5
+2003d082:	00656533          	or	a0,a0,t1
+2003d086:	bcb51073          	csrw	0xbcb,a0
+2003d08a:	fff70513          	addi	a0,a4,-1
+2003d08e:	bfd1                	j	2003d062 <hrt_read+0x374>
+2003d090:	05344503          	lbu	a0,83(s0)
+2003d094:	02000493          	li	s1,32
+2003d098:	02a4c4b3          	div	s1,s1,a0
+2003d09c:	bdbd                	j	2003cf1a <hrt_read+0x22c>
+2003d09e:	4505                	li	a0,1
+2003d0a0:	00a70963          	beq	a4,a0,2003d0b2 <hrt_read+0x3c4>
+2003d0a4:	02570963          	beq	a4,t0,2003d0d6 <hrt_read+0x3e8>
+2003d0a8:	05344483          	lbu	s1,83(s0)
+2003d0ac:	0293c4b3          	div	s1,t2,s1
+2003d0b0:	a019                	j	2003d0b6 <hrt_read+0x3c8>
+2003d0b2:	04444483          	lbu	s1,68(s0)
+2003d0b6:	14fd                	addi	s1,s1,-1
+2003d0b8:	0ff4f493          	zext.b	s1,s1
+2003d0bc:	bca02573          	csrr	a0,0xbca
+2003d0c0:	c188                	sw	a0,0(a1)
+2003d0c2:	03f4f513          	andi	a0,s1,63
+2003d0c6:	8d5d                	or	a0,a0,a5
+2003d0c8:	00656533          	or	a0,a0,t1
+2003d0cc:	bcb51073          	csrw	0xbcb,a0
+2003d0d0:	0591                	addi	a1,a1,4
+2003d0d2:	177d                	addi	a4,a4,-1
+2003d0d4:	bdbd                	j	2003cf52 <hrt_read+0x264>
+2003d0d6:	04544483          	lbu	s1,69(s0)
+2003d0da:	bff1                	j	2003d0b6 <hrt_read+0x3c8>
+2003d0dc:	4305                	li	t1,1
+2003d0de:	42f9                	li	t0,30
+2003d0e0:	b711                	j	2003cfe4 <hrt_read+0x2f6>
+2003d0e2:	bca02773          	csrr	a4,0xbca
+2003d0e6:	04444603          	lbu	a2,68(s0)
+2003d0ea:	05344683          	lbu	a3,83(s0)
+2003d0ee:	02d60633          	mul	a2,a2,a3
+2003d0f2:	02000693          	li	a3,32
+2003d0f6:	8e91                	sub	a3,a3,a2
+2003d0f8:	00d75733          	srl	a4,a4,a3
+2003d0fc:	b351                	j	2003ce80 <hrt_read+0x192>
+2003d0fe:	4785                	li	a5,1
+2003d100:	00e797b3          	sll	a5,a5,a4
+2003d104:	07c2                	slli	a5,a5,0x10
+2003d106:	83c1                	srli	a5,a5,0x10
+2003d108:	bc07b073          	csrc	0xbc0,a5
+2003d10c:	b365                	j	2003ceb4 <hrt_read+0x1c6>
+
+2003d10e <trap_entry>:
+/* The trap_entry function is the entry point for exception handling.
+ * The naked attribute prevents the compiler from generating an automatic prologue/epilogue.
+ */
+__attribute__((naked)) void trap_entry(void)
+{
+	__asm__ volatile(
+2003d10e:	1141                	addi	sp,sp,-16
+2003d110:	c606                	sw	ra,12(sp)
+2003d112:	c416                	sw	t0,8(sp)
+2003d114:	c21a                	sw	t1,4(sp)
+2003d116:	c01e                	sw	t2,0(sp)
+2003d118:	342022f3          	csrr	t0,mcause
+2003d11c:	34102373          	csrr	t1,mepc
+2003d120:	343023f3          	csrr	t2,mtval
+2003d124:	8516                	mv	a0,t0
+2003d126:	859a                	mv	a1,t1
+2003d128:	861e                	mv	a2,t2
+2003d12a:	868a                	mv	a3,sp
+2003d12c:	7e6000ef          	jal	ra,2003d912 <trap_handler>
+2003d130:	40b2                	lw	ra,12(sp)
+2003d132:	42a2                	lw	t0,8(sp)
+2003d134:	4312                	lw	t1,4(sp)
+2003d136:	4382                	lw	t2,0(sp)
+2003d138:	0141                	addi	sp,sp,16
+2003d13a:	30200073          	mret
+
+2003d13e <hrt_handler_read>:
+{
+2003d13e:	fd810113          	addi	sp,sp,-40
+2003d142:	ca2a                	sw	a0,20(sp)
+	hrt_read(&xfer_params);
+2003d144:	2003f537          	lui	a0,0x2003f
+2003d148:	ac850513          	addi	a0,a0,-1336 # 2003eac8 <xfer_params>
+{
+2003d14c:	d206                	sw	ra,36(sp)
+2003d14e:	d016                	sw	t0,32(sp)
+2003d150:	ce1a                	sw	t1,28(sp)
+2003d152:	cc1e                	sw	t2,24(sp)
+2003d154:	c82e                	sw	a1,16(sp)
+2003d156:	c632                	sw	a2,12(sp)
+2003d158:	c436                	sw	a3,8(sp)
+2003d15a:	c23a                	sw	a4,4(sp)
+2003d15c:	c03e                	sw	a5,0(sp)
+	hrt_read(&xfer_params);
+2003d15e:	3e41                	jal	2003ccee <hrt_read>
+}
+2003d160:	5092                	lw	ra,36(sp)
+2003d162:	5282                	lw	t0,32(sp)
+2003d164:	4372                	lw	t1,28(sp)
+2003d166:	43e2                	lw	t2,24(sp)
+2003d168:	4552                	lw	a0,20(sp)
+2003d16a:	45c2                	lw	a1,16(sp)
+2003d16c:	4632                	lw	a2,12(sp)
+2003d16e:	46a2                	lw	a3,8(sp)
+2003d170:	4712                	lw	a4,4(sp)
+2003d172:	4782                	lw	a5,0(sp)
+2003d174:	02810113          	addi	sp,sp,40
+2003d178:	30200073          	mret
+
+2003d17c <hrt_handler_write>:
+{
+2003d17c:	fd810113          	addi	sp,sp,-40
+2003d180:	ca2a                	sw	a0,20(sp)
+	hrt_write(&xfer_params);
+2003d182:	2003f537          	lui	a0,0x2003f
+2003d186:	ac850513          	addi	a0,a0,-1336 # 2003eac8 <xfer_params>
+{
+2003d18a:	d206                	sw	ra,36(sp)
+2003d18c:	d016                	sw	t0,32(sp)
+2003d18e:	ce1a                	sw	t1,28(sp)
+2003d190:	cc1e                	sw	t2,24(sp)
+2003d192:	c82e                	sw	a1,16(sp)
+2003d194:	c632                	sw	a2,12(sp)
+2003d196:	c436                	sw	a3,8(sp)
+2003d198:	c23a                	sw	a4,4(sp)
+2003d19a:	c03e                	sw	a5,0(sp)
+	hrt_write(&xfer_params);
+2003d19c:	3279                	jal	2003cb2a <hrt_write>
+}
+2003d19e:	5092                	lw	ra,36(sp)
+2003d1a0:	5282                	lw	t0,32(sp)
+2003d1a2:	4372                	lw	t1,28(sp)
+2003d1a4:	43e2                	lw	t2,24(sp)
+2003d1a6:	4552                	lw	a0,20(sp)
+2003d1a8:	45c2                	lw	a1,16(sp)
+2003d1aa:	4632                	lw	a2,12(sp)
+2003d1ac:	46a2                	lw	a3,8(sp)
+2003d1ae:	4712                	lw	a4,4(sp)
+2003d1b0:	4782                	lw	a5,0(sp)
+2003d1b2:	02810113          	addi	sp,sp,40
+2003d1b6:	30200073          	mret
+
+2003d1ba <adjust_tail>:
+	if (data_length == 0) {
+2003d1ba:	ce0d                	beqz	a2,2003d1f4 <adjust_tail+0x3a>
+	uint8_t last_word_length = data_length % BITS_IN_WORD;
+2003d1bc:	01f67793          	andi	a5,a2,31
+	xfer_data->word_count = NRFX_CEIL_DIV(data_length, BITS_IN_WORD);
+2003d1c0:	167d                	addi	a2,a2,-1
+2003d1c2:	8215                	srli	a2,a2,0x5
+2003d1c4:	0605                	addi	a2,a2,1
+2003d1c6:	c150                	sw	a2,4(a0)
+	if (last_word_length == 0) {
+2003d1c8:	e79d                	bnez	a5,2003d1f6 <adjust_tail+0x3c>
+		if (xfer_data->data != NULL) {
+2003d1ca:	411c                	lw	a5,0(a0)
+2003d1cc:	cb81                	beqz	a5,2003d1dc <adjust_tail+0x22>
+				((uint32_t *)xfer_data->data)[xfer_data->word_count - 1];
+2003d1ce:	411c                	lw	a5,0(a0)
+2003d1d0:	4158                	lw	a4,4(a0)
+2003d1d2:	070a                	slli	a4,a4,0x2
+2003d1d4:	97ba                	add	a5,a5,a4
+2003d1d6:	ffc7a783          	lw	a5,-4(a5)
+			xfer_data->last_word =
+2003d1da:	c55c                	sw	a5,12(a0)
+	uint8_t penultimate_word_length = BITS_IN_WORD;
+2003d1dc:	02000713          	li	a4,32
+		last_word_length = BITS_IN_WORD;
+2003d1e0:	02000793          	li	a5,32
+	xfer_data->last_word_clocks = last_word_length / frame_width;
+2003d1e4:	02b7c7b3          	div	a5,a5,a1
+	xfer_data->penultimate_word_clocks = penultimate_word_length / frame_width;
+2003d1e8:	02b74733          	div	a4,a4,a1
+	xfer_data->last_word_clocks = last_word_length / frame_width;
+2003d1ec:	00f50423          	sb	a5,8(a0)
+	xfer_data->penultimate_word_clocks = penultimate_word_length / frame_width;
+2003d1f0:	00e504a3          	sb	a4,9(a0)
+}
+2003d1f4:	8082                	ret
+	} else if ((last_word_length / frame_width == 1) && (xfer_data->word_count > 1)) {
+2003d1f6:	02b7c733          	div	a4,a5,a1
+2003d1fa:	4685                	li	a3,1
+2003d1fc:	02d71c63          	bne	a4,a3,2003d234 <adjust_tail+0x7a>
+2003d200:	4154                	lw	a3,4(a0)
+2003d202:	02d77963          	bgeu	a4,a3,2003d234 <adjust_tail+0x7a>
+		if (xfer_data->data != NULL) {
+2003d206:	4118                	lw	a4,0(a0)
+2003d208:	c30d                	beqz	a4,2003d22a <adjust_tail+0x70>
+				((uint32_t *)xfer_data->data)[xfer_data->word_count - 2] >>
+2003d20a:	4118                	lw	a4,0(a0)
+2003d20c:	00452303          	lw	t1,4(a0)
+				((uint32_t *)xfer_data->data)[xfer_data->word_count - 1]
+2003d210:	4114                	lw	a3,0(a0)
+2003d212:	4150                	lw	a2,4(a0)
+				((uint32_t *)xfer_data->data)[xfer_data->word_count - 2] >>
+2003d214:	030a                	slli	t1,t1,0x2
+2003d216:	971a                	add	a4,a4,t1
+				((uint32_t *)xfer_data->data)[xfer_data->word_count - 1]
+2003d218:	060a                	slli	a2,a2,0x2
+2003d21a:	96b2                	add	a3,a3,a2
+					<< BITS_IN_BYTE;
+2003d21c:	ffc6a683          	lw	a3,-4(a3)
+				((uint32_t *)xfer_data->data)[xfer_data->word_count - 2] >>
+2003d220:	ffb74703          	lbu	a4,-5(a4)
+					<< BITS_IN_BYTE;
+2003d224:	06a2                	slli	a3,a3,0x8
+					(BITS_IN_WORD - BITS_IN_BYTE) |
+2003d226:	8f55                	or	a4,a4,a3
+			xfer_data->last_word =
+2003d228:	c558                	sw	a4,12(a0)
+		last_word_length += BITS_IN_BYTE;
+2003d22a:	07a1                	addi	a5,a5,8
+2003d22c:	0ff7f793          	zext.b	a5,a5
+		penultimate_word_length -= BITS_IN_BYTE;
+2003d230:	4761                	li	a4,24
+2003d232:	bf4d                	j	2003d1e4 <adjust_tail+0x2a>
+	} else if (xfer_data->data == NULL) {
+2003d234:	4118                	lw	a4,0(a0)
+2003d236:	e711                	bnez	a4,2003d242 <adjust_tail+0x88>
+		xfer_data->last_word = 0;
+2003d238:	00052623          	sw	zero,12(a0)
+	uint8_t penultimate_word_length = BITS_IN_WORD;
+2003d23c:	02000713          	li	a4,32
+2003d240:	b755                	j	2003d1e4 <adjust_tail+0x2a>
+		xfer_data->last_word = ((uint32_t *)xfer_data->data)[xfer_data->word_count - 1];
+2003d242:	4118                	lw	a4,0(a0)
+2003d244:	4154                	lw	a3,4(a0)
+2003d246:	068a                	slli	a3,a3,0x2
+2003d248:	9736                	add	a4,a4,a3
+2003d24a:	ffc72703          	lw	a4,-4(a4)
+2003d24e:	c558                	sw	a4,12(a0)
+2003d250:	b7f5                	j	2003d23c <adjust_tail+0x82>
+
+2003d252 <xfer_execute>:
+{
+2003d252:	1101                	addi	sp,sp,-32
+2003d254:	ca26                	sw	s1,20(sp)
+2003d256:	84aa                	mv	s1,a0
+		&hpf_mspi_devices[hpf_mspi_xfer_config_ptr->device_index];
+2003d258:	20040537          	lui	a0,0x20040
+2003d25c:	82c52783          	lw	a5,-2004(a0) # 2003f82c <hpf_mspi_xfer_config_ptr>
+{
+2003d260:	ce06                	sw	ra,28(sp)
+2003d262:	cc22                	sw	s0,24(sp)
+		&hpf_mspi_devices[hpf_mspi_xfer_config_ptr->device_index];
+2003d264:	0007c703          	lbu	a4,0(a5)
+	if (xfer_packet->opcode == HPF_MSPI_TXRX) {
+2003d268:	4090                	lw	a2,0(s1)
+{
+2003d26a:	c42e                	sw	a1,8(sp)
+		&hpf_mspi_devices[hpf_mspi_xfer_config_ptr->device_index];
+2003d26c:	0ff77713          	zext.b	a4,a4
+2003d270:	c03a                	sw	a4,0(sp)
+	if (xfer_packet->opcode == HPF_MSPI_TXRX) {
+2003d272:	4699                	li	a3,6
+2003d274:	26d61b63          	bne	a2,a3,2003d4ea <xfer_execute+0x298>
+                                >> VPRCSR_NORDIC_SHIFTCTRLB_INMODEB_MODE_Pos;
+}
+
+NRF_STATIC_INLINE void nrf_vpr_csr_vio_config_get(nrf_vpr_csr_vio_config_t * p_config)
+{
+    uint32_t reg = nrf_csr_read(VPRCSR_NORDIC_RTPERIPHCTRL);
+2003d278:	7cc027f3          	csrr	a5,0x7cc
+{
+    uint32_t reg = (p_config->clk_polarity << VPRCSR_NORDIC_RTPERIPHCTRL_CLOCKPOLARITY_Pos) |
+                   (p_config->stop_cnt << VPRCSR_NORDIC_RTPERIPHCTRL_STOPCOUNTERS_Pos) |
+                   (p_config->input_sel << VPRCSR_NORDIC_RTPERIPHCTRL_INSEL_Pos);
+
+    nrf_csr_write(VPRCSR_NORDIC_RTPERIPHCTRL, reg);
+2003d27c:	8bc5                	andi	a5,a5,17
+2003d27e:	1007e793          	ori	a5,a5,256
+2003d282:	7cc79073          	csrw	0x7cc,a5
+		dummy_cycles = hpf_mspi_xfer_config_ptr->rx_dummy;
+2003d286:	82c52783          	lw	a5,-2004(a0)
+2003d28a:	0067d683          	lhu	a3,6(a5)
+	xfer_params.counter_value = device->cnt0_value;
+2003d28e:	4702                	lw	a4,0(sp)
+2003d290:	4799                	li	a5,6
+2003d292:	2003f3b7          	lui	t2,0x2003f
+2003d296:	02f707b3          	mul	a5,a4,a5
+2003d29a:	b2838613          	addi	a2,t2,-1240 # 2003eb28 <hpf_mspi_devices>
+	xfer_params.xfer_data[HRT_FE_COMMAND].fun_out = HRT_FUN_OUT_WORD;
+2003d29e:	4285                	li	t0,1
+		dummy_cycles = hpf_mspi_xfer_config_ptr->tx_dummy;
+2003d2a0:	06c2                	slli	a3,a3,0x10
+2003d2a2:	82c1                	srli	a3,a3,0x10
+2003d2a4:	c636                	sw	a3,12(sp)
+	xfer_params.counter_value = device->cnt0_value;
+2003d2a6:	963e                	add	a2,a2,a5
+2003d2a8:	00465583          	lhu	a1,4(a2)
+2003d2ac:	2003f7b7          	lui	a5,0x2003f
+2003d2b0:	ac878413          	addi	s0,a5,-1336 # 2003eac8 <xfer_params>
+2003d2b4:	05c2                	slli	a1,a1,0x10
+2003d2b6:	81c1                	srli	a1,a1,0x10
+2003d2b8:	04b41a23          	sh	a1,84(s0)
+	xfer_params.ce_vio = ce_vios[device->ce_index];
+2003d2bc:	00264303          	lbu	t1,2(a2)
+2003d2c0:	2003f5b7          	lui	a1,0x2003f
+2003d2c4:	8b058593          	addi	a1,a1,-1872 # 2003e8b0 <ce_vios>
+2003d2c8:	959a                	add	a1,a1,t1
+2003d2ca:	0005c583          	lbu	a1,0(a1)
+	xfer_params.ce_hold = hpf_mspi_xfer_config_ptr->hold_ce;
+2003d2ce:	82c52303          	lw	t1,-2004(a0)
+	xfer_params.ce_vio = ce_vios[device->ce_index];
+2003d2d2:	0ff5f593          	zext.b	a1,a1
+2003d2d6:	04b40b23          	sb	a1,86(s0)
+	xfer_params.ce_hold = hpf_mspi_xfer_config_ptr->hold_ce;
+2003d2da:	00334583          	lbu	a1,3(t1)
+		    hpf_mspi_xfer_config_ptr->command_length * BITS_IN_BYTE);
+2003d2de:	c21a                	sw	t1,4(sp)
+	xfer_params.ce_hold = hpf_mspi_xfer_config_ptr->hold_ce;
+2003d2e0:	0ff5f593          	zext.b	a1,a1
+2003d2e4:	04b40ba3          	sb	a1,87(s0)
+	xfer_params.cpp_mode = device->cpp;
+2003d2e8:	00164583          	lbu	a1,1(a2)
+2003d2ec:	0ff5f593          	zext.b	a1,a1
+2003d2f0:	04b40f23          	sb	a1,94(s0)
+	xfer_params.ce_polarity = device->ce_polarity;
+2003d2f4:	00364583          	lbu	a1,3(a2)
+2003d2f8:	0ff5f593          	zext.b	a1,a1
+2003d2fc:	04b40c23          	sb	a1,88(s0)
+	xfer_params.bus_widths = io_modes[device->io_mode];
+2003d300:	00064583          	lbu	a1,0(a2)
+2003d304:	2003e637          	lui	a2,0x2003e
+2003d308:	7a860613          	addi	a2,a2,1960 # 2003e7a8 <io_modes>
+2003d30c:	058a                	slli	a1,a1,0x2
+2003d30e:	962e                	add	a2,a2,a1
+2003d310:	4210                	lw	a2,0(a2)
+2003d312:	c830                	sw	a2,80(s0)
+		<< (BITS_IN_WORD - hpf_mspi_xfer_config_ptr->command_length * BITS_IN_BYTE);
+2003d314:	00134583          	lbu	a1,1(t1)
+2003d318:	40c8                	lw	a0,4(s1)
+2003d31a:	4611                	li	a2,4
+2003d31c:	40b605b3          	sub	a1,a2,a1
+2003d320:	058e                	slli	a1,a1,0x3
+2003d322:	00b515b3          	sll	a1,a0,a1
+	xfer_packet->command =
+2003d326:	c0cc                	sw	a1,4(s1)
+		<< (BITS_IN_WORD - hpf_mspi_xfer_config_ptr->address_length * BITS_IN_BYTE);
+2003d328:	00234583          	lbu	a1,2(t1)
+	adjust_tail(&xfer_params.xfer_data[HRT_FE_COMMAND], xfer_params.bus_widths.command,
+2003d32c:	ac878513          	addi	a0,a5,-1336
+		<< (BITS_IN_WORD - hpf_mspi_xfer_config_ptr->address_length * BITS_IN_BYTE);
+2003d330:	8e0d                	sub	a2,a2,a1
+2003d332:	448c                	lw	a1,8(s1)
+2003d334:	060e                	slli	a2,a2,0x3
+2003d336:	00c59633          	sll	a2,a1,a2
+	xfer_packet->address =
+2003d33a:	c490                	sw	a2,8(s1)
+	xfer_params.xfer_data[HRT_FE_COMMAND].fun_out = HRT_FUN_OUT_WORD;
+2003d33c:	00540823          	sb	t0,16(s0)
+	xfer_params.xfer_data[HRT_FE_COMMAND].data = (uint8_t *)&xfer_packet->command;
+2003d340:	00448613          	addi	a2,s1,4
+2003d344:	c010                	sw	a2,0(s0)
+	xfer_params.xfer_data[HRT_FE_COMMAND].word_count = 0;
+2003d346:	00042223          	sw	zero,4(s0)
+	adjust_tail(&xfer_params.xfer_data[HRT_FE_COMMAND], xfer_params.bus_widths.command,
+2003d34a:	05044583          	lbu	a1,80(s0)
+		    hpf_mspi_xfer_config_ptr->command_length * BITS_IN_BYTE);
+2003d34e:	00134603          	lbu	a2,1(t1)
+	adjust_tail(&xfer_params.xfer_data[HRT_FE_COMMAND], xfer_params.bus_widths.command,
+2003d352:	060e                	slli	a2,a2,0x3
+2003d354:	359d                	jal	2003d1ba <adjust_tail>
+	xfer_params.xfer_data[HRT_FE_ADDRESS].fun_out = HRT_FUN_OUT_WORD;
+2003d356:	4285                	li	t0,1
+2003d358:	02540223          	sb	t0,36(s0)
+		    hpf_mspi_xfer_config_ptr->address_length * BITS_IN_BYTE);
+2003d35c:	4312                	lw	t1,4(sp)
+	xfer_params.xfer_data[HRT_FE_ADDRESS].data = (uint8_t *)&xfer_packet->address;
+2003d35e:	00848613          	addi	a2,s1,8
+2003d362:	c850                	sw	a2,20(s0)
+	xfer_params.xfer_data[HRT_FE_ADDRESS].word_count = 0;
+2003d364:	00042c23          	sw	zero,24(s0)
+	adjust_tail(&xfer_params.xfer_data[HRT_FE_ADDRESS], xfer_params.bus_widths.address,
+2003d368:	05144583          	lbu	a1,81(s0)
+		    hpf_mspi_xfer_config_ptr->address_length * BITS_IN_BYTE);
+2003d36c:	00234603          	lbu	a2,2(t1)
+	adjust_tail(&xfer_params.xfer_data[HRT_FE_ADDRESS], xfer_params.bus_widths.address,
+2003d370:	2003f537          	lui	a0,0x2003f
+2003d374:	adc50513          	addi	a0,a0,-1316 # 2003eadc <xfer_params+0x14>
+2003d378:	060e                	slli	a2,a2,0x3
+2003d37a:	3581                	jal	2003d1ba <adjust_tail>
+	xfer_params.xfer_data[HRT_FE_DUMMY_CYCLES].fun_out = HRT_FUN_OUT_WORD;
+2003d37c:	4285                	li	t0,1
+2003d37e:	02540c23          	sb	t0,56(s0)
+		hpf_mspi_xfer_config_ptr->address_length != 0 ? HRT_FE_ADDRESS : HRT_FE_COMMAND;
+2003d382:	4312                	lw	t1,4(sp)
+	xfer_params.xfer_data[HRT_FE_DUMMY_CYCLES].data = NULL;
+2003d384:	02042423          	sw	zero,40(s0)
+	xfer_params.xfer_data[HRT_FE_DUMMY_CYCLES].word_count = 0;
+2003d388:	02042623          	sw	zero,44(s0)
+		hpf_mspi_xfer_config_ptr->address_length != 0 ? HRT_FE_ADDRESS : HRT_FE_COMMAND;
+2003d38c:	00234603          	lbu	a2,2(t1)
+	if (xfer_params.xfer_data[elem].last_word_clocks + dummy_cycles <= MAX_SHIFT_COUNT) {
+2003d390:	45d1                	li	a1,20
+2003d392:	46b2                	lw	a3,12(sp)
+		hpf_mspi_xfer_config_ptr->address_length != 0 ? HRT_FE_ADDRESS : HRT_FE_COMMAND;
+2003d394:	00c03633          	snez	a2,a2
+	if (xfer_params.xfer_data[elem].last_word_clocks + dummy_cycles <= MAX_SHIFT_COUNT) {
+2003d398:	02b60633          	mul	a2,a2,a1
+2003d39c:	2003f3b7          	lui	t2,0x2003f
+2003d3a0:	b2838793          	addi	a5,t2,-1240 # 2003eb28 <hpf_mspi_devices>
+2003d3a4:	03f00513          	li	a0,63
+2003d3a8:	c23e                	sw	a5,4(sp)
+2003d3aa:	00c405b3          	add	a1,s0,a2
+2003d3ae:	0085c603          	lbu	a2,8(a1)
+2003d3b2:	9636                	add	a2,a2,a3
+2003d3b4:	12c54e63          	blt	a0,a2,2003d4f0 <xfer_execute+0x29e>
+		xfer_params.xfer_data[elem].last_word_clocks += dummy_cycles;
+2003d3b8:	0085c603          	lbu	a2,8(a1)
+2003d3bc:	96b2                	add	a3,a3,a2
+2003d3be:	0ff6f693          	zext.b	a3,a3
+2003d3c2:	00d58423          	sb	a3,8(a1)
+	xfer_params.xfer_data[HRT_FE_DATA].fun_out = HRT_FUN_OUT_BYTE;
+2003d3c6:	04040623          	sb	zero,76(s0)
+	xfer_params.xfer_data[HRT_FE_DATA].word_count = 0;
+2003d3ca:	04042023          	sw	zero,64(s0)
+	if (xfer_packet->opcode == HPF_MSPI_TXRX) {
+2003d3ce:	4090                	lw	a2,0(s1)
+2003d3d0:	4699                	li	a3,6
+2003d3d2:	2003f537          	lui	a0,0x2003f
+2003d3d6:	12d61963          	bne	a2,a3,2003d508 <xfer_execute+0x2b6>
+		xfer_params.xfer_data[HRT_FE_DATA].data = NULL;
+2003d3da:	02042e23          	sw	zero,60(s0)
+		adjust_tail(&xfer_params.xfer_data[HRT_FE_DATA], xfer_params.bus_widths.data,
+2003d3de:	44d0                	lw	a2,12(s1)
+2003d3e0:	05344583          	lbu	a1,83(s0)
+2003d3e4:	b0450513          	addi	a0,a0,-1276 # 2003eb04 <xfer_params+0x3c>
+2003d3e8:	060e                	slli	a2,a2,0x3
+2003d3ea:	3bc1                	jal	2003d1ba <adjust_tail>
+		xfer_params.xfer_data[HRT_FE_DATA].data = rx_buffer;
+2003d3ec:	47a2                	lw	a5,8(sp)
+2003d3ee:	dc5c                	sw	a5,60(s0)
+	if (device->cpp == MSPI_CPP_MODE_2) {
+2003d3f0:	4782                	lw	a5,0(sp)
+2003d3f2:	4699                	li	a3,6
+2003d3f4:	02d786b3          	mul	a3,a5,a3
+2003d3f8:	4792                	lw	a5,4(sp)
+2003d3fa:	96be                	add	a3,a3,a5
+2003d3fc:	0016c603          	lbu	a2,1(a3)
+2003d400:	4689                	li	a3,2
+2003d402:	02d61863          	bne	a2,a3,2003d432 <xfer_execute+0x1e0>
+		for (uint8_t phase = xfer_packet->opcode == HPF_MSPI_TXRX ? 1 : 0;
+2003d406:	4094                	lw	a3,0(s1)
+2003d408:	460d                	li	a2,3
+			if (xfer_params.xfer_data[HRT_FE_MAX - 1 - phase].word_count != 0) {
+2003d40a:	4351                	li	t1,20
+		for (uint8_t phase = xfer_packet->opcode == HPF_MSPI_TXRX ? 1 : 0;
+2003d40c:	16e9                	addi	a3,a3,-6
+2003d40e:	0016b693          	seqz	a3,a3
+		     phase < HRT_FE_MAX; phase++) {
+2003d412:	8e15                	sub	a2,a2,a3
+2003d414:	4511                	li	a0,4
+			if (xfer_params.xfer_data[HRT_FE_MAX - 1 - phase].word_count != 0) {
+2003d416:	026605b3          	mul	a1,a2,t1
+2003d41a:	95a2                	add	a1,a1,s0
+2003d41c:	0045a283          	lw	t0,4(a1)
+2003d420:	0e028e63          	beqz	t0,2003d51c <xfer_execute+0x2ca>
+				xfer_params.xfer_data[HRT_FE_MAX - 1 - phase].last_word_clocks++;
+2003d424:	0085c683          	lbu	a3,8(a1)
+2003d428:	0685                	addi	a3,a3,1
+2003d42a:	0ff6f693          	zext.b	a3,a3
+2003d42e:	00d58423          	sb	a3,8(a1)
+	if (device->cpp == MSPI_CPP_MODE_3) {
+2003d432:	4782                	lw	a5,0(sp)
+2003d434:	4699                	li	a3,6
+2003d436:	4712                	lw	a4,4(sp)
+2003d438:	02d787b3          	mul	a5,a5,a3
+2003d43c:	97ba                	add	a5,a5,a4
+2003d43e:	0017c603          	lbu	a2,1(a5)
+}
+
+NRF_STATIC_INLINE void nrf_barrier_rw(void)
+{
+#if defined(ISA_RISCV)
+    RISCV_FENCE(iorw, iorw);
+2003d442:	0ff0000f          	fence
+	if (xfer_packet->opcode == HPF_MSPI_TXRX) {
+2003d446:	4098                	lw	a4,0(s1)
+2003d448:	0ed71163          	bne	a4,a3,2003d52a <xfer_execute+0x2d8>
+}
+
+NRF_STATIC_INLINE void nrf_vpr_clic_int_pending_set(NRF_CLIC_Type * p_reg, uint32_t irq_num)
+{
+    NRFX_ASSERT(irq_num < NRF_VPR_CLIC_IRQ_COUNT);
+    p_reg->CLIC.CLICINT[irq_num] = (p_reg->CLIC.CLICINT[irq_num] & ~CLIC_CLIC_CLICINT_IP_Msk) |
+2003d44c:	f00016b7          	lui	a3,0xf0001
+2003d450:	42f8                	lw	a4,68(a3)
+2003d452:	00176713          	ori	a4,a4,1
+2003d456:	c2f8                	sw	a4,68(a3)
+	uint32_t *rx_data = (uint32_t *)xfer_params.xfer_data[HRT_FE_DATA].data;
+2003d458:	5c54                	lw	a3,60(s0)
+	uint32_t last_word = xfer_params.xfer_data[HRT_FE_DATA].last_word;
+2003d45a:	442c                	lw	a1,72(s0)
+	uint32_t word_count = xfer_params.xfer_data[HRT_FE_DATA].word_count;
+2003d45c:	4030                	lw	a2,64(s0)
+		xfer_params.xfer_data[HRT_FE_DATA].penultimate_word_clocks *
+2003d45e:	04544703          	lbu	a4,69(s0)
+		xfer_params.bus_widths.data;
+2003d462:	05344503          	lbu	a0,83(s0)
+	uint32_t last_word = xfer_params.xfer_data[HRT_FE_DATA].last_word;
+2003d466:	c82e                	sw	a1,16(sp)
+		xfer_params.xfer_data[HRT_FE_DATA].penultimate_word_clocks *
+2003d468:	02a70733          	mul	a4,a4,a0
+		xfer_params.xfer_data[HRT_FE_DATA].last_word_clocks * xfer_params.bus_widths.data;
+2003d46c:	04444503          	lbu	a0,68(s0)
+2003d470:	05344783          	lbu	a5,83(s0)
+2003d474:	02f50533          	mul	a0,a0,a5
+	uint32_t penultimate_word_shift = BITS_IN_WORD - penultimate_word_bits;
+2003d478:	02000793          	li	a5,32
+2003d47c:	40e782b3          	sub	t0,a5,a4
+	if ((penultimate_word_shift != 0) && (word_count > 1)) {
+2003d480:	02e78663          	beq	a5,a4,2003d4ac <xfer_execute+0x25a>
+2003d484:	4785                	li	a5,1
+2003d486:	02c7f363          	bgeu	a5,a2,2003d4ac <xfer_execute+0x25a>
+		rx_data[word_count - 2] = (rx_data[word_count - 2] >> penultimate_word_shift) |
+2003d48a:	00261793          	slli	a5,a2,0x2
+2003d48e:	17e1                	addi	a5,a5,-8
+2003d490:	97b6                	add	a5,a5,a3
+2003d492:	0007a303          	lw	t1,0(a5)
+					  (last_word << penultimate_word_bits);
+2003d496:	00e593b3          	sll	t2,a1,a4
+		last_word = last_word >> penultimate_word_shift;
+2003d49a:	0055d5b3          	srl	a1,a1,t0
+		rx_data[word_count - 2] = (rx_data[word_count - 2] >> penultimate_word_shift) |
+2003d49e:	00535333          	srl	t1,t1,t0
+2003d4a2:	00736333          	or	t1,t1,t2
+2003d4a6:	0067a023          	sw	t1,0(a5)
+		last_word = last_word >> penultimate_word_shift;
+2003d4aa:	c82e                	sw	a1,16(sp)
+	     byte < NRFX_CEIL_DIV(last_word_bits - penultimate_word_shift, BITS_IN_BYTE); byte++) {
+2003d4ac:	972a                	add	a4,a4,a0
+2003d4ae:	fdf70713          	addi	a4,a4,-33
+		((uint8_t *)&(rx_data[word_count - 1]))[byte] = ((uint8_t *)&last_word)[byte];
+2003d4b2:	060a                	slli	a2,a2,0x2
+	     byte < NRFX_CEIL_DIV(last_word_bits - penultimate_word_shift, BITS_IN_BYTE); byte++) {
+2003d4b4:	830d                	srli	a4,a4,0x3
+		((uint8_t *)&(rx_data[word_count - 1]))[byte] = ((uint8_t *)&last_word)[byte];
+2003d4b6:	ffc60593          	addi	a1,a2,-4
+	     byte < NRFX_CEIL_DIV(last_word_bits - penultimate_word_shift, BITS_IN_BYTE); byte++) {
+2003d4ba:	0705                	addi	a4,a4,1
+2003d4bc:	4781                	li	a5,0
+2003d4be:	4601                	li	a2,0
+		((uint8_t *)&(rx_data[word_count - 1]))[byte] = ((uint8_t *)&last_word)[byte];
+2003d4c0:	00c68533          	add	a0,a3,a2
+2003d4c4:	0800                	addi	s0,sp,16
+2003d4c6:	0611                	addi	a2,a2,4
+2003d4c8:	9622                	add	a2,a2,s0
+2003d4ca:	ffc64603          	lbu	a2,-4(a2)
+2003d4ce:	952e                	add	a0,a0,a1
+	     byte < NRFX_CEIL_DIV(last_word_bits - penultimate_word_shift, BITS_IN_BYTE); byte++) {
+2003d4d0:	0785                	addi	a5,a5,1
+		((uint8_t *)&(rx_data[word_count - 1]))[byte] = ((uint8_t *)&last_word)[byte];
+2003d4d2:	00c50023          	sb	a2,0(a0)
+	     byte < NRFX_CEIL_DIV(last_word_bits - penultimate_word_shift, BITS_IN_BYTE); byte++) {
+2003d4d6:	0ff7f793          	zext.b	a5,a5
+2003d4da:	863e                	mv	a2,a5
+2003d4dc:	fee7e2e3          	bltu	a5,a4,2003d4c0 <xfer_execute+0x26e>
+}
+2003d4e0:	40f2                	lw	ra,28(sp)
+2003d4e2:	4462                	lw	s0,24(sp)
+2003d4e4:	44d2                	lw	s1,20(sp)
+2003d4e6:	6105                	addi	sp,sp,32
+2003d4e8:	8082                	ret
+		dummy_cycles = hpf_mspi_xfer_config_ptr->tx_dummy;
+2003d4ea:	0047d683          	lhu	a3,4(a5)
+2003d4ee:	b345                	j	2003d28e <xfer_execute+0x3c>
+			    xfer_params.bus_widths.dummy_cycles,
+2003d4f0:	05244583          	lbu	a1,82(s0)
+			    dummy_cycles * xfer_params.bus_widths.dummy_cycles);
+2003d4f4:	05244603          	lbu	a2,82(s0)
+		adjust_tail(&xfer_params.xfer_data[HRT_FE_DUMMY_CYCLES],
+2003d4f8:	2003f537          	lui	a0,0x2003f
+2003d4fc:	af050513          	addi	a0,a0,-1296 # 2003eaf0 <xfer_params+0x28>
+2003d500:	02d60633          	mul	a2,a2,a3
+2003d504:	395d                	jal	2003d1ba <adjust_tail>
+2003d506:	b5c1                	j	2003d3c6 <xfer_execute+0x174>
+		xfer_params.xfer_data[HRT_FE_DATA].data = xfer_packet->data;
+2003d508:	4894                	lw	a3,16(s1)
+		adjust_tail(&xfer_params.xfer_data[HRT_FE_DATA], xfer_params.bus_widths.data,
+2003d50a:	b0450513          	addi	a0,a0,-1276
+		xfer_params.xfer_data[HRT_FE_DATA].data = xfer_packet->data;
+2003d50e:	dc54                	sw	a3,60(s0)
+		adjust_tail(&xfer_params.xfer_data[HRT_FE_DATA], xfer_params.bus_widths.data,
+2003d510:	44d0                	lw	a2,12(s1)
+2003d512:	05344583          	lbu	a1,83(s0)
+2003d516:	060e                	slli	a2,a2,0x3
+2003d518:	314d                	jal	2003d1ba <adjust_tail>
+2003d51a:	bdd9                	j	2003d3f0 <xfer_execute+0x19e>
+		     phase < HRT_FE_MAX; phase++) {
+2003d51c:	0685                	addi	a3,a3,1 # f0001001 <CONFIG_MCUBOOT_APPLICATION_IMAGE_NUMBER+0xf0001002>
+2003d51e:	0ff6f693          	zext.b	a3,a3
+2003d522:	167d                	addi	a2,a2,-1
+2003d524:	eea699e3          	bne	a3,a0,2003d416 <xfer_execute+0x1c4>
+2003d528:	b729                	j	2003d432 <xfer_execute+0x1e0>
+2003d52a:	f0001737          	lui	a4,0xf0001
+2003d52e:	473c                	lw	a5,72(a4)
+2003d530:	0017e793          	ori	a5,a5,1
+2003d534:	c73c                	sw	a5,72(a4)
+}
+2003d536:	b76d                	j	2003d4e0 <xfer_execute+0x28e>
+
+2003d538 <ep_recv>:
+{
+2003d538:	1131                	addi	sp,sp,-20
+2003d53a:	c806                	sw	ra,16(sp)
+2003d53c:	c622                	sw	s0,12(sp)
+2003d53e:	c426                	sw	s1,8(sp)
+	data = *(void **)data;
+2003d540:	4104                	lw	s1,0(a0)
+	switch (opcode) {
+2003d542:	4711                	li	a4,4
+	uint8_t opcode = *(uint8_t *)data;
+2003d544:	0004c403          	lbu	s0,0(s1)
+	switch (opcode) {
+2003d548:	ffe40793          	addi	a5,s0,-2
+2003d54c:	0ff7f793          	zext.b	a5,a5
+2003d550:	3af76863          	bltu	a4,a5,2003d900 <ep_recv+0x3c8>
+2003d554:	2003e737          	lui	a4,0x2003e
+2003d558:	078a                	slli	a5,a5,0x2
+2003d55a:	77870713          	addi	a4,a4,1912 # 2003e778 <__symbol_to_keep_end>
+2003d55e:	97ba                	add	a5,a5,a4
+2003d560:	439c                	lw	a5,0(a5)
+2003d562:	8782                	jr	a5
+	ce_vios_count = 0;
+2003d564:	2003f6b7          	lui	a3,0x2003f
+2003d568:	8a068ba3          	sb	zero,-1865(a3) # 2003e8b7 <ce_vios_count>
+	xfer_params.tx_direction_mask = 0;
+2003d56c:	2003f7b7          	lui	a5,0x2003f
+	data_vios_count = 0;
+2003d570:	2003f2b7          	lui	t0,0x2003f
+2003d574:	8a028b23          	sb	zero,-1866(t0) # 2003e8b6 <data_vios_count>
+	xfer_params.tx_direction_mask = 0;
+2003d578:	ac878713          	addi	a4,a5,-1336 # 2003eac8 <xfer_params>
+2003d57c:	04071d23          	sh	zero,90(a4)
+		data_vios[i] = DATA_PIN_UNUSED;
+2003d580:	2003f5b7          	lui	a1,0x2003f
+	xfer_params.rx_direction_mask = 0;
+2003d584:	04071e23          	sh	zero,92(a4)
+		data_vios[i] = DATA_PIN_UNUSED;
+2003d588:	567d                	li	a2,-1
+2003d58a:	8a858713          	addi	a4,a1,-1880 # 2003e8a8 <data_vios>
+2003d58e:	00c70023          	sb	a2,0(a4)
+2003d592:	00c700a3          	sb	a2,1(a4)
+2003d596:	00c70123          	sb	a2,2(a4)
+2003d59a:	00c701a3          	sb	a2,3(a4)
+2003d59e:	00c70223          	sb	a2,4(a4)
+2003d5a2:	00c702a3          	sb	a2,5(a4)
+2003d5a6:	00c70323          	sb	a2,6(a4)
+2003d5aa:	00c703a3          	sb	a2,7(a4)
+	for (uint8_t i = 0; i < DATA_PINS_MAX; i++) {
+2003d5ae:	8a858613          	addi	a2,a1,-1880
+2003d5b2:	c232                	sw	a2,4(sp)
+			data_vios[DATA_LINE_INDEX(fun)] = pin_to_vio_map[pin_number];
+2003d5b4:	2003e637          	lui	a2,0x2003e
+2003d5b8:	7c460613          	addi	a2,a2,1988 # 2003e7c4 <pin_to_vio_map>
+			ce_vios[ce_vios_count] = pin_to_vio_map[pin_number];
+2003d5bc:	2003f537          	lui	a0,0x2003f
+	for (uint8_t i = 0; i < pins_cfg->pins_count; i++) {
+2003d5c0:	4701                	li	a4,0
+2003d5c2:	ac878793          	addi	a5,a5,-1336
+			data_vios[DATA_LINE_INDEX(fun)] = pin_to_vio_map[pin_number];
+2003d5c6:	c032                	sw	a2,0(sp)
+			ce_vios[ce_vios_count] = pin_to_vio_map[pin_number];
+2003d5c8:	8b050513          	addi	a0,a0,-1872 # 2003e8b0 <ce_vios>
+	for (uint8_t i = 0; i < pins_cfg->pins_count; i++) {
+2003d5cc:	0044c603          	lbu	a2,4(s1)
+2003d5d0:	04c76763          	bltu	a4,a2,2003d61e <ep_recv+0xe6>
+	nrf_vpr_csr_vio_dir_set(xfer_params.tx_direction_mask);
+2003d5d4:	05a7d783          	lhu	a5,90(a5)
+    nrf_csr_write(VPRCSR_NORDIC_DIR, value);
+2003d5d8:	bc179073          	csrw	0xbc1,a5
+		hpf_mspi_devices[i].ce_index = CE_PIN_UNUSED;
+2003d5dc:	2003f7b7          	lui	a5,0x2003f
+2003d5e0:	b2878793          	addi	a5,a5,-1240 # 2003eb28 <hpf_mspi_devices>
+2003d5e4:	577d                	li	a4,-1
+2003d5e6:	00e78123          	sb	a4,2(a5)
+2003d5ea:	00e78423          	sb	a4,8(a5)
+2003d5ee:	00e78723          	sb	a4,14(a5)
+2003d5f2:	00e78a23          	sb	a4,20(a5)
+2003d5f6:	00e78d23          	sb	a4,26(a5)
+	response_buffer[0] = opcode;
+2003d5fa:	2003f5b7          	lui	a1,0x2003f
+2003d5fe:	8bc58793          	addi	a5,a1,-1860 # 2003e8bc <response_buffer>
+2003d602:	00878023          	sb	s0,0(a5)
+}
+2003d606:	4432                	lw	s0,12(sp)
+2003d608:	40c2                	lw	ra,16(sp)
+2003d60a:	44a2                	lw	s1,8(sp)
+	ipc_service_send(&ep, (const void *)response_buffer,
+2003d60c:	2003f537          	lui	a0,0x2003f
+2003d610:	4611                	li	a2,4
+2003d612:	8bc58593          	addi	a1,a1,-1860
+2003d616:	89850513          	addi	a0,a0,-1896 # 2003e898 <ep>
+}
+2003d61a:	0151                	addi	sp,sp,20
+	ipc_service_send(&ep, (const void *)response_buffer,
+2003d61c:	a12d                	j	2003da46 <ipc_service_send>
+		uint32_t psel = NRF_GET_PIN(pins_cfg->pin[i]);
+2003d61e:	00271613          	slli	a2,a4,0x2
+2003d622:	9626                	add	a2,a2,s1
+2003d624:	4610                	lw	a2,8(a2)
+		if ((psel == NRF_PIN_DISCONNECTED) || (pins_cfg->pin[i] == 0)) {
+2003d626:	1ff00313          	li	t1,511
+		uint32_t psel = NRF_GET_PIN(pins_cfg->pin[i]);
+2003d62a:	1ff67593          	andi	a1,a2,511
+		if ((psel == NRF_PIN_DISCONNECTED) || (pins_cfg->pin[i] == 0)) {
+2003d62e:	06658963          	beq	a1,t1,2003d6a0 <ep_recv+0x168>
+2003d632:	c63d                	beqz	a2,2003d6a0 <ep_recv+0x168>
+		uint32_t fun = NRF_GET_FUN(pins_cfg->pin[i]);
+2003d634:	01865313          	srli	t1,a2,0x18
+		if ((fun >= NRF_FUN_HPF_MSPI_CS0) && (fun <= NRF_FUN_HPF_MSPI_CS4)) {
+2003d638:	fbe30593          	addi	a1,t1,-66
+2003d63c:	4391                	li	t2,4
+		uint8_t pin_number = NRF_PIN_NUMBER_TO_PIN(psel);
+2003d63e:	8a7d                	andi	a2,a2,31
+		if ((fun >= NRF_FUN_HPF_MSPI_CS0) && (fun <= NRF_FUN_HPF_MSPI_CS4)) {
+2003d640:	06b3e463          	bltu	t2,a1,2003d6a8 <ep_recv+0x170>
+			ce_vios[ce_vios_count] = pin_to_vio_map[pin_number];
+2003d644:	4302                	lw	t1,0(sp)
+2003d646:	8b76c583          	lbu	a1,-1865(a3)
+2003d64a:	961a                	add	a2,a2,t1
+2003d64c:	00064603          	lbu	a2,0(a2)
+2003d650:	95aa                	add	a1,a1,a0
+2003d652:	00c58023          	sb	a2,0(a1)
+			WRITE_BIT(xfer_params.tx_direction_mask, ce_vios[ce_vios_count],
+2003d656:	05a7d603          	lhu	a2,90(a5)
+2003d65a:	8b76c583          	lbu	a1,-1865(a3)
+2003d65e:	95aa                	add	a1,a1,a0
+2003d660:	0005c303          	lbu	t1,0(a1)
+2003d664:	4585                	li	a1,1
+2003d666:	00659333          	sll	t1,a1,t1
+2003d66a:	00666633          	or	a2,a2,t1
+2003d66e:	0642                	slli	a2,a2,0x10
+2003d670:	8241                	srli	a2,a2,0x10
+2003d672:	04c79d23          	sh	a2,90(a5)
+			WRITE_BIT(xfer_params.rx_direction_mask, ce_vios[ce_vios_count],
+2003d676:	05c7d603          	lhu	a2,92(a5)
+2003d67a:	8b76c303          	lbu	t1,-1865(a3)
+2003d67e:	932a                	add	t1,t1,a0
+2003d680:	00034303          	lbu	t1,0(t1)
+2003d684:	006595b3          	sll	a1,a1,t1
+2003d688:	8e4d                	or	a2,a2,a1
+2003d68a:	0642                	slli	a2,a2,0x10
+2003d68c:	8241                	srli	a2,a2,0x10
+2003d68e:	04c79e23          	sh	a2,92(a5)
+			ce_vios_count++;
+2003d692:	8b76c603          	lbu	a2,-1865(a3)
+2003d696:	0605                	addi	a2,a2,1
+2003d698:	0ff67613          	zext.b	a2,a2
+2003d69c:	8ac68ba3          	sb	a2,-1865(a3)
+	for (uint8_t i = 0; i < pins_cfg->pins_count; i++) {
+2003d6a0:	0705                	addi	a4,a4,1
+2003d6a2:	0ff77713          	zext.b	a4,a4
+2003d6a6:	b71d                	j	2003d5cc <ep_recv+0x94>
+		} else if ((fun >= NRF_FUN_HPF_MSPI_DQ0) && (fun <= NRF_FUN_HPF_MSPI_DQ7)) {
+2003d6a8:	fc630593          	addi	a1,t1,-58
+2003d6ac:	439d                	li	t2,7
+2003d6ae:	04b3ec63          	bltu	t2,a1,2003d706 <ep_recv+0x1ce>
+			data_vios[DATA_LINE_INDEX(fun)] = pin_to_vio_map[pin_number];
+2003d6b2:	4302                	lw	t1,0(sp)
+2003d6b4:	961a                	add	a2,a2,t1
+2003d6b6:	4312                	lw	t1,4(sp)
+2003d6b8:	00064603          	lbu	a2,0(a2)
+2003d6bc:	959a                	add	a1,a1,t1
+2003d6be:	00c58023          	sb	a2,0(a1)
+			WRITE_BIT(xfer_params.tx_direction_mask, data_vios[DATA_LINE_INDEX(fun)],
+2003d6c2:	05a7d303          	lhu	t1,90(a5)
+2003d6c6:	0005c383          	lbu	t2,0(a1)
+2003d6ca:	4605                	li	a2,1
+2003d6cc:	007613b3          	sll	t2,a2,t2
+2003d6d0:	00736333          	or	t1,t1,t2
+2003d6d4:	0342                	slli	t1,t1,0x10
+2003d6d6:	01035313          	srli	t1,t1,0x10
+2003d6da:	04679d23          	sh	t1,90(a5)
+			WRITE_BIT(xfer_params.rx_direction_mask, data_vios[DATA_LINE_INDEX(fun)],
+2003d6de:	05c7d303          	lhu	t1,92(a5)
+2003d6e2:	0005c583          	lbu	a1,0(a1)
+2003d6e6:	00b61633          	sll	a2,a2,a1
+2003d6ea:	fff64613          	not	a2,a2
+2003d6ee:	00c37333          	and	t1,t1,a2
+2003d6f2:	04679e23          	sh	t1,92(a5)
+			data_vios_count++;
+2003d6f6:	8b62c603          	lbu	a2,-1866(t0)
+2003d6fa:	0605                	addi	a2,a2,1
+2003d6fc:	0ff67613          	zext.b	a2,a2
+2003d700:	8ac28b23          	sb	a2,-1866(t0)
+2003d704:	bf71                	j	2003d6a0 <ep_recv+0x168>
+		} else if (fun == NRF_FUN_HPF_MSPI_SCK) {
+2003d706:	03900593          	li	a1,57
+2003d70a:	f8b31be3          	bne	t1,a1,2003d6a0 <ep_recv+0x168>
+			clk_vio = pin_to_vio_map[pin_number];
+2003d70e:	2003e5b7          	lui	a1,0x2003e
+2003d712:	7c458593          	addi	a1,a1,1988 # 2003e7c4 <pin_to_vio_map>
+2003d716:	95b2                	add	a1,a1,a2
+2003d718:	0005c603          	lbu	a2,0(a1)
+2003d71c:	2003f337          	lui	t1,0x2003f
+			WRITE_BIT(xfer_params.tx_direction_mask, clk_vio, VPRCSR_NORDIC_DIR_OUTPUT);
+2003d720:	4585                	li	a1,1
+			clk_vio = pin_to_vio_map[pin_number];
+2003d722:	8ac30aa3          	sb	a2,-1867(t1) # 2003e8b5 <clk_vio>
+			WRITE_BIT(xfer_params.tx_direction_mask, clk_vio, VPRCSR_NORDIC_DIR_OUTPUT);
+2003d726:	05a7d603          	lhu	a2,90(a5)
+2003d72a:	8b534383          	lbu	t2,-1867(t1)
+2003d72e:	007593b3          	sll	t2,a1,t2
+2003d732:	00766633          	or	a2,a2,t2
+2003d736:	0642                	slli	a2,a2,0x10
+2003d738:	8241                	srli	a2,a2,0x10
+2003d73a:	04c79d23          	sh	a2,90(a5)
+			WRITE_BIT(xfer_params.rx_direction_mask, clk_vio, VPRCSR_NORDIC_DIR_OUTPUT);
+2003d73e:	05c7d603          	lhu	a2,92(a5)
+2003d742:	8b534303          	lbu	t1,-1867(t1)
+2003d746:	006595b3          	sll	a1,a1,t1
+2003d74a:	8e4d                	or	a2,a2,a1
+2003d74c:	0642                	slli	a2,a2,0x10
+2003d74e:	8241                	srli	a2,a2,0x10
+2003d750:	04c79e23          	sh	a2,92(a5)
+2003d754:	b7b1                	j	2003d6a0 <ep_recv+0x168>
+		hpf_mspi_devices[dev_config->device_index] = dev_config->dev_config;
+2003d756:	0044c503          	lbu	a0,4(s1)
+2003d75a:	4699                	li	a3,6
+2003d75c:	2003f737          	lui	a4,0x2003f
+2003d760:	02d50533          	mul	a0,a0,a3
+2003d764:	b2870713          	addi	a4,a4,-1240 # 2003eb28 <hpf_mspi_devices>
+2003d768:	4619                	li	a2,6
+2003d76a:	00648593          	addi	a1,s1,6
+2003d76e:	953a                	add	a0,a0,a4
+2003d770:	731000ef          	jal	ra,2003e6a0 <memcpy>
+		if (hpf_mspi_devices[dev_config->device_index].ce_polarity == MSPI_CE_ACTIVE_LOW) {
+2003d774:	0044c783          	lbu	a5,4(s1)
+2003d778:	4699                	li	a3,6
+2003d77a:	2003f737          	lui	a4,0x2003f
+2003d77e:	02d787b3          	mul	a5,a5,a3
+2003d782:	b2870713          	addi	a4,a4,-1240 # 2003eb28 <hpf_mspi_devices>
+2003d786:	973e                	add	a4,a4,a5
+2003d788:	00374683          	lbu	a3,3(a4)
+				BIT(ce_vios[hpf_mspi_devices[dev_config->device_index].ce_index]));
+2003d78c:	00274703          	lbu	a4,2(a4)
+2003d790:	2003f7b7          	lui	a5,0x2003f
+2003d794:	8b078793          	addi	a5,a5,-1872 # 2003e8b0 <ce_vios>
+2003d798:	97ba                	add	a5,a5,a4
+2003d79a:	0007c703          	lbu	a4,0(a5)
+2003d79e:	4785                	li	a5,1
+2003d7a0:	00e797b3          	sll	a5,a5,a4
+    nrf_csr_set_bits(VPRCSR_NORDIC_OUT, value);
+2003d7a4:	07c2                	slli	a5,a5,0x10
+2003d7a6:	83c1                	srli	a5,a5,0x10
+		if (hpf_mspi_devices[dev_config->device_index].ce_polarity == MSPI_CE_ACTIVE_LOW) {
+2003d7a8:	e6b1                	bnez	a3,2003d7f4 <ep_recv+0x2bc>
+2003d7aa:	bc07a073          	csrs	0xbc0,a5
+		if (dev_config->dev_config.io_mode == MSPI_IO_MODE_SINGLE) {
+2003d7ae:	2003f7b7          	lui	a5,0x2003f
+2003d7b2:	8a878793          	addi	a5,a5,-1880 # 2003e8a8 <data_vios>
+2003d7b6:	0064c703          	lbu	a4,6(s1)
+			if (data_vios[DATA_LINE_INDEX(NRF_FUN_HPF_MSPI_DQ2)] != DATA_PIN_UNUSED &&
+2003d7ba:	0027c683          	lbu	a3,2(a5)
+		if (dev_config->dev_config.io_mode == MSPI_IO_MODE_SINGLE) {
+2003d7be:	ef15                	bnez	a4,2003d7fa <ep_recv+0x2c2>
+			if (data_vios[DATA_LINE_INDEX(NRF_FUN_HPF_MSPI_DQ2)] != DATA_PIN_UNUSED &&
+2003d7c0:	0ff00713          	li	a4,255
+2003d7c4:	e2e68be3          	beq	a3,a4,2003d5fa <ep_recv+0xc2>
+			    data_vios[DATA_LINE_INDEX(NRF_FUN_HPF_MSPI_DQ3)] != DATA_PIN_UNUSED) {
+2003d7c8:	0037c683          	lbu	a3,3(a5)
+			if (data_vios[DATA_LINE_INDEX(NRF_FUN_HPF_MSPI_DQ2)] != DATA_PIN_UNUSED &&
+2003d7cc:	e2e687e3          	beq	a3,a4,2003d5fa <ep_recv+0xc2>
+					BIT(data_vios[DATA_LINE_INDEX(NRF_FUN_HPF_MSPI_DQ2)]));
+2003d7d0:	0027c683          	lbu	a3,2(a5)
+2003d7d4:	4705                	li	a4,1
+2003d7d6:	6641                	lui	a2,0x10
+2003d7d8:	00d716b3          	sll	a3,a4,a3
+2003d7dc:	167d                	addi	a2,a2,-1 # ffff <CONFIG_PM_PARTITION_SIZE_B0_IMAGE+0x8fff>
+2003d7de:	8ef1                	and	a3,a3,a2
+2003d7e0:	bc06a073          	csrs	0xbc0,a3
+					BIT(data_vios[DATA_LINE_INDEX(NRF_FUN_HPF_MSPI_DQ3)]));
+2003d7e4:	0037c783          	lbu	a5,3(a5)
+2003d7e8:	00f71733          	sll	a4,a4,a5
+2003d7ec:	8f71                	and	a4,a4,a2
+2003d7ee:	bc072073          	csrs	0xbc0,a4
+}
+2003d7f2:	b521                	j	2003d5fa <ep_recv+0xc2>
+    nrf_csr_clear_bits(VPRCSR_NORDIC_OUT, value);
+2003d7f4:	bc07b073          	csrc	0xbc0,a5
+}
+2003d7f8:	bf5d                	j	2003d7ae <ep_recv+0x276>
+				BIT(data_vios[DATA_LINE_INDEX(NRF_FUN_HPF_MSPI_DQ2)]));
+2003d7fa:	4705                	li	a4,1
+    nrf_csr_clear_bits(VPRCSR_NORDIC_OUT, value);
+2003d7fc:	6641                	lui	a2,0x10
+2003d7fe:	00d716b3          	sll	a3,a4,a3
+2003d802:	167d                	addi	a2,a2,-1 # ffff <CONFIG_PM_PARTITION_SIZE_B0_IMAGE+0x8fff>
+2003d804:	8ef1                	and	a3,a3,a2
+2003d806:	bc06b073          	csrc	0xbc0,a3
+				BIT(data_vios[DATA_LINE_INDEX(NRF_FUN_HPF_MSPI_DQ3)]));
+2003d80a:	0037c783          	lbu	a5,3(a5)
+2003d80e:	00f71733          	sll	a4,a4,a5
+2003d812:	8f71                	and	a4,a4,a2
+2003d814:	bc073073          	csrc	0xbc0,a4
+}
+2003d818:	b3cd                	j	2003d5fa <ep_recv+0xc2>
+		configure_clock(hpf_mspi_devices[hpf_mspi_xfer_config_ptr->device_index].cpp);
+2003d81a:	0044c703          	lbu	a4,4(s1)
+2003d81e:	4599                	li	a1,6
+		hpf_mspi_xfer_config_ptr = &xfer_config->xfer_config;
+2003d820:	00448793          	addi	a5,s1,4
+		configure_clock(hpf_mspi_devices[hpf_mspi_xfer_config_ptr->device_index].cpp);
+2003d824:	02b70733          	mul	a4,a4,a1
+		hpf_mspi_xfer_config_ptr = &xfer_config->xfer_config;
+2003d828:	20040637          	lui	a2,0x20040
+		configure_clock(hpf_mspi_devices[hpf_mspi_xfer_config_ptr->device_index].cpp);
+2003d82c:	2003f6b7          	lui	a3,0x2003f
+		hpf_mspi_xfer_config_ptr = &xfer_config->xfer_config;
+2003d830:	82f62623          	sw	a5,-2004(a2) # 2003f82c <hpf_mspi_xfer_config_ptr>
+		configure_clock(hpf_mspi_devices[hpf_mspi_xfer_config_ptr->device_index].cpp);
+2003d834:	b2868793          	addi	a5,a3,-1240 # 2003eb28 <hpf_mspi_devices>
+2003d838:	97ba                	add	a5,a5,a4
+2003d83a:	0017c783          	lbu	a5,1(a5)
+2003d83e:	0ff7f793          	zext.b	a5,a5
+    return (uint16_t)nrf_csr_read(VPRCSR_NORDIC_OUT);
+2003d842:	bc002773          	csrr	a4,0xbc0
+	switch (cpp_mode) {
+2003d846:	4589                	li	a1,2
+2003d848:	0742                	slli	a4,a4,0x10
+2003d84a:	8341                	srli	a4,a4,0x10
+2003d84c:	b2868693          	addi	a3,a3,-1240
+2003d850:	06b78763          	beq	a5,a1,2003d8be <ep_recv+0x386>
+2003d854:	04f5e663          	bltu	a1,a5,2003d8a0 <ep_recv+0x368>
+2003d858:	2003f5b7          	lui	a1,0x2003f
+2003d85c:	e7b9                	bnez	a5,2003d8aa <ep_recv+0x372>
+		WRITE_BIT(out, clk_vio, VPRCSR_NORDIC_OUT_LOW);
+2003d85e:	8b55c503          	lbu	a0,-1867(a1) # 2003e8b5 <clk_vio>
+2003d862:	4585                	li	a1,1
+2003d864:	00a595b3          	sll	a1,a1,a0
+2003d868:	fff5c593          	not	a1,a1
+2003d86c:	8f6d                	and	a4,a4,a1
+    nrf_csr_write(VPRCSR_NORDIC_OUT, value);
+2003d86e:	bc071073          	csrw	0xbc0,a4
+    uint32_t reg = (p_config->clk_polarity << VPRCSR_NORDIC_RTPERIPHCTRL_CLOCKPOLARITY_Pos) |
+2003d872:	0107e793          	ori	a5,a5,16
+    nrf_csr_write(VPRCSR_NORDIC_RTPERIPHCTRL, reg);
+2003d876:	7cc79073          	csrw	0x7cc,a5
+		if (hpf_mspi_devices[hpf_mspi_xfer_config_ptr->device_index].cnt0_value <=
+2003d87a:	82c62783          	lw	a5,-2004(a2)
+2003d87e:	4719                	li	a4,6
+2003d880:	0007c783          	lbu	a5,0(a5)
+2003d884:	02e787b3          	mul	a5,a5,a4
+2003d888:	4705                	li	a4,1
+2003d88a:	96be                	add	a3,a3,a5
+2003d88c:	0046d783          	lhu	a5,4(a3)
+2003d890:	d6f765e3          	bltu	a4,a5,2003d5fa <ep_recv+0xc2>
+			NRF_GPIOHSPADCTRL->BIAS = PAD_BIAS_VALUE;
+2003d894:	500507b7          	lui	a5,0x50050
+2003d898:	40078793          	addi	a5,a5,1024 # 50050400 <__global_pointer$+0x300103d8>
+2003d89c:	db98                	sw	a4,48(a5)
+2003d89e:	bbb1                	j	2003d5fa <ep_recv+0xc2>
+	switch (cpp_mode) {
+2003d8a0:	458d                	li	a1,3
+2003d8a2:	02b78a63          	beq	a5,a1,2003d8d6 <ep_recv+0x39e>
+		vio_config.clk_polarity = 0;
+2003d8a6:	4781                	li	a5,0
+		break;
+2003d8a8:	b7d9                	j	2003d86e <ep_recv+0x336>
+		WRITE_BIT(out, clk_vio, VPRCSR_NORDIC_OUT_LOW);
+2003d8aa:	8b55c583          	lbu	a1,-1867(a1)
+2003d8ae:	4785                	li	a5,1
+2003d8b0:	00b797b3          	sll	a5,a5,a1
+2003d8b4:	fff7c793          	not	a5,a5
+2003d8b8:	8f7d                	and	a4,a4,a5
+		vio_config.clk_polarity = 1;
+2003d8ba:	4785                	li	a5,1
+		break;
+2003d8bc:	bf4d                	j	2003d86e <ep_recv+0x336>
+		WRITE_BIT(out, clk_vio, VPRCSR_NORDIC_OUT_HIGH);
+2003d8be:	2003f7b7          	lui	a5,0x2003f
+2003d8c2:	8b57c583          	lbu	a1,-1867(a5) # 2003e8b5 <clk_vio>
+2003d8c6:	4785                	li	a5,1
+2003d8c8:	00b797b3          	sll	a5,a5,a1
+2003d8cc:	8fd9                	or	a5,a5,a4
+2003d8ce:	01079713          	slli	a4,a5,0x10
+2003d8d2:	8341                	srli	a4,a4,0x10
+2003d8d4:	b7dd                	j	2003d8ba <ep_recv+0x382>
+		WRITE_BIT(out, clk_vio, VPRCSR_NORDIC_OUT_HIGH);
+2003d8d6:	2003f7b7          	lui	a5,0x2003f
+2003d8da:	8b57c583          	lbu	a1,-1867(a5) # 2003e8b5 <clk_vio>
+2003d8de:	4785                	li	a5,1
+2003d8e0:	00b797b3          	sll	a5,a5,a1
+2003d8e4:	8fd9                	or	a5,a5,a4
+2003d8e6:	01079713          	slli	a4,a5,0x10
+2003d8ea:	8341                	srli	a4,a4,0x10
+2003d8ec:	bf6d                	j	2003d8a6 <ep_recv+0x36e>
+		xfer_execute(packet, NULL);
+2003d8ee:	4581                	li	a1,0
+			xfer_execute(packet, packet->data);
+2003d8f0:	8526                	mv	a0,s1
+2003d8f2:	3285                	jal	2003d252 <xfer_execute>
+2003d8f4:	b319                	j	2003d5fa <ep_recv+0xc2>
+		if (packet->num_bytes > 0) {
+2003d8f6:	44dc                	lw	a5,12(s1)
+2003d8f8:	d00781e3          	beqz	a5,2003d5fa <ep_recv+0xc2>
+			xfer_execute(packet, packet->data);
+2003d8fc:	488c                	lw	a1,16(s1)
+2003d8fe:	bfcd                	j	2003d8f0 <ep_recv+0x3b8>
+	switch (opcode) {
+2003d900:	4421                	li	s0,8
+2003d902:	b9e5                	j	2003d5fa <ep_recv+0xc2>
+
+2003d904 <ep_bound>:
+		union { uintptr_t x; atomic_val_t val; } parm1 = { .val = value };
+		return (atomic_val_t) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_ATOMIC_OR);
+	}
+#endif
+	compiler_barrier();
+	return z_impl_atomic_or(target, value);
+2003d904:	2003f537          	lui	a0,0x2003f
+2003d908:	4585                	li	a1,1
+2003d90a:	89450513          	addi	a0,a0,-1900 # 2003e894 <ipc_atomic_sem>
+2003d90e:	4f70006f          	j	2003e604 <z_impl_atomic_or>
+
+2003d912 <trap_handler>:
+{
+2003d912:	1141                	addi	sp,sp,-16
+	const uint8_t fault_opcode = HPF_MSPI_HPF_APP_HARD_FAULT;
+2003d914:	479d                	li	a5,7
+2003d916:	00f101a3          	sb	a5,3(sp)
+	cpuflpr_error_ctx_ptr[0] = mcause;
+2003d91a:	2003c7b7          	lui	a5,0x2003c
+{
+2003d91e:	c606                	sw	ra,12(sp)
+	cpuflpr_error_ctx_ptr[0] = mcause;
+2003d920:	3e078793          	addi	a5,a5,992 # 2003c3e0 <CONFIG_PM_SRAM_BASE+0x3c3e0>
+2003d924:	c388                	sw	a0,0(a5)
+	cpuflpr_error_ctx_ptr[1] = mepc;
+2003d926:	c3cc                	sw	a1,4(a5)
+	cpuflpr_error_ctx_ptr[2] = mtval;
+2003d928:	c790                	sw	a2,8(a5)
+	ipc_service_send(&ep, &fault_opcode, sizeof(fault_opcode));
+2003d92a:	2003f537          	lui	a0,0x2003f
+	cpuflpr_error_ctx_ptr[3] = (uint32_t)context;
+2003d92e:	c7d4                	sw	a3,12(a5)
+	ipc_service_send(&ep, &fault_opcode, sizeof(fault_opcode));
+2003d930:	4605                	li	a2,1
+2003d932:	00310593          	addi	a1,sp,3
+2003d936:	89850513          	addi	a0,a0,-1896 # 2003e898 <ep>
+2003d93a:	2231                	jal	2003da46 <ipc_service_send>
+	while (1) {
+2003d93c:	a001                	j	2003d93c <trap_handler+0x2a>
+
+2003d93e <init_trap_handler>:
+	/* Write the address of the trap_entry function into the mtvec CSR.
+	 * Note: On RV32, the address must be aligned to 4 bytes.
+	 */
+	uintptr_t trap_entry_addr = (uintptr_t)&trap_entry;
+
+	__asm__ volatile("csrw mtvec, %0\n"
+2003d93e:	2003d7b7          	lui	a5,0x2003d
+2003d942:	10e78793          	addi	a5,a5,270 # 2003d10e <trap_entry>
+2003d946:	30579073          	csrw	mtvec,a5
+			 : /* no outs */
+			 : "r"(trap_entry_addr));
+}
+2003d94a:	8082                	ret
+
+2003d94c <main>:
+	trap_entry();
+}
+#endif
+
+int main(void)
+{
+2003d94c:	1141                	addi	sp,sp,-16
+2003d94e:	c606                	sw	ra,12(sp)
+2003d950:	c422                	sw	s0,8(sp)
+	int ret = 0;
+
+	init_trap_handler();
+2003d952:	37f5                	jal	2003d93e <init_trap_handler>
+	while (delay < 6000) {
+2003d954:	6785                	lui	a5,0x1
+	volatile uint32_t delay = 0;
+2003d956:	c002                	sw	zero,0(sp)
+	while (delay < 6000) {
+2003d958:	76f78793          	addi	a5,a5,1903 # 176f <CONFIG_WFA_QT_THREAD_STACK_SIZE+0x31f>
+2003d95c:	4702                	lw	a4,0(sp)
+2003d95e:	08e7f863          	bgeu	a5,a4,2003d9ee <main+0xa2>
+	ret = ipc_service_open_instance(ipc0_instance);
+2003d962:	2003e437          	lui	s0,0x2003e
+2003d966:	73040513          	addi	a0,s0,1840 # 2003e730 <__device_dts_ord_28>
+2003d96a:	205d                	jal	2003da10 <ipc_service_open_instance>
+	if ((ret < 0) && (ret != -EALREADY)) {
+2003d96c:	00055663          	bgez	a0,2003d978 <main+0x2c>
+2003d970:	f8800793          	li	a5,-120
+2003d974:	08f51163          	bne	a0,a5,2003d9f6 <main+0xaa>
+	ret = ipc_service_register_endpoint(ipc0_instance, &ep, &ep_cfg);
+2003d978:	2003e637          	lui	a2,0x2003e
+2003d97c:	2003f5b7          	lui	a1,0x2003f
+2003d980:	78c60613          	addi	a2,a2,1932 # 2003e78c <ep_cfg>
+2003d984:	89858593          	addi	a1,a1,-1896 # 2003e898 <ep>
+2003d988:	73040513          	addi	a0,s0,1840
+2003d98c:	2871                	jal	2003da28 <ipc_service_register_endpoint>
+	if (ret < 0) {
+2003d98e:	06054463          	bltz	a0,2003d9f6 <main+0xaa>
+		union { uintptr_t x; atomic_val_t val; } parm1 = { .val = value };
+		return (atomic_val_t) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_ATOMIC_AND);
+	}
+#endif
+	compiler_barrier();
+	return z_impl_atomic_and(target, value);
+2003d992:	2003f437          	lui	s0,0x2003f
+2003d996:	55f9                	li	a1,-2
+2003d998:	89440513          	addi	a0,s0,-1900 # 2003e894 <ipc_atomic_sem>
+2003d99c:	47f000ef          	jal	ra,2003e61a <z_impl_atomic_and>
+	atomic_val_t mask = ATOMIC_MASK(bit);
+	atomic_val_t old;
+
+	old = atomic_and(ATOMIC_ELEM(target, bit), ~mask);
+
+	return (old & mask) != 0;
+2003d9a0:	8905                	andi	a0,a0,1
+	while (!atomic_test_and_clear_bit(&ipc_atomic_sem, HPF_MSPI_EP_BOUNDED)) {
+2003d9a2:	d975                	beqz	a0,2003d996 <main+0x4a>
+	ret = backend_init();
+	if (ret < 0) {
+		return 0;
+	}
+
+	IRQ_DIRECT_CONNECT(HRT_VEVIF_IDX_READ, HRT_IRQ_PRIORITY, hrt_handler_read, 0);
+2003d9a4:	4601                	li	a2,0
+2003d9a6:	4589                	li	a1,2
+2003d9a8:	4545                	li	a0,17
+2003d9aa:	2085                	jal	2003da0a <z_riscv_irq_priority_set>
+2003d9ac:	4545                	li	a0,17
+2003d9ae:	2085                	jal	2003da0e <z_riscv_irq_vector_set>
+NRF_STATIC_INLINE void nrf_vpr_clic_int_enable_set(NRF_CLIC_Type * p_reg,
+                                                   uint32_t        irq_num,
+                                                   bool            enable)
+{
+    NRFX_ASSERT(irq_num < NRF_VPR_CLIC_IRQ_COUNT);
+    p_reg->CLIC.CLICINT[irq_num] = (p_reg->CLIC.CLICINT[irq_num] & ~CLIC_CLIC_CLICINT_IE_Msk) |
+2003d9b0:	f0001437          	lui	s0,0xf0001
+2003d9b4:	407c                	lw	a5,68(s0)
+	nrf_vpr_clic_int_enable_set(NRF_VPRCLIC, VEVIF_IRQN(HRT_VEVIF_IDX_READ), true);
+
+	IRQ_DIRECT_CONNECT(HRT_VEVIF_IDX_WRITE, HRT_IRQ_PRIORITY, hrt_handler_write, 0);
+2003d9b6:	4601                	li	a2,0
+2003d9b8:	4589                	li	a1,2
+2003d9ba:	1007e793          	ori	a5,a5,256
+2003d9be:	c07c                	sw	a5,68(s0)
+2003d9c0:	4549                	li	a0,18
+2003d9c2:	20a1                	jal	2003da0a <z_riscv_irq_priority_set>
+2003d9c4:	4549                	li	a0,18
+2003d9c6:	20a1                	jal	2003da0e <z_riscv_irq_vector_set>
+2003d9c8:	443c                	lw	a5,72(s0)
+2003d9ca:	1007e793          	ori	a5,a5,256
+2003d9ce:	c43c                	sw	a5,72(s0)
+    return nrf_csr_read(VPRCSR_MINSTRET) | ((uint64_t)nrf_csr_read(VPRCSR_MINSTRETH) << 32);
+}
+
+NRF_STATIC_INLINE void nrf_vpr_csr_rtperiph_enable_set(bool enable)
+{
+    uint32_t reg = nrf_csr_read(VPRCSR_NORDIC_VPRNORDICCTRL);
+2003d9d0:	7c0027f3          	csrr	a5,0x7c0
+    reg = (reg & ~VPRCSR_NORDIC_VPRNORDICCTRL_ENABLERTPERIPH_Msk) | NRF_VPR_CSR_NORDIC_KEY_MASK;
+2003d9d4:	af830737          	lui	a4,0xaf830
+2003d9d8:	1779                	addi	a4,a4,-2 # af82fffe <CONFIG_MCUBOOT_APPLICATION_IMAGE_NUMBER+0xaf82ffff>
+2003d9da:	8ff9                	and	a5,a5,a4
+
+    reg |= ((enable ? VPRCSR_NORDIC_VPRNORDICCTRL_ENABLERTPERIPH_Enabled :
+2003d9dc:	507d0737          	lui	a4,0x507d0
+2003d9e0:	0705                	addi	a4,a4,1 # 507d0001 <__global_pointer$+0x3078ffd9>
+2003d9e2:	8fd9                	or	a5,a5,a4
+                      VPRCSR_NORDIC_VPRNORDICCTRL_ENABLERTPERIPH_Disabled)
+            << VPRCSR_NORDIC_VPRNORDICCTRL_ENABLERTPERIPH_Pos) | NRF_VPR_CSR_NORDIC_KEY_MASK;
+
+    nrf_csr_write(VPRCSR_NORDIC_VPRNORDICCTRL, reg);
+2003d9e4:	7c079073          	csrw	0x7c0,a5
+ * @note In some architectures, before returning, the function unmasks interrupts
+ * unconditionally.
+ */
+static inline void k_cpu_idle(void)
+{
+	arch_cpu_idle();
+2003d9e8:	7bc000ef          	jal	ra,2003e1a4 <arch_cpu_idle>
+2003d9ec:	bff5                	j	2003d9e8 <main+0x9c>
+		delay++;
+2003d9ee:	4702                	lw	a4,0(sp)
+2003d9f0:	0705                	addi	a4,a4,1
+2003d9f2:	c03a                	sw	a4,0(sp)
+2003d9f4:	b7a5                	j	2003d95c <main+0x10>
+	while (true) {
+		k_cpu_idle();
+	}
+
+	return 0;
+}
+2003d9f6:	40b2                	lw	ra,12(sp)
+2003d9f8:	4422                	lw	s0,8(sp)
+2003d9fa:	4501                	li	a0,0
+2003d9fc:	0141                	addi	sp,sp,16
+2003d9fe:	8082                	ret
+
+2003da00 <_ConfigAbsSyms>:
+GEN_ABSOLUTE_SYM_KCONFIG(CONFIG_CHECK_INIT_PRIORITIES, 1);
+GEN_ABSOLUTE_SYM_KCONFIG(CONFIG_WARN_DEPRECATED, 1);
+GEN_ABSOLUTE_SYM_KCONFIG(CONFIG_ENFORCE_ZEPHYR_STDINT, 1);
+GEN_ABSOLUTE_SYM_KCONFIG(CONFIG_LEGACY_GENERATED_INCLUDE_PATH, 1);
+
+GEN_ABS_SYM_END
+2003da00:	8082                	ret
+
+2003da02 <arch_irq_enable>:
+
+#if defined(CONFIG_RISCV_HAS_CLIC)
+
+void arch_irq_enable(unsigned int irq)
+{
+	riscv_clic_irq_enable(irq);
+2003da02:	1730006f          	j	2003e374 <riscv_clic_irq_enable>
+
+2003da06 <arch_irq_disable>:
+}
+
+void arch_irq_disable(unsigned int irq)
+{
+	riscv_clic_irq_disable(irq);
+2003da06:	1810006f          	j	2003e386 <riscv_clic_irq_disable>
+
+2003da0a <z_riscv_irq_priority_set>:
+	return riscv_clic_irq_is_enabled(irq);
+}
+
+void z_riscv_irq_priority_set(unsigned int irq, unsigned int prio, uint32_t flags)
+{
+	riscv_clic_irq_priority_set(irq, prio, flags);
+2003da0a:	18f0006f          	j	2003e398 <riscv_clic_irq_priority_set>
+
+2003da0e <z_riscv_irq_vector_set>:
+#if defined(CONFIG_CLIC_SMCLICSHV_EXT)
+	riscv_clic_irq_vector_set(irq);
+#else
+	ARG_UNUSED(irq);
+#endif
+}
+2003da0e:	8082                	ret
+
+2003da10 <ipc_service_open_instance>:
+
+int ipc_service_open_instance(const struct device *instance)
+{
+	const struct ipc_service_backend *backend;
+
+	if (!instance) {
+2003da10:	c511                	beqz	a0,2003da1c <ipc_service_open_instance+0xc>
+		LOG_ERR("Invalid instance");
+		return -EINVAL;
+	}
+
+	backend = (const struct ipc_service_backend *) instance->api;
+2003da12:	451c                	lw	a5,8(a0)
+
+	if (!backend) {
+2003da14:	c791                	beqz	a5,2003da20 <ipc_service_open_instance+0x10>
+		LOG_ERR("Invalid backend configuration");
+		return -EIO;
+	}
+
+	if (!backend->open_instance) {
+2003da16:	439c                	lw	a5,0(a5)
+2003da18:	c791                	beqz	a5,2003da24 <ipc_service_open_instance+0x14>
+		/* maybe not needed on backend */
+		return 0;
+	}
+
+	return backend->open_instance(instance);
+2003da1a:	8782                	jr	a5
+		return -EINVAL;
+2003da1c:	5529                	li	a0,-22
+2003da1e:	8082                	ret
+		return -EIO;
+2003da20:	556d                	li	a0,-5
+2003da22:	8082                	ret
+		return 0;
+2003da24:	4501                	li	a0,0
+}
+2003da26:	8082                	ret
+
+2003da28 <ipc_service_register_endpoint>:
+				  struct ipc_ept *ept,
+				  const struct ipc_ept_cfg *cfg)
+{
+	const struct ipc_service_backend *backend;
+
+	if (!instance || !ept || !cfg) {
+2003da28:	c919                	beqz	a0,2003da3e <ipc_service_register_endpoint+0x16>
+2003da2a:	c991                	beqz	a1,2003da3e <ipc_service_register_endpoint+0x16>
+2003da2c:	ca09                	beqz	a2,2003da3e <ipc_service_register_endpoint+0x16>
+		LOG_ERR("Invalid instance, endpoint or configuration");
+		return -EINVAL;
+	}
+
+	backend = (const struct ipc_service_backend *) instance->api;
+2003da2e:	4518                	lw	a4,8(a0)
+
+	if (!backend || !backend->register_endpoint) {
+2003da30:	cb09                	beqz	a4,2003da42 <ipc_service_register_endpoint+0x1a>
+2003da32:	4754                	lw	a3,12(a4)
+2003da34:	c699                	beqz	a3,2003da42 <ipc_service_register_endpoint+0x1a>
+		return -EIO;
+	}
+
+	LOG_DBG("Register endpoint %s", cfg->name ? cfg->name : "");
+
+	ept->instance = instance;
+2003da36:	c188                	sw	a0,0(a1)
+
+	return backend->register_endpoint(instance, &ept->token, cfg);
+2003da38:	475c                	lw	a5,12(a4)
+2003da3a:	0591                	addi	a1,a1,4
+2003da3c:	8782                	jr	a5
+		return -EINVAL;
+2003da3e:	5529                	li	a0,-22
+2003da40:	8082                	ret
+		return -EIO;
+2003da42:	556d                	li	a0,-5
+}
+2003da44:	8082                	ret
+
+2003da46 <ipc_service_send>:
+	return 0;
+}
+
+
+int ipc_service_send(struct ipc_ept *ept, const void *data, size_t len)
+{
+2003da46:	87aa                	mv	a5,a0
+2003da48:	86b2                	mv	a3,a2
+	const struct ipc_service_backend *backend;
+
+	if (!ept) {
+2003da4a:	c911                	beqz	a0,2003da5e <ipc_service_send+0x18>
+		LOG_ERR("Invalid endpoint");
+		return -EINVAL;
+	}
+
+	if (!ept->instance) {
+2003da4c:	4108                	lw	a0,0(a0)
+2003da4e:	c911                	beqz	a0,2003da62 <ipc_service_send+0x1c>
+		LOG_ERR("Endpoint not registered\n");
+		return -ENOENT;
+	}
+
+	backend = ept->instance->api;
+2003da50:	4518                	lw	a4,8(a0)
+
+	if (!backend || !backend->send) {
+2003da52:	cb11                	beqz	a4,2003da66 <ipc_service_send+0x20>
+2003da54:	4718                	lw	a4,8(a4)
+2003da56:	cb01                	beqz	a4,2003da66 <ipc_service_send+0x20>
+		LOG_ERR("Invalid backend configuration");
+		return -EIO;
+	}
+
+	return backend->send(ept->instance, ept->token, data, len);
+2003da58:	862e                	mv	a2,a1
+2003da5a:	43cc                	lw	a1,4(a5)
+2003da5c:	8702                	jr	a4
+		return -EINVAL;
+2003da5e:	5529                	li	a0,-22
+2003da60:	8082                	ret
+		return -ENOENT;
+2003da62:	5579                	li	a0,-2
+2003da64:	8082                	ret
+		return -EIO;
+2003da66:	556d                	li	a0,-5
+}
+2003da68:	8082                	ret
+
+2003da6a <backend_init>:
+};
+
+static int backend_init(const struct device *instance)
+{
+	return 0;
+}
+2003da6a:	4501                	li	a0,0
+2003da6c:	8082                	ret
+
+2003da6e <deregister_ept>:
+	return icmsg_close(conf, dev_data);
+2003da6e:	490c                	lw	a1,16(a0)
+2003da70:	4148                	lw	a0,4(a0)
+2003da72:	a68d                	j	2003ddd4 <icmsg_close>
+
+2003da74 <register_ept>:
+{
+2003da74:	87aa                	mv	a5,a0
+	struct icmsg_data_t *dev_data = instance->data;
+2003da76:	4b9c                	lw	a5,16(a5)
+	const struct icmsg_config_t *conf = instance->config;
+2003da78:	4148                	lw	a0,4(a0)
+	*token = NULL;
+2003da7a:	0005a023          	sw	zero,0(a1)
+	return icmsg_open(conf, dev_data, &cfg->cb, cfg->priv);
+2003da7e:	4e14                	lw	a3,24(a2)
+2003da80:	85be                	mv	a1,a5
+2003da82:	0621                	addi	a2,a2,8
+2003da84:	acb9                	j	2003dce2 <icmsg_open>
+
+2003da86 <send>:
+	return icmsg_send(conf, dev_data, msg, len);
+2003da86:	490c                	lw	a1,16(a0)
+2003da88:	4148                	lw	a0,4(a0)
+2003da8a:	ae45                	j	2003de3a <icmsg_send>
+
+2003da8c <atomic_set>:
+	return z_impl_atomic_set(target, value);
+2003da8c:	3650006f          	j	2003e5f0 <z_impl_atomic_set>
+
+2003da90 <mbox_send_dt.constprop.0>:
+ * @param spec MBOX specification from devicetree
+ * @param msg Message
+ *
+ * @return See return values for mbox_send()
+ */
+static inline int mbox_send_dt(const struct mbox_dt_spec *spec,
+2003da90:	87aa                	mv	a5,a0
+			       const struct mbox_msg *msg)
+{
+	return mbox_send(spec->dev, spec->channel_id, msg);
+2003da92:	43cc                	lw	a1,4(a5)
+2003da94:	4108                	lw	a0,0(a0)
+	if (api->send == NULL) {
+2003da96:	451c                	lw	a5,8(a0)
+2003da98:	439c                	lw	a5,0(a5)
+2003da9a:	c399                	beqz	a5,2003daa0 <mbox_send_dt.constprop.0+0x10>
+	return api->send(dev, channel_id, msg);
+2003da9c:	4601                	li	a2,0
+2003da9e:	8782                	jr	a5
+}
+2003daa0:	fa800513          	li	a0,-88
+2003daa4:	8082                	ret
+
+2003daa6 <initialize_tx_with_sid_disabled>:
+}
+
+#endif
+
+static int initialize_tx_with_sid_disabled(struct icmsg_data_t *dev_data)
+{
+2003daa6:	1151                	addi	sp,sp,-12
+2003daa8:	c222                	sw	s0,4(sp)
+2003daaa:	c406                	sw	ra,8(sp)
+2003daac:	842a                	mv	s0,a0
+	int ret;
+
+	ret = pbuf_tx_init(dev_data->tx_pb);
+2003daae:	4108                	lw	a0,0(a0)
+2003dab0:	2981                	jal	2003df00 <pbuf_tx_init>
+
+	if (ret < 0) {
+2003dab2:	00054f63          	bltz	a0,2003dad0 <initialize_tx_with_sid_disabled+0x2a>
+		__ASSERT(false, "Incorrect Tx configuration");
+		return ret;
+	}
+
+	ret = pbuf_write(dev_data->tx_pb, magic, sizeof(magic));
+2003dab6:	4008                	lw	a0,0(s0)
+2003dab8:	2003f5b7          	lui	a1,0x2003f
+2003dabc:	4635                	li	a2,13
+2003dabe:	86458593          	addi	a1,a1,-1948 # 2003e864 <magic>
+2003dac2:	2969                	jal	2003df5c <pbuf_write>
+
+	if (ret < 0) {
+2003dac4:	00054663          	bltz	a0,2003dad0 <initialize_tx_with_sid_disabled+0x2a>
+		__ASSERT_NO_MSG(false);
+		return ret;
+	}
+
+	if (ret < (int)sizeof(magic)) {
+2003dac8:	47b1                	li	a5,12
+2003daca:	00a7c763          	blt	a5,a0,2003dad8 <initialize_tx_with_sid_disabled+0x32>
+		__ASSERT_NO_MSG(ret == sizeof(magic));
+		return -EINVAL;
+2003dace:	5529                	li	a0,-22
+	}
+
+	return 0;
+}
+2003dad0:	40a2                	lw	ra,8(sp)
+2003dad2:	4412                	lw	s0,4(sp)
+2003dad4:	0131                	addi	sp,sp,12
+2003dad6:	8082                	ret
+	return 0;
+2003dad8:	4501                	li	a0,0
+2003dada:	bfdd                	j	2003dad0 <initialize_tx_with_sid_disabled+0x2a>
+
+2003dadc <callback_process>:
+
+static bool callback_process(struct icmsg_data_t *dev_data)
+{
+2003dadc:	ce810113          	addi	sp,sp,-792
+	uint8_t rx_buffer[CONFIG_PBUF_RX_READ_BUF_SIZE] __aligned(4);
+	uint32_t len = 0;
+	uint32_t len_available;
+	bool rerun = false;
+	bool notify_remote = false;
+	atomic_t state = atomic_get(&dev_data->state);
+2003dae0:	01850793          	addi	a5,a0,24
+{
+2003dae4:	30812823          	sw	s0,784(sp)
+2003dae8:	842a                	mv	s0,a0
+	atomic_t state = atomic_get(&dev_data->state);
+2003daea:	853e                	mv	a0,a5
+{
+2003daec:	30112a23          	sw	ra,788(sp)
+2003daf0:	30912623          	sw	s1,780(sp)
+	atomic_t state = atomic_get(&dev_data->state);
+2003daf4:	c03e                	sw	a5,0(sp)
+2003daf6:	2f7000ef          	jal	ra,2003e5ec <atomic_get>
+
+	switch (state) {
+2003dafa:	468d                	li	a3,3
+2003dafc:	08d50e63          	beq	a0,a3,2003db98 <callback_process+0xbc>
+2003db00:	84aa                	mv	s1,a0
+2003db02:	02a6c363          	blt	a3,a0,2003db28 <callback_process+0x4c>
+2003db06:	4685                	li	a3,1
+2003db08:	02d50563          	beq	a0,a3,2003db32 <callback_process+0x56>
+2003db0c:	4689                	li	a3,2
+2003db0e:	0ed50263          	beq	a0,a3,2003dbf2 <callback_process+0x116>
+					dev_data->cb->error("Incorrect Tx configuration",
+							    dev_data->ctx);
+				}
+				__ASSERT(false, "Incorrect Tx configuration");
+				atomic_set(&dev_data->state, ICMSG_STATE_OFF);
+				return false;
+2003db12:	4481                	li	s1,0
+	if (notify_remote) {
+		(void)mbox_send_dt(&dev_data->cfg->mbox_tx, NULL);
+	}
+
+	return rerun;
+}
+2003db14:	31412083          	lw	ra,788(sp)
+2003db18:	31012403          	lw	s0,784(sp)
+2003db1c:	8526                	mv	a0,s1
+2003db1e:	30c12483          	lw	s1,780(sp)
+2003db22:	31810113          	addi	sp,sp,792
+2003db26:	8082                	ret
+	switch (state) {
+2003db28:	ffb50693          	addi	a3,a0,-5
+2003db2c:	4605                	li	a2,1
+2003db2e:	fed662e3          	bltu	a2,a3,2003db12 <callback_process+0x36>
+	return pbuf_read(dev_data->rx_pb, NULL, 0);
+2003db32:	4048                	lw	a0,4(s0)
+2003db34:	4601                	li	a2,0
+2003db36:	4581                	li	a1,0
+2003db38:	2ba1                	jal	2003e090 <pbuf_read>
+		if (len_available > 0 && sizeof(rx_buffer) >= len_available) {
+2003db3a:	fff50793          	addi	a5,a0,-1
+2003db3e:	c03e                	sw	a5,0(sp)
+2003db40:	2ff00693          	li	a3,767
+2003db44:	12f6e863          	bltu	a3,a5,2003dc74 <callback_process+0x198>
+			len = pbuf_read(dev_data->rx_pb, rx_buffer, sizeof(rx_buffer));
+2003db48:	4048                	lw	a0,4(s0)
+2003db4a:	006c                	addi	a1,sp,12
+2003db4c:	30000613          	li	a2,768
+2003db50:	2381                	jal	2003e090 <pbuf_read>
+		if (state == ICMSG_STATE_CONNECTED_SID_ENABLED &&
+2003db52:	4699                	li	a3,6
+			len = pbuf_read(dev_data->rx_pb, rx_buffer, sizeof(rx_buffer));
+2003db54:	85aa                	mv	a1,a0
+		if (state == ICMSG_STATE_CONNECTED_SID_ENABLED &&
+2003db56:	12d48363          	beq	s1,a3,2003dc7c <callback_process+0x1a0>
+		if (state != ICMSG_STATE_INITIALIZING_SID_DISABLED || !UNBOUND_DISABLED) {
+2003db5a:	4685                	li	a3,1
+2003db5c:	14d49a63          	bne	s1,a3,2003dcb0 <callback_process+0x1d4>
+			bool endpoint_invalid = (len < sizeof(magic) ||
+2003db60:	4731                	li	a4,12
+2003db62:	faa778e3          	bgeu	a4,a0,2003db12 <callback_process+0x36>
+						memcmp(magic, rx_buffer, sizeof(magic)));
+2003db66:	2003f537          	lui	a0,0x2003f
+2003db6a:	4635                	li	a2,13
+2003db6c:	006c                	addi	a1,sp,12
+2003db6e:	86450513          	addi	a0,a0,-1948 # 2003e864 <magic>
+2003db72:	309000ef          	jal	ra,2003e67a <memcmp>
+			bool endpoint_invalid = (len < sizeof(magic) ||
+2003db76:	fd51                	bnez	a0,2003db12 <callback_process+0x36>
+			if (dev_data->cb->bound) {
+2003db78:	4418                	lw	a4,8(s0)
+2003db7a:	4318                	lw	a4,0(a4)
+2003db7c:	c319                	beqz	a4,2003db82 <callback_process+0xa6>
+				dev_data->cb->bound(dev_data->ctx);
+2003db7e:	4448                	lw	a0,12(s0)
+2003db80:	9702                	jalr	a4
+			atomic_set(&dev_data->state, ICMSG_STATE_CONNECTED_SID_DISABLED);
+2003db82:	4595                	li	a1,5
+2003db84:	01840513          	addi	a0,s0,24 # f0001018 <CONFIG_MCUBOOT_APPLICATION_IMAGE_NUMBER+0xf0001019>
+2003db88:	3711                	jal	2003da8c <atomic_set>
+	return pbuf_read(dev_data->rx_pb, NULL, 0);
+2003db8a:	4048                	lw	a0,4(s0)
+2003db8c:	4601                	li	a2,0
+2003db8e:	4581                	li	a1,0
+2003db90:	2301                	jal	2003e090 <pbuf_read>
+		rerun = (data_available(dev_data) > 0);
+2003db92:	00a034b3          	snez	s1,a0
+	if (notify_remote) {
+2003db96:	a899                	j	2003dbec <callback_process+0x110>
+		ret = pbuf_get_initial_buf(dev_data->rx_pb, &magic_buf, &magic_len);
+2003db98:	4048                	lw	a0,4(s0)
+2003db9a:	00a10613          	addi	a2,sp,10
+2003db9e:	006c                	addi	a1,sp,12
+2003dba0:	2949                	jal	2003e032 <pbuf_get_initial_buf>
+		if (ret == 0 && magic_len == sizeof(magic) &&
+2003dba2:	e921                	bnez	a0,2003dbf2 <callback_process+0x116>
+2003dba4:	00a15683          	lhu	a3,10(sp)
+2003dba8:	4735                	li	a4,13
+2003dbaa:	04e69463          	bne	a3,a4,2003dbf2 <callback_process+0x116>
+		    memcmp((void *)magic_buf, magic, sizeof(magic)) == 0) {
+2003dbae:	4532                	lw	a0,12(sp)
+2003dbb0:	2003f5b7          	lui	a1,0x2003f
+2003dbb4:	4635                	li	a2,13
+2003dbb6:	86458593          	addi	a1,a1,-1948 # 2003e864 <magic>
+2003dbba:	2c1000ef          	jal	ra,2003e67a <memcmp>
+		if (ret == 0 && magic_len == sizeof(magic) &&
+2003dbbe:	e915                	bnez	a0,2003dbf2 <callback_process+0x116>
+			ret = initialize_tx_with_sid_disabled(dev_data);
+2003dbc0:	8522                	mv	a0,s0
+2003dbc2:	35d5                	jal	2003daa6 <initialize_tx_with_sid_disabled>
+			if (ret < 0) {
+2003dbc4:	00055f63          	bgez	a0,2003dbe2 <callback_process+0x106>
+				if (dev_data->cb->error) {
+2003dbc8:	4418                	lw	a4,8(s0)
+2003dbca:	4758                	lw	a4,12(a4)
+2003dbcc:	c719                	beqz	a4,2003dbda <callback_process+0xfe>
+					dev_data->cb->error("Incorrect Tx configuration",
+2003dbce:	444c                	lw	a1,12(s0)
+2003dbd0:	2003f537          	lui	a0,0x2003f
+2003dbd4:	84850513          	addi	a0,a0,-1976 # 2003e848 <backend_ops+0x2c>
+2003dbd8:	9702                	jalr	a4
+				atomic_set(&dev_data->state, ICMSG_STATE_OFF);
+2003dbda:	4581                	li	a1,0
+				atomic_set(&dev_data->state, ICMSG_STATE_DISCONNECTED);
+2003dbdc:	4502                	lw	a0,0(sp)
+2003dbde:	357d                	jal	2003da8c <atomic_set>
+				return false;
+2003dbe0:	bf0d                	j	2003db12 <callback_process+0x36>
+			atomic_set(&dev_data->state, ICMSG_STATE_INITIALIZING_SID_DISABLED);
+2003dbe2:	4585                	li	a1,1
+2003dbe4:	01840513          	addi	a0,s0,24
+2003dbe8:	3555                	jal	2003da8c <atomic_set>
+			rerun = true;
+2003dbea:	4485                	li	s1,1
+		(void)mbox_send_dt(&dev_data->cfg->mbox_tx, NULL);
+2003dbec:	4808                	lw	a0,16(s0)
+2003dbee:	354d                	jal	2003da90 <mbox_send_dt.constprop.0>
+2003dbf0:	b715                	j	2003db14 <callback_process+0x38>
+		uint32_t tx_handshake = pbuf_handshake_read(dev_data->tx_pb);
+2003dbf2:	4008                	lw	a0,0(s0)
+2003dbf4:	2b9d                	jal	2003e16a <pbuf_handshake_read>
+		if (remote_sid_req != dev_data->remote_sid && remote_sid_req != SID_DISCONNECTED) {
+2003dbf6:	01445703          	lhu	a4,20(s0)
+		uint32_t remote_sid_req = REMOTE_SID_REQ_FROM_TX(tx_handshake);
+2003dbfa:	01051613          	slli	a2,a0,0x10
+2003dbfe:	8241                	srli	a2,a2,0x10
+		uint32_t tx_handshake = pbuf_handshake_read(dev_data->tx_pb);
+2003dc00:	84aa                	mv	s1,a0
+		uint32_t local_sid_ack = LOCAL_SID_ACK_FROM_TX(tx_handshake);
+2003dc02:	01055693          	srli	a3,a0,0x10
+		if (remote_sid_req != dev_data->remote_sid && remote_sid_req != SID_DISCONNECTED) {
+2003dc06:	06c70063          	beq	a4,a2,2003dc66 <callback_process+0x18a>
+2003dc0a:	ce31                	beqz	a2,2003dc66 <callback_process+0x18a>
+			ret = pbuf_tx_init(dev_data->tx_pb);
+2003dc0c:	4008                	lw	a0,0(s0)
+2003dc0e:	c236                	sw	a3,4(sp)
+2003dc10:	2cc5                	jal	2003df00 <pbuf_tx_init>
+			if (ret < 0) {
+2003dc12:	4692                	lw	a3,4(sp)
+2003dc14:	00055d63          	bgez	a0,2003dc2e <callback_process+0x152>
+				if (dev_data->cb->error) {
+2003dc18:	4418                	lw	a4,8(s0)
+2003dc1a:	4758                	lw	a4,12(a4)
+2003dc1c:	c719                	beqz	a4,2003dc2a <callback_process+0x14e>
+					dev_data->cb->error("Incorrect Tx configuration",
+2003dc1e:	444c                	lw	a1,12(s0)
+2003dc20:	2003f537          	lui	a0,0x2003f
+2003dc24:	84850513          	addi	a0,a0,-1976 # 2003e848 <backend_ops+0x2c>
+2003dc28:	9702                	jalr	a4
+				atomic_set(&dev_data->state, ICMSG_STATE_DISCONNECTED);
+2003dc2a:	4591                	li	a1,4
+2003dc2c:	bf45                	j	2003dbdc <callback_process+0x100>
+				MAKE_RX_HANDSHAKE(dev_data->local_sid, dev_data->remote_sid));
+2003dc2e:	01645583          	lhu	a1,22(s0)
+			pbuf_handshake_write(dev_data->rx_pb,
+2003dc32:	4048                	lw	a0,4(s0)
+			dev_data->remote_sid = remote_sid_req;
+2003dc34:	00941a23          	sh	s1,20(s0)
+				MAKE_RX_HANDSHAKE(dev_data->local_sid, dev_data->remote_sid));
+2003dc38:	04c2                	slli	s1,s1,0x10
+			pbuf_handshake_write(dev_data->rx_pb,
+2003dc3a:	8dc5                	or	a1,a1,s1
+2003dc3c:	c036                	sw	a3,0(sp)
+2003dc3e:	2b25                	jal	2003e176 <pbuf_handshake_write>
+		if (local_sid_ack == dev_data->local_sid &&
+2003dc40:	01645703          	lhu	a4,22(s0)
+2003dc44:	4682                	lw	a3,0(sp)
+	bool rerun = false;
+2003dc46:	4481                	li	s1,0
+		if (local_sid_ack == dev_data->local_sid &&
+2003dc48:	fae692e3          	bne	a3,a4,2003dbec <callback_process+0x110>
+2003dc4c:	01445703          	lhu	a4,20(s0)
+2003dc50:	df51                	beqz	a4,2003dbec <callback_process+0x110>
+			atomic_set(&dev_data->state, ICMSG_STATE_CONNECTED_SID_ENABLED);
+2003dc52:	4599                	li	a1,6
+2003dc54:	01840513          	addi	a0,s0,24
+2003dc58:	3d15                	jal	2003da8c <atomic_set>
+			if (dev_data->cb->bound) {
+2003dc5a:	4418                	lw	a4,8(s0)
+2003dc5c:	4318                	lw	a4,0(a4)
+2003dc5e:	d751                	beqz	a4,2003dbea <callback_process+0x10e>
+				dev_data->cb->bound(dev_data->ctx);
+2003dc60:	4448                	lw	a0,12(s0)
+2003dc62:	9702                	jalr	a4
+2003dc64:	b759                	j	2003dbea <callback_process+0x10e>
+		if (local_sid_ack == dev_data->local_sid &&
+2003dc66:	01645603          	lhu	a2,22(s0)
+2003dc6a:	eac694e3          	bne	a3,a2,2003db12 <callback_process+0x36>
+2003dc6e:	ea0702e3          	beqz	a4,2003db12 <callback_process+0x36>
+2003dc72:	b7c5                	j	2003dc52 <callback_process+0x176>
+		if (state == ICMSG_STATE_CONNECTED_SID_ENABLED &&
+2003dc74:	4699                	li	a3,6
+2003dc76:	e8d49ee3          	bne	s1,a3,2003db12 <callback_process+0x36>
+	uint32_t len = 0;
+2003dc7a:	4581                	li	a1,0
+			uint32_t remote_sid_req = REMOTE_SID_REQ_FROM_TX(
+2003dc7c:	4008                	lw	a0,0(s0)
+2003dc7e:	c22e                	sw	a1,4(sp)
+2003dc80:	21ed                	jal	2003e16a <pbuf_handshake_read>
+			if (remote_sid_req != dev_data->remote_sid) {
+2003dc82:	01445703          	lhu	a4,20(s0)
+			uint32_t remote_sid_req = REMOTE_SID_REQ_FROM_TX(
+2003dc86:	0542                	slli	a0,a0,0x10
+2003dc88:	8141                	srli	a0,a0,0x10
+			if (remote_sid_req != dev_data->remote_sid) {
+2003dc8a:	4592                	lw	a1,4(sp)
+2003dc8c:	00a70d63          	beq	a4,a0,2003dca6 <callback_process+0x1ca>
+				atomic_set(&dev_data->state, ICMSG_STATE_DISCONNECTED);
+2003dc90:	4591                	li	a1,4
+2003dc92:	01840513          	addi	a0,s0,24
+2003dc96:	3bdd                	jal	2003da8c <atomic_set>
+				if (dev_data->cb->unbound) {
+2003dc98:	4418                	lw	a4,8(s0)
+2003dc9a:	4358                	lw	a4,4(a4)
+2003dc9c:	e6070be3          	beqz	a4,2003db12 <callback_process+0x36>
+					dev_data->cb->unbound(dev_data->ctx);
+2003dca0:	4448                	lw	a0,12(s0)
+2003dca2:	9702                	jalr	a4
+2003dca4:	b5bd                	j	2003db12 <callback_process+0x36>
+		if (len_available == 0) {
+2003dca6:	4782                	lw	a5,0(sp)
+2003dca8:	2ff00713          	li	a4,767
+2003dcac:	e6f763e3          	bltu	a4,a5,2003db12 <callback_process+0x36>
+			if (dev_data->cb->received) {
+2003dcb0:	4418                	lw	a4,8(s0)
+2003dcb2:	4718                	lw	a4,8(a4)
+2003dcb4:	eb01                	bnez	a4,2003dcc4 <callback_process+0x1e8>
+	return pbuf_read(dev_data->rx_pb, NULL, 0);
+2003dcb6:	4048                	lw	a0,4(s0)
+2003dcb8:	4601                	li	a2,0
+2003dcba:	4581                	li	a1,0
+2003dcbc:	2ed1                	jal	2003e090 <pbuf_read>
+		rerun = (data_available(dev_data) > 0);
+2003dcbe:	00a034b3          	snez	s1,a0
+	if (notify_remote) {
+2003dcc2:	bd89                	j	2003db14 <callback_process+0x38>
+				dev_data->cb->received(rx_buffer, len, dev_data->ctx);
+2003dcc4:	4450                	lw	a2,12(s0)
+2003dcc6:	0068                	addi	a0,sp,12
+2003dcc8:	9702                	jalr	a4
+2003dcca:	b7f5                	j	2003dcb6 <callback_process+0x1da>
+
+2003dccc <mbox_callback>:
+}
+#endif /* def CONFIG_MULTITHREADING */
+
+static void mbox_callback(const struct device *instance, uint32_t channel,
+			  void *user_data, struct mbox_msg *msg_data)
+{
+2003dccc:	1151                	addi	sp,sp,-12
+2003dcce:	c222                	sw	s0,4(sp)
+2003dcd0:	c406                	sw	ra,8(sp)
+2003dcd2:	8432                	mv	s0,a2
+#ifdef CONFIG_MULTITHREADING
+	ARG_UNUSED(rerun);
+	submit_mbox_work(dev_data);
+#else
+	do {
+		rerun = callback_process(dev_data);
+2003dcd4:	8522                	mv	a0,s0
+2003dcd6:	3519                	jal	2003dadc <callback_process>
+	} while (rerun);
+2003dcd8:	fd75                	bnez	a0,2003dcd4 <mbox_callback+0x8>
+#endif
+}
+2003dcda:	40a2                	lw	ra,8(sp)
+2003dcdc:	4412                	lw	s0,4(sp)
+2003dcde:	0131                	addi	sp,sp,12
+2003dce0:	8082                	ret
+
+2003dce2 <icmsg_open>:
+}
+
+int icmsg_open(const struct icmsg_config_t *conf,
+	       struct icmsg_data_t *dev_data,
+	       const struct ipc_service_cb *cb, void *ctx)
+{
+2003dce2:	1111                	addi	sp,sp,-28
+2003dce4:	ca22                	sw	s0,20(sp)
+2003dce6:	c826                	sw	s1,16(sp)
+2003dce8:	cc06                	sw	ra,24(sp)
+2003dcea:	842e                	mv	s0,a1
+	__ASSERT(conf->unbound_mode != ICMSG_UNBOUND_MODE_ENABLE || UNBOUND_ENABLED,
+		 "Unbound mode \"enabled\" is was forbidden in Kconfig.");
+	__ASSERT(conf->unbound_mode != ICMSG_UNBOUND_MODE_DETECT || UNBOUND_DETECT,
+		 "Unbound mode \"detect\" is was forbidden in Kconfig.");
+
+	if (conf->unbound_mode == ICMSG_UNBOUND_MODE_DISABLE ||
+2003dcec:	01054583          	lbu	a1,16(a0)
+	    !(UNBOUND_ENABLED || UNBOUND_DETECT)) {
+		if (!atomic_cas(&dev_data->state, ICMSG_STATE_OFF,
+2003dcf0:	01840793          	addi	a5,s0,24
+2003dcf4:	c23e                	sw	a5,4(sp)
+{
+2003dcf6:	c432                	sw	a2,8(sp)
+2003dcf8:	c636                	sw	a3,12(sp)
+	if (conf->unbound_mode == ICMSG_UNBOUND_MODE_DISABLE ||
+2003dcfa:	4785                	li	a5,1
+{
+2003dcfc:	84aa                	mv	s1,a0
+	if (conf->unbound_mode == ICMSG_UNBOUND_MODE_DISABLE ||
+2003dcfe:	06f59f63          	bne	a1,a5,2003dd7c <icmsg_open+0x9a>
+	return z_impl_atomic_cas(target, old_value, new_value);
+2003dd02:	4605                	li	a2,1
+2003dd04:	4581                	li	a1,0
+2003dd06:	01840513          	addi	a0,s0,24
+2003dd0a:	0c9000ef          	jal	ra,2003e5d2 <z_impl_atomic_cas>
+				ICMSG_STATE_INITIALIZING_SID_DISABLED)) {
+			/* Already opened. */
+			return -EALREADY;
+		}
+		old_state = ICMSG_STATE_OFF;
+2003dd0e:	c002                	sw	zero,0(sp)
+			return -EALREADY;
+2003dd10:	f8800793          	li	a5,-120
+		if (!atomic_cas(&dev_data->state, ICMSG_STATE_OFF,
+2003dd14:	cd31                	beqz	a0,2003dd70 <icmsg_open+0x8e>
+	} else {
+		/* Unbound mode has the same values as ICMSG_STATE_INITIALIZING_* */
+		old_state = atomic_set(&dev_data->state, conf->unbound_mode);
+	}
+
+	dev_data->cb = cb;
+2003dd16:	47a2                	lw	a5,8(sp)
+
+#ifdef CONFIG_IPC_SERVICE_ICMSG_SHMEM_ACCESS_SYNC
+	k_mutex_init(&dev_data->tx_lock);
+#endif
+
+	ret = pbuf_rx_init(dev_data->rx_pb);
+2003dd18:	4048                	lw	a0,4(s0)
+	dev_data->cfg = conf;
+2003dd1a:	c804                	sw	s1,16(s0)
+	dev_data->cb = cb;
+2003dd1c:	c41c                	sw	a5,8(s0)
+	dev_data->ctx = ctx;
+2003dd1e:	47b2                	lw	a5,12(sp)
+2003dd20:	c45c                	sw	a5,12(s0)
+	ret = pbuf_rx_init(dev_data->rx_pb);
+2003dd22:	2c21                	jal	2003df3a <pbuf_rx_init>
+2003dd24:	87aa                	mv	a5,a0
+
+	if (ret < 0) {
+2003dd26:	06054763          	bltz	a0,2003dd94 <icmsg_open+0xb2>
+		__ASSERT(false, "Incorrect Rx configuration");
+		goto cleanup_and_exit;
+	}
+
+	if (conf->unbound_mode != ICMSG_UNBOUND_MODE_DISABLE &&
+2003dd2a:	0104c703          	lbu	a4,16(s1)
+2003dd2e:	4785                	li	a5,1
+2003dd30:	04f70d63          	beq	a4,a5,2003dd8a <icmsg_open+0xa8>
+	    (UNBOUND_ENABLED || UNBOUND_DETECT)) {
+		/* Increment local session id without conflicts with forbidden values. */
+		uint32_t local_sid_ack =
+			LOCAL_SID_ACK_FROM_TX(pbuf_handshake_read(dev_data->tx_pb));
+2003dd34:	4008                	lw	a0,0(s0)
+2003dd36:	2915                	jal	2003e16a <pbuf_handshake_read>
+		uint32_t local_sid_ack =
+2003dd38:	01055793          	srli	a5,a0,0x10
+		dev_data->local_sid =
+			LOCAL_SID_REQ_FROM_RX(pbuf_handshake_read(dev_data->tx_pb));
+2003dd3c:	4008                	lw	a0,0(s0)
+		uint32_t local_sid_ack =
+2003dd3e:	c43e                	sw	a5,8(sp)
+			LOCAL_SID_REQ_FROM_RX(pbuf_handshake_read(dev_data->tx_pb));
+2003dd40:	212d                	jal	2003e16a <pbuf_handshake_read>
+		dev_data->remote_sid = SID_DISCONNECTED;
+2003dd42:	47a2                	lw	a5,8(sp)
+		dev_data->local_sid =
+2003dd44:	01051593          	slli	a1,a0,0x10
+2003dd48:	81c1                	srli	a1,a1,0x10
+		dev_data->remote_sid = SID_DISCONNECTED;
+2003dd4a:	00041a23          	sh	zero,20(s0)
+		do {
+			dev_data->local_sid = (dev_data->local_sid + 1) & 0xFFFF;
+2003dd4e:	0585                	addi	a1,a1,1
+2003dd50:	05c2                	slli	a1,a1,0x10
+2003dd52:	81c1                	srli	a1,a1,0x10
+		} while (dev_data->local_sid == local_sid_ack ||
+2003dd54:	fef58de3          	beq	a1,a5,2003dd4e <icmsg_open+0x6c>
+2003dd58:	d9fd                	beqz	a1,2003dd4e <icmsg_open+0x6c>
+			 dev_data->local_sid == SID_DISCONNECTED);
+		/* Write local session id request without remote acknowledge */
+		pbuf_handshake_write(dev_data->rx_pb,
+2003dd5a:	4048                	lw	a0,4(s0)
+2003dd5c:	00b41b23          	sh	a1,22(s0)
+2003dd60:	2919                	jal	2003e176 <pbuf_handshake_write>
+		if (ret < 0) {
+			goto cleanup_and_exit;
+		}
+	}
+
+	if (old_state == ICMSG_STATE_OFF && (UNBOUND_ENABLED || UNBOUND_DETECT)) {
+2003dd62:	4782                	lw	a5,0(sp)
+2003dd64:	cf95                	beqz	a5,2003dda0 <icmsg_open+0xbe>
+	/* We need to send a notification to remote, it may not be delivered
+	 * since it may be uninitialized yet, but when it finishes the initialization
+	 * we get a notification from it. We need to send this notification in callback
+	 * again to make sure that it arrived.
+	 */
+	ret = mbox_send_dt(&conf->mbox_tx, NULL);
+2003dd66:	8526                	mv	a0,s1
+2003dd68:	3325                	jal	2003da90 <mbox_send_dt.constprop.0>
+2003dd6a:	87aa                	mv	a5,a0
+
+	if (ret < 0) {
+2003dd6c:	02054463          	bltz	a0,2003dd94 <icmsg_open+0xb2>
+	return ret;
+
+cleanup_and_exit:
+	atomic_set(&dev_data->state, ICMSG_STATE_OFF);
+	return ret;
+}
+2003dd70:	40e2                	lw	ra,24(sp)
+2003dd72:	4452                	lw	s0,20(sp)
+2003dd74:	44c2                	lw	s1,16(sp)
+2003dd76:	853e                	mv	a0,a5
+2003dd78:	0171                	addi	sp,sp,28
+2003dd7a:	8082                	ret
+		old_state = atomic_set(&dev_data->state, conf->unbound_mode);
+2003dd7c:	01840513          	addi	a0,s0,24
+2003dd80:	3331                	jal	2003da8c <atomic_set>
+2003dd82:	0ff57793          	zext.b	a5,a0
+2003dd86:	c03e                	sw	a5,0(sp)
+2003dd88:	b779                	j	2003dd16 <icmsg_open+0x34>
+		ret = initialize_tx_with_sid_disabled(dev_data);
+2003dd8a:	8522                	mv	a0,s0
+2003dd8c:	3b29                	jal	2003daa6 <initialize_tx_with_sid_disabled>
+2003dd8e:	87aa                	mv	a5,a0
+		if (ret < 0) {
+2003dd90:	fc0559e3          	bgez	a0,2003dd62 <icmsg_open+0x80>
+	atomic_set(&dev_data->state, ICMSG_STATE_OFF);
+2003dd94:	4512                	lw	a0,4(sp)
+2003dd96:	4581                	li	a1,0
+2003dd98:	c03e                	sw	a5,0(sp)
+2003dd9a:	39cd                	jal	2003da8c <atomic_set>
+2003dd9c:	4782                	lw	a5,0(sp)
+	return ret;
+2003dd9e:	bfc9                	j	2003dd70 <icmsg_open+0x8e>
+ * @return See return values for mbox_register_callback()
+ */
+static inline int mbox_register_callback_dt(const struct mbox_dt_spec *spec,
+					    mbox_callback_t cb, void *user_data)
+{
+	return mbox_register_callback(spec->dev, spec->channel_id, cb,
+2003dda0:	4488                	lw	a0,8(s1)
+2003dda2:	44cc                	lw	a1,12(s1)
+	if (api->register_callback == NULL) {
+2003dda4:	451c                	lw	a5,8(a0)
+2003dda6:	43dc                	lw	a5,4(a5)
+2003dda8:	e781                	bnez	a5,2003ddb0 <icmsg_open+0xce>
+		return -ENOSYS;
+2003ddaa:	fa800793          	li	a5,-88
+2003ddae:	b7dd                	j	2003dd94 <icmsg_open+0xb2>
+	return api->register_callback(dev, channel_id, cb, user_data);
+2003ddb0:	2003e637          	lui	a2,0x2003e
+2003ddb4:	86a2                	mv	a3,s0
+2003ddb6:	ccc60613          	addi	a2,a2,-820 # 2003dccc <mbox_callback>
+2003ddba:	9782                	jalr	a5
+2003ddbc:	87aa                	mv	a5,a0
+	if (err != 0) {
+2003ddbe:	f979                	bnez	a0,2003dd94 <icmsg_open+0xb2>
+ * @return See return values for mbox_set_enabled()
+ */
+static inline int mbox_set_enabled_dt(const struct mbox_dt_spec *spec,
+				      bool enabled)
+{
+	return mbox_set_enabled(spec->dev, spec->channel_id, enabled);
+2003ddc0:	4488                	lw	a0,8(s1)
+2003ddc2:	44cc                	lw	a1,12(s1)
+	if (api->set_enabled == NULL) {
+2003ddc4:	451c                	lw	a5,8(a0)
+2003ddc6:	4b9c                	lw	a5,16(a5)
+2003ddc8:	d3ed                	beqz	a5,2003ddaa <icmsg_open+0xc8>
+	return api->set_enabled(dev, channel_id, enabled);
+2003ddca:	4605                	li	a2,1
+2003ddcc:	9782                	jalr	a5
+2003ddce:	87aa                	mv	a5,a0
+		if (ret) {
+2003ddd0:	d959                	beqz	a0,2003dd66 <icmsg_open+0x84>
+2003ddd2:	b7c9                	j	2003dd94 <icmsg_open+0xb2>
+
+2003ddd4 <icmsg_close>:
+
+int icmsg_close(const struct icmsg_config_t *conf,
+		struct icmsg_data_t *dev_data)
+{
+2003ddd4:	1151                	addi	sp,sp,-12
+2003ddd6:	c222                	sw	s0,4(sp)
+2003ddd8:	c026                	sw	s1,0(sp)
+2003ddda:	c406                	sw	ra,8(sp)
+	int ret = 0;
+	enum icmsg_state old_state;
+
+	if (conf->unbound_mode != ICMSG_UNBOUND_MODE_DISABLE &&
+2003dddc:	01054703          	lbu	a4,16(a0)
+2003dde0:	4785                	li	a5,1
+{
+2003dde2:	842a                	mv	s0,a0
+2003dde4:	84ae                	mv	s1,a1
+	if (conf->unbound_mode != ICMSG_UNBOUND_MODE_DISABLE &&
+2003dde6:	00f70563          	beq	a4,a5,2003ddf0 <icmsg_close+0x1c>
+	    (UNBOUND_ENABLED || UNBOUND_DETECT)) {
+		pbuf_handshake_write(dev_data->rx_pb,
+2003ddea:	40c8                	lw	a0,4(s1)
+2003ddec:	4581                	li	a1,0
+2003ddee:	2661                	jal	2003e176 <pbuf_handshake_write>
+			MAKE_RX_HANDSHAKE(SID_DISCONNECTED, SID_DISCONNECTED));
+	}
+
+	(void)mbox_send_dt(&conf->mbox_tx, NULL);
+2003ddf0:	8522                	mv	a0,s0
+2003ddf2:	3979                	jal	2003da90 <mbox_send_dt.constprop.0>
+
+	old_state = atomic_set(&dev_data->state, ICMSG_STATE_OFF);
+2003ddf4:	4581                	li	a1,0
+2003ddf6:	01848513          	addi	a0,s1,24
+2003ddfa:	3949                	jal	2003da8c <atomic_set>
+
+	if (old_state != ICMSG_STATE_OFF) {
+2003ddfc:	0ff57793          	zext.b	a5,a0
+	int ret = 0;
+2003de00:	4501                	li	a0,0
+	if (old_state != ICMSG_STATE_OFF) {
+2003de02:	cb81                	beqz	a5,2003de12 <icmsg_close+0x3e>
+	return mbox_set_enabled(spec->dev, spec->channel_id, enabled);
+2003de04:	4408                	lw	a0,8(s0)
+2003de06:	444c                	lw	a1,12(s0)
+	if (api->set_enabled == NULL) {
+2003de08:	451c                	lw	a5,8(a0)
+2003de0a:	4b9c                	lw	a5,16(a5)
+2003de0c:	eb81                	bnez	a5,2003de1c <icmsg_close+0x48>
+		return -ENOSYS;
+2003de0e:	fa800513          	li	a0,-88
+		ret = mbox_deinit(conf, dev_data);
+	}
+
+	return ret;
+}
+2003de12:	40a2                	lw	ra,8(sp)
+2003de14:	4412                	lw	s0,4(sp)
+2003de16:	4482                	lw	s1,0(sp)
+2003de18:	0131                	addi	sp,sp,12
+2003de1a:	8082                	ret
+	return api->set_enabled(dev, channel_id, enabled);
+2003de1c:	4601                	li	a2,0
+2003de1e:	9782                	jalr	a5
+	if (err != 0) {
+2003de20:	f96d                	bnez	a0,2003de12 <icmsg_close+0x3e>
+	return mbox_register_callback(spec->dev, spec->channel_id, cb,
+2003de22:	4408                	lw	a0,8(s0)
+2003de24:	444c                	lw	a1,12(s0)
+	if (api->register_callback == NULL) {
+2003de26:	451c                	lw	a5,8(a0)
+2003de28:	43dc                	lw	a5,4(a5)
+2003de2a:	d3f5                	beqz	a5,2003de0e <icmsg_close+0x3a>
+}
+2003de2c:	4412                	lw	s0,4(sp)
+2003de2e:	40a2                	lw	ra,8(sp)
+2003de30:	4482                	lw	s1,0(sp)
+	return api->register_callback(dev, channel_id, cb, user_data);
+2003de32:	4681                	li	a3,0
+2003de34:	4601                	li	a2,0
+2003de36:	0131                	addi	sp,sp,12
+2003de38:	8782                	jr	a5
+
+2003de3a <icmsg_send>:
+
+int icmsg_send(const struct icmsg_config_t *conf,
+	       struct icmsg_data_t *dev_data,
+	       const void *msg, size_t len)
+{
+2003de3a:	1131                	addi	sp,sp,-20
+2003de3c:	c02a                	sw	a0,0(sp)
+	int ret;
+	int write_ret;
+	int release_ret;
+	int sent_bytes;
+	uint32_t state = atomic_get(&dev_data->state);
+2003de3e:	01858513          	addi	a0,a1,24
+{
+2003de42:	c622                	sw	s0,12(sp)
+2003de44:	c426                	sw	s1,8(sp)
+2003de46:	c232                	sw	a2,4(sp)
+2003de48:	84ae                	mv	s1,a1
+2003de4a:	c806                	sw	ra,16(sp)
+2003de4c:	8436                	mv	s0,a3
+	uint32_t state = atomic_get(&dev_data->state);
+2003de4e:	79e000ef          	jal	ra,2003e5ec <atomic_get>
+
+	if (!is_endpoint_ready(state)) {
+2003de52:	4611                	li	a2,4
+2003de54:	4592                	lw	a1,4(sp)
+2003de56:	00a64c63          	blt	a2,a0,2003de6e <icmsg_send+0x34>
+2003de5a:	872a                	mv	a4,a0
+		/* If instance was disconnected on the remote side, some threads may still
+		 * don't know it yet and still may try to send messages.
+		 */
+		return (state == ICMSG_STATE_DISCONNECTED) ? len : -EBUSY;
+2003de5c:	5541                	li	a0,-16
+2003de5e:	00c71363          	bne	a4,a2,2003de64 <icmsg_send+0x2a>
+2003de62:	8522                	mv	a0,s0
+	if (ret) {
+		return ret;
+	}
+
+	return sent_bytes;
+}
+2003de64:	40c2                	lw	ra,16(sp)
+2003de66:	4432                	lw	s0,12(sp)
+2003de68:	44a2                	lw	s1,8(sp)
+2003de6a:	0151                	addi	sp,sp,20
+2003de6c:	8082                	ret
+		return -ENODATA;
+2003de6e:	fc300513          	li	a0,-61
+	if (len == 0) {
+2003de72:	d86d                	beqz	s0,2003de64 <icmsg_send+0x2a>
+	write_ret = pbuf_write(dev_data->tx_pb, msg, len);
+2003de74:	4088                	lw	a0,0(s1)
+2003de76:	01041613          	slli	a2,s0,0x10
+2003de7a:	8241                	srli	a2,a2,0x10
+2003de7c:	20c5                	jal	2003df5c <pbuf_write>
+2003de7e:	84aa                	mv	s1,a0
+	if (write_ret < 0) {
+2003de80:	00055463          	bgez	a0,2003de88 <icmsg_send+0x4e>
+		return -ENODATA;
+2003de84:	8526                	mv	a0,s1
+2003de86:	bff9                	j	2003de64 <icmsg_send+0x2a>
+		return -EBADMSG;
+2003de88:	fb300513          	li	a0,-77
+	} else if (write_ret < len) {
+2003de8c:	fc84ece3          	bltu	s1,s0,2003de64 <icmsg_send+0x2a>
+	ret = mbox_send_dt(&conf->mbox_tx, NULL);
+2003de90:	4502                	lw	a0,0(sp)
+2003de92:	3efd                	jal	2003da90 <mbox_send_dt.constprop.0>
+	if (ret) {
+2003de94:	d965                	beqz	a0,2003de84 <icmsg_send+0x4a>
+2003de96:	b7f9                	j	2003de64 <icmsg_send+0x2a>
+
+2003de98 <validate_cfg>:
+{
+	return (idx >= len) ? (idx % len) : (idx);
+}
+
+static int validate_cfg(const struct pbuf_cfg *cfg)
+{
+2003de98:	87aa                	mv	a5,a0
+	/* Validate pointers. */
+	if (!cfg || !cfg->rd_idx_loc || !cfg->wr_idx_loc || !cfg->data_loc) {
+2003de9a:	c12d                	beqz	a0,2003defc <validate_cfg+0x64>
+2003de9c:	4118                	lw	a4,0(a0)
+		return -EINVAL;
+2003de9e:	5529                	li	a0,-22
+	if (!cfg || !cfg->rd_idx_loc || !cfg->wr_idx_loc || !cfg->data_loc) {
+2003dea0:	cf39                	beqz	a4,2003defe <validate_cfg+0x66>
+2003dea2:	4794                	lw	a3,8(a5)
+2003dea4:	cea9                	beqz	a3,2003defe <validate_cfg+0x66>
+2003dea6:	0147a303          	lw	t1,20(a5)
+2003deaa:	04030a63          	beqz	t1,2003defe <validate_cfg+0x66>
+	}
+
+	/* Validate pointer alignment. */
+	if (!IS_PTR_ALIGNED_BYTES(cfg->rd_idx_loc, MAX(cfg->dcache_alignment, _PBUF_IDX_SIZE)) ||
+2003deae:	47d0                	lw	a2,12(a5)
+2003deb0:	4591                	li	a1,4
+2003deb2:	00b67363          	bgeu	a2,a1,2003deb8 <validate_cfg+0x20>
+2003deb6:	4611                	li	a2,4
+2003deb8:	02c775b3          	remu	a1,a4,a2
+		return -EINVAL;
+2003debc:	5529                	li	a0,-22
+	if (!IS_PTR_ALIGNED_BYTES(cfg->rd_idx_loc, MAX(cfg->dcache_alignment, _PBUF_IDX_SIZE)) ||
+2003debe:	e1a1                	bnez	a1,2003defe <validate_cfg+0x66>
+	    !IS_PTR_ALIGNED_BYTES(cfg->wr_idx_loc, MAX(cfg->dcache_alignment, _PBUF_IDX_SIZE)) ||
+2003dec0:	02c6f5b3          	remu	a1,a3,a2
+	if (!IS_PTR_ALIGNED_BYTES(cfg->rd_idx_loc, MAX(cfg->dcache_alignment, _PBUF_IDX_SIZE)) ||
+2003dec4:	ed8d                	bnez	a1,2003defe <validate_cfg+0x66>
+	    !IS_PTR_ALIGNED_BYTES(cfg->handshake_loc, _PBUF_IDX_SIZE) ||
+2003dec6:	43cc                	lw	a1,4(a5)
+2003dec8:	00b362b3          	or	t0,t1,a1
+2003decc:	0032f293          	andi	t0,t0,3
+2003ded0:	02029763          	bnez	t0,2003defe <validate_cfg+0x66>
+	    !IS_PTR_ALIGNED_BYTES(cfg->data_loc, _PBUF_IDX_SIZE)) {
+		return -EINVAL;
+	}
+
+	/* Validate len. */
+	if (cfg->len < _PBUF_MIN_DATA_LEN || !IS_PTR_ALIGNED_BYTES(cfg->len, _PBUF_IDX_SIZE)) {
+2003ded4:	4b9c                	lw	a5,16(a5)
+2003ded6:	42ad                	li	t0,11
+2003ded8:	02f2f363          	bgeu	t0,a5,2003defe <validate_cfg+0x66>
+2003dedc:	8b8d                	andi	a5,a5,3
+2003dede:	e385                	bnez	a5,2003defe <validate_cfg+0x66>
+		return -EINVAL;
+	}
+
+	/* Validate pointer values. */
+	if (!(cfg->rd_idx_loc < cfg->wr_idx_loc) ||
+2003dee0:	00d77f63          	bgeu	a4,a3,2003defe <validate_cfg+0x66>
+2003dee4:	c589                	beqz	a1,2003deee <validate_cfg+0x56>
+	    (cfg->handshake_loc && !(cfg->rd_idx_loc < cfg->handshake_loc)) ||
+2003dee6:	00b77c63          	bgeu	a4,a1,2003defe <validate_cfg+0x66>
+2003deea:	00d5fa63          	bgeu	a1,a3,2003defe <validate_cfg+0x66>
+		return -EINVAL;
+2003deee:	5529                	li	a0,-22
+	    !(cfg->handshake_loc < cfg->wr_idx_loc) ||
+2003def0:	0066f763          	bgeu	a3,t1,2003defe <validate_cfg+0x66>
+	    !((uint8_t *)cfg->wr_idx_loc < cfg->data_loc) ||
+	    !(((uint8_t *)cfg->rd_idx_loc + MAX(_PBUF_IDX_SIZE, cfg->dcache_alignment)) ==
+2003def4:	9732                	add	a4,a4,a2
+	    (uint8_t *)cfg->wr_idx_loc)) {
+		return -EINVAL;
+	}
+
+	return 0;
+2003def6:	4501                	li	a0,0
+	    !((uint8_t *)cfg->wr_idx_loc < cfg->data_loc) ||
+2003def8:	00e68363          	beq	a3,a4,2003defe <validate_cfg+0x66>
+		return -EINVAL;
+2003defc:	5529                	li	a0,-22
+}
+2003defe:	8082                	ret
+
+2003df00 <pbuf_tx_init>:
+	native_emb_addr_remap((void **)&pb->cfg->data_loc);
+}
+#endif
+
+int pbuf_tx_init(struct pbuf *pb)
+{
+2003df00:	1151                	addi	sp,sp,-12
+2003df02:	c222                	sw	s0,4(sp)
+2003df04:	c406                	sw	ra,8(sp)
+2003df06:	c026                	sw	s1,0(sp)
+	if (validate_cfg(pb->cfg) != 0) {
+2003df08:	4104                	lw	s1,0(a0)
+{
+2003df0a:	842a                	mv	s0,a0
+	if (validate_cfg(pb->cfg) != 0) {
+2003df0c:	8526                	mv	a0,s1
+2003df0e:	3769                	jal	2003de98 <validate_cfg>
+2003df10:	e11d                	bnez	a0,2003df36 <pbuf_tx_init+0x36>
+#if defined(CONFIG_ARCH_POSIX)
+	pbuf_native_addr_remap(pb);
+#endif
+
+	/* Initialize local copy of indexes. */
+	pb->data.wr_idx = 0;
+2003df12:	00042223          	sw	zero,4(s0)
+	pb->data.rd_idx = 0;
+2003df16:	00042423          	sw	zero,8(s0)
+
+	/* Clear shared memory. */
+	*(pb->cfg->wr_idx_loc) = pb->data.wr_idx;
+2003df1a:	449c                	lw	a5,8(s1)
+2003df1c:	4058                	lw	a4,4(s0)
+2003df1e:	c398                	sw	a4,0(a5)
+	*(pb->cfg->rd_idx_loc) = pb->data.rd_idx;
+2003df20:	401c                	lw	a5,0(s0)
+2003df22:	4418                	lw	a4,8(s0)
+2003df24:	439c                	lw	a5,0(a5)
+2003df26:	c398                	sw	a4,0(a5)
+
+	__sync_synchronize();
+2003df28:	0ff0000f          	fence
+	/* Take care cache. */
+	sys_cache_data_flush_range((void *)(pb->cfg->wr_idx_loc), sizeof(*(pb->cfg->wr_idx_loc)));
+	sys_cache_data_flush_range((void *)(pb->cfg->rd_idx_loc), sizeof(*(pb->cfg->rd_idx_loc)));
+
+	return 0;
+}
+2003df2c:	40a2                	lw	ra,8(sp)
+2003df2e:	4412                	lw	s0,4(sp)
+2003df30:	4482                	lw	s1,0(sp)
+2003df32:	0131                	addi	sp,sp,12
+2003df34:	8082                	ret
+		return -EINVAL;
+2003df36:	5529                	li	a0,-22
+2003df38:	bfd5                	j	2003df2c <pbuf_tx_init+0x2c>
+
+2003df3a <pbuf_rx_init>:
+
+int pbuf_rx_init(struct pbuf *pb)
+{
+2003df3a:	1151                	addi	sp,sp,-12
+2003df3c:	c222                	sw	s0,4(sp)
+2003df3e:	c406                	sw	ra,8(sp)
+2003df40:	842a                	mv	s0,a0
+	if (validate_cfg(pb->cfg) != 0) {
+2003df42:	4108                	lw	a0,0(a0)
+2003df44:	3f91                	jal	2003de98 <validate_cfg>
+2003df46:	e909                	bnez	a0,2003df58 <pbuf_rx_init+0x1e>
+#if defined(CONFIG_ARCH_POSIX)
+	pbuf_native_addr_remap(pb);
+#endif
+
+	/* Initialize local copy of indexes. */
+	pb->data.wr_idx = 0;
+2003df48:	00042223          	sw	zero,4(s0)
+	pb->data.rd_idx = 0;
+2003df4c:	00042423          	sw	zero,8(s0)
+
+	return 0;
+}
+2003df50:	40a2                	lw	ra,8(sp)
+2003df52:	4412                	lw	s0,4(sp)
+2003df54:	0131                	addi	sp,sp,12
+2003df56:	8082                	ret
+		return -EINVAL;
+2003df58:	5529                	li	a0,-22
+2003df5a:	bfdd                	j	2003df50 <pbuf_rx_init+0x16>
+
+2003df5c <pbuf_write>:
+
+int pbuf_write(struct pbuf *pb, const char *data, uint16_t len)
+{
+	if (pb == NULL || len == 0 || data == NULL) {
+2003df5c:	e909                	bnez	a0,2003df6e <pbuf_write+0x12>
+		/* Incorrect call. */
+		return -EINVAL;
+2003df5e:	5529                	li	a0,-22
+	*(pb->cfg->wr_idx_loc) = wr_idx;
+	__sync_synchronize();
+	sys_cache_data_flush_range((void *)pb->cfg->wr_idx_loc, sizeof(*(pb->cfg->wr_idx_loc)));
+
+	return len;
+}
+2003df60:	8082                	ret
+		return -EINVAL;
+2003df62:	5529                	li	a0,-22
+}
+2003df64:	40f2                	lw	ra,28(sp)
+2003df66:	4462                	lw	s0,24(sp)
+2003df68:	44d2                	lw	s1,20(sp)
+2003df6a:	6105                	addi	sp,sp,32
+2003df6c:	8082                	ret
+{
+2003df6e:	1101                	addi	sp,sp,-32
+2003df70:	cc22                	sw	s0,24(sp)
+2003df72:	ce06                	sw	ra,28(sp)
+2003df74:	ca26                	sw	s1,20(sp)
+2003df76:	8432                	mv	s0,a2
+	if (pb == NULL || len == 0 || data == NULL) {
+2003df78:	d66d                	beqz	a2,2003df62 <pbuf_write+0x6>
+2003df7a:	d5e5                	beqz	a1,2003df62 <pbuf_write+0x6>
+2003df7c:	872a                	mv	a4,a0
+	__sync_synchronize();
+2003df7e:	0ff0000f          	fence
+	uint8_t *const data_loc = pb->cfg->data_loc;
+2003df82:	411c                	lw	a5,0(a0)
+2003df84:	0147a303          	lw	t1,20(a5)
+	const uint32_t blen = pb->cfg->len;
+2003df88:	4b94                	lw	a3,16(a5)
+	uint32_t rd_idx = *(pb->cfg->rd_idx_loc);
+2003df8a:	439c                	lw	a5,0(a5)
+2003df8c:	4390                	lw	a2,0(a5)
+	uint32_t wr_idx = pb->data.wr_idx;
+2003df8e:	4144                	lw	s1,4(a0)
+	if (!IS_PTR_ALIGNED_BYTES(rd_idx, _PBUF_IDX_SIZE)) {
+2003df90:	00367793          	andi	a5,a2,3
+2003df94:	f7f9                	bnez	a5,2003df62 <pbuf_write+0x6>
+	return (rd_idx > wr_idx) ? (len - (rd_idx - wr_idx)) : (wr_idx - rd_idx);
+2003df96:	40c487b3          	sub	a5,s1,a2
+2003df9a:	00c4f563          	bgeu	s1,a2,2003dfa4 <pbuf_write+0x48>
+2003df9e:	009687b3          	add	a5,a3,s1
+2003dfa2:	8f91                	sub	a5,a5,a2
+	uint32_t free_space = blen - idx_occupied(blen, wr_idx, rd_idx) - _PBUF_IDX_SIZE;
+2003dfa4:	ffc68613          	addi	a2,a3,-4
+2003dfa8:	8e1d                	sub	a2,a2,a5
+	uint32_t plen = len + PBUF_PACKET_LEN_SZ;
+2003dfaa:	00440793          	addi	a5,s0,4
+		return -ENOMEM;
+2003dfae:	5551                	li	a0,-12
+	if (free_space < plen) {
+2003dfb0:	faf66ae3          	bltu	a2,a5,2003df64 <pbuf_write+0x8>
+	*((uint32_t *)(&data_loc[wr_idx])) = 0;
+2003dfb4:	009307b3          	add	a5,t1,s1
+2003dfb8:	0007a023          	sw	zero,0(a5)
+ *  @param val 16-bit integer in host endianness.
+ *  @param dst Destination memory address to store the result.
+ */
+static inline void sys_put_be16(uint16_t val, uint8_t dst[2])
+{
+	dst[0] = val >> 8;
+2003dfbc:	00845613          	srli	a2,s0,0x8
+2003dfc0:	00c78023          	sb	a2,0(a5)
+	dst[1] = val;
+2003dfc4:	008780a3          	sb	s0,1(a5)
+	__sync_synchronize();
+2003dfc8:	0ff0000f          	fence
+	wr_idx = idx_wrap(blen, wr_idx + PBUF_PACKET_LEN_SZ);
+2003dfcc:	0491                	addi	s1,s1,4
+	return (idx >= len) ? (idx % len) : (idx);
+2003dfce:	00d4e463          	bltu	s1,a3,2003dfd6 <pbuf_write+0x7a>
+2003dfd2:	02d4f4b3          	remu	s1,s1,a3
+	uint32_t tail = MIN(len, blen - wr_idx);
+2003dfd6:	409687b3          	sub	a5,a3,s1
+2003dfda:	00f47363          	bgeu	s0,a5,2003dfe0 <pbuf_write+0x84>
+2003dfde:	87a2                	mv	a5,s0
+	memcpy(&data_loc[wr_idx], data, tail);
+2003dfe0:	863e                	mv	a2,a5
+2003dfe2:	00930533          	add	a0,t1,s1
+2003dfe6:	c83a                	sw	a4,16(sp)
+2003dfe8:	c636                	sw	a3,12(sp)
+2003dfea:	c43e                	sw	a5,8(sp)
+2003dfec:	c22e                	sw	a1,4(sp)
+2003dfee:	c01a                	sw	t1,0(sp)
+2003dff0:	2d45                	jal	2003e6a0 <memcpy>
+	if (len > tail) {
+2003dff2:	47a2                	lw	a5,8(sp)
+2003dff4:	4302                	lw	t1,0(sp)
+2003dff6:	4592                	lw	a1,4(sp)
+2003dff8:	46b2                	lw	a3,12(sp)
+2003dffa:	4742                	lw	a4,16(sp)
+2003dffc:	0087fb63          	bgeu	a5,s0,2003e012 <pbuf_write+0xb6>
+		memcpy(&data_loc[0], data + tail, len - tail);
+2003e000:	40f40633          	sub	a2,s0,a5
+2003e004:	95be                	add	a1,a1,a5
+2003e006:	851a                	mv	a0,t1
+2003e008:	c23a                	sw	a4,4(sp)
+2003e00a:	c036                	sw	a3,0(sp)
+2003e00c:	2d51                	jal	2003e6a0 <memcpy>
+		union { uintptr_t x; void * val; } parm0 = { .val = addr };
+		union { uintptr_t x; size_t val; } parm1 = { .val = size };
+		return (int) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_SYS_CACHE_DATA_FLUSH_RANGE);
+	}
+#endif
+	compiler_barrier();
+2003e00e:	4712                	lw	a4,4(sp)
+2003e010:	4682                	lw	a3,0(sp)
+	wr_idx = idx_wrap(blen, ROUND_UP(wr_idx + len, _PBUF_IDX_SIZE));
+2003e012:	00340793          	addi	a5,s0,3
+2003e016:	97a6                	add	a5,a5,s1
+2003e018:	9bf1                	andi	a5,a5,-4
+	return (idx >= len) ? (idx % len) : (idx);
+2003e01a:	00d7e463          	bltu	a5,a3,2003e022 <pbuf_write+0xc6>
+2003e01e:	02d7f7b3          	remu	a5,a5,a3
+	pb->data.wr_idx = wr_idx;
+2003e022:	c35c                	sw	a5,4(a4)
+	*(pb->cfg->wr_idx_loc) = wr_idx;
+2003e024:	4318                	lw	a4,0(a4)
+2003e026:	4718                	lw	a4,8(a4)
+2003e028:	c31c                	sw	a5,0(a4)
+	__sync_synchronize();
+2003e02a:	0ff0000f          	fence
+	return len;
+2003e02e:	8522                	mv	a0,s0
+2003e030:	bf15                	j	2003df64 <pbuf_write+0x8>
+
+2003e032 <pbuf_get_initial_buf>:
+int pbuf_get_initial_buf(struct pbuf *pb, volatile char **buf, uint16_t *len)
+{
+	uint32_t wr_idx;
+	uint16_t plen;
+
+	if (pb == NULL || pb->data.rd_idx != 0) {
+2003e032:	e119                	bnez	a0,2003e038 <pbuf_get_initial_buf+0x6>
+		/* Incorrect call. */
+		return -EINVAL;
+2003e034:	5529                	li	a0,-22
+2003e036:	8082                	ret
+	if (pb == NULL || pb->data.rd_idx != 0) {
+2003e038:	451c                	lw	a5,8(a0)
+2003e03a:	ffed                	bnez	a5,2003e034 <pbuf_get_initial_buf+0x2>
+	}
+
+	sys_cache_data_invd_range((void *)(pb->cfg->wr_idx_loc), sizeof(*(pb->cfg->wr_idx_loc)));
+	__sync_synchronize();
+2003e03c:	0ff0000f          	fence
+
+	wr_idx = *(pb->cfg->wr_idx_loc);
+2003e040:	411c                	lw	a5,0(a0)
+2003e042:	4798                	lw	a4,8(a5)
+	if (wr_idx >= pb->cfg->len || wr_idx > 0xFFFF || wr_idx == 0) {
+2003e044:	4b9c                	lw	a5,16(a5)
+	wr_idx = *(pb->cfg->wr_idx_loc);
+2003e046:	4314                	lw	a3,0(a4)
+	if (wr_idx >= pb->cfg->len || wr_idx > 0xFFFF || wr_idx == 0) {
+2003e048:	fef6f6e3          	bgeu	a3,a5,2003e034 <pbuf_get_initial_buf+0x2>
+2003e04c:	67c1                	lui	a5,0x10
+2003e04e:	fff68713          	addi	a4,a3,-1
+2003e052:	17f9                	addi	a5,a5,-2 # fffe <CONFIG_PM_PARTITION_SIZE_B0_IMAGE+0x8ffe>
+2003e054:	fee7e0e3          	bltu	a5,a4,2003e034 <pbuf_get_initial_buf+0x2>
+		/* Wrong index - probably pbuf was not initialized or message was not send yet. */
+		return -EINVAL;
+	}
+
+	sys_cache_data_invd_range((void *)(pb->cfg->data_loc), PBUF_PACKET_LEN_SZ);
+	__sync_synchronize();
+2003e058:	0ff0000f          	fence
+
+	plen = sys_get_be16(&pb->cfg->data_loc[0]);
+2003e05c:	411c                	lw	a5,0(a0)
+2003e05e:	4bc8                	lw	a0,20(a5)
+2003e060:	00154783          	lbu	a5,1(a0)
+2003e064:	00054703          	lbu	a4,0(a0)
+2003e068:	07a2                	slli	a5,a5,0x8
+2003e06a:	8fd9                	or	a5,a5,a4
+2003e06c:	00879713          	slli	a4,a5,0x8
+2003e070:	83a1                	srli	a5,a5,0x8
+2003e072:	8fd9                	or	a5,a5,a4
+2003e074:	07c2                	slli	a5,a5,0x10
+2003e076:	83c1                	srli	a5,a5,0x10
+
+	if (plen + 4 > wr_idx) {
+2003e078:	00478713          	addi	a4,a5,4
+2003e07c:	fae6ece3          	bltu	a3,a4,2003e034 <pbuf_get_initial_buf+0x2>
+		/* Wrong length - probably pbuf was not initialized or message was not send yet. */
+		return -EINVAL;
+	}
+
+	*buf = &pb->cfg->data_loc[PBUF_PACKET_LEN_SZ];
+2003e080:	0511                	addi	a0,a0,4
+2003e082:	c188                	sw	a0,0(a1)
+	*len = plen;
+2003e084:	00f61023          	sh	a5,0(a2)
+
+	sys_cache_data_invd_range((void *)*buf, plen);
+	__sync_synchronize();
+2003e088:	0ff0000f          	fence
+
+	return 0;
+2003e08c:	4501                	li	a0,0
+}
+2003e08e:	8082                	ret
+
+2003e090 <pbuf_read>:
+
+int pbuf_read(struct pbuf *pb, char *buf, uint16_t len)
+{
+	if (pb == NULL) {
+2003e090:	e119                	bnez	a0,2003e096 <pbuf_read+0x6>
+		/* Incorrect call. */
+		return -EINVAL;
+2003e092:	5529                	li	a0,-22
+	*(pb->cfg->rd_idx_loc) = rd_idx;
+	__sync_synchronize();
+	sys_cache_data_flush_range((void *)pb->cfg->rd_idx_loc, sizeof(*(pb->cfg->rd_idx_loc)));
+
+	return len;
+}
+2003e094:	8082                	ret
+{
+2003e096:	1121                	addi	sp,sp,-24
+2003e098:	c626                	sw	s1,12(sp)
+2003e09a:	ca06                	sw	ra,20(sp)
+2003e09c:	c822                	sw	s0,16(sp)
+2003e09e:	84aa                	mv	s1,a0
+2003e0a0:	832e                	mv	t1,a1
+	__sync_synchronize();
+2003e0a2:	0ff0000f          	fence
+	uint8_t *const data_loc = pb->cfg->data_loc;
+2003e0a6:	411c                	lw	a5,0(a0)
+2003e0a8:	4bcc                	lw	a1,20(a5)
+	const uint32_t blen = pb->cfg->len;
+2003e0aa:	4b94                	lw	a3,16(a5)
+	uint32_t wr_idx = *(pb->cfg->wr_idx_loc);
+2003e0ac:	479c                	lw	a5,8(a5)
+2003e0ae:	0007a283          	lw	t0,0(a5)
+	uint32_t rd_idx = pb->data.rd_idx;
+2003e0b2:	451c                	lw	a5,8(a0)
+		return -EINVAL;
+2003e0b4:	5529                	li	a0,-22
+	if (!IS_PTR_ALIGNED_BYTES(wr_idx, _PBUF_IDX_SIZE)) {
+2003e0b6:	0032f713          	andi	a4,t0,3
+2003e0ba:	e70d                	bnez	a4,2003e0e4 <pbuf_read+0x54>
+		return 0;
+2003e0bc:	4501                	li	a0,0
+	if (rd_idx == wr_idx) {
+2003e0be:	02f28363          	beq	t0,a5,2003e0e4 <pbuf_read+0x54>
+	uint16_t plen = sys_get_be16(&data_loc[rd_idx]);
+2003e0c2:	00f58733          	add	a4,a1,a5
+2003e0c6:	00074503          	lbu	a0,0(a4)
+2003e0ca:	00174703          	lbu	a4,1(a4)
+2003e0ce:	0722                	slli	a4,a4,0x8
+2003e0d0:	8f49                	or	a4,a4,a0
+2003e0d2:	00871413          	slli	s0,a4,0x8
+2003e0d6:	8321                	srli	a4,a4,0x8
+2003e0d8:	8c59                	or	s0,s0,a4
+2003e0da:	0442                	slli	s0,s0,0x10
+2003e0dc:	8041                	srli	s0,s0,0x10
+	if (!buf) {
+2003e0de:	00031863          	bnez	t1,2003e0ee <pbuf_read+0x5e>
+	return len;
+2003e0e2:	8522                	mv	a0,s0
+}
+2003e0e4:	40d2                	lw	ra,20(sp)
+2003e0e6:	4442                	lw	s0,16(sp)
+2003e0e8:	44b2                	lw	s1,12(sp)
+2003e0ea:	0161                	addi	sp,sp,24
+2003e0ec:	8082                	ret
+		return -ENOMEM;
+2003e0ee:	5551                	li	a0,-12
+	if (plen > len) {
+2003e0f0:	fe866ae3          	bltu	a2,s0,2003e0e4 <pbuf_read+0x54>
+	return (rd_idx > wr_idx) ? (len - (rd_idx - wr_idx)) : (wr_idx - rd_idx);
+2003e0f4:	40f28733          	sub	a4,t0,a5
+2003e0f8:	00f2f563          	bgeu	t0,a5,2003e102 <pbuf_read+0x72>
+2003e0fc:	40f68733          	sub	a4,a3,a5
+2003e100:	9716                	add	a4,a4,t0
+	if (occupied_space < plen + PBUF_PACKET_LEN_SZ) {
+2003e102:	00440613          	addi	a2,s0,4
+		return -EAGAIN;
+2003e106:	5555                	li	a0,-11
+	if (occupied_space < plen + PBUF_PACKET_LEN_SZ) {
+2003e108:	fcc76ee3          	bltu	a4,a2,2003e0e4 <pbuf_read+0x54>
+	rd_idx = idx_wrap(blen, rd_idx + PBUF_PACKET_LEN_SZ);
+2003e10c:	00478713          	addi	a4,a5,4
+	return (idx >= len) ? (idx % len) : (idx);
+2003e110:	00d76463          	bltu	a4,a3,2003e118 <pbuf_read+0x88>
+2003e114:	02d77733          	remu	a4,a4,a3
+	uint32_t tail = MIN(blen - rd_idx, len);
+2003e118:	40e687b3          	sub	a5,a3,a4
+2003e11c:	00f47363          	bgeu	s0,a5,2003e122 <pbuf_read+0x92>
+2003e120:	87a2                	mv	a5,s0
+2003e122:	c436                	sw	a3,8(sp)
+	memcpy(buf, &data_loc[rd_idx], tail);
+2003e124:	863e                	mv	a2,a5
+2003e126:	95ba                	add	a1,a1,a4
+2003e128:	851a                	mv	a0,t1
+2003e12a:	c23e                	sw	a5,4(sp)
+2003e12c:	c03a                	sw	a4,0(sp)
+2003e12e:	2b8d                	jal	2003e6a0 <memcpy>
+	if (len > tail) {
+2003e130:	4792                	lw	a5,4(sp)
+2003e132:	4702                	lw	a4,0(sp)
+2003e134:	46a2                	lw	a3,8(sp)
+2003e136:	0087fb63          	bgeu	a5,s0,2003e14c <pbuf_read+0xbc>
+2003e13a:	c236                	sw	a3,4(sp)
+		memcpy(&buf[tail], &pb->cfg->data_loc[0], len - tail);
+2003e13c:	408c                	lw	a1,0(s1)
+2003e13e:	40f40633          	sub	a2,s0,a5
+2003e142:	953e                	add	a0,a0,a5
+2003e144:	49cc                	lw	a1,20(a1)
+2003e146:	2ba9                	jal	2003e6a0 <memcpy>
+2003e148:	4692                	lw	a3,4(sp)
+2003e14a:	4702                	lw	a4,0(sp)
+	rd_idx = idx_wrap(blen, ROUND_UP(rd_idx + len, _PBUF_IDX_SIZE));
+2003e14c:	00340793          	addi	a5,s0,3
+2003e150:	97ba                	add	a5,a5,a4
+2003e152:	9bf1                	andi	a5,a5,-4
+	return (idx >= len) ? (idx % len) : (idx);
+2003e154:	00d7e463          	bltu	a5,a3,2003e15c <pbuf_read+0xcc>
+2003e158:	02d7f7b3          	remu	a5,a5,a3
+	*(pb->cfg->rd_idx_loc) = rd_idx;
+2003e15c:	4098                	lw	a4,0(s1)
+	pb->data.rd_idx = rd_idx;
+2003e15e:	c49c                	sw	a5,8(s1)
+	*(pb->cfg->rd_idx_loc) = rd_idx;
+2003e160:	4318                	lw	a4,0(a4)
+2003e162:	c31c                	sw	a5,0(a4)
+	__sync_synchronize();
+2003e164:	0ff0000f          	fence
+2003e168:	bfad                	j	2003e0e2 <pbuf_read+0x52>
+
+2003e16a <pbuf_handshake_read>:
+
+uint32_t pbuf_handshake_read(struct pbuf *pb)
+{
+	volatile uint32_t *ptr = pb->cfg->handshake_loc;
+2003e16a:	411c                	lw	a5,0(a0)
+2003e16c:	43dc                	lw	a5,4(a5)
+
+	__ASSERT_NO_MSG(ptr);
+	sys_cache_data_invd_range((void *)ptr, sizeof(*ptr));
+	__sync_synchronize();
+2003e16e:	0ff0000f          	fence
+	return *ptr;
+2003e172:	4388                	lw	a0,0(a5)
+}
+2003e174:	8082                	ret
+
+2003e176 <pbuf_handshake_write>:
+
+void pbuf_handshake_write(struct pbuf *pb, uint32_t value)
+{
+	volatile uint32_t *ptr = pb->cfg->handshake_loc;
+2003e176:	411c                	lw	a5,0(a0)
+2003e178:	43dc                	lw	a5,4(a5)
+
+	__ASSERT_NO_MSG(ptr);
+	*ptr = value;
+2003e17a:	c38c                	sw	a1,0(a5)
+	__sync_synchronize();
+2003e17c:	0ff0000f          	fence
+	sys_cache_data_flush_range((void *)ptr, sizeof(*ptr));
+}
+2003e180:	8082                	ret
+
+2003e182 <sys_trace_idle>:
+
+__weak void sys_trace_isr_exit(void) {}
+
+__weak void sys_trace_isr_exit_to_scheduler(void) {}
+
+__weak void sys_trace_idle(void)
+2003e182:	8082                	ret
+
+2003e184 <sys_trace_idle_exit>:
+	if (IS_ENABLED(CONFIG_CPU_LOAD)) {
+		cpu_load_on_enter_idle();
+	}
+}
+
+__weak void sys_trace_idle_exit(void)
+2003e184:	8082                	ret
+
+2003e186 <arch_early_memset>:
+ * may override this with their own safe implementation.
+ */
+__boot_func
+void __weak arch_early_memset(void *dst, int c, size_t n)
+{
+	(void) memset(dst, c, n);
+2003e186:	ab05                	j	2003e6b6 <memset>
+
+2003e188 <arch_bss_zero>:
+{
+	if (IS_ENABLED(CONFIG_SKIP_BSS_CLEAR)) {
+		return;
+	}
+
+	arch_early_memset(__bss_start, 0, __bss_end - __bss_start);
+2003e188:	2003f537          	lui	a0,0x2003f
+2003e18c:	2003f7b7          	lui	a5,0x2003f
+2003e190:	89450613          	addi	a2,a0,-1900 # 2003e894 <ipc_atomic_sem>
+2003e194:	be478793          	addi	a5,a5,-1052 # 2003ebe4 <__bss_end>
+2003e198:	40c78633          	sub	a2,a5,a2
+2003e19c:	4581                	li	a1,0
+2003e19e:	89450513          	addi	a0,a0,-1900
+2003e1a2:	b7d5                	j	2003e186 <arch_early_memset>
+
+2003e1a4 <arch_cpu_idle>:
+#include <zephyr/irq.h>
+#include <zephyr/tracing/tracing.h>
+
+#ifndef CONFIG_ARCH_HAS_CUSTOM_CPU_IDLE
+void arch_cpu_idle(void)
+{
+2003e1a4:	1151                	addi	sp,sp,-12
+2003e1a6:	c406                	sw	ra,8(sp)
+	sys_trace_idle();
+2003e1a8:	3fe9                	jal	2003e182 <sys_trace_idle>
+	__asm__ volatile("wfi");
+2003e1aa:	10500073          	wfi
+	sys_trace_idle_exit();
+2003e1ae:	3fd9                	jal	2003e184 <sys_trace_idle_exit>
+static ALWAYS_INLINE void arch_irq_unlock(unsigned int key)
+{
+#ifdef CONFIG_RISCV_SOC_HAS_CUSTOM_IRQ_LOCK_OPS
+	z_soc_irq_unlock(key);
+#else
+	__asm__ volatile ("csrs mstatus, %0"
+2003e1b0:	47a1                	li	a5,8
+2003e1b2:	3007a073          	csrs	mstatus,a5
+	irq_unlock(MSTATUS_IEN);
+}
+2003e1b6:	40a2                	lw	ra,8(sp)
+2003e1b8:	0131                	addi	sp,sp,12
+2003e1ba:	8082                	ret
+
+2003e1bc <z_riscv_get_sp_before_exc>:
+		sp = esf->sp;
+	}
+#endif
+
+	return sp;
+}
+2003e1bc:	04050513          	addi	a0,a0,64
+2003e1c0:	8082                	ret
+
+2003e1c2 <z_riscv_fatal_error_csf>:
+	z_riscv_fatal_error_csf(reason, esf, NULL);
+}
+
+FUNC_NORETURN void z_riscv_fatal_error_csf(unsigned int reason, const struct arch_esf *esf,
+					   const _callee_saved_t *csf)
+{
+2003e1c2:	1151                	addi	sp,sp,-12
+2003e1c4:	c222                	sw	s0,4(sp)
+2003e1c6:	c026                	sw	s1,0(sp)
+2003e1c8:	842e                	mv	s0,a1
+2003e1ca:	c406                	sw	ra,8(sp)
+2003e1cc:	84aa                	mv	s1,a0
+2003e1ce:	85b2                	mv	a1,a2
+	unsigned long mcause;
+
+	__asm__ volatile("csrr %0, mcause" : "=r" (mcause));
+2003e1d0:	342027f3          	csrr	a5,mcause
+	EXCEPTION_DUMP(" mcause: %ld, %s", mcause, z_riscv_mcause_str(mcause));
+
+#ifndef CONFIG_SOC_OPENISA_RV32M1
+	unsigned long mtval;
+
+	__asm__ volatile("csrr %0, mtval" : "=r" (mtval));
+2003e1d4:	343027f3          	csrr	a5,mtval
+		EXCEPTION_DUMP("");
+	}
+#endif /* CONFIG_EXCEPTION_DEBUG */
+
+#ifdef CONFIG_EXCEPTION_STACK_TRACE
+	z_riscv_unwind_stack(esf, csf);
+2003e1d8:	8522                	mv	a0,s0
+2003e1da:	2291                	jal	2003e31e <z_riscv_unwind_stack>
+#endif /* CONFIG_EXCEPTION_STACK_TRACE */
+
+	z_fatal_error(reason, esf);
+2003e1dc:	85a2                	mv	a1,s0
+2003e1de:	8526                	mv	a0,s1
+2003e1e0:	2e35                	jal	2003e51c <z_fatal_error>
+
+2003e1e2 <z_riscv_fatal_error>:
+{
+2003e1e2:	1151                	addi	sp,sp,-12
+	z_riscv_fatal_error_csf(reason, esf, NULL);
+2003e1e4:	4601                	li	a2,0
+{
+2003e1e6:	c406                	sw	ra,8(sp)
+	z_riscv_fatal_error_csf(reason, esf, NULL);
+2003e1e8:	3fe9                	jal	2003e1c2 <z_riscv_fatal_error_csf>
+
+2003e1ea <z_irq_spurious>:
+#endif
+
+LOG_MODULE_DECLARE(os, CONFIG_KERNEL_LOG_LEVEL);
+
+FUNC_NORETURN void z_irq_spurious(const void *unused)
+{
+2003e1ea:	1151                	addi	sp,sp,-12
+2003e1ec:	c406                	sw	ra,8(sp)
+#else
+	unsigned long mcause;
+
+	ARG_UNUSED(unused);
+
+	mcause = csr_read(mcause);
+2003e1ee:	342027f3          	csrr	a5,mcause
+		const struct device *save_dev = riscv_plic_get_dev();
+
+		LOG_ERR("PLIC interrupt line causing the IRQ: %d (%p)", save_irq, save_dev);
+	}
+#endif
+	z_riscv_fatal_error(K_ERR_SPURIOUS_IRQ, NULL);
+2003e1f2:	4581                	li	a1,0
+2003e1f4:	4505                	li	a0,1
+2003e1f6:	37f5                	jal	2003e1e2 <z_riscv_fatal_error>
+
+2003e1f8 <z_prep_c>:
+ *
+ * This routine prepares for the execution of and runs C code.
+ */
+
+FUNC_NORETURN void z_prep_c(void)
+{
+2003e1f8:	1151                	addi	sp,sp,-12
+2003e1fa:	c406                	sw	ra,8(sp)
+#if defined(CONFIG_SOC_PREP_HOOK)
+	soc_prep_hook();
+#endif
+
+	arch_bss_zero();
+2003e1fc:	3771                	jal	2003e188 <arch_bss_zero>
+	soc_interrupt_init();
+#endif
+#if CONFIG_ARCH_CACHE
+	arch_cache_init();
+#endif
+	z_cstart();
+2003e1fe:	2e4d                	jal	2003e5b0 <z_cstart>
+
+2003e200 <z_riscv_switch_to_main_no_multithreading>:
+
+	ARG_UNUSED(p1);
+	ARG_UNUSED(p2);
+	ARG_UNUSED(p3);
+
+	_kernel.cpus[0].id = 0;
+2003e200:	2003f7b7          	lui	a5,0x2003f
+	_kernel.cpus[0].irq_stack = (K_KERNEL_STACK_BUFFER(z_interrupt_stacks[0]) +
+2003e204:	2003f737          	lui	a4,0x2003f
+	_kernel.cpus[0].id = 0;
+2003e208:	bc478793          	addi	a5,a5,-1084 # 2003ebc4 <_kernel>
+	_kernel.cpus[0].irq_stack = (K_KERNEL_STACK_BUFFER(z_interrupt_stacks[0]) +
+2003e20c:	3f070713          	addi	a4,a4,1008 # 2003f3f0 <z_main_stack>
+	_kernel.cpus[0].id = 0;
+2003e210:	00078823          	sb	zero,16(a5)
+	_kernel.cpus[0].irq_stack = (K_KERNEL_STACK_BUFFER(z_interrupt_stacks[0]) +
+2003e214:	c3d8                	sw	a4,4(a5)
+2003e216:	47a1                	li	a5,8
+2003e218:	3007a073          	csrs	mstatus,a5
+	main_stack = (K_THREAD_STACK_BUFFER(z_main_stack) +
+		      K_THREAD_STACK_SIZEOF(z_main_stack));
+
+	irq_unlock(MSTATUS_IEN);
+
+	__asm__ volatile (
+2003e21c:	2003f7b7          	lui	a5,0x2003f
+2003e220:	7f078793          	addi	a5,a5,2032 # 2003f7f0 <backend_data_0>
+2003e224:	813e                	mv	sp,a5
+2003e226:	000500e7          	jalr	a0
+	__asm__ volatile ("csrrc %0, mstatus, %1"
+2003e22a:	300477f3          	csrrci	a5,mstatus,8
+	: "r" (main_stack), "r" (main_entry)
+	: "memory");
+
+	/* infinite loop */
+	irq_lock();
+	while (true) {
+2003e22e:	a001                	j	2003e22e <z_riscv_switch_to_main_no_multithreading+0x2e>
+
+2003e230 <print_trace_address>:
+#ifdef CONFIG_SYMTAB
+	uint32_t offset = 0;
+	const char *name = symtab_find_symbol_name(ra, &offset);
+#endif /* CONFIG_SYMTAB */
+
+	LOG_STACK_TRACE((*i)++, sfp, ra, name, offset);
+2003e230:	411c                	lw	a5,0(a0)
+2003e232:	0785                	addi	a5,a5,1
+2003e234:	c11c                	sw	a5,0(a0)
+
+	return true;
+}
+2003e236:	4505                	li	a0,1
+2003e238:	8082                	ret
+
+2003e23a <walk_stackframe>:
+{
+2003e23a:	fd810113          	addi	sp,sp,-40
+2003e23e:	d206                	sw	ra,36(sp)
+2003e240:	d022                	sw	s0,32(sp)
+2003e242:	ce26                	sw	s1,28(sp)
+2003e244:	c22a                	sw	a0,4(sp)
+2003e246:	c42e                	sw	a1,8(sp)
+2003e248:	c632                	sw	a2,12(sp)
+2003e24a:	c036                	sw	a3,0(sp)
+2003e24c:	c83a                	sw	a4,16(sp)
+	if (esf != NULL) {
+2003e24e:	c2a9                	beqz	a3,2003e290 <walk_stackframe+0x56>
+		sp = z_riscv_get_sp_before_exc(esf);
+2003e250:	8536                	mv	a0,a3
+2003e252:	37ad                	jal	2003e1bc <z_riscv_get_sp_before_exc>
+		ra = esf->mepc;
+2003e254:	4702                	lw	a4,0(sp)
+		sp = z_riscv_get_sp_before_exc(esf);
+2003e256:	87aa                	mv	a5,a0
+		ra = esf->mepc;
+2003e258:	5f58                	lw	a4,60(a4)
+	ksp = (uintptr_t *)sp;
+2003e25a:	84be                	mv	s1,a5
+	for (int i = 0; (i < MAX_STACK_FRAMES) && vrfy((uintptr_t)ksp, thread, esf) &&
+2003e25c:	4401                	li	s0,0
+	uintptr_t *ksp, last_ksp = 0;
+2003e25e:	4301                	li	t1,0
+	for (int i = 0; (i < MAX_STACK_FRAMES) && vrfy((uintptr_t)ksp, thread, esf) &&
+2003e260:	4602                	lw	a2,0(sp)
+2003e262:	45b2                	lw	a1,12(sp)
+2003e264:	47c2                	lw	a5,16(sp)
+2003e266:	cc3a                	sw	a4,24(sp)
+2003e268:	ca1a                	sw	t1,20(sp)
+2003e26a:	8526                	mv	a0,s1
+2003e26c:	9782                	jalr	a5
+2003e26e:	c53d                	beqz	a0,2003e2dc <walk_stackframe+0xa2>
+2003e270:	4352                	lw	t1,20(sp)
+2003e272:	4762                	lw	a4,24(sp)
+2003e274:	06937463          	bgeu	t1,s1,2003e2dc <walk_stackframe+0xa2>
+	return (addr >= (uintptr_t)__text_region_start) && (addr < (uintptr_t)__text_region_end);
+2003e278:	2003d7b7          	lui	a5,0x2003d
+2003e27c:	98478613          	addi	a2,a5,-1660 # 2003c984 <__initialize>
+2003e280:	02c77b63          	bgeu	a4,a2,2003e2b6 <walk_stackframe+0x7c>
+		ra = ((struct arch_esf *)ksp++)->ra;
+2003e284:	4898                	lw	a4,16(s1)
+2003e286:	00448613          	addi	a2,s1,4
+{
+2003e28a:	8326                	mv	t1,s1
+2003e28c:	84b2                	mv	s1,a2
+2003e28e:	bfc9                	j	2003e260 <walk_stackframe+0x26>
+2003e290:	873e                	mv	a4,a5
+	} else if ((csf == NULL) || (csf == &_current->callee_saved)) {
+2003e292:	cb89                	beqz	a5,2003e2a4 <walk_stackframe+0x6a>
+2003e294:	2003f7b7          	lui	a5,0x2003f
+2003e298:	bc478793          	addi	a5,a5,-1084 # 2003ebc4 <_kernel>
+2003e29c:	479c                	lw	a5,8(a5)
+2003e29e:	07d1                	addi	a5,a5,20
+2003e2a0:	00f71863          	bne	a4,a5,2003e2b0 <walk_stackframe+0x76>
+		ra = (uintptr_t)walk_stackframe;
+2003e2a4:	2003e737          	lui	a4,0x2003e
+		sp = current_stack_pointer;
+2003e2a8:	878a                	mv	a5,sp
+		ra = (uintptr_t)walk_stackframe;
+2003e2aa:	23a70713          	addi	a4,a4,570 # 2003e23a <walk_stackframe>
+2003e2ae:	b775                	j	2003e25a <walk_stackframe+0x20>
+		sp = csf->sp;
+2003e2b0:	431c                	lw	a5,0(a4)
+		ra = csf->ra;
+2003e2b2:	4358                	lw	a4,4(a4)
+2003e2b4:	b75d                	j	2003e25a <walk_stackframe+0x20>
+	return (addr >= (uintptr_t)__text_region_start) && (addr < (uintptr_t)__text_region_end);
+2003e2b6:	2003e637          	lui	a2,0x2003e
+2003e2ba:	6c660613          	addi	a2,a2,1734 # 2003e6c6 <__rodata_region_start>
+2003e2be:	fcc773e3          	bgeu	a4,a2,2003e284 <walk_stackframe+0x4a>
+			if (!cb(cookie, ra, POINTER_TO_UINT(ksp))) {
+2003e2c2:	4522                	lw	a0,8(sp)
+2003e2c4:	4792                	lw	a5,4(sp)
+2003e2c6:	8626                	mv	a2,s1
+2003e2c8:	85ba                	mv	a1,a4
+2003e2ca:	9782                	jalr	a5
+2003e2cc:	c901                	beqz	a0,2003e2dc <walk_stackframe+0xa2>
+			i++;
+2003e2ce:	0405                	addi	s0,s0,1
+	for (int i = 0; (i < MAX_STACK_FRAMES) && vrfy((uintptr_t)ksp, thread, esf) &&
+2003e2d0:	45a1                	li	a1,8
+		ra = ((struct arch_esf *)ksp++)->ra;
+2003e2d2:	4898                	lw	a4,16(s1)
+2003e2d4:	00448613          	addi	a2,s1,4
+	for (int i = 0; (i < MAX_STACK_FRAMES) && vrfy((uintptr_t)ksp, thread, esf) &&
+2003e2d8:	fab419e3          	bne	s0,a1,2003e28a <walk_stackframe+0x50>
+}
+2003e2dc:	5092                	lw	ra,36(sp)
+2003e2de:	5402                	lw	s0,32(sp)
+2003e2e0:	44f2                	lw	s1,28(sp)
+2003e2e2:	02810113          	addi	sp,sp,40
+2003e2e6:	8082                	ret
+
+2003e2e8 <in_fatal_stack_bound>:
+	if (!IS_ALIGNED(addr, sizeof(uintptr_t))) {
+2003e2e8:	00357793          	andi	a5,a0,3
+{
+2003e2ec:	872a                	mv	a4,a0
+	if (!IS_ALIGNED(addr, sizeof(uintptr_t))) {
+2003e2ee:	e795                	bnez	a5,2003e31a <in_fatal_stack_bound+0x32>
+	if ((thread == NULL) || arch_is_in_isr()) {
+2003e2f0:	c599                	beqz	a1,2003e2fe <in_fatal_stack_bound+0x16>
+	bool ret = arch_curr_cpu()->nested != 0U;
+
+	arch_irq_unlock(key);
+	return ret;
+#else
+	return _kernel.cpus[0].nested != 0U;
+2003e2f2:	2003f7b7          	lui	a5,0x2003f
+2003e2f6:	bc47a783          	lw	a5,-1084(a5) # 2003ebc4 <_kernel>
+		return false;
+2003e2fa:	4501                	li	a0,0
+	if ((thread == NULL) || arch_is_in_isr()) {
+2003e2fc:	c385                	beqz	a5,2003e31c <in_fatal_stack_bound+0x34>
+	start = (uintptr_t)K_KERNEL_STACK_BUFFER(z_interrupt_stacks[cpu_id]);
+2003e2fe:	2003f7b7          	lui	a5,0x2003f
+2003e302:	bf078793          	addi	a5,a5,-1040 # 2003ebf0 <z_interrupt_stacks>
+	return (addr >= start) && (addr < end);
+2003e306:	4501                	li	a0,0
+2003e308:	00f76a63          	bltu	a4,a5,2003e31c <in_fatal_stack_bound+0x34>
+	end = start + CONFIG_ISR_STACK_SIZE;
+2003e30c:	6685                	lui	a3,0x1
+2003e30e:	80068693          	addi	a3,a3,-2048 # 800 <CONFIG_ISR_STACK_SIZE>
+2003e312:	97b6                	add	a5,a5,a3
+	return (addr >= start) && (addr < end);
+2003e314:	00f73533          	sltu	a0,a4,a5
+2003e318:	8082                	ret
+		return false;
+2003e31a:	4501                	li	a0,0
+}
+2003e31c:	8082                	ret
+
+2003e31e <z_riscv_unwind_stack>:
+
+void z_riscv_unwind_stack(const struct arch_esf *esf, const _callee_saved_t *csf)
+{
+2003e31e:	1141                	addi	sp,sp,-16
+	int i = 0;
+
+	EXCEPTION_DUMP("call trace:");
+	walk_stackframe(print_trace_address, &i, _current, esf, in_fatal_stack_bound, csf);
+2003e320:	2003f637          	lui	a2,0x2003f
+{
+2003e324:	c606                	sw	ra,12(sp)
+	walk_stackframe(print_trace_address, &i, _current, esf, in_fatal_stack_bound, csf);
+2003e326:	bc460613          	addi	a2,a2,-1084 # 2003ebc4 <_kernel>
+2003e32a:	4610                	lw	a2,8(a2)
+{
+2003e32c:	86aa                	mv	a3,a0
+	walk_stackframe(print_trace_address, &i, _current, esf, in_fatal_stack_bound, csf);
+2003e32e:	2003e737          	lui	a4,0x2003e
+2003e332:	2003e537          	lui	a0,0x2003e
+{
+2003e336:	87ae                	mv	a5,a1
+	walk_stackframe(print_trace_address, &i, _current, esf, in_fatal_stack_bound, csf);
+2003e338:	2e870713          	addi	a4,a4,744 # 2003e2e8 <in_fatal_stack_bound>
+2003e33c:	858a                	mv	a1,sp
+2003e33e:	23050513          	addi	a0,a0,560 # 2003e230 <print_trace_address>
+	int i = 0;
+2003e342:	c002                	sw	zero,0(sp)
+	walk_stackframe(print_trace_address, &i, _current, esf, in_fatal_stack_bound, csf);
+2003e344:	3ddd                	jal	2003e23a <walk_stackframe>
+	EXCEPTION_DUMP("");
+}
+2003e346:	40b2                	lw	ra,12(sp)
+2003e348:	0141                	addi	sp,sp,16
+2003e34a:	8082                	ret
+
+2003e34c <nordicsemi_nrf54l_init>:
+int nordicsemi_nrf54l_init(void)
+{
+	/* Update the SystemCoreClock global variable with current core clock
+	 * retrieved from the DT.
+	 */
+	SystemCoreClock = NRF_PERIPH_GET_FREQUENCY(DT_NODELABEL(cpu));
+2003e34c:	07a12737          	lui	a4,0x7a12
+2003e350:	80e1a423          	sw	a4,-2040(gp) # 2003f830 <SystemCoreClock>
+	!defined(__ZEPHYR__)
+	power_and_clock_configuration();
+#endif
+
+	return 0;
+}
+2003e354:	4501                	li	a0,0
+2003e356:	8082                	ret
+
+2003e358 <vpr_init>:
+    uint32_t reg = nrf_csr_read(VPRCSR_NORDIC_VPRNORDICCTRL);
+2003e358:	7c0027f3          	csrr	a5,0x7c0
+    reg = (reg & ~VPRCSR_NORDIC_VPRNORDICCTRL_ENABLERTPERIPH_Msk) | NRF_VPR_CSR_NORDIC_KEY_MASK;
+2003e35c:	af830737          	lui	a4,0xaf830
+2003e360:	1779                	addi	a4,a4,-2 # af82fffe <CONFIG_MCUBOOT_APPLICATION_IMAGE_NUMBER+0xaf82ffff>
+2003e362:	8ff9                	and	a5,a5,a4
+    reg |= ((enable ? VPRCSR_NORDIC_VPRNORDICCTRL_ENABLERTPERIPH_Enabled :
+2003e364:	507d0737          	lui	a4,0x507d0
+2003e368:	0705                	addi	a4,a4,1 # 507d0001 <__global_pointer$+0x3078ffd9>
+2003e36a:	8fd9                	or	a5,a5,a4
+    nrf_csr_write(VPRCSR_NORDIC_VPRNORDICCTRL, reg);
+2003e36c:	7c079073          	csrw	0x7c0,a5
+	 * To prevent redundant calls, do it here once.
+	 */
+	nrf_vpr_csr_rtperiph_enable_set(true);
+
+	return 0;
+}
+2003e370:	4501                	li	a0,0
+2003e372:	8082                	ret
+
+2003e374 <riscv_clic_irq_enable>:
+2003e374:	f00017b7          	lui	a5,0xf0001
+2003e378:	050a                	slli	a0,a0,0x2
+2003e37a:	953e                	add	a0,a0,a5
+2003e37c:	411c                	lw	a5,0(a0)
+2003e37e:	1007e793          	ori	a5,a5,256
+2003e382:	c11c                	sw	a5,0(a0)
+#include <hal/nrf_vpr_clic.h>
+
+void riscv_clic_irq_enable(uint32_t irq)
+{
+	nrf_vpr_clic_int_enable_set(NRF_VPRCLIC, irq, true);
+}
+2003e384:	8082                	ret
+
+2003e386 <riscv_clic_irq_disable>:
+2003e386:	f00017b7          	lui	a5,0xf0001
+2003e38a:	050a                	slli	a0,a0,0x2
+2003e38c:	953e                	add	a0,a0,a5
+2003e38e:	411c                	lw	a5,0(a0)
+2003e390:	eff7f793          	andi	a5,a5,-257
+2003e394:	c11c                	sw	a5,0(a0)
+
+void riscv_clic_irq_disable(uint32_t irq)
+{
+	nrf_vpr_clic_int_enable_set(NRF_VPRCLIC, irq, false);
+}
+2003e396:	8082                	ret
+
+2003e398 <riscv_clic_irq_priority_set>:
+	return nrf_vpr_clic_int_enable_check(NRF_VPRCLIC, irq);
+}
+
+void riscv_clic_irq_priority_set(uint32_t irq, uint32_t pri, uint32_t flags)
+{
+	nrf_vpr_clic_int_priority_set(NRF_VPRCLIC, irq, NRF_VPR_CLIC_INT_TO_PRIO(pri));
+2003e398:	478d                	li	a5,3
+{
+2003e39a:	4701                	li	a4,0
+2003e39c:	00b7e763          	bltu	a5,a1,2003e3aa <riscv_clic_irq_priority_set+0x12>
+2003e3a0:	059a                	slli	a1,a1,0x6
+2003e3a2:	03f58593          	addi	a1,a1,63
+2003e3a6:	0ff5f713          	zext.b	a4,a1
+                                                     nrf_vpr_clic_priority_t priority)
+{
+    NRFX_ASSERT(irq_num < NRF_VPR_CLIC_IRQ_COUNT);
+    NRFX_ASSERT(priority != 0);
+
+    p_reg->CLIC.CLICINT[irq_num] = (p_reg->CLIC.CLICINT[irq_num] & ~CLIC_CLIC_CLICINT_PRIORITY_Msk)
+2003e3aa:	f00017b7          	lui	a5,0xf0001
+2003e3ae:	050a                	slli	a0,a0,0x2
+2003e3b0:	953e                	add	a0,a0,a5
+2003e3b2:	411c                	lw	a5,0(a0)
+                                   | (priority << CLIC_CLIC_CLICINT_PRIORITY_Pos);
+2003e3b4:	0762                	slli	a4,a4,0x18
+    p_reg->CLIC.CLICINT[irq_num] = (p_reg->CLIC.CLICINT[irq_num] & ~CLIC_CLIC_CLICINT_PRIORITY_Msk)
+2003e3b6:	07a2                	slli	a5,a5,0x8
+2003e3b8:	83a1                	srli	a5,a5,0x8
+                                   | (priority << CLIC_CLIC_CLICINT_PRIORITY_Pos);
+2003e3ba:	8fd9                	or	a5,a5,a4
+    p_reg->CLIC.CLICINT[irq_num] = (p_reg->CLIC.CLICINT[irq_num] & ~CLIC_CLIC_CLICINT_PRIORITY_Msk)
+2003e3bc:	c11c                	sw	a5,0(a0)
+}
+2003e3be:	8082                	ret
+
+2003e3c0 <vevif_task_rx_max_channels_get>:
+static uint32_t vevif_task_rx_max_channels_get(const struct device *dev)
+{
+	ARG_UNUSED(dev);
+
+	return VEVIF_TASKS_NUM;
+}
+2003e3c0:	4505                	li	a0,1
+2003e3c2:	8082                	ret
+
+2003e3c4 <vevif_task_rx_register_callback>:
+
+static int vevif_task_rx_register_callback(const struct device *dev, uint32_t id,
+					   mbox_callback_t cb, void *user_data)
+{
+	ARG_UNUSED(dev);
+	uint8_t idx = id - TASKS_IDX_MIN;
+2003e3c4:	ff058793          	addi	a5,a1,-16
+
+	if (!vevif_task_rx_is_task_valid(id)) {
+2003e3c8:	4741                	li	a4,16
+	uint8_t idx = id - TASKS_IDX_MIN;
+2003e3ca:	0ff7f793          	zext.b	a5,a5
+		return -EINVAL;
+2003e3ce:	5529                	li	a0,-22
+	if (!vevif_task_rx_is_task_valid(id)) {
+2003e3d0:	00e59f63          	bne	a1,a4,2003e3ee <vevif_task_rx_register_callback+0x2a>
+	}
+
+	cbs.cb[idx] = cb;
+2003e3d4:	00279593          	slli	a1,a5,0x2
+2003e3d8:	2003f737          	lui	a4,0x2003f
+	cbs.user_data[idx] = user_data;
+2003e3dc:	0791                	addi	a5,a5,4 # f0001004 <CONFIG_MCUBOOT_APPLICATION_IMAGE_NUMBER+0xf0001005>
+	cbs.cb[idx] = cb;
+2003e3de:	b4870713          	addi	a4,a4,-1208 # 2003eb48 <cbs>
+	cbs.user_data[idx] = user_data;
+2003e3e2:	078a                	slli	a5,a5,0x2
+	cbs.cb[idx] = cb;
+2003e3e4:	95ba                	add	a1,a1,a4
+	cbs.user_data[idx] = user_data;
+2003e3e6:	973e                	add	a4,a4,a5
+	cbs.cb[idx] = cb;
+2003e3e8:	c190                	sw	a2,0(a1)
+	cbs.user_data[idx] = user_data;
+2003e3ea:	c754                	sw	a3,12(a4)
+
+	return 0;
+2003e3ec:	4501                	li	a0,0
+}
+2003e3ee:	8082                	ret
+
+2003e3f0 <vevif_task_rx_set_enabled>:
+static int vevif_task_rx_set_enabled(const struct device *dev, uint32_t id, bool enable)
+{
+	ARG_UNUSED(dev);
+	uint8_t idx = id - TASKS_IDX_MIN;
+
+	if (!vevif_task_rx_is_task_valid(id)) {
+2003e3f0:	47c1                	li	a5,16
+		return -EINVAL;
+2003e3f2:	5529                	li	a0,-22
+	if (!vevif_task_rx_is_task_valid(id)) {
+2003e3f4:	04f59363          	bne	a1,a5,2003e43a <vevif_task_rx_set_enabled+0x4a>
+{
+2003e3f8:	1151                	addi	sp,sp,-12
+	}
+
+	if (enable) {
+		if ((cbs.enabled_mask & BIT(id)) != 0U) {
+2003e3fa:	2003f737          	lui	a4,0x2003f
+{
+2003e3fe:	c406                	sw	ra,8(sp)
+		if ((cbs.enabled_mask & BIT(id)) != 0U) {
+2003e400:	b4870713          	addi	a4,a4,-1208 # 2003eb48 <cbs>
+2003e404:	5f1c                	lw	a5,56(a4)
+			return -EALREADY;
+2003e406:	f8800513          	li	a0,-120
+		if ((cbs.enabled_mask & BIT(id)) != 0U) {
+2003e40a:	0107d693          	srli	a3,a5,0x10
+2003e40e:	8a85                	andi	a3,a3,1
+	if (enable) {
+2003e410:	ce01                	beqz	a2,2003e428 <vevif_task_rx_set_enabled+0x38>
+		if ((cbs.enabled_mask & BIT(id)) != 0U) {
+2003e412:	ea81                	bnez	a3,2003e422 <vevif_task_rx_set_enabled+0x32>
+		}
+
+		cbs.enabled_mask |= BIT(id);
+2003e414:	66c1                	lui	a3,0x10
+2003e416:	8fd5                	or	a5,a5,a3
+		irq_enable(vevif_irqs[idx]);
+2003e418:	4541                	li	a0,16
+		cbs.enabled_mask |= BIT(id);
+2003e41a:	df1c                	sw	a5,56(a4)
+		irq_enable(vevif_irqs[idx]);
+2003e41c:	de6ff0ef          	jal	ra,2003da02 <arch_irq_enable>
+
+		cbs.enabled_mask &= ~BIT(id);
+		irq_disable(vevif_irqs[idx]);
+	}
+
+	return 0;
+2003e420:	4501                	li	a0,0
+}
+2003e422:	40a2                	lw	ra,8(sp)
+2003e424:	0131                	addi	sp,sp,12
+2003e426:	8082                	ret
+		if ((cbs.enabled_mask & BIT(id)) == 0U) {
+2003e428:	deed                	beqz	a3,2003e422 <vevif_task_rx_set_enabled+0x32>
+		cbs.enabled_mask &= ~BIT(id);
+2003e42a:	76c1                	lui	a3,0xffff0
+2003e42c:	16fd                	addi	a3,a3,-1 # fffeffff <CONFIG_MCUBOOT_APPLICATION_IMAGE_NUMBER+0xffff0000>
+2003e42e:	8ff5                	and	a5,a5,a3
+		irq_disable(vevif_irqs[idx]);
+2003e430:	4541                	li	a0,16
+		cbs.enabled_mask &= ~BIT(id);
+2003e432:	df1c                	sw	a5,56(a4)
+		irq_disable(vevif_irqs[idx]);
+2003e434:	dd2ff0ef          	jal	ra,2003da06 <arch_irq_disable>
+2003e438:	b7e5                	j	2003e420 <vevif_task_rx_set_enabled+0x30>
+}
+2003e43a:	8082                	ret
+
+2003e43c <vevif_task_rx_init>:
+	IRQ_DIRECT_CONNECT(DT_INST_IRQ_BY_IDX(0, idx, irq), DT_INST_IRQ_BY_IDX(0, idx, priority), \
+		    vevif_task_##idx##_rx_isr, 0)
+#endif
+
+static int vevif_task_rx_init(const struct device *dev)
+{
+2003e43c:	1151                	addi	sp,sp,-12
+2003e43e:	c406                	sw	ra,8(sp)
+    return nrf_csr_read(VPRCSR_NORDIC_TASKS);
+}
+
+NRF_STATIC_INLINE void nrf_vpr_csr_vevif_tasks_clear(uint32_t mask)
+{
+    nrf_csr_clear_bits(VPRCSR_NORDIC_TASKS, mask);
+2003e440:	57fd                	li	a5,-1
+2003e442:	7e07b073          	csrc	0x7e0,a5
+	nrf_vpr_csr_vevif_tasks_clear(NRF_VPR_TASK_TRIGGER_ALL_MASK);
+
+	LISTIFY(DT_NUM_IRQS(DT_DRV_INST(0)), VEVIF_IRQ_CONNECT, (;));
+2003e446:	4601                	li	a2,0
+2003e448:	4585                	li	a1,1
+2003e44a:	4541                	li	a0,16
+2003e44c:	dbeff0ef          	jal	ra,2003da0a <z_riscv_irq_priority_set>
+2003e450:	4541                	li	a0,16
+2003e452:	dbcff0ef          	jal	ra,2003da0e <z_riscv_irq_vector_set>
+
+	return 0;
+}
+2003e456:	40a2                	lw	ra,8(sp)
+2003e458:	4501                	li	a0,0
+2003e45a:	0131                	addi	sp,sp,12
+2003e45c:	8082                	ret
+
+2003e45e <vevif_task_0_rx_isr>:
+LISTIFY(DT_NUM_IRQS(DT_DRV_INST(0)), VEVIF_IRQ_FUN, ())
+2003e45e:	fd410113          	addi	sp,sp,-44
+2003e462:	cc22                	sw	s0,24(sp)
+{
+#ifdef CONFIG_TRACING_ISR
+	sys_trace_isr_enter();
+#endif
+	/* We need to increment this so that arch_is_in_isr() keeps working */
+	++(arch_curr_cpu()->nested);
+2003e464:	2003f437          	lui	s0,0x2003f
+2003e468:	c23a                	sw	a4,4(sp)
+2003e46a:	d406                	sw	ra,40(sp)
+2003e46c:	d216                	sw	t0,36(sp)
+2003e46e:	d01a                	sw	t1,32(sp)
+2003e470:	ce1e                	sw	t2,28(sp)
+2003e472:	ca2a                	sw	a0,20(sp)
+2003e474:	c82e                	sw	a1,16(sp)
+2003e476:	c632                	sw	a2,12(sp)
+2003e478:	c436                	sw	a3,8(sp)
+2003e47a:	c03e                	sw	a5,0(sp)
+2003e47c:	bc440713          	addi	a4,s0,-1084 # 2003ebc4 <_kernel>
+2003e480:	431c                	lw	a5,0(a4)
+2003e482:	0785                	addi	a5,a5,1
+2003e484:	c31c                	sw	a5,0(a4)
+2003e486:	67c1                	lui	a5,0x10
+2003e488:	7e07b073          	csrc	0x7e0,a5
+	if (cbs.cb[idx] != NULL) {
+2003e48c:	2003f7b7          	lui	a5,0x2003f
+2003e490:	b4878793          	addi	a5,a5,-1208 # 2003eb48 <cbs>
+2003e494:	4398                	lw	a4,0(a5)
+2003e496:	bc440413          	addi	s0,s0,-1084
+2003e49a:	cb09                	beqz	a4,2003e4ac <vevif_task_0_rx_isr+0x4e>
+		cbs.cb[idx](DEVICE_DT_INST_GET(0), channel, cbs.user_data[idx], NULL);
+2003e49c:	4fd0                	lw	a2,28(a5)
+2003e49e:	2003e537          	lui	a0,0x2003e
+2003e4a2:	4681                	li	a3,0
+2003e4a4:	45c1                	li	a1,16
+2003e4a6:	6f050513          	addi	a0,a0,1776 # 2003e6f0 <__device_dts_ord_23>
+2003e4aa:	9702                	jalr	a4
+{
+	ARG_UNUSED(swap);
+	unsigned long mcause;
+
+	/* Get the IRQ number */
+	__asm__ volatile("csrr %0, mcause" : "=r" (mcause));
+2003e4ac:	34202573          	csrr	a0,mcause
+	mcause &= CONFIG_RISCV_MCAUSE_EXCEPTION_MASK;
+2003e4b0:	0552                	slli	a0,a0,0x14
+
+	/* Clear the pending IRQ */
+	__soc_handle_irq(mcause);
+2003e4b2:	8151                	srli	a0,a0,0x14
+2003e4b4:	cccfe0ef          	jal	ra,2003c980 <__soc_handle_irq>
+
+	/* We are not in the ISR anymore */
+	--(arch_curr_cpu()->nested);
+2003e4b8:	401c                	lw	a5,0(s0)
+2003e4ba:	17fd                	addi	a5,a5,-1
+2003e4bc:	c01c                	sw	a5,0(s0)
+LISTIFY(DT_NUM_IRQS(DT_DRV_INST(0)), VEVIF_IRQ_FUN, ())
+2003e4be:	4462                	lw	s0,24(sp)
+2003e4c0:	50a2                	lw	ra,40(sp)
+2003e4c2:	5292                	lw	t0,36(sp)
+2003e4c4:	5302                	lw	t1,32(sp)
+2003e4c6:	43f2                	lw	t2,28(sp)
+2003e4c8:	4552                	lw	a0,20(sp)
+2003e4ca:	45c2                	lw	a1,16(sp)
+2003e4cc:	4632                	lw	a2,12(sp)
+2003e4ce:	46a2                	lw	a3,8(sp)
+2003e4d0:	4712                	lw	a4,4(sp)
+2003e4d2:	4782                	lw	a5,0(sp)
+2003e4d4:	02c10113          	addi	sp,sp,44
+2003e4d8:	30200073          	mret
+
+2003e4dc <vevif_event_tx_mtu_get>:
+static int vevif_event_tx_mtu_get(const struct device *dev)
+{
+	ARG_UNUSED(dev);
+
+	return 0;
+}
+2003e4dc:	4501                	li	a0,0
+2003e4de:	8082                	ret
+
+2003e4e0 <vevif_event_tx_max_channels_get>:
+static uint32_t vevif_event_tx_max_channels_get(const struct device *dev)
+{
+	ARG_UNUSED(dev);
+
+	return VEVIF_EVENTS_NUM;
+}
+2003e4e0:	4505                	li	a0,1
+2003e4e2:	8082                	ret
+
+2003e4e4 <vevif_event_tx_send>:
+	if (!vevif_event_tx_is_valid(id)) {
+2003e4e4:	47d1                	li	a5,20
+		return -EINVAL;
+2003e4e6:	5529                	li	a0,-22
+	if (!vevif_event_tx_is_valid(id)) {
+2003e4e8:	02f59263          	bne	a1,a5,2003e50c <vevif_event_tx_send+0x28>
+		return -EMSGSIZE;
+2003e4ec:	f8600513          	li	a0,-122
+	if (msg != NULL) {
+2003e4f0:	ee11                	bnez	a2,2003e50c <vevif_event_tx_send+0x28>
+    nrf_csr_write(VPRCSR_NORDIC_EVENTS, value);
+}
+
+NRF_STATIC_INLINE void nrf_vpr_csr_vevif_events_trigger(uint32_t mask)
+{
+    nrf_csr_set_bits(VPRCSR_NORDIC_EVENTS, mask);
+2003e4f2:	001007b7          	lui	a5,0x100
+2003e4f6:	7e27a073          	csrs	0x7e2,a5
+	while (!(nrf_vpr_csr_vevif_events_get() & BIT(id))) {
+2003e4fa:	00100737          	lui	a4,0x100
+    return nrf_csr_read(VPRCSR_NORDIC_EVENTS);
+2003e4fe:	7e2027f3          	csrr	a5,0x7e2
+2003e502:	8ff9                	and	a5,a5,a4
+2003e504:	dfed                	beqz	a5,2003e4fe <vevif_event_tx_send+0x1a>
+    nrf_csr_write(VPRCSR_NORDIC_EVENTS, value);
+2003e506:	7e205073          	csrwi	0x7e2,0
+2003e50a:	4501                	li	a0,0
+}
+2003e50c:	8082                	ret
+
+2003e50e <SystemInit>:
+                }
+            #endif
+        #endif
+
+    #endif
+}
+2003e50e:	8082                	ret
+
+2003e510 <arch_system_halt>:
+2003e510:	300477f3          	csrrci	a5,mstatus,8
+	/* TODO: What's the best way to totally halt the system if SMP
+	 * is enabled?
+	 */
+
+	(void)arch_irq_lock();
+	for (;;) {
+2003e514:	a001                	j	2003e514 <arch_system_halt+0x4>
+
+2003e516 <k_sys_fatal_error_handler>:
+/* LCOV_EXCL_STOP */
+
+/* LCOV_EXCL_START */
+__weak void k_sys_fatal_error_handler(unsigned int reason,
+				      const struct arch_esf *esf)
+{
+2003e516:	1151                	addi	sp,sp,-12
+2003e518:	c406                	sw	ra,8(sp)
+	ARG_UNUSED(esf);
+
+	LOG_PANIC();
+	LOG_ERR("Halting system");
+	arch_system_halt(reason);
+2003e51a:	3fdd                	jal	2003e510 <arch_system_halt>
+
+2003e51c <z_fatal_error>:
+	arch_system_halt(reason);
+}
+/* LCOV_EXCL_STOP */
+
+void z_fatal_error(unsigned int reason, const struct arch_esf *esf)
+{
+2003e51c:	1151                	addi	sp,sp,-12
+2003e51e:	c406                	sw	ra,8(sp)
+2003e520:	c222                	sw	s0,4(sp)
+2003e522:	30047473          	csrrci	s0,mstatus,8
+		LOG_ERR("Current thread: %p (%s)", thread, thread_name_get(thread));
+	}
+
+	coredump(reason, esf, thread);
+
+	k_sys_fatal_error_handler(reason, esf);
+2003e526:	3fc5                	jal	2003e516 <k_sys_fatal_error_handler>
+			  :
+			  : "r" (key & MSTATUS_IEN)
+2003e528:	8821                	andi	s0,s0,8
+	__asm__ volatile ("csrs mstatus, %0"
+2003e52a:	30042073          	csrs	mstatus,s0
+	arch_irq_unlock(key);
+
+	if (IS_ENABLED(CONFIG_MULTITHREADING)) {
+		k_thread_abort(thread);
+	}
+}
+2003e52e:	40a2                	lw	ra,8(sp)
+2003e530:	4412                	lw	s0,4(sp)
+2003e532:	0131                	addi	sp,sp,12
+2003e534:	8082                	ret
+
+2003e536 <z_sys_init_run_level>:
+		/* End marker */
+		__init_end,
+	};
+	const struct init_entry *entry;
+
+	for (entry = levels[level]; entry < levels[level+1]; entry++) {
+2003e536:	00251713          	slli	a4,a0,0x2
+2003e53a:	2003f7b7          	lui	a5,0x2003f
+2003e53e:	0505                	addi	a0,a0,1
+2003e540:	87c78793          	addi	a5,a5,-1924 # 2003e87c <levels.0>
+2003e544:	050a                	slli	a0,a0,0x2
+{
+2003e546:	1151                	addi	sp,sp,-12
+	for (entry = levels[level]; entry < levels[level+1]; entry++) {
+2003e548:	973e                	add	a4,a4,a5
+2003e54a:	97aa                	add	a5,a5,a0
+{
+2003e54c:	c222                	sw	s0,4(sp)
+2003e54e:	c026                	sw	s1,0(sp)
+	for (entry = levels[level]; entry < levels[level+1]; entry++) {
+2003e550:	4300                	lw	s0,0(a4)
+2003e552:	4384                	lw	s1,0(a5)
+{
+2003e554:	c406                	sw	ra,8(sp)
+	for (entry = levels[level]; entry < levels[level+1]; entry++) {
+2003e556:	00946763          	bltu	s0,s1,2003e564 <z_sys_init_run_level+0x2e>
+		} else {
+			result = entry->init_fn();
+		}
+		sys_trace_sys_init_exit(entry, level, result);
+	}
+}
+2003e55a:	40a2                	lw	ra,8(sp)
+2003e55c:	4412                	lw	s0,4(sp)
+2003e55e:	4482                	lw	s1,0(sp)
+2003e560:	0131                	addi	sp,sp,12
+2003e562:	8082                	ret
+		const struct device *dev = entry->dev;
+2003e564:	4048                	lw	a0,4(s0)
+		if (dev != NULL) {
+2003e566:	c901                	beqz	a0,2003e576 <z_sys_init_run_level+0x40>
+			if ((dev->flags & DEVICE_FLAG_INIT_DEFERRED) == 0U) {
+2003e568:	01c54783          	lbu	a5,28(a0)
+2003e56c:	8b85                	andi	a5,a5,1
+2003e56e:	e391                	bnez	a5,2003e572 <z_sys_init_run_level+0x3c>
+				result = do_device_init(dev);
+2003e570:	20c9                	jal	2003e632 <do_device_init>
+	for (entry = levels[level]; entry < levels[level+1]; entry++) {
+2003e572:	0421                	addi	s0,s0,8
+2003e574:	b7cd                	j	2003e556 <z_sys_init_run_level+0x20>
+			result = entry->init_fn();
+2003e576:	401c                	lw	a5,0(s0)
+2003e578:	9782                	jalr	a5
+2003e57a:	bfe5                	j	2003e572 <z_sys_init_run_level+0x3c>
+
+2003e57c <bg_thread_main>:
+ * This routine completes kernel initialization by invoking the remaining
+ * init functions, then invokes application's main() routine.
+ */
+__boot_func
+static void bg_thread_main(void *unused1, void *unused2, void *unused3)
+{
+2003e57c:	1151                	addi	sp,sp,-12
+	 * may perform memory management tasks (except for
+	 * k_mem_map_phys_bare() which is allowed at any time)
+	 */
+	z_mem_manage_init();
+#endif /* CONFIG_MMU */
+	z_sys_post_kernel = true;
+2003e57e:	2003f7b7          	lui	a5,0x2003f
+2003e582:	4705                	li	a4,1
+
+#if CONFIG_IRQ_OFFLOAD
+	arch_irq_offload_init();
+#endif
+	z_sys_init_run_level(INIT_LEVEL_POST_KERNEL);
+2003e584:	450d                	li	a0,3
+{
+2003e586:	c406                	sw	ra,8(sp)
+	z_sys_post_kernel = true;
+2003e588:	8ae78c23          	sb	a4,-1864(a5) # 2003e8b8 <z_sys_post_kernel>
+	z_sys_init_run_level(INIT_LEVEL_POST_KERNEL);
+2003e58c:	376d                	jal	2003e536 <z_sys_init_run_level>
+#endif
+
+#if defined(CONFIG_STACK_POINTER_RANDOM) && (CONFIG_STACK_POINTER_RANDOM != 0)
+	z_stack_adjust_initialized = 1;
+#endif /* CONFIG_STACK_POINTER_RANDOM */
+	boot_banner();
+2003e58e:	204d                	jal	2003e630 <boot_banner>
+#ifdef CONFIG_STATIC_INIT_GNU
+	z_static_init_gnu();
+#endif /* CONFIG_STATIC_INIT_GNU */
+
+	/* Final init level before app starts */
+	z_sys_init_run_level(INIT_LEVEL_APPLICATION);
+2003e590:	4511                	li	a0,4
+2003e592:	3755                	jal	2003e536 <z_sys_init_run_level>
+	char **argv = prepare_main_args(&argc);
+	(void)main(argc, argv);
+#else
+	extern int main(void);
+
+	(void)main();
+2003e594:	bb8ff0ef          	jal	ra,2003d94c <main>
+ * Exceptions raised by this thread may be recoverable.
+ * (This is the default tag for a thread.)
+ */
+static inline void z_thread_essential_clear(struct k_thread *thread)
+{
+	thread->base.user_options &= ~K_ESSENTIAL;
+2003e598:	2003f7b7          	lui	a5,0x2003f
+2003e59c:	b8478793          	addi	a5,a5,-1148 # 2003eb84 <z_main_thread>
+2003e5a0:	00c7c703          	lbu	a4,12(a5)
+2003e5a4:	9b79                	andi	a4,a4,-2
+2003e5a6:	00e78623          	sb	a4,12(a5)
+
+#ifdef CONFIG_COVERAGE_DUMP
+	/* Dump coverage data once the main() has exited. */
+	gcov_coverage_dump();
+#endif /* CONFIG_COVERAGE_DUMP */
+} /* LCOV_EXCL_LINE ... because we just dumped final coverage data */
+2003e5aa:	40a2                	lw	ra,8(sp)
+2003e5ac:	0131                	addi	sp,sp,12
+2003e5ae:	8082                	ret
+
+2003e5b0 <z_cstart>:
+ * @return Does not return
+ */
+__boot_func
+FUNC_NO_STACK_PROTECTOR
+FUNC_NORETURN void z_cstart(void)
+{
+2003e5b0:	1151                	addi	sp,sp,-12
+	/* gcov hook needed to get the coverage report.*/
+	gcov_static_init();
+
+	/* initialize early init calls */
+	z_sys_init_run_level(INIT_LEVEL_EARLY);
+2003e5b2:	4501                	li	a0,0
+{
+2003e5b4:	c406                	sw	ra,8(sp)
+	z_sys_init_run_level(INIT_LEVEL_EARLY);
+2003e5b6:	3741                	jal	2003e536 <z_sys_init_run_level>
+	__asm__ volatile ("li tp, 0");
+2003e5b8:	4201                	li	tp,0
+#endif
+#if CONFIG_BOARD_EARLY_INIT_HOOK
+	board_early_init_hook();
+#endif
+	/* perform basic hardware initialization */
+	z_sys_init_run_level(INIT_LEVEL_PRE_KERNEL_1);
+2003e5ba:	4505                	li	a0,1
+2003e5bc:	3fad                	jal	2003e536 <z_sys_init_run_level>
+#if defined(CONFIG_SMP)
+	arch_smp_init();
+#endif
+	z_sys_init_run_level(INIT_LEVEL_PRE_KERNEL_2);
+2003e5be:	4509                	li	a0,2
+2003e5c0:	3f9d                	jal	2003e536 <z_sys_init_run_level>
+#else
+#ifdef ARCH_SWITCH_TO_MAIN_NO_MULTITHREADING
+	/* Custom ARCH-specific routine to switch to main()
+	 * in the case of no multi-threading.
+	 */
+	ARCH_SWITCH_TO_MAIN_NO_MULTITHREADING(bg_thread_main,
+2003e5c2:	2003e537          	lui	a0,0x2003e
+2003e5c6:	4681                	li	a3,0
+2003e5c8:	4601                	li	a2,0
+2003e5ca:	4581                	li	a1,0
+2003e5cc:	57c50513          	addi	a0,a0,1404 # 2003e57c <bg_thread_main>
+2003e5d0:	3905                	jal	2003e200 <z_riscv_switch_to_main_no_multithreading>
+
+2003e5d2 <z_impl_atomic_cas>:
+	__asm__ volatile ("csrrc %0, mstatus, %1"
+2003e5d2:	300477f3          	csrrci	a5,mstatus,8
+	 */
+	BUILD_ASSERT(!IS_ENABLED(CONFIG_SMP));
+
+	key = k_spin_lock(&lock);
+
+	if (*target == old_value) {
+2003e5d6:	4118                	lw	a4,0(a0)
+2003e5d8:	00b71863          	bne	a4,a1,2003e5e8 <z_impl_atomic_cas+0x16>
+		*target = new_value;
+2003e5dc:	c110                	sw	a2,0(a0)
+		ret = true;
+2003e5de:	4505                	li	a0,1
+	__asm__ volatile ("csrs mstatus, %0"
+2003e5e0:	8ba1                	andi	a5,a5,8
+2003e5e2:	3007a073          	csrs	mstatus,a5
+	}
+
+	k_spin_unlock(&lock, key);
+
+	return ret;
+}
+2003e5e6:	8082                	ret
+	int ret = false;
+2003e5e8:	4501                	li	a0,0
+2003e5ea:	bfdd                	j	2003e5e0 <z_impl_atomic_cas+0xe>
+
+2003e5ec <atomic_get>:
+ * @return The value read from <target>
+ */
+atomic_val_t atomic_get(const atomic_t *target)
+{
+	return *target;
+}
+2003e5ec:	4108                	lw	a0,0(a0)
+2003e5ee:	8082                	ret
+
+2003e5f0 <z_impl_atomic_set>:
+ * @param value the value to write
+ *
+ * @return The previous value from <target>
+ */
+atomic_val_t z_impl_atomic_set(atomic_t *target, atomic_val_t value)
+{
+2003e5f0:	87aa                	mv	a5,a0
+	__asm__ volatile ("csrrc %0, mstatus, %1"
+2003e5f2:	30047773          	csrrci	a4,mstatus,8
+	k_spinlock_key_t key;
+	atomic_val_t ret;
+
+	key = k_spin_lock(&lock);
+
+	ret = *target;
+2003e5f6:	4108                	lw	a0,0(a0)
+	*target = value;
+2003e5f8:	c38c                	sw	a1,0(a5)
+	__asm__ volatile ("csrs mstatus, %0"
+2003e5fa:	00877793          	andi	a5,a4,8
+2003e5fe:	3007a073          	csrs	mstatus,a5
+
+	k_spin_unlock(&lock, key);
+
+	return ret;
+}
+2003e602:	8082                	ret
+
+2003e604 <z_impl_atomic_or>:
+ * @param value the value to OR
+ *
+ * @return The previous value from <target>
+ */
+atomic_val_t z_impl_atomic_or(atomic_t *target, atomic_val_t value)
+{
+2003e604:	87aa                	mv	a5,a0
+	__asm__ volatile ("csrrc %0, mstatus, %1"
+2003e606:	30047773          	csrrci	a4,mstatus,8
+	k_spinlock_key_t key;
+	atomic_val_t ret;
+
+	key = k_spin_lock(&lock);
+
+	ret = *target;
+2003e60a:	4108                	lw	a0,0(a0)
+	*target |= value;
+2003e60c:	8dc9                	or	a1,a1,a0
+2003e60e:	c38c                	sw	a1,0(a5)
+	__asm__ volatile ("csrs mstatus, %0"
+2003e610:	00877793          	andi	a5,a4,8
+2003e614:	3007a073          	csrs	mstatus,a5
+
+	k_spin_unlock(&lock, key);
+
+	return ret;
+}
+2003e618:	8082                	ret
+
+2003e61a <z_impl_atomic_and>:
+ * @param value the value to AND
+ *
+ * @return The previous value from <target>
+ */
+atomic_val_t z_impl_atomic_and(atomic_t *target, atomic_val_t value)
+{
+2003e61a:	87aa                	mv	a5,a0
+	__asm__ volatile ("csrrc %0, mstatus, %1"
+2003e61c:	30047773          	csrrci	a4,mstatus,8
+	k_spinlock_key_t key;
+	atomic_val_t ret;
+
+	key = k_spin_lock(&lock);
+
+	ret = *target;
+2003e620:	4108                	lw	a0,0(a0)
+	*target &= value;
+2003e622:	8de9                	and	a1,a1,a0
+2003e624:	c38c                	sw	a1,0(a5)
+	__asm__ volatile ("csrs mstatus, %0"
+2003e626:	00877793          	andi	a5,a4,8
+2003e62a:	3007a073          	csrs	mstatus,a5
+
+	k_spin_unlock(&lock, key);
+
+	return ret;
+}
+2003e62e:	8082                	ret
+
+2003e630 <boot_banner>:
+#endif /* CONFIG_BOOT_CLEAR_SCREEN */
+
+#ifdef CONFIG_BOOT_BANNER
+	printk("*** " CONFIG_BOOT_BANNER_STRING " " BANNER_VERSION BANNER_POSTFIX " ***\n");
+#endif /* CONFIG_BOOT_BANNER */
+}
+2003e630:	8082                	ret
+
+2003e632 <do_device_init>:
+		k_object_init(dev);
+	}
+}
+
+int do_device_init(const struct device *dev)
+{
+2003e632:	1151                	addi	sp,sp,-12
+2003e634:	c222                	sw	s0,4(sp)
+2003e636:	c406                	sw	ra,8(sp)
+	int rc = 0;
+
+	if (dev->ops.init != NULL) {
+2003e638:	495c                	lw	a5,20(a0)
+{
+2003e63a:	842a                	mv	s0,a0
+	if (dev->ops.init != NULL) {
+2003e63c:	ef99                	bnez	a5,2003e65a <do_device_init+0x28>
+	int rc = 0;
+2003e63e:	4501                	li	a0,0
+			dev->state->init_res = rc;
+		}
+	}
+
+	/* device initialization has been invoked */
+	dev->state->initialized = true;
+2003e640:	4458                	lw	a4,12(s0)
+
+	/* here, the value of rc is either 0 or +errno
+	 * flip the sign to return a negative value on failure as expected
+	 */
+	return -rc;
+}
+2003e642:	40a00533          	neg	a0,a0
+	dev->state->initialized = true;
+2003e646:	00174783          	lbu	a5,1(a4) # 100001 <CONFIG_PM_SRAM_SIZE+0xc0001>
+2003e64a:	0017e793          	ori	a5,a5,1
+2003e64e:	00f700a3          	sb	a5,1(a4)
+}
+2003e652:	40a2                	lw	ra,8(sp)
+2003e654:	4412                	lw	s0,4(sp)
+2003e656:	0131                	addi	sp,sp,12
+2003e658:	8082                	ret
+		rc = dev->ops.init(dev);
+2003e65a:	9782                	jalr	a5
+		if (rc != 0) {
+2003e65c:	d16d                	beqz	a0,2003e63e <do_device_init+0xc>
+			if (rc < 0) {
+2003e65e:	41f55793          	srai	a5,a0,0x1f
+2003e662:	8d3d                	xor	a0,a0,a5
+2003e664:	8d1d                	sub	a0,a0,a5
+			if (rc > UINT8_MAX) {
+2003e666:	0ff00793          	li	a5,255
+2003e66a:	00a7d463          	bge	a5,a0,2003e672 <do_device_init+0x40>
+2003e66e:	0ff00513          	li	a0,255
+			dev->state->init_res = rc;
+2003e672:	445c                	lw	a5,12(s0)
+2003e674:	00a78023          	sb	a0,0(a5)
+2003e678:	b7e1                	j	2003e640 <do_device_init+0xe>
+
+2003e67a <memcmp>:
+2003e67a:	4701                	li	a4,0
+2003e67c:	00e61463          	bne	a2,a4,2003e684 <memcmp+0xa>
+2003e680:	4501                	li	a0,0
+2003e682:	8082                	ret
+2003e684:	00e507b3          	add	a5,a0,a4
+2003e688:	0705                	addi	a4,a4,1
+2003e68a:	00e586b3          	add	a3,a1,a4
+2003e68e:	0007c783          	lbu	a5,0(a5)
+2003e692:	fff6c683          	lbu	a3,-1(a3)
+2003e696:	fed783e3          	beq	a5,a3,2003e67c <memcmp+0x2>
+2003e69a:	40d78533          	sub	a0,a5,a3
+2003e69e:	8082                	ret
+
+2003e6a0 <memcpy>:
+2003e6a0:	832a                	mv	t1,a0
+2003e6a2:	ca09                	beqz	a2,2003e6b4 <memcpy+0x14>
+2003e6a4:	00058383          	lb	t2,0(a1)
+2003e6a8:	00730023          	sb	t2,0(t1)
+2003e6ac:	167d                	addi	a2,a2,-1
+2003e6ae:	0305                	addi	t1,t1,1
+2003e6b0:	0585                	addi	a1,a1,1
+2003e6b2:	fa6d                	bnez	a2,2003e6a4 <memcpy+0x4>
+2003e6b4:	8082                	ret
+
+2003e6b6 <memset>:
+2003e6b6:	832a                	mv	t1,a0
+2003e6b8:	c611                	beqz	a2,2003e6c4 <memset+0xe>
+2003e6ba:	00b30023          	sb	a1,0(t1)
+2003e6be:	167d                	addi	a2,a2,-1
+2003e6c0:	0305                	addi	t1,t1,1
+2003e6c2:	fe65                	bnez	a2,2003e6ba <memset+0x4>
+2003e6c4:	8082                	ret

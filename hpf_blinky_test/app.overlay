@@ -1,0 +1,14 @@
+/ {
+	aliases {
+		led0 = &hpf_led0;
+	};
+	
+	leds {
+		compatible = "gpio-leds";
+		hpf_led0: hpf_led_0 {
+			/* Use Port 2 Pin 0 for HPF GPIO */
+			gpios = <&gpio2 0 GPIO_ACTIVE_LOW>;
+			label = "HPF LED 0";
+		};
+	};
+};

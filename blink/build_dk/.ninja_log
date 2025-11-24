@@ -1,0 +1,11 @@
+# ninja log v6
+27	77	7837241561230436	_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-mkdir	aa2a5665041d8873
+27	77	7837241561230436	M:/nRF54L15/blink/build_dk/_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-mkdir	aa2a5665041d8873
+78	124	7837241561700423	_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-download	9309acded7857aae
+78	124	7837241561700423	M:/nRF54L15/blink/build_dk/_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-download	9309acded7857aae
+124	169	7837241562151043	_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-update	85bb36f064c7b48e
+124	169	7837241562151043	M:/nRF54L15/blink/build_dk/_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-update	85bb36f064c7b48e
+170	216	7837241562619571	_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-patch	d170f1ad711b5c1c
+170	216	7837241562619571	M:/nRF54L15/blink/build_dk/_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-patch	d170f1ad711b5c1c
+216	262	7837241563079569	_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-configure	3bd57da27e16f4a5
+216	262	7837241563079569	M:/nRF54L15/blink/build_dk/_sysbuild/sysbuild/images/blink-prefix/src/blink-stamp/blink-configure	3bd57da27e16f4a5

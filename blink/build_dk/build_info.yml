@@ -1,0 +1,25 @@
+cmake:
+  application:
+    source-dir: 'C:/ncs/v3.2.0-preview2/zephyr/share/sysbuild'
+  board:
+    name: 'nrf54l15dk'
+    path:
+     - 'C:/ncs/v3.2.0-preview2/zephyr/boards/nordic/nrf54l15dk'
+    qualifiers: 'nrf54l15/cpuapp'
+    revision: ''
+  images:
+   - name: 'blink'
+     source-dir: 'M:/nRF54L15/blink'
+     type: 'MAIN'
+  kconfig:
+    files:
+     - 'M:/nRF54L15/blink/build_dk/_sysbuild/empty.conf'
+     - 'M:/nRF54L15/blink/build_dk/_sysbuild/empty.conf'
+    user-files:
+     - 'M:/nRF54L15/blink/build_dk/_sysbuild/empty.conf'
+  sysbuild: 'true'
+version: '0.1.0'
+west:
+  command: 'C:\Python313\Scripts\west build --build-dir m:/nRF54L15/blink/build_dk m:/nRF54L15/blink --pristine --board nrf54l15dk/nrf54l15/cpuapp --sysbuild'
+  topdir: 'C:\ncs\v3.2.0-preview2'
+  version: '1.4.0'

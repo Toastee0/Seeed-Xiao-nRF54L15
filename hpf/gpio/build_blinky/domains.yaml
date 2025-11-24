@@ -1,0 +1,10 @@
+default: blinky
+build_dir: M:/nRF54L15/hpf/gpio/build_blinky
+domains:
+  - name: blinky
+    build_dir: M:/nRF54L15/hpf/gpio/build_blinky/blinky
+  - name: hpf
+    build_dir: M:/nRF54L15/hpf/gpio/build_blinky/hpf
+flash_order:
+  - blinky
+  - hpf

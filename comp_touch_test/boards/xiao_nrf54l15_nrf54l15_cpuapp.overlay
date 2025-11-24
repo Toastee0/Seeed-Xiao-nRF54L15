@@ -1,0 +1,12 @@
+// Enable COMP for capacitive touch on D0 (P1.04 / AIN0)
+
+&comp {
+	status = "okay";
+	main-mode = "SE";  /* Single-ended mode */
+	psel = <0>;  /* AIN0 (D0 = P1.04) */
+	refsel = "VDD";  /* VDD reference for relaxation oscillator */
+	sp-mode = "NORMAL";  /* Normal speed mode */
+	th-up = <32>;  /* VUP = 32/63 * VDD */
+	th-down = <31>;  /* VDOWN = 31/63 * VDD */
+	isource = "10UA";  /* 10μA current source for capacitive sensing */
+};

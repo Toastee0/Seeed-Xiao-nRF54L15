@@ -1,0 +1,18 @@
+// XIAO nRF54L15 Peripheral LBS Overlay
+// Uses existing led0 and sw0 aliases from XIAO board definition
+
+/ {
+	chosen {
+		zephyr,bt-hci = &bt_hci_sdc;
+	};
+};
+
+// Enable Bluetooth controller
+&bt_hci_sdc {
+	status = "okay";
+};
+
+// Enable radio for Bluetooth
+&radio {
+	status = "okay";
+};

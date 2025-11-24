@@ -1,0 +1,35 @@
+# Copyright (c) 2019 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+menu "LED Matrix Configuration"
+
+config MATRIX_WIDTH
+	int "Matrix width (number of columns)"
+	default 8
+	help
+	  Width of the LED matrix in pixels.
+
+config MATRIX_HEIGHT
+	int "Matrix height (number of rows)"
+	default 6
+	help
+	  Height of the LED matrix in pixels.
+
+config SAMPLE_LED_UPDATE_DELAY
+	int "Delay between frame updates in ms"
+	default 50
+	help
+	  Delay between frame updates in ms.
+
+config SAMPLE_LED_BRIGHTNESS
+	int "LED brightness"
+	default 105
+	range 1 105
+	help
+	  Brightness level of each LED. Maximum 105 is safe for 5 matrices
+	  at 1.5A power budget (1435mA total). Higher values may exceed USB
+	  power limits.
+
+endmenu
+
+source "Kconfig.zephyr"

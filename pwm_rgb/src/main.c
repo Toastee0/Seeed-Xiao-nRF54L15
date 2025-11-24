@@ -1,5 +1,8 @@
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/pwm.h>
+#include <zephyr/drivers/gpio.h>
+#include <zephyr/pm/pm.h>
+#include <zephyr/pm/device.h>
 #include <zephyr/logging/log.h>
 #include <math.h>
 
@@ -16,6 +19,23 @@ LOG_MODULE_REGISTER(pwm_rgb_example, CONFIG_LOG_DEFAULT_LEVEL);
 static const struct pwm_dt_spec red_led = PWM_DT_SPEC_GET(RED_PWM_LED);
 static const struct pwm_dt_spec green_led = PWM_DT_SPEC_GET(GREEN_PWM_LED);
 static const struct pwm_dt_spec blue_led = PWM_DT_SPEC_GET(BLUE_PWM_LED);
+
+// Button for wake-up
+#define BUTTON_NODE DT_ALIAS(sw0)
+static const struct gpio_dt_spec button = GPIO_DT_SPEC_GET(BUTTON_NODE, gpios);
+static struct gpio_callback button_cb_data;
+
+// Wake-up flag
+static volatile bool wakeup_requested = false;
+
+/**
+ * @brief Button interrupt handler for wake-up
+ */
+static void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins)
+{
+    wakeup_requested = true;
+    LOG_INF("Button wake-up triggered");
+}
 
 /**
  * @brief Set RGB LED color with 0-255 values
@@ -92,7 +112,7 @@ int main(void)
     uint8_t r, g, b;
     float hue = 0.0f;
 
-    LOG_INF("Starting RGB LED PWM example...");
+    LOG_INF("Starting RGB LED PWM example with button wake...");
 
     // Check if all PWM devices are ready
     if (!device_is_ready(red_led.dev) || 
@@ -102,8 +122,33 @@ int main(void)
         return -ENODEV;
     }
 
+    // Configure button for wake-up
+    if (!device_is_ready(button.port)) {
+        LOG_ERR("Button device not ready");
+        return -ENODEV;
+    }
+
+    ret = gpio_pin_configure_dt(&button, GPIO_INPUT);
+    if (ret < 0) {
+        LOG_ERR("Failed to configure button GPIO: %d", ret);
+        return ret;
+    }
+
+    ret = gpio_pin_interrupt_configure_dt(&button, GPIO_INT_EDGE_TO_ACTIVE);
+    if (ret < 0) {
+        LOG_ERR("Failed to configure button interrupt: %d", ret);
+        return ret;
+    }
+
+    gpio_init_callback(&button_cb_data, button_pressed, BIT(button.pin));
+    gpio_add_callback(button.port, &button_cb_data);
+
+    LOG_INF("Button wake-up configured on sw0");
     LOG_INF("All PWM channels ready. Period: %lu ns (1kHz)", PWM_PERIOD_NS);
     LOG_INF("RGB LED on D1 (Red), D2 (Green), D3 (Blue)");
+    LOG_INF("Press button to wake from battery power");
+
+    wakeup_requested = true;  // Start active
 
     while (1) {
         // Rainbow effect - smooth color cycle through full spectrum

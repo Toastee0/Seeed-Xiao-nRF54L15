@@ -1,0 +1,1725 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    message: |
+      The target system is: Generic - 4.2.99 - riscv
+      The host system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/3.31.0-rc1/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/3.31.0-rc1/CompilerIdCXX/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1237 (message)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:135 (enable_language)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      riscv64-zephyr-elf-gcc.exe (Zephyr SDK 0.17.0) 12.2.0
+      Copyright (C) 2022 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:145 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-80u746"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-80u746"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-80u746'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_359ba
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -o CMakeFiles/cmTC_359ba.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-80u746/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_359ba.dir/src.c.obj -o cmTC_359ba   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:36 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ckktcp"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ckktcp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wall_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ckktcp'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_9f259
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wall_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wall -o CMakeFiles/cmTC_9f259.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ckktcp/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_9f259.dir/src.c.obj -o cmTC_9f259   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:36 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-1ltbj9"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-1ltbj9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wformat__Wformat_security_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-1ltbj9'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_f9ce8
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wformat__Wformat_security_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wformat -Wformat-security -o CMakeFiles/cmTC_f9ce8.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-1ltbj9/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_f9ce8.dir/src.c.obj -o cmTC_f9ce8   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:36 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-15eks8"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-15eks8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wformat__Wformat_zero_length_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-15eks8'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_71b15
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wformat__Wformat_zero_length_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wformat -Wformat-zero-length -o CMakeFiles/cmTC_71b15.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-15eks8/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_71b15.dir/src.c.obj -o cmTC_71b15   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:43 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-xt5das"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-xt5das"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wdouble_promotion_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-xt5das'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_74b66
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wdouble_promotion_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wdouble-promotion -o CMakeFiles/cmTC_74b66.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-xt5das/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_74b66.dir/src.c.obj -o cmTC_74b66   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:45 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-tc1s0i"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-tc1s0i"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wpointer_sign_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-tc1s0i'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_afdea
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wpointer_sign_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wpointer-sign -o CMakeFiles/cmTC_afdea.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-tc1s0i/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_afdea.dir/src.c.obj -o cmTC_afdea   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:48 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ed83k7"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ed83k7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wpointer_arith_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ed83k7'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_27fa3
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wpointer_arith_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wpointer-arith -o CMakeFiles/cmTC_27fa3.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ed83k7/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_27fa3.dir/src.c.obj -o cmTC_27fa3   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:51 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-w9x95u"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-w9x95u"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wexpansion_to_defined_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-w9x95u'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_ef2ad
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wexpansion_to_defined_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wexpansion-to-defined -o CMakeFiles/cmTC_ef2ad.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-w9x95u/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_ef2ad.dir/src.c.obj -o cmTC_ef2ad   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:61 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-mn5xyk"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-mn5xyk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wlogical_op_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-mn5xyk'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_6e7ab
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wlogical_op_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wlogical-op -o CMakeFiles/cmTC_6e7ab.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-mn5xyk/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_6e7ab.dir/src.c.obj -o cmTC_6e7ab   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:61 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-u33cth"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-u33cth"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wmissing_field_initializers_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-u33cth'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_ce49c
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wmissing_field_initializers_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wmissing-field-initializers -o CMakeFiles/cmTC_ce49c.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-u33cth/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_ce49c.dir/src.c.obj -o cmTC_ce49c   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:77 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ssipah"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ssipah"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wpacked_bitfield_compat_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ssipah'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_eb1be
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wpacked_bitfield_compat_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wpacked-bitfield-compat -o CMakeFiles/cmTC_eb1be.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ssipah/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_eb1be.dir/src.c.obj -o cmTC_eb1be   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:77 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-yf2mzx"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-yf2mzx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wvla_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-yf2mzx'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_e87f7
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wvla_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wvla -o CMakeFiles/cmTC_e87f7.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-yf2mzx/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_e87f7.dir/src.c.obj -o cmTC_e87f7   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:96 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-l789rt"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-l789rt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wunused_but_set_variable_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-l789rt'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_af889
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Wunused_but_set_variable_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wunused-but-set-variable -o CMakeFiles/cmTC_af889.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-l789rt/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_af889.dir/src.c.obj -o cmTC_af889   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:98 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-fth2nz"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-fth2nz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Werror_implicit_int_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-fth2nz'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_46aaf
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_Werror_implicit_int_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Werror=implicit-int -o CMakeFiles/cmTC_46aaf.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-fth2nz/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_46aaf.dir/src.c.obj -o cmTC_46aaf   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:126 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-8k0h7m"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-8k0h7m"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_printf_return_value_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-8k0h7m'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_96437
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fno_printf_return_value_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-printf-return-value -o CMakeFiles/cmTC_96437.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-8k0h7m/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_96437.dir/src.c.obj -o cmTC_96437   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:190 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-vms4cs"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-vms4cs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_mstack_protector_guard_global_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-vms4cs'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_47f9d
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_mstack_protector_guard_global_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -mstack-protector-guard=global -o CMakeFiles/cmTC_47f9d.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-vms4cs/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_47f9d.dir/src.c.obj -o cmTC_47f9d   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:207 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-54vkvy"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-54vkvy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fsanitize_undefined_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-54vkvy'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_52eac
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fsanitize_undefined_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fsanitize=undefined -o CMakeFiles/cmTC_52eac.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-54vkvy/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_52eac.dir/src.c.obj -o cmTC_52eac   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:208 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-7xyl9g"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-7xyl9g"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fsanitize_undefined_trap_on_error_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-7xyl9g'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_58104
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fsanitize_undefined_trap_on_error_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fsanitize-undefined-trap-on-error -o CMakeFiles/cmTC_58104.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-7xyl9g/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_58104.dir/src.c.obj -o cmTC_58104   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:212 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-6v14ng"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-6v14ng"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_freestanding_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-6v14ng'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_03d58
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fno_freestanding_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-freestanding -o CMakeFiles/cmTC_03d58.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-6v14ng/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_03d58.dir/src.c.obj -o cmTC_03d58   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:215 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ctjxow"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ctjxow"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_ffreestanding_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ctjxow'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_4ef95
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_ffreestanding_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -ffreestanding -o CMakeFiles/cmTC_4ef95.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ctjxow/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_4ef95.dir/src.c.obj -o cmTC_4ef95   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:231 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-od1tp3"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-od1tp3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_gdwarf_4_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-od1tp3'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_12b1b
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_gdwarf_4_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -gdwarf-4 -o CMakeFiles/cmTC_12b1b.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-od1tp3/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_12b1b.dir/src.c.obj -o cmTC_12b1b   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2600 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/compiler/gcc/compiler_flags.cmake:250 (check_set_compiler_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-r6eamo"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-r6eamo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fdiagnostics_color_always_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-r6eamo'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_bcd70
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fdiagnostics_color_always_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fdiagnostics-color=always -o CMakeFiles/cmTC_bcd70.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-r6eamo/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_bcd70.dir/src.c.obj -o cmTC_bcd70   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:5 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-tbpqxv"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-tbpqxv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___gc_sections"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-tbpqxv'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_287e3
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___gc_sections  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--gc-sections -o CMakeFiles/cmTC_287e3.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-tbpqxv/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--gc-sections  CMakeFiles/cmTC_287e3.dir/src.c.obj -o cmTC_287e3   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:5 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-d6lpu1"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-d6lpu1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___build_id_none"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-d6lpu1'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_77c14
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___build_id_none  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--build-id=none -o CMakeFiles/cmTC_77c14.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-d6lpu1/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--build-id=none  CMakeFiles/cmTC_77c14.dir/src.c.obj -o cmTC_77c14   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:10 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-v3rug4"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-v3rug4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__nostdlib"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-v3rug4'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_5b30d
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__nostdlib  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -nostdlib -o CMakeFiles/cmTC_5b30d.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-v3rug4/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -nostdlib  CMakeFiles/cmTC_5b30d.dir/src.c.obj -o cmTC_5b30d   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:10 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-wzt1wu"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-wzt1wu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__static"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-wzt1wu'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_3fae6
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__static  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -static -o CMakeFiles/cmTC_3fae6.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-wzt1wu/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -static  CMakeFiles/cmTC_3fae6.dir/src.c.obj -o cmTC_3fae6   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:10 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jwyykk"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jwyykk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl__X"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jwyykk'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_e3504
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl__X  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,-X -o CMakeFiles/cmTC_e3504.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jwyykk/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,-X  CMakeFiles/cmTC_e3504.dir/src.c.obj -o cmTC_e3504   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:10 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-zjtdip"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-zjtdip"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl__N"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-zjtdip'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_00d50
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl__N  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,-N -o CMakeFiles/cmTC_00d50.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-zjtdip/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,-N  CMakeFiles/cmTC_00d50.dir/src.c.obj -o cmTC_00d50   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:17 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-rfyyzy"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-rfyyzy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___orphan_handling_warn"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-rfyyzy'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_a8c44
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___orphan_handling_warn  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--orphan-handling=warn -o CMakeFiles/cmTC_a8c44.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-rfyyzy/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--orphan-handling=warn  CMakeFiles/cmTC_a8c44.dir/src.c.obj -o cmTC_a8c44   && cd ."
+        c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/../../../../riscv64-zephyr-elf/bin/ld.bfd.exe: warning: orphan section `.riscv.attributes' from `CMakeFiles/cmTC_a8c44.dir/src.c.obj' being placed in section `.riscv.attributes'\x0d
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:21 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ewh0ce"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ewh0ce"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___orphan_handling_error"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ewh0ce'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_1263f
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___orphan_handling_error  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--orphan-handling=error -o CMakeFiles/cmTC_1263f.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-ewh0ce/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--orphan-handling=error  CMakeFiles/cmTC_1263f.dir/src.c.obj -o cmTC_1263f   && cd ."
+        FAILED: cmTC_1263f 
+        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--orphan-handling=error  CMakeFiles/cmTC_1263f.dir/src.c.obj -o cmTC_1263f   && cd ."
+        c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/../../../../riscv64-zephyr-elf/bin/ld.bfd.exe: error: unplaced orphan section `.riscv.attributes' from `CMakeFiles/cmTC_1263f.dir/src.c.obj'\x0d
+        collect2.exe: error: ld returned 1 exit status
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:25 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-hf9pqs"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-hf9pqs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___print_memory_usage"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-hf9pqs'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_febf4
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___print_memory_usage  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--print-memory-usage -o CMakeFiles/cmTC_febf4.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-hf9pqs/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--print-memory-usage  CMakeFiles/cmTC_febf4.dir/src.c.obj -o cmTC_febf4   && cd ."
+        Memory region         Used Size  Region Size  %age Used\x0d
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:27 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-erdti6"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-erdti6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__fsanitize_undefined"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-erdti6'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_562d5
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__fsanitize_undefined  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -fsanitize=undefined -o CMakeFiles/cmTC_562d5.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-erdti6/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -fsanitize=undefined  CMakeFiles/cmTC_562d5.dir/src.c.obj -o cmTC_562d5   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:28 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-6il6y4"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-6il6y4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__fsanitize_undefined_trap_on_error"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-6il6y4'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_2d03f
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__fsanitize_undefined_trap_on_error  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -fsanitize-undefined-trap-on-error -o CMakeFiles/cmTC_2d03f.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-6il6y4/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -fsanitize-undefined-trap-on-error  CMakeFiles/cmTC_2d03f.dir/src.c.obj -o cmTC_2d03f   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:45 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-a290pb"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-a290pb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___no_relax"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-a290pb'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_38357
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___no_relax  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--no-relax -o CMakeFiles/cmTC_38357.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-a290pb/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--no-relax  CMakeFiles/cmTC_38357.dir/src.c.obj -o cmTC_38357   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:47 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-if4hn5"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-if4hn5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___sort_common_descending"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-if4hn5'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_39352
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___sort_common_descending  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--sort-common=descending -o CMakeFiles/cmTC_39352.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-if4hn5/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--sort-common=descending  CMakeFiles/cmTC_39352.dir/src.c.obj -o cmTC_39352   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:47 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-t5obmt"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-t5obmt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___sort_section_alignment"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-t5obmt'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_c8a37
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___sort_section_alignment  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--sort-section=alignment -o CMakeFiles/cmTC_c8a37.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-t5obmt/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--sort-section=alignment  CMakeFiles/cmTC_c8a37.dir/src.c.obj -o cmTC_c8a37   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2522 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/gcc/linker_flags.cmake:10 (check_set_linker_property)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/linker/ld/linker_flags.cmake:57 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:153 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-df1fgy"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-df1fgy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__pg"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-df1fgy'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_78ed9
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__pg  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -pg -o CMakeFiles/cmTC_78ed9.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-df1fgy/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -pg  CMakeFiles/cmTC_78ed9.dir/src.c.obj -o cmTC_78ed9   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2400 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:164 (target_ld_options)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/CMakeLists.txt:474 (zephyr_ld_options)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-dfah8v"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-dfah8v"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__mabi_ilp32e__march_rv32emc_zicsr__mcmodel_medlow__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-dfah8v'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_9797b
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__mabi_ilp32e__march_rv32emc_zicsr__mcmodel_medlow__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -mabi=ilp32e -march=rv32emc_zicsr -mcmodel=medlow -fuse-ld=bfd -o CMakeFiles/cmTC_9797b.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-dfah8v/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -mabi=ilp32e -march=rv32emc_zicsr -mcmodel=medlow -fuse-ld=bfd  CMakeFiles/cmTC_9797b.dir/src.c.obj -o cmTC_9797b   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/CMakeLists.txt:575 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-lzzcbz"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-lzzcbz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_asynchronous_unwind_tables_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-lzzcbz'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_db565
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fno_asynchronous_unwind_tables_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-asynchronous-unwind-tables -o CMakeFiles/cmTC_db565.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-lzzcbz/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_db565.dir/src.c.obj -o cmTC_db565   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/CMakeLists.txt:583 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-gahfkz"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-gahfkz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_ftls_model_local_exec_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-gahfkz'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_1103a
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_ftls_model_local_exec_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -ftls-model=local-exec -o CMakeFiles/cmTC_1103a.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-gahfkz/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_1103a.dir/src.c.obj -o cmTC_1103a   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/CMakeLists.txt:603 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-76cvfr"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-76cvfr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_reorder_functions_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-76cvfr'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_c718c
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fno_reorder_functions_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-reorder-functions -o CMakeFiles/cmTC_c718c.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-76cvfr/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_c718c.dir/src.c.obj -o cmTC_c718c   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/CMakeLists.txt:610 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-yeb30z"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-yeb30z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check__param_min_pagesize_0_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-yeb30z'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_7d8fa
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck__param_min_pagesize_0_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   --param=min-pagesize=0 -o CMakeFiles/cmTC_7d8fa.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-yeb30z/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_7d8fa.dir/src.c.obj -o cmTC_7d8fa   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/CMakeLists.txt:613 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jclipw"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jclipw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_defer_pop_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jclipw'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_9afae
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fno_defer_pop_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-defer-pop -o CMakeFiles/cmTC_9afae.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jclipw/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_9afae.dir/src.c.obj -o cmTC_9afae   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/CMakeLists.txt:632 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-wlyykr"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-wlyykr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fmacro_prefix_map_M__nRF54L15_hpf_gpio_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-wlyykr'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_ece65
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fmacro_prefix_map_M__nRF54L15_hpf_gpio_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fmacro-prefix-map=M:/nRF54L15/hpf/gpio=CMAKE_SOURCE_DIR -o CMakeFiles/cmTC_ece65.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-wlyykr/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_ece65.dir/src.c.obj -o cmTC_ece65   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/CMakeLists.txt:633 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jzg027"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jzg027"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fmacro_prefix_map_C__ncs_v3_2_0_preview2_zephyr_ZEPHYR_BASE_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jzg027'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_9135a
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fmacro_prefix_map_C__ncs_v3_2_0_preview2_zephyr_ZEPHYR_BASE_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fmacro-prefix-map=C:/ncs/v3.2.0-preview2/zephyr=ZEPHYR_BASE -o CMakeFiles/cmTC_9135a.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-jzg027/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_9135a.dir/src.c.obj -o cmTC_9135a   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/CMakeLists.txt:635 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-h4mval"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-h4mval"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fmacro_prefix_map_C__ncs_v3_2_0_preview2_WEST_TOPDIR_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-h4mval'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_aad74
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fmacro_prefix_map_C__ncs_v3_2_0_preview2_WEST_TOPDIR_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fmacro-prefix-map=C:/ncs/v3.2.0-preview2=WEST_TOPDIR -o CMakeFiles/cmTC_aad74.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-h4mval/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_aad74.dir/src.c.obj -o cmTC_aad74   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/arch/common/CMakeLists.txt:43 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-cfiwks"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-cfiwks"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_ffunction_sections_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-cfiwks'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_166e8
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_ffunction_sections_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -ffunction-sections -o CMakeFiles/cmTC_166e8.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-cfiwks/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_166e8.dir/src.c.obj -o cmTC_166e8   && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "M:/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "M:/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2339 (check_c_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:1198 (check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2378 (zephyr_check_compiler_flag)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:2354 (target_cc_option_fallback)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/arch/common/CMakeLists.txt:43 (zephyr_cc_option)"
+    directories:
+      source: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-vmxa4p"
+      binary: "M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-vmxa4p"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/ncs/v3.2.0-preview2/nrf/cmake/modules;C:/ncs/v3.2.0-preview2/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fdata_sections_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: 'M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-vmxa4p'
+        
+        Run Build Command(s): M:/ninja/ninja.exe -v cmTC_fbf9c
+        [1/2] C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -Dcheck_fdata_sections_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include___isystem__c__ncs_toolchains_c1a76fddb2_opt_zephyr_sdk_riscv64_zephyr_elf_bin____lib_gcc_riscv64_zephyr_elf_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fdata-sections -o CMakeFiles/cmTC_fbf9c.dir/src.c.obj -c M:/nRF54L15/hpf/gpio/build_dk/gpio/CMakeFiles/CMakeScratch/TryCompile-vmxa4p/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\ncs\\toolchains\\c1a76fddb2\\opt\\zephyr-sdk\\riscv64-zephyr-elf\\bin\\riscv64-zephyr-elf-gcc.exe -nostartfiles -nostdlib -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include" -isystem "c:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/../lib/gcc/riscv64-zephyr-elf/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_fbf9c.dir/src.c.obj -o cmTC_fbf9c   && cd ."
+        
+      exitCode: 0
+...

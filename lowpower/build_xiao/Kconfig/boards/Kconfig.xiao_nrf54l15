@@ -1,2 +1,2 @@
 # Load board Kconfig descriptions.
-osource "C:/ncs/v3.1.0/zephyr/boards/seeed/xiao_nrf54l15/Kconfig.xiao_nrf54l15"
+osource "C:/ncs/v3.1.1/zephyr/boards/arm/xiao_nrf54l15/Kconfig.xiao_nrf54l15"

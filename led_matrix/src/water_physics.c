@@ -6,6 +6,7 @@
  */
 
 #include "water_physics.h"
+#include "font_5x5.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -79,31 +80,84 @@ void water_physics_set_tilt(float new_tilt_x, float new_tilt_y)
 	tilt_x = new_tilt_x;
 	tilt_y = new_tilt_y;
 
-	// Convert tilt to gravity vector
-	// Simplified: use tilt angles directly to determine gravity direction
+	// Convert tilt angles to proper gravity vector
+	// tilt_x = roll (rotation around Y axis) - affects which edge is "down"
+	// tilt_y = pitch (rotation around X axis) - affects forward/back tilt
 	
-	// Default gravity is down
-	grav_x = 0.0f;
-	grav_y = GRAVITY;
+	// Use sin/cos to properly convert angle to gravity components
+	float angle_rad_x = tilt_x * 3.14159f / 180.0f;
+	float angle_rad_y = tilt_y * 3.14159f / 180.0f;
 	
-	// Apply tilt influence (larger tilt = more horizontal gravity)
-	if (fabsf(tilt_y) > 10.0f) {
-		// Forward/back tilt affects X gravity (SWAPPED: negative for correct direction)
-		grav_x = -(tilt_y / 90.0f) * GRAVITY;
+	// Calculate gravity vector based on orientation
+	// X component: left/right gravity (from roll)
+	// Y component: up/down gravity (from roll, inverted when upside down)
+	grav_x = sinf(angle_rad_x) * GRAVITY;
+	grav_y = cosf(angle_rad_x) * GRAVITY;
+	
+	// Add forward/back tilt influence on X axis
+	grav_x -= sinf(angle_rad_y) * GRAVITY * 0.5f;
+}
+
+/**
+ * @brief Initialize water physics with text pattern
+ */
+int water_physics_init_text(int width, int height, const char *text)
+{
+	if (width <= 0 || height <= 0) {
+		return -1;
 	}
-	
-	if (fabsf(tilt_x) > 10.0f) {
-		// Left/right tilt affects Y gravity
-		float tilt_factor = tilt_x / 90.0f;
-		if (tilt_factor > 1.0f) tilt_factor = 1.0f;
-		if (tilt_factor < -1.0f) tilt_factor = -1.0f;
-		grav_y = GRAVITY * (1.0f - fabsf(tilt_factor) * 0.5f);
+
+	matrix_width = width;
+	matrix_height = height;
+	initial_fill = 0;  // No bottom fill for text mode
+
+	// Allocate grids
+	grid = (uint8_t *)malloc(width * height * sizeof(uint8_t));
+	particles = (water_particle_t *)malloc(width * height * sizeof(water_particle_t));
+
+	if (!grid || !particles) {
+		if (grid) free(grid);
+		if (particles) free(particles);
+		return -1;
 	}
-	
-	// If upside down, flip Y
-	if (fabsf(tilt_x) > 90.0f) {
-		grav_y = -GRAVITY;
+
+	memset(grid, 0, matrix_width * matrix_height);
+	memset(particles, 0, matrix_width * matrix_height * sizeof(water_particle_t));
+
+	// Calculate text dimensions
+	int text_len = 0;
+	while (text[text_len]) text_len++;
+	// Align text to start at x=0 for proper segment alignment
+	int start_x = 0;
+	int start_y = (height - 5) / 2;  // Center vertically
+
+	// Draw each character (8 pixels wide including spacing for segment alignment)
+	for (int i = 0; i < text_len; i++) {
+		char c = text[i];
+		if (c >= 'a' && c <= 'z') c = c - 'a' + 'A';  // Convert to uppercase
+		if (c < ' ' || c > 'Z') c = ' ';  // Default to space
+		
+		int char_idx = c - ' ';
+		const uint8_t *glyph = font_5x5[char_idx];
+		
+		int char_x = start_x + i * 8;  // 8 pixels per character for segment alignment
+		
+		// Draw 5x5 character
+		for (int row = 0; row < 5; row++) {
+			for (int col = 0; col < 5; col++) {
+				if (glyph[row] & (1 << (4 - col))) {
+					int px = char_x + col;
+					int py = start_y + row;
+					if (px >= 0 && px < width && py >= 0 && py < height) {
+						int idx = py * width + px;
+						grid[idx] = 1;
+					}
+				}
+			}
+		}
 	}
+
+	return 0;
 }
 
 /**

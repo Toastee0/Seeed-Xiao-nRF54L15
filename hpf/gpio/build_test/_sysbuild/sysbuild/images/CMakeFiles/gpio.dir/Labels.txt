@@ -1,0 +1,13 @@
+# Target labels
+ gpio
+# Source files and their labels
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/CMakeFiles/gpio
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/CMakeFiles/gpio.rule
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/CMakeFiles/gpio-complete.rule
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-build.rule
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-configure.rule
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-download.rule
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-install.rule
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-mkdir.rule
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-patch.rule
+M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-update.rule

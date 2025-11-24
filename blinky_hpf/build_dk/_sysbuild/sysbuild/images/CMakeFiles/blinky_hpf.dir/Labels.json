@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/CMakeFiles/blinky_hpf"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/CMakeFiles/blinky_hpf.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/CMakeFiles/blinky_hpf-complete.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-build.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-configure.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-download.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-install.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-mkdir.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-patch.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"blinky_hpf"
+		],
+		"name" : "blinky_hpf"
+	}
+}

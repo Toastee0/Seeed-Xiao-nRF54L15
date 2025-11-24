@@ -1,0 +1,11 @@
+sample:
+  description: Smooth, bright animations for a single RGB LED
+  name: Single RGB LED Animation sample
+tests:
+  sample.drivers.led_strip_single:
+    tags: LED
+    filter: dt_alias_exists("led-strip")
+    harness_config:
+      fixture: fixture_led_strip
+    integration_platforms:
+      - mimxrt1050_evk/mimxrt1052/hyperflash

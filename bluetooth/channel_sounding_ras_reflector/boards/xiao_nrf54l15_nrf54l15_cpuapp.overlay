@@ -1,0 +1,10 @@
+/*
+ * Copyright (c) 2025 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+ */
+
+/*
+ * Xiao nRF54L15 has a single antenna, no antenna switching needed.
+ * This overlay file can be left minimal or empty.
+ */

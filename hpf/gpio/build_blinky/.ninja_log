@@ -1,0 +1,21 @@
+# ninja log v6
+30	81	7837236242303733	_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-mkdir	c995b9737b7d9f6b
+30	81	7837236242303733	M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-mkdir	c995b9737b7d9f6b
+36	90	7837236242393716	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-mkdir	afaf700d9d31d63d
+36	90	7837236242393716	M:/nRF54L15/hpf/gpio/build_blinky/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-mkdir	afaf700d9d31d63d
+81	130	7837236242804121	_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-download	58a0c999ed93c2f7
+81	130	7837236242804121	M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-download	58a0c999ed93c2f7
+90	139	7837236242884101	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-download	94b4eac13aed7068
+90	139	7837236242884101	M:/nRF54L15/hpf/gpio/build_blinky/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-download	94b4eac13aed7068
+130	178	7837236243284131	_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-update	1326f5b12e1a72b0
+130	178	7837236243284131	M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-update	1326f5b12e1a72b0
+139	187	7837236243364106	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-update	56ce3e72c7a27c6e
+139	187	7837236243364106	M:/nRF54L15/hpf/gpio/build_blinky/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-update	56ce3e72c7a27c6e
+178	231	7837236243782025	_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-patch	4b443d705ed2c0ee
+178	231	7837236243782025	M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-patch	4b443d705ed2c0ee
+187	238	7837236243872095	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-patch	5866855a825071dd
+187	238	7837236243872095	M:/nRF54L15/hpf/gpio/build_blinky/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-patch	5866855a825071dd
+231	280	7837236244292213	_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-configure	134bccf02cfd67a6
+231	280	7837236244292213	M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-configure	134bccf02cfd67a6
+238	290	7837236244392233	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-configure	467f23398b4a6596
+238	290	7837236244392233	M:/nRF54L15/hpf/gpio/build_blinky/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-configure	467f23398b4a6596

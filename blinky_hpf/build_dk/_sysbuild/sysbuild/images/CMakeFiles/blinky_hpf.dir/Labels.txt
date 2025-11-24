@@ -1,0 +1,13 @@
+# Target labels
+ blinky_hpf
+# Source files and their labels
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/CMakeFiles/blinky_hpf
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/CMakeFiles/blinky_hpf.rule
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/CMakeFiles/blinky_hpf-complete.rule
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-build.rule
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-configure.rule
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-download.rule
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-install.rule
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-mkdir.rule
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-patch.rule
+M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-update.rule

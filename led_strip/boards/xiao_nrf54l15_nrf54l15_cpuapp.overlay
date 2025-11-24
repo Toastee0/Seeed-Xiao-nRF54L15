@@ -17,7 +17,7 @@
 		spi-max-frequency = <SPI_FREQ>;
 
 		/* WS2812 */
-		chain-length = <90>; /* arbitrary; change at will */
+		chain-length = <1>; /* arbitrary; change at will */
 		color-mapping = <LED_COLOR_ID_GREEN
 				 LED_COLOR_ID_RED
 				 LED_COLOR_ID_BLUE>;

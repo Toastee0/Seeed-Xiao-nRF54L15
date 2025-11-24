@@ -1,0 +1,7 @@
+default: blink
+build_dir: M:/nRF54L15/blink/build_dk
+domains:
+  - name: blink
+    build_dir: M:/nRF54L15/blink/build_dk/blink
+flash_order:
+  - blink

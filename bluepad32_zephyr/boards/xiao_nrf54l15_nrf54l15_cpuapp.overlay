@@ -1,0 +1,54 @@
+/*
+ * Copyright (c) 2025 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+ */
+
+/ {
+	chosen {
+		/* Allocate full 256KB SRAM to cpuapp (no FLPR core used) */
+		zephyr,sram = &cpuapp_sram;
+	};
+
+	/* Xiao nRF54L15 has led0 and sw0 defined in base board file */
+	/* No need to redefine - they already exist */
+};
+
+/* Enable GPIO controllers */
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};
+
+&gpio2 {
+	status = "okay";
+};
+
+/* UART for console output */
+&uart20 {
+	status = "okay";
+	current-speed = <115200>;
+};
+
+/* Disable UART21 - not currently connected on Xiao */
+&uart21 {
+	status = "disabled";
+};
+
+/* Enable radio for Bluetooth */
+&radio {
+	status = "okay";
+};
+
+/* RRAM for application and storage */
+&cpuapp_rram {
+	status = "okay";
+};
+
+/* Override SRAM partition to use full 256KB */
+&cpuapp_sram {
+	reg = <0x20000000 0x40000>; /* 256KB at 0x20000000 */
+};

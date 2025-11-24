@@ -1,0 +1,7 @@
+default: gpio
+build_dir: M:/nRF54L15/hpf/gpio/build_test
+domains:
+  - name: gpio
+    build_dir: M:/nRF54L15/hpf/gpio/build_test/gpio
+flash_order:
+  - gpio

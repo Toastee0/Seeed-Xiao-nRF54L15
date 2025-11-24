@@ -1,0 +1,21 @@
+# ninja log v6
+28	78	7837246052593057	_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-mkdir	da30af89fd6514b2
+28	78	7837246052593057	M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-mkdir	da30af89fd6514b2
+34	85	7837246052643051	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-mkdir	48488c4b41f3df40
+34	85	7837246052643051	M:/nRF54L15/blinky_hpf/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-mkdir	48488c4b41f3df40
+78	125	7837246053063203	_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-download	f6b5c14da7a7843c
+78	125	7837246053063203	M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-download	f6b5c14da7a7843c
+85	132	7837246053113201	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-download	27f7f96508049dfb
+85	132	7837246053113201	M:/nRF54L15/blinky_hpf/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-download	27f7f96508049dfb
+126	173	7837246053543522	_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-update	88271636970c20a7
+126	173	7837246053543522	M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-update	88271636970c20a7
+132	179	7837246053583509	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-update	72af88e2215b5a4d
+132	179	7837246053583509	M:/nRF54L15/blinky_hpf/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-update	72af88e2215b5a4d
+174	220	7837246054013712	_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-patch	36f838b8a26b561e
+174	220	7837246054013712	M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-patch	36f838b8a26b561e
+180	230	7837246054063767	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-patch	f1e9dcf5fdc2694b
+180	230	7837246054063767	M:/nRF54L15/blinky_hpf/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-patch	f1e9dcf5fdc2694b
+220	269	7837246054503890	_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-configure	df475854c14f076c
+220	269	7837246054503890	M:/nRF54L15/blinky_hpf/build_dk/_sysbuild/sysbuild/images/blinky_hpf-prefix/src/blinky_hpf-stamp/blinky_hpf-configure	df475854c14f076c
+230	277	7837246054574131	modules/nrf/hpf-prefix/src/hpf-stamp/hpf-configure	ce49243e54b66059
+230	277	7837246054574131	M:/nRF54L15/blinky_hpf/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-configure	ce49243e54b66059

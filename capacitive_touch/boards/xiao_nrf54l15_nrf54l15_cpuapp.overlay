@@ -1,0 +1,68 @@
+/*
+ * Device Tree Overlay for Capacitive Touch using COMP peripheral
+ * 
+ * This overlay configures the comparator peripheral for capacitive touch
+ * sensing on D0-D3 pins (P1.04-P1.07 / AIN0-AIN3)
+ */
+
+/ {
+    /* Define aliases for touch sensors */
+    aliases {
+        touch0 = &touch_sensor_0;
+        touch1 = &touch_sensor_1;
+        touch2 = &touch_sensor_2;
+        touch3 = &touch_sensor_3;
+    };
+
+    /* Touch sensor definitions */
+    touch_sensors {
+        compatible = "gpio-keys";
+        status = "okay";
+        
+        touch_sensor_0: touch_0 {
+            gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;  /* D0 = P1.04 */
+            label = "Touch Sensor 0";
+        };
+        
+        touch_sensor_1: touch_1 {
+            gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;  /* D1 = P1.05 */
+            label = "Touch Sensor 1";
+        };
+        
+        touch_sensor_2: touch_2 {
+            gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;  /* D2 = P1.06 */
+            label = "Touch Sensor 2";
+        };
+        
+        touch_sensor_3: touch_3 {
+            gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  /* D3 = P1.07 */
+            label = "Touch Sensor 3";
+        };
+    };
+
+    /* User configuration for COMP channels */
+    zephyr,user {
+        /* Map analog input channels for capacitive touch sensing */
+        io-channels = <&adc 0>, <&adc 1>, <&adc 2>, <&adc 3>;
+    };
+};
+
+/* Enable and configure the COMP peripheral */
+&comp {
+    status = "okay";
+    /* 
+     * PSEL configuration for capacitive touch:
+     * We'll configure this programmatically in the application
+     * to switch between different analog input pins
+     */
+};
+
+/* Enable ADC for reference measurements */
+&adc {
+    status = "okay";
+};
+
+/* Ensure GPIO1 is available for touch pin access */
+&gpio1 {
+    status = "okay";
+};

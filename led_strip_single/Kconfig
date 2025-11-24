@@ -1,0 +1,23 @@
+# Copyright (c) 2019 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+menu "Single RGB LED Animation Configuration"
+
+config SAMPLE_LED_UPDATE_DELAY
+	int "Delay between LED updates in ms"
+	default 20
+	help
+	  Delay between LED updates in ms. Lower values = smoother animations.
+	  Default 20ms gives 50 FPS for smooth visual effects.
+
+config SAMPLE_LED_BRIGHTNESS
+	int "LED brightness"
+	default 255
+	range 1 255
+	help
+	  Maximum brightness level for the RGB LED. Higher values are brighter.
+	  Default 128 provides good visibility without overwhelming brightness.
+
+endmenu
+
+source "Kconfig.zephyr"

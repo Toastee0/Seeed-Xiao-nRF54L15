@@ -71,6 +71,7 @@ The repository is organized into the following sample projects:
 
 #### ✅ Working Samples (Tested on Hardware):
 - `adc/` - ADC variable blink sample - reads potentiometer on A0, controls LED blink rate (working - builds, flashes, and tested with pot)
+- `bap_dmic/` - **BLE Audio wireless microphone** - Complete wireless microphone system using BLE Audio broadcast with LC3 codec and PDM microphone input (working - 16kHz real-time audio streaming, 99.9%+ packet success rate, tested with nRF52840 dongle receiver)
 - `blink/` - Basic LED blinking sample (working - builds, flashes, and runs correctly)
 - `button/` - Button input sample (working - builds, flashes, and runs correctly)
 - `dmic/` - Digital Microphone sample with LED feedback and terminal bar graph (working - captures audio, displays levels, LED responds to volume thresholds)
@@ -95,6 +96,28 @@ The repository is organized into the following sample projects:
 - **Hardware SPI00 Minimum Frequency**: The nRF54L15's hardware SPI00 peripheral (SPIM00) has a minimum frequency of 2MHz, which is too fast for reliable SD card initialization (requires 400kHz). Two solutions are provided:
   - `xiao_expanded/sd_card/` - Uses SPI bit-bang driver (software SPI)
   - `xiao_expanded/sd_card_hw/` - Uses hardware SPI20 which supports full frequency range (400kHz to 24MHz)
+
+### BLE Audio System (`bap_*` samples):
+
+#### Complete Wireless Microphone System
+The `bap_dmic` and `bap_broadcast_sink` samples work together to create a complete BLE Audio wireless microphone:
+
+- **`bap_dmic/`** (Transmitter - XIAO nRF54L15):
+  - Captures audio from PDM20 microphone
+  - Encodes with LC3 codec
+  - Broadcasts via BLE Audio (BAP Broadcast Source)
+  - Real-time RMS monitoring
+  - 99.9%+ transmission success rate
+
+- **`bap_broadcast_sink/`** (Receiver - nRF52840 Dongle):
+  - Scans and connects to BLE Audio broadcasts
+  - Decodes LC3 audio
+  - Two output modes:
+    - **Serial Console Mode**: Debug output showing reception statistics
+    - **USB Audio Mode**: Direct playback through Windows speakers
+  - Switch modes by editing `boards/nrf52840dongle_nrf52840.conf`
+
+**Quick Start**: See `bap_dmic/README.md` for complete setup instructions including receiver configuration.
 
 ### Expansion Base Samples (`xiao_expanded/`):
 

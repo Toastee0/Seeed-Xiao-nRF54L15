@@ -1,0 +1,7 @@
+default: blinky_sdk
+build_dir: M:/nRF54L15/blinky_sdk/build_dk_standard
+domains:
+  - name: blinky_sdk
+    build_dir: M:/nRF54L15/blinky_sdk/build_dk_standard/blinky_sdk
+flash_order:
+  - blinky_sdk

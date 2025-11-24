@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2024 Nordic Semiconductor ASA
+
+sample:
+  name: HPF WS2812 Bit-Bang
+  description: >
+    Sample demonstrating WS2812/NeoPixel control using bit-banging on the FLPR core
+    with Nordic's High Performance Framework for precise timing control.
+  
+tests:
+  sample.drivers.led_strip.hpf_ws2812_bitbang:
+    harness: shield
+    platform_allow: 
+      - nrf54l15dk/nrf54l15
+    integration_platforms:
+      - nrf54l15dk/nrf54l15

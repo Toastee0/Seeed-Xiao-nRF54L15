@@ -1,0 +1,10 @@
+default: hpf_blinky_test
+build_dir: M:/nRF54L15/hpf_blinky_test/build_dk
+domains:
+  - name: hpf_blinky_test
+    build_dir: M:/nRF54L15/hpf_blinky_test/build_dk/hpf_blinky_test
+  - name: hpf
+    build_dir: M:/nRF54L15/hpf_blinky_test/build_dk/hpf
+flash_order:
+  - hpf_blinky_test
+  - hpf

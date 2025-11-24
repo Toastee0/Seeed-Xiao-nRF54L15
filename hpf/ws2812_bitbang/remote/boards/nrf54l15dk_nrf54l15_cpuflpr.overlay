@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2024 Nordic Semiconductor ASA
+ * SPDX-License-Identifier: Apache-2.0
+ * 
+ * Device tree overlay for WS2812 FLPR driver on CPUFLPR
+ */
+
+#include <zephyr/dt-bindings/led/led.h>
+
+/ {
+	aliases {
+		led-strip = &ws2812;
+	};
+
+	ws2812: ws2812 {
+		compatible = "worldsemi,ws2812-flpr";
+		vio-pin = <10>;  /* VIO pin 10 for WS2812 data */
+		chain-length = <8>;  /* 8 LEDs in strip */
+		color-mapping = <LED_COLOR_ID_GREEN
+				 LED_COLOR_ID_RED
+				 LED_COLOR_ID_BLUE>;  /* GRB order for WS2812 */
+	};
+};

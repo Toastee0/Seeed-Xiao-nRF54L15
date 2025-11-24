@@ -1,0 +1,85 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    message: |
+      The target system is: Generic - 4.2.99 - riscv
+      The host system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        M:/nRF54L15/blinky_hpf/build_dk/hpf/CMakeFiles/3.31.0-rc1/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/ncs/toolchains/c1a76fddb2/opt/zephyr-sdk/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        M:/nRF54L15/blinky_hpf/build_dk/hpf/CMakeFiles/3.31.0-rc1/CompilerIdCXX/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1237 (message)"
+      - "M:/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/kernel.cmake:135 (enable_language)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "C:/ncs/v3.2.0-preview2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:9 (find_package)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      riscv64-zephyr-elf-gcc.exe (Zephyr SDK 0.17.0) 12.2.0
+      Copyright (C) 2022 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+...

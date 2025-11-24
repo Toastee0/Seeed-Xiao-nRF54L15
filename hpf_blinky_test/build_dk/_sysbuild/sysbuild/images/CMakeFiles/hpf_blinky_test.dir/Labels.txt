@@ -1,0 +1,13 @@
+# Target labels
+ hpf_blinky_test
+# Source files and their labels
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/CMakeFiles/hpf_blinky_test
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/CMakeFiles/hpf_blinky_test.rule
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/CMakeFiles/hpf_blinky_test-complete.rule
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/hpf_blinky_test-prefix/src/hpf_blinky_test-stamp/hpf_blinky_test-build.rule
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/hpf_blinky_test-prefix/src/hpf_blinky_test-stamp/hpf_blinky_test-configure.rule
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/hpf_blinky_test-prefix/src/hpf_blinky_test-stamp/hpf_blinky_test-download.rule
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/hpf_blinky_test-prefix/src/hpf_blinky_test-stamp/hpf_blinky_test-install.rule
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/hpf_blinky_test-prefix/src/hpf_blinky_test-stamp/hpf_blinky_test-mkdir.rule
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/hpf_blinky_test-prefix/src/hpf_blinky_test-stamp/hpf_blinky_test-patch.rule
+M:/nRF54L15/hpf_blinky_test/build_dk/_sysbuild/sysbuild/images/hpf_blinky_test-prefix/src/hpf_blinky_test-stamp/hpf_blinky_test-update.rule

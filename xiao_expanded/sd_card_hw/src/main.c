@@ -244,7 +244,7 @@ int main(void)
 	LOG_INF("========================================");
 	LOG_INF("XIAO nRF54L15 SD Card + ZMS Sample");
 	LOG_INF("========================================");
-
+	//nrfx_power_constlat_mode_request(); //causes a warning, but doesn't work without this line on platform.io
 #ifdef CONFIG_ZMS
 	/* Initialize ZMS for persistent storage */
 	LOG_INF("Initializing ZMS...");

@@ -1,0 +1,13 @@
+sample:
+  description: BLE button sample for XIAO nRF54L15 - button press counter in advertising data
+  name: BLE Button Sample
+common:
+  tags: bluetooth ble advertising gpio button
+  harness: bluetooth
+  platform_allow: xiao_nrf54l15/nrf54l15/cpuapp
+  integration_platforms:
+    - xiao_nrf54l15/nrf54l15/cpuapp
+tests:
+  sample.bluetooth.ble_button:
+    harness: bluetooth
+    platform_allow: xiao_nrf54l15/nrf54l15/cpuapp

@@ -1,0 +1,25 @@
+# Build artifacts
+build/
+build-*/
+*.elf
+*.hex
+*.bin
+*.map
+
+# Zephyr specific
+.cache/
+.west/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/CMakeFiles/hpf"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/CMakeFiles/hpf.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/CMakeFiles/hpf-complete.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-build.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-configure.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-download.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-install.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-mkdir.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-patch.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf_blinky_test/build_dk/modules/nrf/hpf-prefix/src/hpf-stamp/hpf-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"hpf"
+		],
+		"name" : "hpf"
+	}
+}

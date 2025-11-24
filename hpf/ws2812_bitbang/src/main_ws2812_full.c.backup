@@ -1,0 +1,344 @@
+/*
+ * Copyright (c) 2024 Nordic Semiconductor ASA
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/kernel.h>
+#include <zephyr/irq.h>
+#include <hal/nrf_vpr_csr.h>
+#include <hal/nrf_gpio.h>
+
+/* WS2812 HPF Implementation using Event Handling Architecture
+ * - HRT functions implemented as interrupt handlers
+ * - Communication via shared memory (not function parameters)
+ * - Boot → WFI → IRQ dispatch pattern
+ */
+
+/* WS2812 Timing Requirements (in nanoseconds):
+ * T0H (0 code high): 200-500 ns (target: 350 ns)
+ * T1H (1 code high): 550-850 ns (target: 700 ns)  
+ * T0L (0 code low):  650-950 ns (target: 800 ns)
+ * T1L (1 code low):  450-750 ns (target: 600 ns)
+ * RES (reset):       >300 µs (target: 500 µs)
+ */
+
+/* Use GPIO2 pin 10 for WS2812 output (VIO pin 10, FLPR-accessible) */
+#define WS2812_GPIO_DEV DEVICE_DT_GET(DT_NODELABEL(gpio2))
+#define WS2812_PIN 10
+
+#define NUM_LEDS 8        /* Number of WS2812 LEDs */
+
+/* FLPR core timing calibration (128 MHz RISC-V) */
+#define FLPR_FREQ_MHZ 128
+#define CYCLES_PER_NS(ns) ((ns * FLPR_FREQ_MHZ) / 1000)
+
+/* Timing in CPU cycles for precise HRT execution */
+#define T0H_CYCLES CYCLES_PER_NS(350)  /* ~45 cycles */
+#define T1H_CYCLES CYCLES_PER_NS(700)  /* ~90 cycles */
+#define T0L_CYCLES CYCLES_PER_NS(800)  /* ~102 cycles */ 
+#define T1L_CYCLES CYCLES_PER_NS(600)  /* ~77 cycles */
+
+/* Shared memory for HRT communication (no function parameters allowed) */
+struct ws2812_shared_data {
+    uint8_t leds[NUM_LEDS * 3]; /* RGB data: G,R,B order */
+    volatile uint32_t led_count;
+    volatile uint32_t current_bit;
+    volatile uint32_t current_byte;
+    volatile bool transmission_active;
+    volatile uint32_t heartbeat_counter; /* For fault detection */
+    volatile uint32_t error_code;        /* Error reporting */
+};
+
+/* Error codes for fault handling */
+#define WS2812_ERROR_NONE        0
+#define WS2812_ERROR_MEMORY      1
+#define WS2812_ERROR_TIMING      2
+#define WS2812_ERROR_GPIO        3
+
+static struct ws2812_shared_data ws2812_data;
+static const struct device *gpio_dev;
+
+/* Function declarations */
+struct ws2812_rgb hsv_to_rgb(uint16_t hue, uint8_t sat, uint8_t val);
+
+/* HRT Function: Precise timing delay using RISC-V assembly 
+ * Must be HRT - no external function calls allowed */
+static inline void hrt_delay_cycles(uint32_t cycles)
+{
+    __asm__ volatile (
+        "1: addi %0, %0, -1\n"
+        "   bnez %0, 1b\n"
+        : "+r" (cycles)
+        :
+        : "memory"
+    );
+}
+
+/* HRT Function: VPR VIO direct pin control for precise timing
+ * Uses VPR RT peripherals mapped to CSR space - no external calls */
+static inline void hrt_vio_set(uint32_t vio_pin, uint32_t value)
+{
+    /* VIO pin 10 maps to P2.10 according to documentation */
+    if (value) {
+        nrf_vpr_csr_vio_out_set(1U << vio_pin);
+    } else {
+        nrf_vpr_csr_vio_out_set(0);  /* Clear all bits, then set specific pattern */
+        nrf_vpr_csr_vio_out_set(~(1U << vio_pin) & nrf_vpr_csr_vio_out_get());
+    }
+}
+
+/* Initialize VPR RT peripherals for WS2812 */
+static void init_vpr_peripherals(void)
+{
+    /* Configure P2.10 ownership to VPR (VIO pin 10) */
+    nrf_gpio_pin_control_select(NRF_GPIO_PIN_MAP(2, 10), NRF_GPIO_PIN_SEL_VPR);
+    
+    /* Enable RT peripherals */
+    nrf_vpr_csr_rtperiph_enable_set(true);
+    
+    /* Configure VIO pin 10 as output for WS2812 */
+    nrf_vpr_csr_vio_dir_set(1U << 10);
+    
+    /* Initial state: LOW */
+    nrf_vpr_csr_vio_out_set(0);
+}
+
+/* HRT Function: WS2812 bit transmission interrupt handler
+ * Must be HRT - no external function calls, uses shared memory only */
+void hrt_ws2812_tx_handler(void)
+{
+    uint8_t current_byte_val;
+    bool bit_value;
+    
+    /* Check bounds and get current bit */
+    if (ws2812_data.current_byte >= (ws2812_data.led_count * 3)) {
+        /* Transmission complete - reset and notify */
+        ws2812_data.transmission_active = false;
+        ws2812_data.current_bit = 0;
+        ws2812_data.current_byte = 0;
+        hrt_gpio_set(WS2812_PIN, 0); /* Ensure LOW for reset */
+        return;
+    }
+    
+    current_byte_val = ws2812_data.leds[ws2812_data.current_byte];
+    bit_value = (current_byte_val >> (7 - ws2812_data.current_bit)) & 0x01;
+    
+    /* Send bit with precise HRT timing using VIO */
+    if (bit_value) {
+        /* Send '1': High for T1H, Low for T1L */
+        hrt_vio_set(10, 1);  /* VIO pin 10 = P2.10 */
+        hrt_delay_cycles(T1H_CYCLES);
+        hrt_vio_set(10, 0);
+        hrt_delay_cycles(T1L_CYCLES);
+    } else {
+        /* Send '0': High for T0H, Low for T0L */
+        hrt_vio_set(10, 1);  /* VIO pin 10 = P2.10 */
+        hrt_delay_cycles(T0H_CYCLES);
+        hrt_vio_set(10, 0);
+        hrt_delay_cycles(T0L_CYCLES);
+    }
+    
+    /* Advance to next bit */
+    ws2812_data.current_bit++;
+    if (ws2812_data.current_bit >= 8) {
+        ws2812_data.current_bit = 0;
+        ws2812_data.current_byte++;
+    }
+    
+    /* Update heartbeat for fault detection */
+    ws2812_data.heartbeat_counter++;
+}
+
+/* HSV to RGB conversion for color generation */
+struct ws2812_rgb hsv_to_rgb(uint16_t hue, uint8_t sat, uint8_t val)
+{
+    struct ws2812_rgb rgb = {0};
+    uint16_t region, remainder, p, q, t;
+
+    if (sat == 0) {
+        rgb.r = rgb.g = rgb.b = val;
+        return rgb;
+    }
+
+    region = hue / 43;
+    remainder = (hue - (region * 43)) * 6;
+
+    p = (val * (255 - sat)) >> 8;
+    q = (val * (255 - ((sat * remainder) >> 8))) >> 8;
+    t = (val * (255 - ((sat * (255 - remainder)) >> 8))) >> 8;
+
+    switch (region) {
+    case 0: rgb.r = val; rgb.g = t; rgb.b = p; break;
+    case 1: rgb.r = q; rgb.g = val; rgb.b = p; break;
+    case 2: rgb.r = p; rgb.g = val; rgb.b = t; break;
+    case 3: rgb.r = p; rgb.g = q; rgb.b = val; break;
+    case 4: rgb.r = t; rgb.g = p; rgb.b = val; break;
+    default: rgb.r = val; rgb.g = p; rgb.b = q; break;
+    }
+
+    return rgb;
+}
+
+/* Send a byte (8 bits) MSB first */
+static void ws2812_send_byte(uint8_t byte)
+{
+    for (int i = 7; i >= 0; i--) {
+        ws2812_send_bit((byte >> i) & 0x01);
+    }
+}
+
+/* Send RGB data to a single LED */
+static void ws2812_send_rgb(struct ws2812_rgb *rgb)
+{
+    /* WS2812 expects GRB order */
+    ws2812_send_byte(rgb->g);
+    ws2812_send_byte(rgb->r); 
+    ws2812_send_byte(rgb->b);
+}
+
+/* Send reset signal */
+static void ws2812_reset(void)
+{
+    gpio_pin_set_raw(gpio_dev, pin_num, 0);
+    k_usleep(RESET_TIME_US);
+}
+
+/* Update all LEDs with new data */
+static void ws2812_update(struct ws2812_rgb *leds, int num_leds)
+{
+    /* Disable interrupts for precise timing */
+    unsigned int key = irq_lock();
+    
+    for (int i = 0; i < num_leds; i++) {
+        ws2812_send_rgb(&leds[i]);
+    }
+    
+    /* Re-enable interrupts */
+    irq_unlock(key);
+    
+    /* Send reset to latch data */
+    ws2812_reset();
+}
+
+/* HSV to RGB conversion */
+static struct ws2812_rgb hsv_to_rgb(uint16_t hue, uint8_t sat, uint8_t val)
+{
+    struct ws2812_rgb rgb = {0};
+    uint16_t region, remainder, p, q, t;
+
+    if (sat == 0) {
+        rgb.r = rgb.g = rgb.b = val;
+        return rgb;
+    }
+
+    region = hue / 43;
+    remainder = (hue - (region * 43)) * 6;
+
+    p = (val * (255 - sat)) >> 8;
+    q = (val * (255 - ((sat * remainder) >> 8))) >> 8;
+    t = (val * (255 - ((sat * (255 - remainder)) >> 8))) >> 8;
+
+    switch (region) {
+    case 0:
+        rgb.r = val; rgb.g = t; rgb.b = p;
+        break;
+    case 1:
+        rgb.r = q; rgb.g = val; rgb.b = p;
+        break;
+    case 2:
+        rgb.r = p; rgb.g = val; rgb.b = t;
+        break;
+    case 3:
+        rgb.r = p; rgb.g = q; rgb.b = val;
+        break;
+    case 4:
+        rgb.r = t; rgb.g = p; rgb.b = val;
+        break;
+    default:
+        rgb.r = val; rgb.g = p; rgb.b = q;
+        break;
+    }
+
+    return rgb;
+}
+
+/* VEVIF IRQ handler for WS2812 commands from host */
+void vevif_irq_handler(void)
+{
+    /* Check which task triggered the interrupt */
+    uint32_t tasks = nrf_vpr_csr_vevif_tasks_get();
+    
+    if (tasks & (1U << 16)) {
+        /* Task 16: Start WS2812 transmission */
+        ws2812_data.transmission_active = true;
+        ws2812_data.current_bit = 0;
+        ws2812_data.current_byte = 0;
+        ws2812_data.error_code = WS2812_ERROR_NONE;
+        
+        /* Clear task */
+        nrf_vpr_csr_vevif_tasks_clear(1U << 16);
+        
+        /* Start transmission by calling HRT handler */
+        hrt_ws2812_tx_handler();
+    }
+    
+    if (tasks & (1U << 17)) {
+        /* Task 17: Stop/Reset WS2812 */
+        ws2812_data.transmission_active = false;
+        hrt_vio_set(10, 0); /* Ensure LOW */
+        
+        /* Clear task */
+        nrf_vpr_csr_vevif_tasks_clear(1U << 17);
+    }
+}
+
+int main(void)
+{
+    /* HPF Boot sequence */
+    
+    /* Initialize error state */
+    ws2812_data.error_code = WS2812_ERROR_NONE;
+    ws2812_data.heartbeat_counter = 0;
+    ws2812_data.transmission_active = false;
+    ws2812_data.led_count = NUM_LEDS;
+    
+    /* Initialize VPR RT peripherals */
+    init_vpr_peripherals();
+    
+    /* Initialize demo rainbow pattern */
+    for (int i = 0; i < NUM_LEDS; i++) {
+        uint16_t hue = (i * 256 / NUM_LEDS) % 256;
+        struct ws2812_rgb color = hsv_to_rgb(hue, 255, 32); /* Low brightness */
+        
+        ws2812_data.leds[i * 3 + 0] = color.g; /* Green first */
+        ws2812_data.leds[i * 3 + 1] = color.r; /* Red */
+        ws2812_data.leds[i * 3 + 2] = color.b; /* Blue */
+    }
+    
+    /* Configure VEVIF for host communication */
+    nrf_vpr_csr_vevif_int_enable(1U << 16 | 1U << 17); /* Enable tasks 16,17 */
+    
+    /* Enable VEVIF IRQ */
+    IRQ_CONNECT(16, 0, vevif_irq_handler, 0, 0); /* VEVIF IRQ 16 */
+    irq_enable(16);
+    
+    /* HPF Main Loop: WFI until IRQ */
+    while (1) {
+        /* Update heartbeat for fault detection */
+        ws2812_data.heartbeat_counter++;
+        
+        /* Check for transmission in progress */
+        if (ws2812_data.transmission_active) {
+            /* Continue bit-by-bit transmission */
+            hrt_ws2812_tx_handler();
+            
+            /* Small delay between bits for timing accuracy */
+            k_busy_wait(1); /* 1 microsecond */
+        } else {
+            /* Enter WFI (Wait For Interrupt) - HPF power management */
+            k_cpu_idle();
+        }
+    }
+    
+    return 0;
+}

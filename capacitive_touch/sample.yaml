@@ -1,0 +1,22 @@
+sample:
+  name: Capacitive Touch Sample
+  description: |
+    Demonstrates capacitive touch sensing using the nRF54L15 COMP peripheral
+    on pins D0-D3 of the Seeed Studio XIAO nRF54L15 board.
+common:
+  tags:
+    - touch
+    - sensors
+    - comp
+    - gpio
+  depends_on: adc
+  platform_allow: xiao_nrf54l15_nrf54l15_cpuapp
+tests:
+  sample.capacitive_touch:
+    platform_allow: xiao_nrf54l15_nrf54l15_cpuapp
+    tags:
+      - touch
+      - sensors
+    extra_configs:
+      - CONFIG_NRFX_COMP=y
+      - CONFIG_ADC=y

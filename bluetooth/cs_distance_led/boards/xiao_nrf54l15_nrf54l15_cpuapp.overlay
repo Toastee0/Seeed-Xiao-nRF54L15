@@ -1,0 +1,59 @@
+/*
+ * Copyright (c) 2025 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+ */
+
+#include <zephyr/dt-bindings/led/led.h>
+#include "../nrf54L15-bindings.h"
+
+/* Configure LED strip on SPI */
+&xiao_spi {
+	compatible = "nordic,nrf-spim";
+	led_strip: ws2812@0 {
+		compatible = "worldsemi,ws2812-spi";
+		reg = <0>; /* P2.08 (D6/TX on XIAO nRF54L15) */
+		spi-max-frequency = <SPI_FREQ>;
+
+		/* Single RGB LED */
+		chain-length = <1>;
+		color-mapping = <LED_COLOR_ID_RED
+				 LED_COLOR_ID_GREEN
+				 LED_COLOR_ID_BLUE>;
+		spi-one-frame = <ONE_FRAME>;
+		spi-zero-frame = <ZERO_FRAME>;
+	};
+};
+
+/ {
+	aliases { 
+		led-strip = &led_strip;
+	};
+
+	chosen {
+		/* Allocate full 256KB SRAM to cpuapp (no FLPR core used) */
+		zephyr,sram = &cpuapp_sram;
+	};
+};
+
+/* Override SRAM partition to use full 256KB */
+&cpuapp_sram {
+	reg = <0x20000000 0x40000>; /* 256KB at 0x20000000 */
+};
+
+/* Disable unused peripherals */
+&pdm20 {
+	status = "disabled";
+};
+
+&i2c22 {
+	status = "disabled";
+};
+
+&adc {
+	status = "disabled";
+};
+
+&uart21 {
+	status = "disabled";
+};

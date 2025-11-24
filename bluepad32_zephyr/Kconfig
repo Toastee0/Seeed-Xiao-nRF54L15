@@ -1,0 +1,147 @@
+#
+# Copyright (c) 2025 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menuconfig BLUEPAD32
+	bool "Bluepad32 Bluetooth Controller Support"
+	depends on BT
+	select BT_CENTRAL
+	select BT_GATT_CLIENT
+	select BT_CONN_CTX
+	default n
+	help
+	  Enable Bluepad32 library for Bluetooth gamepad, mouse, and keyboard support.
+	  Bluepad32 connects to Bluetooth controllers (as a central device) and provides
+	  a unified API for accessing gamepad, mouse, and keyboard input.
+
+if BLUEPAD32
+
+config BLUEPAD32_MAX_DEVICES
+	int "Maximum number of connected devices"
+	default 4
+	range 1 8
+	help
+	  Maximum number of Bluetooth controllers that can be connected simultaneously.
+	  Each device requires memory for connection state, HID reports, and parser data.
+
+choice BLUEPAD32_PLATFORM
+	prompt "Target Platform"
+	default BLUEPAD32_PLATFORM_ZEPHYR
+
+config BLUEPAD32_PLATFORM_ZEPHYR
+	bool "Zephyr RTOS Platform"
+	help
+	  Use Zephyr RTOS platform implementation with native Bluetooth stack.
+
+endchoice
+
+menu "Controller Parser Support"
+
+config BLUEPAD32_PARSER_GENERIC
+	bool "Generic HID Controller Support"
+	default y
+	help
+	  Enable generic HID parser for unknown controllers.
+	  This provides basic support for any HID-compliant device.
+
+config BLUEPAD32_PARSER_DS4
+	bool "Sony DualShock 4 (PS4) Support"
+	default y
+	help
+	  Enable parser for Sony DualShock 4 controllers.
+	  Supports all buttons, analog sticks, triggers, touchpad, and motion sensors.
+
+config BLUEPAD32_PARSER_DS5
+	bool "Sony DualSense (PS5) Support"
+	default y
+	help
+	  Enable parser for Sony DualSense controllers.
+	  Supports all buttons, analog sticks, triggers, haptic feedback, and adaptive triggers.
+
+config BLUEPAD32_PARSER_SWITCH
+	bool "Nintendo Switch Pro Controller Support"
+	default y
+	help
+	  Enable parser for Nintendo Switch Pro controllers.
+	  Also supports Joy-Cons (individual or paired).
+
+config BLUEPAD32_PARSER_XBOX
+	bool "Xbox Controller Support"
+	default y
+	help
+	  Enable parser for Xbox One and Xbox Series X/S controllers.
+	  Supports both Bluetooth and Xbox Wireless Protocol.
+
+config BLUEPAD32_PARSER_WII
+	bool "Nintendo Wii Controller Support"
+	default n
+	help
+	  Enable parser for Wii Remote, Nunchuk, and Classic Controller.
+	  Includes motion sensor and IR camera support.
+
+config BLUEPAD32_PARSER_8BITDO
+	bool "8BitDo Controller Support"
+	default n
+	help
+	  Enable parser for 8BitDo controllers (various models).
+
+config BLUEPAD32_PARSER_MOUSE
+	bool "Generic Mouse Support"
+	default y
+	help
+	  Enable parser for Bluetooth mice.
+	  Supports buttons, scroll wheel, and movement tracking.
+
+config BLUEPAD32_PARSER_KEYBOARD
+	bool "Generic Keyboard Support"
+	default y
+	help
+	  Enable parser for Bluetooth keyboards.
+	  Supports standard key events and modifiers.
+
+endmenu # Controller Parser Support
+
+menu "Advanced Options"
+
+config BLUEPAD32_LOG_LEVEL
+	int "Bluepad32 Log Level"
+	default 3
+	range 0 4
+	help
+	  Set the logging level for Bluepad32 components:
+	  0 = OFF, 1 = ERROR, 2 = WARNING, 3 = INFO, 4 = DEBUG
+
+config BLUEPAD32_CONNECTION_TIMEOUT_MS
+	int "Device connection timeout (milliseconds)"
+	default 10000
+	range 5000 30000
+	help
+	  Maximum time to wait for a device to complete connection and initialization.
+	  If the device doesn't respond within this time, the connection is dropped.
+
+config BLUEPAD32_ENABLE_VIRTUAL_DEVICES
+	bool "Enable virtual device support"
+	default n
+	help
+	  Allow controllers to create virtual child devices.
+	  For example, a DualShock 4 can emulate both a gamepad and a mouse.
+
+config BLUEPAD32_RUMBLE_SUPPORT
+	bool "Enable rumble/vibration support"
+	default y
+	help
+	  Enable sending rumble/vibration commands to controllers that support it.
+
+config BLUEPAD32_LED_SUPPORT
+	bool "Enable LED control support"
+	default y
+	help
+	  Enable control of controller LEDs (player indicators, lightbar, etc.).
+
+endmenu # Advanced Options
+
+endif # BLUEPAD32
+
+source "Kconfig.zephyr"

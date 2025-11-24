@@ -15,10 +15,19 @@
  * @brief Initialize the water physics simulation
  * @param width Matrix width in pixels
  * @param height Matrix height in pixels
- * @param initial_fill_rows Number of rows to fill from bottom at start
+ * @param initial_fill_rows Number of rows to fill from bottom at start (0 for text mode)
  * @return 0 on success, negative error code on failure
  */
 int water_physics_init(int width, int height, int initial_fill_rows);
+
+/**
+ * @brief Initialize water physics with text pattern
+ * @param width Matrix width in pixels
+ * @param height Matrix height in pixels
+ * @param text Text to display in water
+ * @return 0 on success, negative error code on failure
+ */
+int water_physics_init_text(int width, int height, const char *text);
 
 /**
  * @brief Update tilt angles for the water physics simulation

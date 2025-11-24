@@ -1,0 +1,25 @@
+cmake:
+  board:
+    name: 'nrf54l15dk'
+    path:
+     - 'C:/ncs/v3.2.0-preview2/zephyr/boards/nordic/nrf54l15dk'
+    qualifiers: 'nrf54l15/cpuflpr'
+    revision: ''
+  images:
+   - name: 'gpio'
+     source-dir: 'M:/nRF54L15/hpf/gpio'
+     type: 'MAIN'
+   - name: 'hpf'
+     source-dir: ''
+  kconfig:
+    files:
+     - 'M:/nRF54L15/hpf/gpio/build_dk/_sysbuild/empty.conf'
+     - 'm:/nRF54L15/hpf/gpio/sysbuild.conf'
+     - 'M:/nRF54L15/hpf/gpio/build_dk/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - 'm:/nRF54L15/hpf/gpio/sysbuild.conf'
+version: '0.1.0'
+west:
+  command: 'C:\Python313\Scripts\west build --build-dir m:/nRF54L15/hpf/gpio/build_dk m:/nRF54L15/hpf/gpio --pristine --board nrf54l15dk/nrf54l15/cpuflpr --sysbuild -- -DSB_CONFIG_PARTITION_MANAGER=n -DSB_CONFIG_HPF=y -DSB_CONFIG_HPF_GPIO=y -DSB_CONFIG_HPF_GPIO_BACKEND_ICMSG=y'
+  topdir: 'C:\ncs\v3.2.0-preview2'
+  version: '1.4.0'

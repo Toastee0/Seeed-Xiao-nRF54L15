@@ -34,7 +34,8 @@
 			"${workspaceFolder}\\xiao_expanded\\mspi_sd_test",
 			"${workspaceFolder}\\hpf_gpio_basic_api",
 			"${workspaceFolder}\\blink_hpf\\blink_cpuapp",
-			"${workspaceFolder}\\watchface"
+			"${workspaceFolder}\\watchface",
+			"${workspaceFolder}\\lowpower"
 		],
 		"git.ignoreLimitWarning": true
 	}

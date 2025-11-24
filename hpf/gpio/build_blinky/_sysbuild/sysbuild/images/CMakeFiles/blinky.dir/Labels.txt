@@ -1,0 +1,13 @@
+# Target labels
+ blinky
+# Source files and their labels
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/CMakeFiles/blinky
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/CMakeFiles/blinky.rule
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/CMakeFiles/blinky-complete.rule
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-build.rule
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-configure.rule
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-download.rule
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-install.rule
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-mkdir.rule
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-patch.rule
+M:/nRF54L15/hpf/gpio/build_blinky/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-update.rule

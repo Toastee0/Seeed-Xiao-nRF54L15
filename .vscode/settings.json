@@ -23,8 +23,32 @@
         "${workspaceFolder}\\xiao_expanded\\sd_card_mspi",
         "${workspaceFolder}\\xiao_expanded\\mspi_sd_test",
         "${workspaceFolder}\\hpf_gpio_basic_api",
-        "${workspaceFolder}\\blink_hpf\\blink_cpuapp"
+        "${workspaceFolder}\\blink_hpf\\blink_cpuapp",
+        "${workspaceFolder}\\watchface",
+        "${workspaceFolder}\\xiao_expanded\\sd_card_hw",
+        "${workspaceFolder}\\dmic_ble",
+        "${workspaceFolder}\\bluetooth\\peripheral_lbs",
+        "${workspaceFolder}\\ble",
+        "${workspaceFolder}\\ble_modern",
+        "${workspaceFolder}\\ble_button",
+        "${workspaceFolder}\\bap_broadcast_source",
+        "${workspaceFolder}\\bap_broadcast_sink",
+        "${workspaceFolder}\\hpf\\ws2812_bitbang",
+        "${workspaceFolder}\\led_strip_single",
+        "${workspaceFolder}\\bluetooth\\channel_sounding_ras_initiator_new",
+        "${workspaceFolder}\\bluetooth\\cs_distance_led",
+        "${workspaceFolder}\\bluepad32_zephyr",
+        "${workspaceFolder}\\comp_touch_test",
+        "${workspaceFolder}\\bluetooth\\channel_sounding_ras_reflector_new",
+        "${workspaceFolder}\\led_matrix"
     ],
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "files.exclude": {
+        "**/*.rpyc": true,
+        "**/*.rpa": true,
+        "**/*.rpymc": true,
+        "**/cache/": true
+    },
+    "dotnet.defaultSolution": "disable"
 }
 

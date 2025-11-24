@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/CMakeFiles/gpio"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/CMakeFiles/gpio.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/CMakeFiles/gpio-complete.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-build.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-configure.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-download.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-install.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-mkdir.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-patch.rule"
+		},
+		{
+			"file" : "M:/nRF54L15/hpf/gpio/build_test/_sysbuild/sysbuild/images/gpio-prefix/src/gpio-stamp/gpio-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"gpio"
+		],
+		"name" : "gpio"
+	}
+}
