@@ -7,12 +7,15 @@
 [submodule "pyOCD"]
 	path = pyOCD
 	url = https://github.com/pyocd/pyOCD.git
+	ignore = dirty
 [submodule "platform-seeedboards"]
 	path = platform-seeedboards
 	url = https://github.com/Seeed-Studio/platform-seeedboards.git
+	ignore = dirty
 [submodule "led_strip_pov"]
 	path = led_strip_pov
 	url = https://github.com/Toastee0/led_strip_pov.git
+	ignore = dirty
 [submodule "lib/tflite-micro"]
 	path = lib/tflite-micro
 	url = https://github.com/tensorflow/tflite-micro.git
@@ -22,6 +25,7 @@
 [submodule "lib/flatbuffers"]
 	path = lib/flatbuffers
 	url = https://github.com/google/flatbuffers.git
+	ignore = dirty
 [submodule "lib/ruy"]
 	path = lib/ruy
 	url = https://github.com/google/ruy.git
