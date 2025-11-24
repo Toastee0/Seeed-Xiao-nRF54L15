@@ -28,7 +28,6 @@ Not_working/
 pyOCD/
 hpf-mspi/
 blink_hpf/
-channel_sounding/
 reference/
 board_config_template.overlay
 hpf.rst
