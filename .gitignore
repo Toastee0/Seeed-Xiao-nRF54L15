@@ -32,3 +32,8 @@ channel_sounding/
 reference/
 board_config_template.overlay
 hpf.rst
+
+# Ignore submodule local changes
+lib/flatbuffers
+platform-seeedboards
+pyOCD
