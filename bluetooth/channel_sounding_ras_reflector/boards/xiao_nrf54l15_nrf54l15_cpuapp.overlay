@@ -4,7 +4,30 @@
  * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
  */
 
-/*
- * Xiao nRF54L15 has a single antenna, no antenna switching needed.
- * This overlay file can be left minimal or empty.
- */
+/ {
+	/* Channel Sounding antenna config using Xiao's RF switch GPIOs */
+	cs_antenna_switch: cs-antenna-config {
+		status = "okay";
+		compatible = "nordic,bt-cs-antenna-switch";
+		/* Xiao RF switch control pins */
+		ant-gpios = <&gpio2 5 GPIO_ACTIVE_LOW>,   /* rfsw-ctl */
+			    <&gpio2 3 GPIO_ACTIVE_HIGH>;  /* rfsw-pwr */
+		multiplexing-mode = <0>;
+	};
+};
+
+&rfsw_ctl {
+	regulator-boot-on;
+};
+
+&rfsw_pwr {
+	regulator-boot-on;
+};
+
+&pdm_imu_pwr {
+	/delete-property/ regulator-boot-on;
+};
+
+&pdm20 {
+	status = "disabled";
+};

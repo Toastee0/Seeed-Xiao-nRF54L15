@@ -4,7 +4,34 @@
  * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
  */
 
-/*
- * Xiao nRF54L15 has a single antenna, no antenna switching needed.
- * This overlay file can be left minimal or empty.
- */
+/ {
+	chosen {
+		/* Allocate full 256KB SRAM to cpuapp (no FLPR core used) */
+		zephyr,sram = &cpuapp_sram;
+	};
+};
+
+/* Override SRAM partition to use full 256KB */
+&cpuapp_sram {
+	reg = <0x20000000 0x40000>; /* 256KB at 0x20000000 */
+};
+
+&rfsw_ctl {
+	regulator-boot-on;
+};
+
+&rfsw_pwr {
+	regulator-boot-on;
+};
+
+&pdm20 {
+	status = "disabled";
+};
+
+&adc {
+	status = "disabled";
+};
+
+&comp {
+	status = "disabled";
+};
