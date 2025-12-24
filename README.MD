@@ -1,6 +1,6 @@
-# Seeed Xiao nRF54L15 Zephyr Samples
+# Seeed Studio XIAO nRF54L15 Zephyr Samples
 
-This repository contains sample applications and simple example code for the Seeed Studio Xiao nRF54L15 development board using Zephyr RTOS.
+This repository contains sample applications and simple example code for the [Seeed Studio XIAO nRF54L15](https://www.seeedstudio.com/XIAO-nRF54L15-p-6493.html) development board using Zephyr RTOS.
 
 ## Board Installation (Required First!)
 
