@@ -1,0 +1,145 @@
+{
+	"folders": [
+    {
+        "path": "../../../../..",
+        "name": "zephyrproject"
+    },
+    {
+        "path": "../..",
+        "name": "my zephyr projects"
+    },
+    {
+        "path": ".",
+        "name": "current project"
+    }
+	],
+	"settings": {
+        // Hush CMake
+		"cmake.configureOnOpen": false,
+
+		// IntelliSense
+		"C_Cpp.default.compilerPath": "${userHome}/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc",
+		"C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+
+        //Python venv activation
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
+
+		// Debugger for ARM
+		"cortex-debug.armToolchainPath": "${userHome}/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/",
+		//"cortex-debug.nmPath": "${userHome}/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-nm",
+  		"cortex-debug.objdumpPath": "${userHome}/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump",
+        
+		// File Associations
+		"files.associations": {
+		}
+    },
+	"tasks": {
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "West Build",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"options": {
+				"cwd": "${workspaceFolder:zephyrproject}"
+			},
+			"linux": {
+				"command": "${userHome}/zephyrproject/.venv/bin/west"
+			},
+			"args": [
+				"build",
+				"-p",
+				"always",
+				"-b",
+				"xiao_nrf54l15/nrf54l15/cpuapp",
+				"--shield",
+				"seeed_xiao_expansion_board",
+				"-s",
+  				"${workspaceFolder:current project}"
+			],
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "West Flash",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder:zephyrproject}"
+			},
+			"linux": {
+				"command": "${userHome}/zephyrproject/.venv/bin/west"
+			},
+			"args": [
+				"flash"
+			],
+			"problemMatcher": [
+				"$gcc"
+			]
+		}
+	],
+	"inputs": [
+		{
+			"id": "board",
+			"type": "promptString",
+			"default": "xiao_nrf54l15/nrf54l15/cpuapp",
+			"description": "See https://docs.zephyrproject.org/latest/boards/index.html"
+		},
+		{
+			"id": "pristine",
+			"type": "pickString",
+			"description": "Choose when to run a pristine build",
+			"default": "auto",
+			"options": [
+				"auto",
+				"always",
+				"never"
+                ]
+            }
+        ]
+	},
+	"launch": {
+    "version": "0.2.0",
+    "configurations": [
+            {
+            "name": "OpenOCD Debug",
+            "cwd": "${workspaceFolder:zephyrproject}",
+            "executable": "${workspaceFolder:zephyrproject}/build/zephyr/zephyr.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "device": "cortex-m33",
+            "configFiles": [
+                "${workspaceFolder:zephyrproject}/zephyr/boards/seeed/xiao_nrf54l15/support/openocd.cfg"
+            ],
+            "interface": "swd",
+            "runToEntryPoint": "main",
+            "gdbTarget": "localhost:3333",
+            "preLaunchTask": "West Flash",
+            "svdFile": "${workspaceFolder:zephyrproject}/zephyr/boards/seeed/xiao_nrf54l15/xiao_nrf54l15.svd",
+            "gdbPath": "${userHome}/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "overrideLaunchCommands": [
+                "monitor reset halt",
+                "monitor nrf54l-load build/zephyr/zephyr.elf",
+                "break main"
+            ],
+            "postLaunchCommands": [
+                "continue"
+            ],
+            "showDevDebugOutput": "raw"
+            }
+        ]
+    },
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools-extension-pack",
+			"ms-python.python",
+			"ms-vscode.vscode-embedded-tools",
+			"ms-vscode.vscode-serial-monitor",
+			"marus25.cortex-debug"
+		]
+	}
+}
