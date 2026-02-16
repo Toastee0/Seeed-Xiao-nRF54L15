@@ -2,7 +2,7 @@
 
 This repository contains sample applications and simple example code for the Seeed Studio Xiao nRF54L15 development board using Zephyr RTOS.
 
-## Board Installation (Required First!)
+## Board Installation (Required First!) (sdk 3.20 includes the board files now, so you can skip this if using a newer sdk.)
 
 Before building any samples, you must install the board definition files:
 
