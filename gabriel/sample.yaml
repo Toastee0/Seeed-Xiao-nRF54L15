@@ -1,0 +1,11 @@
+sample:
+  name: Gabriel
+  description: Gabriel project
+tests:
+  sample.gabriel:
+    harness: console
+    platform_allow:
+      - xiao_nrf54l15/nrf54l15/cpuapp
+    tags: adc uart pdm
+    integration_platforms:
+      - xiao_nrf54l15/nrf54l15/cpuapp

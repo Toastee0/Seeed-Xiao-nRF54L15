@@ -74,6 +74,7 @@ The repository is organized into the following sample projects:
 - `bap_dmic/` - **BLE Audio wireless microphone** - Complete wireless microphone system using BLE Audio broadcast with LC3 codec and PDM microphone input (working - 16kHz real-time audio streaming, 99.9%+ packet success rate, tested with nRF52840 dongle receiver)
 - `blink/` - Basic LED blinking sample (working - builds, flashes, and runs correctly)
 - `button/` - Button input sample (working - builds, flashes, and runs correctly)
+- `crypto_kmu/` - **Key Management Unit (KMU)** - Demonstrates nRF54L15's hardware key storage with PSA Crypto API - generates and stores AES-128 and ECDSA keys in secure hardware, performs encryption/decryption and signing/verification (working - 79KB flash, 27KB RAM, auto-generates seed on first boot, no pre-provisioning required)
 - `dmic/` - Digital Microphone sample with LED feedback and terminal bar graph (working - captures audio, displays levels, LED responds to volume thresholds)
 - `dmic-recorder/` - Digital Microphone recorder with UART streaming - records 10-second audio clips to WAV file via Python script (working - 16kHz/16-bit PCM, button-triggered recording, 921600 baud transfer, tested and produces acceptable quality audio)
 - `imu/` - LSM6DSO IMU sensor sample with custom I2C driver - reads raw accelerometer and gyroscope data (working - tested and verified with real sensor, outputs raw LSB values at 12.5Hz)
@@ -81,6 +82,8 @@ The repository is organized into the following sample projects:
 - `pwm/` - PWM LED fade sample with smooth brightness control (working - tested on D1/P1.05, 1kHz PWM frequency)
 - `pwm_rgb/` - RGB LED control with 3-channel PWM - rainbow effects, HSV color conversion, smooth color transitions (working - tested on D1/D2/D3, includes fade effects between colors)
 - `ble_modern/` - Modern Bluetooth Low Energy beacon sample with LED status indication (working - advertises as beacon with URL, LED blinks to show running status, tested on hardware)
+- `bluetooth/channel_sounding_ras_initiator/` - **BLE Channel Sounding initiator** - Scans for reflector, runs CS procedures, outputs calibrated distance estimates with weighted averaging (working - tested with two Xiao boards, nRF Connect SDK v3.2.1)
+- `bluetooth/channel_sounding_ras_reflector/` - **BLE Channel Sounding reflector** - Advertises Ranging Service, responds to CS procedures (working - tested with two Xiao boards, nRF Connect SDK v3.2.1)
 
 #### 🧪 Needs Testing (Board Config Ready):
 - `battery/` - Battery monitoring sample (board config updated)
@@ -118,6 +121,31 @@ The `bap_dmic` and `bap_broadcast_sink` samples work together to create a comple
   - Switch modes by editing `boards/nrf52840dongle_nrf52840.conf`
 
 **Quick Start**: See `bap_dmic/README.md` for complete setup instructions including receiver configuration.
+
+### Bluetooth Channel Sounding (`bluetooth/channel_sounding_*` samples):
+
+#### ✅ BLE Channel Sounding Distance Estimation (Tested on Hardware)
+
+Ported from the Nordic `channel_sounding_ras_initiator` and `channel_sounding_ras_reflector` SDK samples to run on the Xiao nRF54L15. Uses the BLE Channel Sounding Ranging Service (RAS) profile to estimate distance between two boards.
+
+- **`bluetooth/channel_sounding_ras_reflector/`** (Board #1):
+  - Advertises the BLE Ranging Service
+  - Responds to Channel Sounding procedures from the initiator
+  - LED turns on when connected
+
+- **`bluetooth/channel_sounding_ras_initiator/`** (Board #2):
+  - Scans for and connects to the reflector's Ranging Service
+  - Runs CS procedures and prints distance estimates to serial console
+  - Includes calibrated distance output with weighted averaging (Phase Slope 50%, RTT 25%, IFFT 25%)
+  - LED turns on when connected
+
+**Key modifications from stock SDK samples:**
+- DK library replaced with direct GPIO control (single LED via `led0` alias)
+- RF antenna switch manually configured (GPIO2.3/GPIO2.5) before `bt_enable()`
+- `prj.conf` adapted: removed `CONFIG_DK_LIBRARY`, added explicit GPIO/logging/console configs
+- Initiator adds ~100 lines of distance calibration logic with weighted averaging
+
+**Hardware:** 2x Xiao nRF54L15 (or 1x Xiao + 1x nRF54L15 DK). See `docs/forum-post-channel-sounding-xiao.md` for detailed build instructions, troubleshooting, and calibration notes.
 
 ### Expansion Base Samples (`xiao_expanded/`):
 

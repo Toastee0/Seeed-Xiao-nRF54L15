@@ -1,7 +1,0 @@
-default: lowpower
-build_dir: M:/nRF54L15/lowpower/build_xiao
-domains:
-  - name: lowpower
-    build_dir: M:/nRF54L15/lowpower/build_xiao/lowpower
-flash_order:
-  - lowpower
