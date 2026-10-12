@@ -2,6 +2,8 @@
 set(BOARD_ROOT "$ENV{ZEPHYR_BASE}/../../platforms/Seeed Studio/zephyr")
 
 cmake_minimum_required(VERSION 3.20.0)
+# Boot-time reset reason readout, see lib/reset_reason
+list(APPEND ZEPHYR_EXTRA_MODULES ${CMAKE_CURRENT_LIST_DIR}/../../../lib/reset_reason)
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(sd_card)
 

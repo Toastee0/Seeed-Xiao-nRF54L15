@@ -1,0 +1,4 @@
+name: xiao_reset_reason
+build:
+  cmake: .
+  kconfig: Kconfig

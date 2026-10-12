@@ -1,0 +1,23 @@
+# Copyright (c) 2026 Seeed Studio XIAO nRF54L15 samples
+# SPDX-License-Identifier: Apache-2.0
+
+config XIAO_RESET_REASON
+	bool "Print the reset reason (RESETREAS) at boot"
+	default y if SOC_SERIES_NRF54LX
+	depends on ARM && HAS_NRFX && !TRUSTED_EXECUTION_NONSECURE
+	help
+	  Reads the RESET peripheral's RESETREAS register once at boot, prints
+	  the raw value and the decoded reasons via printk, and keeps a copy
+	  available through xiao_reset_reason_get(). A SECTAMPER bit means the
+	  tamper controller (glitch detectors / active shield) reset the chip.
+
+config XIAO_RESET_REASON_CLEAR
+	bool "Clear RESETREAS after reading it"
+	default y
+	depends on XIAO_RESET_REASON
+	help
+	  RESETREAS is cumulative until cleared (a power-on reset clears it),
+	  so without clearing, old reasons keep showing up on later boots.
+	  Disable this if something else in the application (Memfault, or a
+	  sample that calls hwinfo_get_reset_cause() from main()) needs to
+	  read the register after this module has run.

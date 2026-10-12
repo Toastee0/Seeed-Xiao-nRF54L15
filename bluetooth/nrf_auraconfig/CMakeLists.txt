@@ -8,6 +8,8 @@ cmake_minimum_required(VERSION 3.20.0)
 # Include overlay file
 set(EXTRA_DTC_OVERLAY_FILE ${CMAKE_CURRENT_SOURCE_DIR}/../../../applications/nrf5340_audio/boards/nrf5340_audio_dk_nrf5340_cpuapp.overlay)
 
+# Boot-time reset reason readout, see lib/reset_reason
+list(APPEND ZEPHYR_EXTRA_MODULES ${CMAKE_CURRENT_LIST_DIR}/../../lib/reset_reason)
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(nrf_auraconfig)
 

@@ -8,6 +8,8 @@ cmake_minimum_required(VERSION 3.20.0)
 # The sample uses a separate directory for configuration files.
 set(APPLICATION_CONFIG_DIR "${CMAKE_CURRENT_LIST_DIR}/configuration")
 
+# Boot-time reset reason readout, see lib/reset_reason
+list(APPEND ZEPHYR_EXTRA_MODULES ${CMAKE_CURRENT_LIST_DIR}/../../../lib/reset_reason)
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(locator_tag)
 

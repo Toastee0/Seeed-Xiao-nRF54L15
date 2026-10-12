@@ -33,6 +33,7 @@ All external libraries are managed as git submodules in the `lib/` directory to 
 
 - **lib/u8g2/** - U8g2 graphics library for OLED displays
 - **lib/MadgwickAHRS/** - Arduino Madgwick AHRS filter for IMU sensor fusion
+- **lib/reset_reason/** - Prints the decoded `RESETREAS` register at boot in every sample (watchdog, lockup, debugger, tamper/glitch detector, etc.). See `lib/reset_reason/README.md`
 
 ### Using Libraries in Samples
 
